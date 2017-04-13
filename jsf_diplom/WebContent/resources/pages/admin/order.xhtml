@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<h:outputStylesheet library="css" name="style_order.css"  />
+</h:head>
+<h:body>
+	<p:panelGrid style="text-align:center;width:100%">
+		<h2>Заявка на грузоперевозку</h2>
+		<p:row>
+			<p:column>
+				<p:selectOneMenu id="cargo_type" value="#{selectOneMenuView.car}" style="width:50px">
+					<f:selectItem itemLabel="Выберите тип груза" itemValue="" />
+					<f:selectItems value="#{selectOneMenuView.cars}" />
+				</p:selectOneMenu>
+				<br></br>
+				<br></br>
+				<p:selectOneMenu id="cargo_weight" value="#{selectOneMenuView.car}" style="width:50px">
+					<f:selectItem itemLabel="Выберите вес и объем груза" itemValue="" />
+					<f:selectItems value="#{selectOneMenuView.cars}" />
+				</p:selectOneMenu>
+				<br></br>
+				<br></br>
+				<p:selectOneMenu id="country_loading"
+					value="#{selectOneMenuView.car}" style="width:50px">
+					<f:selectItem itemLabel="Выберите страну загрузки" itemValue="" />
+					<f:selectItems value="#{selectOneMenuView.cars}" />
+				</p:selectOneMenu>
+				<br></br>
+				<br></br>
+				<p:selectOneMenu id="port_loading" value="#{selectOneMenuView.car}" style="width:50px">
+					<f:selectItem itemLabel="Выберите порт загрузки" itemValue="" />
+					<f:selectItems value="#{selectOneMenuView.cars}" />
+				</p:selectOneMenu>
+				<br></br>
+				<br></br>
+				<p:selectOneMenu id="country_discharge"
+					value="#{selectOneMenuView.car}" style="width:50px">
+					<f:selectItem itemLabel="Выберите страну выгрузки" itemValue="" />
+					<f:selectItems value="#{selectOneMenuView.cars}" />
+				</p:selectOneMenu>
+				<br></br>
+				<br></br>
+				<p:selectOneMenu id="port_discharge"
+					value="#{selectOneMenuView.car}" style="width:50px">
+					<f:selectItem itemLabel="Выберите порт выгрузки" itemValue="" />
+					<f:selectItems value="#{selectOneMenuView.cars}" />
+				</p:selectOneMenu>
+				<br></br>
+				<br></br>
+
+			
+
+			<p:commandButton value="Заказать перевозку"
+				action="resources/proposal?faces-redirect=true"></p:commandButton>
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+
+
+
+
+</h:body>
+</html>

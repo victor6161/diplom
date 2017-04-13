@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Find Container</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:panelGrid style="text-align:center;width:100%">
+			<p:row>
+				<p:column>
+					<h2>Введите id товара</h2>
+					<p:outputLabel value="Введите id товара" for="goods_id"
+						style="text-align:center"></p:outputLabel>
+					<br></br>
+					<p:inputText id="goods_id" value=""></p:inputText>
+					<br></br>
+
+					<p:commandButton value="Найти Местонахождение"></p:commandButton>
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>
