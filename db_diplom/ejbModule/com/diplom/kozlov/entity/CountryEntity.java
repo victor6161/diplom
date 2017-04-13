@@ -13,6 +13,8 @@ import lombok.Setter;
 public class CountryEntity {
 	  @Id
 	  @GeneratedValue
+	  @Setter
+	  @Getter
 	  private Integer id;
 	  
 	  @Setter

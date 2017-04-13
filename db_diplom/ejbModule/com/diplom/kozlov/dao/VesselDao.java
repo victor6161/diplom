@@ -16,10 +16,10 @@ public class VesselDao {
 		em.close();
 	}
 	
-	public List getVessels(){
+	public List<VesselEntity> getVessels(){
 		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
 		em.getTransaction().begin();
-		List vesselEntity = em.createQuery("from VesselEntity").getResultList();
+		List<VesselEntity> vesselEntity = em.createQuery("from VesselEntity").getResultList();
 		em.getTransaction().commit();
 		em.close();
 		return vesselEntity;
