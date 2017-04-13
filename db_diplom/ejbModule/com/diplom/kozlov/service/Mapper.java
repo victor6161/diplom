@@ -18,6 +18,7 @@ public class Mapper {
 
 	public VesselDto vesselEntityToDto(VesselEntity vesselEntity){
 		VesselDto vesselDto = new VesselDto();
+		vesselDto.setId(vesselEntity.getId());
 		vesselDto.setType(vesselEntity.getType());
 		vesselDto.setName(vesselEntity.getName());
 

@@ -19,6 +19,8 @@ public class VesselEntity {
 	}
   @Id
   @GeneratedValue
+  @Setter
+  @Getter
   private Integer id;
   @Setter
   @Getter

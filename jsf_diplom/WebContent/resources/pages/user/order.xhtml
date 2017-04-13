@@ -14,11 +14,13 @@
 	<p:panelGrid style="text-align:center;width:100%">
 		<p:row>
 			<p:column>
-				<div style="font-size: 50; font-weight: 600;">Заявка на грузоперевозку</div>
+				<div style="font-size: 50; font-weight: 600; text-align: center">Заявка
+					на грузоперевозку</div>
 			</p:column>
 		</p:row>
 		<p:row>
 			<p:column>
+			<h:form>
 				<p:selectOneMenu id="cargo_type" value="#{selectOneMenuView.car}"
 					style="width:50px">
 					<f:selectItem itemLabel="Выберите тип груза" itemValue="" />
@@ -33,11 +35,12 @@
 				</p:selectOneMenu>
 				<br></br>
 				<br></br>
-				<p:selectOneMenu id="country_loading"
-					value="#{selectOneMenuView.car}" style="width:50px">
-					<f:selectItem itemLabel="Выберите страну загрузки" itemValue="" />
-					<f:selectItems value="#{selectOneMenuView.cars}" />
-				</p:selectOneMenu>
+				<p:autoComplete id="dd"
+					value="#{applicationBean.autoCompleteValue}"
+					completeMethod="#{applicationBean.byCountry}"
+					>
+				
+				</p:autoComplete>
 				<br></br>
 				<br></br>
 				<p:selectOneMenu id="port_loading" value="#{selectOneMenuView.car}"
@@ -66,6 +69,7 @@
 
 				<p:commandButton value="Заказать перевозку"
 					action="resources/proposal?faces-redirect=true"></p:commandButton>
+					</h:form>
 			</p:column>
 		</p:row>
 	</p:panelGrid>
