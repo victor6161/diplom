@@ -1,8 +1,10 @@
 package com.diplom.kozlov.db.service;
 
 import com.diplom.kozlov.db.dto.CountryDto;
+import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.entity.CountryEntity;
+import com.diplom.kozlov.entity.PortEntity;
 import com.diplom.kozlov.entity.VesselEntity;
 
 public class Mapper {
@@ -24,5 +26,13 @@ public class Mapper {
 
 		
 		return vesselDto;
+	}
+
+	public PortDto portEntityToDto(PortEntity portEntity) {
+		PortDto portDto = new PortDto();
+		portDto.setId(portEntity.getId());
+		portDto.setName(portEntity.getName());
+		portDto.setCountryId(portEntity.getCountryId());
+		return portDto;
 	}
 }

@@ -12,7 +12,11 @@ import lombok.Setter;
 @Entity
 @Table(name = "vessel")
 public class VesselEntity {
-  @Override
+  public VesselEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+@Override
 	public String toString() {
 		return "VesselEntity [id=" + id + ", type=" + type + ", name=" + name + ", fuelConsumption=" + fuelConsumption
 				+ ", loadCapacity=" + loadCapacity + ", averageSpeed=" + averageSpeed + "]";

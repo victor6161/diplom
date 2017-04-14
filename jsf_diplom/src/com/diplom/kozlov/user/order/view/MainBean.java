@@ -14,13 +14,18 @@ public class MainBean {
 	@Setter
 	@Getter
 	private CountryBeanOrder countryBeanOrder;
+	@Setter
+	@Getter
+	private PortBeanOrder portBeanOrder;
 	
 	public MainBean(){
 		countryBeanOrder = new CountryBeanOrder();
+		portBeanOrder = new PortBeanOrder();
 	}
 	@PostConstruct
 	public void init(){
-		countryBeanOrder.setName("default value");
+		countryBeanOrder.setName("Введите страну загрузки");
+		portBeanOrder.setName("Введите порт");
 	}
 
 }

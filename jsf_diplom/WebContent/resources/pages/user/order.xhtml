@@ -35,7 +35,7 @@
 				</p:selectOneMenu>
 				<br></br>
 				<br></br>
-				<p:autoComplete id="dd" 
+				<p:autoComplete 
 						dropdown="true"
 						value="#{mainBeanOrder.countryBeanOrder}"
 						completeMethod="#{applicationBean.byCountry}"
@@ -50,11 +50,19 @@
 				</p:autoComplete>
 				<br></br>
 				<br></br>
-				<p:selectOneMenu id="port_loading" value="#{selectOneMenuView.car}"
-					style="width:50px">
-					<f:selectItem itemLabel="Выберите порт загрузки" itemValue="" />
-					<f:selectItems value="#{selectOneMenuView.cars}" />
-				</p:selectOneMenu>
+				<p:autoComplete 
+						dropdown="true"
+						value="#{mainBeanOrder.portBeanOrder}"
+						completeMethod="#{applicationBean.byPort}"
+						converter="com.diplom.kozlov.user.converters.PortConverter"
+						var="port"
+						itemLabel="#{port.name}" 
+						itemValue="#{port}">
+						<p:column>
+							<h:outputText value="#{port.name}" />
+						</p:column>
+						
+				</p:autoComplete>
 				<br></br>
 				<br></br>
 				<p:selectOneMenu id="country_discharge"

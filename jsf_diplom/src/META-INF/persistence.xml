@@ -7,8 +7,7 @@
   <persistence-unit name="jpa-example"
 	transaction-type="RESOURCE_LOCAL">
   <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-<!--   	<class>com.diplom.kozlov.db.entity.VesselEntity</class> 
-   	<class>com.diplom.kozlov.db.entity.CountryEntity</class>  -->
+
   <properties>
     <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/diplom" />
     <property name="javax.persistence.jdbc.user" value="root" />
@@ -22,15 +21,15 @@
  
     
 	<!-- Minimum number of JDBC connections in the pool. Hibernate default: 1 -->
-<!--     <property name="hibernate.c3p0.min_size" value="5" /> -->
+    <property name="hibernate.c3p0.min_size" value="5" />
     <!-- Maximum number of JDBC connections in the pool. Hibernate default: 100 -->
-<!--     <property name="hibernate.c3p0.max_size" value="20" /> -->
+    <property name="hibernate.c3p0.max_size" value="20" />
     <!-- When an idle(незанятых) connection is removed from the pool (in second).Hibernate default: 0, never expire-->
-  <!--   <property name="hibernate.c3p0.timeout" value="500" /> -->
+    <property name="hibernate.c3p0.timeout" value="500" />
     <!-- Number of prepared statements will be cached. Increase performance.Hibernate default: 0 , caching is disable. -->
-  <!--   <property name="hibernate.c3p0.max_statements" value="50" /> -->
+    <property name="hibernate.c3p0.max_statements" value="50" />
    	<!--idle time in seconds before a connection is automatically validated. Hibernate default: 0 -->
-  <!--   <property name="hibernate.c3p0.idle_test_period" value="2000" /> -->
+    <property name="hibernate.c3p0.idle_test_period" value="2000" />
     </properties>
     
   </persistence-unit>

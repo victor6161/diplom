@@ -1,5 +1,6 @@
 package com.diplom.kozlov.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,25 +10,23 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "country")
-public class CountryEntity {
-	  public CountryEntity() {
+@Table(name = "port")
+public class PortEntity {
+	
+	  public PortEntity() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
-	@Id
+	  @Id
 	  @GeneratedValue
 	  @Setter
 	  @Getter
 	  private Integer id;
-	  
+	  @Setter
+	  @Getter
+	  @Column(name = "country_id")
+	  private Integer countryId;
 	  @Setter
 	  @Getter
 	  private String name;
-	  @Setter
-	  @Getter
-	  private String postcode;
-	  @Setter
-	  @Getter
-	  private Integer tax;
 }
