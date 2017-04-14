@@ -15,13 +15,13 @@
 		<h2>Заявка на грузоперевозку</h2>
 		<p:row>
 			<p:column>
-				<p:selectOneMenu id="cargo_type" value="#{selectOneMenuView.car}" style="width:50px">
+				<p:selectOneMenu id="cargo_type" value="#{selectOneMenuView.car}">
 					<f:selectItem itemLabel="Выберите тип груза" itemValue="" />
 					<f:selectItems value="#{selectOneMenuView.cars}" />
 				</p:selectOneMenu>
 				<br></br>
 				<br></br>
-				<p:selectOneMenu id="cargo_weight" value="#{selectOneMenuView.car}" style="width:50px">
+				<p:selectOneMenu id="cargo_weight" value="#{selectOneMenuView.car}" >
 					<f:selectItem itemLabel="Выберите вес и объем груза" itemValue="" />
 					<f:selectItems value="#{selectOneMenuView.cars}" />
 				</p:selectOneMenu>
@@ -34,7 +34,7 @@
 				</p:selectOneMenu>
 				<br></br>
 				<br></br>
-				<p:selectOneMenu id="port_loading" value="#{selectOneMenuView.car}" style="width:50px">
+				<p:selectOneMenu id="port_loading" value="#{selectOneMenuView.car}">
 					<f:selectItem itemLabel="Выберите порт загрузки" itemValue="" />
 					<f:selectItems value="#{selectOneMenuView.cars}" />
 				</p:selectOneMenu>

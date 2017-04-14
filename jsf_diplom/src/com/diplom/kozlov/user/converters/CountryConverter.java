@@ -10,6 +10,7 @@ import javax.faces.convert.FacesConverter;
 
 import com.diplom.kozlov.application.ApplicationBean;
 import com.diplom.kozlov.application.CountryBean;
+import com.diplom.kozlov.application.Mapper;
 
 
 
@@ -18,6 +19,7 @@ public class CountryConverter implements Converter {
 
 	@Override
 	public Object getAsObject(FacesContext fc, UIComponent arg1, String value) {
+		Mapper mapper = new Mapper();
 		ApplicationBean autoCompleteValueBean = null;
 
 		autoCompleteValueBean = (ApplicationBean) fc.getApplication().evaluateExpressionGet(fc, "#{applicationBean}", ApplicationBean.class);
@@ -29,7 +31,7 @@ public class CountryConverter implements Converter {
 			try {
 				for (CountryBean country : countryBean) {
 					if (value.equals(String.valueOf(country.getId()))) {
-						return country;
+						return mapper.countryBeanToBeanOrder(country);
 					}
 				}
 				return null;

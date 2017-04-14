@@ -3,16 +3,15 @@ package com.diplom.kozlov.application;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ejb.EJB;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import org.apache.log4j.Logger;
 
-import com.diplom.kozlov.dto.CountryDto;
-import com.diplom.kozlov.service.CountryService;
-import com.diplom.kozlov.service.CountryServiceImpl;
-
+import com.diplom.kozlov.db.dto.CountryDto;
+import com.diplom.kozlov.db.service.CountryService;
+import com.diplom.kozlov.db.service.CountryServiceImpl;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +20,7 @@ import lombok.Setter;
 @SessionScoped
 public class ApplicationBean {
 	private static final Logger LOGGER = Logger.getLogger(ApplicationBean.class);
-	// @EJB
+	//@EJB
 	private CountryService countryService = new CountryServiceImpl();
 	@Setter
 	@Getter
@@ -42,21 +41,17 @@ public class ApplicationBean {
 		return countryBean;
 	}
 
-	@Setter
-	@Getter
-	private String autoCompleteValue;
+	
 
-	public List<String> byCountry(String autoCompleteText) {
+	public List<CountryBean> byCountry(String autoCompleteText) {
 		LOGGER.info("1");
-	/*	List<String> results = new ArrayList<>();
+		LOGGER.info(listCountryBean.toString());
+		List<CountryBean> results = new ArrayList<>();
 		for (CountryBean country : listCountryBean) {
 			if (country.getName().contains(autoCompleteText)) {
-				results.add(country.getName());
+				results.add(country);
 			}
-		}*/
-		List<String> results = new ArrayList<>();
-		results.add("test1");
-		results.add("test2");
+		}
 		return results;
 	}
 }

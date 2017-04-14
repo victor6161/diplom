@@ -5,6 +5,10 @@ import lombok.Setter;
 
 public class CountryBean {
 	  @Override
+	public String toString() {
+		return "CountryBean [id=" + id + ", name=" + name + ", postcode=" + postcode + ", tax=" + tax + "]";
+	}
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -45,7 +49,7 @@ public class CountryBean {
 			return false;
 		return true;
 	}
-	@Setter
+	  @Setter
 	  @Getter
 	  private Integer id;
 	  

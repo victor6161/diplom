@@ -35,11 +35,18 @@
 				</p:selectOneMenu>
 				<br></br>
 				<br></br>
-				<p:autoComplete id="dd"
-					value="#{applicationBean.autoCompleteValue}"
-					completeMethod="#{applicationBean.byCountry}"
-					>
-				
+				<p:autoComplete id="dd" 
+						dropdown="true"
+						value="#{mainBeanOrder.countryBeanOrder}"
+						completeMethod="#{applicationBean.byCountry}"
+						converter="com.diplom.kozlov.user.converters.CountryConverter"
+						var="country"
+						itemLabel="#{country.name}" 
+						itemValue="#{country}">
+						<p:column>
+							<h:outputText value="#{country.name}" />
+						</p:column>
+						
 				</p:autoComplete>
 				<br></br>
 				<br></br>

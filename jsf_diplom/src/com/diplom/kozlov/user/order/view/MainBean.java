@@ -1,18 +1,26 @@
 package com.diplom.kozlov.user.order.view;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import com.diplom.kozlov.application.CountryBean;
 
 import lombok.Getter;
 import lombok.Setter;
 
-@ManagedBean(name="mainBean",eager=true)
+@ManagedBean(name="mainBeanOrder",eager=true)
 @SessionScoped
 public class MainBean {
 	@Setter
 	@Getter
-	private CountryBean countryBean = new CountryBean();
+	private CountryBeanOrder countryBeanOrder;
+	
+	public MainBean(){
+		countryBeanOrder = new CountryBeanOrder();
+	}
+	@PostConstruct
+	public void init(){
+		countryBeanOrder.setName("default value");
+	}
 
 }
