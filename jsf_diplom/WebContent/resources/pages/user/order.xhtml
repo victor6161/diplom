@@ -11,99 +11,97 @@
 	<h:outputStylesheet library="css" name="style_order.css" />
 </h:head>
 <h:body>
-	<p:panelGrid style="text-align:center;width:100%">
-		<p:row>
-			<p:column>
-				<div style="font-size: 50; font-weight: 600; text-align: center">Заявка
-					на грузоперевозку</div>
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column>
-			<h:form>
-				<p:selectOneMenu id="cargo_type" value="#{mainBeanOrder.weight}"
-					style="width:50px">
-					<f:selectItem itemLabel="Выберите тип груза" itemValue="" />
-					<f:selectItems value="#{mainBeanOrder.weightList}" />
-				</p:selectOneMenu>
-				<br></br>
-				<br></br>
-				<p:selectOneMenu id="cargo_weight" value="#{mainBeanOrder.type}"
-					style="width:50px">
-					<f:selectItem itemLabel="Выберите вес и объем груза" itemValue="" />
-					<f:selectItems value="#{mainBeanOrder.typeList}" />
-				</p:selectOneMenu>
-				<br></br>
-				<br></br>
-				<p:autoComplete 
-						dropdown="true"
-						value="#{mainBeanOrder.countryBeanOrder}"
-						completeMethod="#{applicationBean.byCountry}"
-						converter="com.diplom.kozlov.user.converters.CountryConverter"
-						var="country"
-						itemLabel="#{country.name}" 
-						itemValue="#{country}">
-						<p:column>
-							<h:outputText value="#{country.name}" />
-						</p:column>
-						
-				</p:autoComplete>
-				<br></br>
-				<br></br>
-				<p:autoComplete 
-						dropdown="true"
-						value="#{mainBeanOrder.portBeanOrder}"
-						completeMethod="#{applicationBean.byPort}"
-						converter="com.diplom.kozlov.user.converters.PortConverter"
-						var="port"
-						itemLabel="#{port.name}" 
-						itemValue="#{port}">
-						<p:column>
-							<h:outputText value="#{port.name}" />
-						</p:column>
-						
-				</p:autoComplete>
-				<br></br>
-				<br></br>
-				<p:autoComplete 
-						dropdown="true"
-						value="#{mainBeanOrder.countryBeanOrderUnloading}"
-						completeMethod="#{applicationBean.byCountry}"
-						converter="com.diplom.kozlov.user.converters.CountryConverter"
-						var="country"
-						itemLabel="#{country.name}" 
-						itemValue="#{country}">
-						<p:column>
-							<h:outputText value="#{country.name}" />
-						</p:column>
-						
-				</p:autoComplete>
-				<br></br>
-				<br></br>
-				<p:autoComplete 
-						dropdown="true"
-						value="#{mainBeanOrder.portBeanOrderUnloading}"
-						completeMethod="#{applicationBean.byPort}"
-						converter="com.diplom.kozlov.user.converters.PortConverter"
-						var="port"
-						itemLabel="#{port.name}" 
-						itemValue="#{port}">
-						<p:column>
-							<h:outputText value="#{port.name}" />
-						</p:column>
-						
-				</p:autoComplete>
-				<br></br>
-				<br></br>
+
+	<ui:composition
+		template="/resources/pages/user/template/user.xhtml">
+		<ui:define name="main">
+
+			<p:panelGrid style="text-align:center;width:100%">
+				<p:row>
+					<p:column>
+						<div style="font-size: 50; font-weight: 600; text-align: center">Заявка
+							на грузоперевозку</div>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:form>
+							<p:selectOneMenu id="cargo_type" value="#{mainBeanOrder.weight}"
+								style="width:50px">
+								<f:selectItem itemLabel="Выберите тип груза" itemValue="" />
+								<f:selectItems value="#{mainBeanOrder.weightList}" />
+							</p:selectOneMenu>
+							<br></br>
+							<br></br>
+							<p:selectOneMenu id="cargo_weight" value="#{mainBeanOrder.type}"
+								style="width:50px">
+								<f:selectItem itemLabel="Выберите вес и объем груза"
+									itemValue="" />
+								<f:selectItems value="#{mainBeanOrder.typeList}" />
+							</p:selectOneMenu>
+							<br></br>
+							<br></br>
+							<p:autoComplete dropdown="true"
+								value="#{mainBeanOrder.countryBeanOrder}"
+								completeMethod="#{applicationBean.byCountry}"
+								converter="com.diplom.kozlov.user.converters.CountryConverter"
+								var="country" itemLabel="#{country.name}" itemValue="#{country}">
+								<p:column>
+									<h:outputText value="#{country.name}" />
+								</p:column>
+
+							</p:autoComplete>
+							<br></br>
+							<br></br>
+							<p:autoComplete dropdown="true"
+								value="#{mainBeanOrder.portBeanOrder}"
+								completeMethod="#{applicationBean.byPort}"
+								converter="com.diplom.kozlov.user.converters.PortConverter"
+								var="port" itemLabel="#{port.name}" itemValue="#{port}">
+								<p:column>
+									<h:outputText value="#{port.name}" />
+								</p:column>
+
+							</p:autoComplete>
+							<br></br>
+							<br></br>
+							<p:autoComplete dropdown="true"
+								value="#{mainBeanOrder.countryBeanOrderUnloading}"
+								completeMethod="#{applicationBean.byCountry}"
+								converter="com.diplom.kozlov.user.converters.CountryConverter"
+								var="country" itemLabel="#{country.name}" itemValue="#{country}">
+								<p:column>
+									<h:outputText value="#{country.name}" />
+								</p:column>
+
+							</p:autoComplete>
+							<br></br>
+							<br></br>
+							<p:autoComplete dropdown="true"
+								value="#{mainBeanOrder.portBeanOrderUnloading}"
+								completeMethod="#{applicationBean.byPort}"
+								converter="com.diplom.kozlov.user.converters.PortConverter"
+								var="port" itemLabel="#{port.name}" itemValue="#{port}">
+								<p:column>
+									<h:outputText value="#{port.name}" />
+								</p:column>
+
+							</p:autoComplete>
+							<br></br>
+							<br></br>
 
 
 
-				<p:commandButton value="Заказать перевозку"
-					action="resources/proposal?faces-redirect=true"></p:commandButton>
-					</h:form>
-			</p:column>
-		</p:row>
-	</p:panelGrid>
+							<p:commandButton value="Заказать перевозку"
+								action="resources/proposal?faces-redirect=true"></p:commandButton>
+						</h:form>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</ui:define>
+
+	</ui:composition>
+
 
 
 

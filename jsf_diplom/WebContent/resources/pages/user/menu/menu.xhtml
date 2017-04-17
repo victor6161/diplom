@@ -20,21 +20,15 @@
 	<p:row>
 		<p:column>
 			<h:form>
-				<p:tabMenu titleStyle="float:right">
-					<p:menuitem value="Заказы на перевозки"
+				<p:tabMenu>
+					<p:menuitem value="Поиск и отслеживание контейнеров и товаров"
+						action="container?faces-redirect=true" icon="ui-icon-star">
+					</p:menuitem>
+
+					<p:menuitem value="Заказать новую перевозку и предварительно посмотреть её стоимость"
 						action="order?faces-redirect=true" icon="ui-icon-star">
 					</p:menuitem>
 
-					<p:menuitem value="Карта с расположением судов"
-						action="map?faces-redirect=true" icon="ui-icon-star">
-					</p:menuitem>
-				
-					<p:menuitem value="Список Кораблей" action="vessel?faces-redirect=true"
-						icon="ui-icon-star">
-					</p:menuitem>
-					<p:menuitem value="Расписание Движения Кораблей" action="shedule?faces-redirect=true"
-						icon="ui-icon-star">
-					</p:menuitem>
 				</p:tabMenu>
 			</h:form>
 		</p:column>
