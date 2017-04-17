@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+
+<composite:interface />
+
+<composite:implementation>
+	<p:row>
+		<p:column>
+			<h:form>
+				<p:tabMenu>
+
+					<p:menuitem value="Карта с расположением судов"
+						action="map?faces-redirect=true" icon="ui-icon-star">
+					</p:menuitem>
+					<p:menuitem value="Заказы на перевозки"
+						action="order?faces-redirect=true" icon="ui-icon-star">
+					</p:menuitem>
+					<p:menuitem value="Список Кораблей" action="vessel?faces-redirect=true"
+						icon="ui-icon-star">
+					</p:menuitem>
+					<p:menuitem value="Расписание Движения Кораблей" action="shedule?faces-redirect=true"
+						icon="ui-icon-star">
+					</p:menuitem>
+				</p:tabMenu>
+			</h:form>
+		</p:column>
+	</p:row>
+</composite:implementation>
+</html>

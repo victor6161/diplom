@@ -1,14 +1,16 @@
 package com.diplom.kozlov.user.order.view;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
-@ManagedBean(name="mainBeanOrder",eager=true)
+@ManagedBean(name = "mainBeanOrder", eager = true)
 @SessionScoped
 public class MainBean {
 	@Setter
@@ -17,15 +19,44 @@ public class MainBean {
 	@Setter
 	@Getter
 	private PortBeanOrder portBeanOrder;
-	
-	public MainBean(){
+	@Setter
+	@Getter
+	private CountryBeanOrder countryBeanOrderUnloading;
+	@Setter
+	@Getter
+	private PortBeanOrder portBeanOrderUnloading;
+	@Setter
+	@Getter
+	private List<String> weightList = new ArrayList<>();
+	@Setter
+	@Getter
+	private List<String> typeList = new ArrayList<>();
+
+	@Setter
+	@Getter
+	private String weight;
+	@Setter
+	@Getter
+	private String type;
+
+	public MainBean() {
 		countryBeanOrder = new CountryBeanOrder();
 		portBeanOrder = new PortBeanOrder();
+		countryBeanOrderUnloading = new CountryBeanOrder();
+		portBeanOrderUnloading = new PortBeanOrder();
+		weightList.add("11");
+		weightList.add("12");
+		typeList.add("paper");
+		typeList.add("tires");
+
 	}
+
 	@PostConstruct
-	public void init(){
+	public void init() {
 		countryBeanOrder.setName("Введите страну загрузки");
 		portBeanOrder.setName("Введите порт");
+		countryBeanOrderUnloading.setName("Введите страну выгрузки");
+		portBeanOrderUnloading.setName("Введите порт выгрузки");
 	}
 
 }

@@ -1,4 +1,9 @@
 @CHARSET "UTF-8";
 .ui-selectonemenu{
-     width: 40% !important;
+     width: 15% !important;
+}
+
+.ui-autocomplete-input.ui-inputfield
+{
+    width : 100% !important;
 }
