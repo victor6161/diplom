@@ -8,19 +8,19 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<h:outputStylesheet library="css" name="style_order.css" />
+	
 </h:head>
 <h:body>
 	<ui:composition template="/resources/pages/admin/template/admin.xhtml">
 		<ui:define name="main">
 			<p:dataTable var="order" value="#{mainBeanOrderAdmin.orderList}">
-				<p:column headerText="goods">
+				<p:column headerText="Товар">
 					<h:outputText value="#{order.product}"></h:outputText>
 				</p:column>
-				<p:column headerText="Port from">
+				<p:column headerText="Порт Загрузки">
 					<h:outputText value="#{order.portFrom}"></h:outputText>
 				</p:column>
-				<p:column headerText="Port to">
+				<p:column headerText="Порт разргрузки">
 					<h:outputText value="#{order.portTo}"></h:outputText>
 				</p:column>
 				

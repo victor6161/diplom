@@ -14,13 +14,14 @@
 	<ui:composition template="/resources/pages/admin/template/admin.xhtml">
 		<ui:define name="main">
 			<p:dataTable var="vessel" value="#{mainBean.vesselBean}">
-				<p:column headerText="vessel type">
+				<p:column headerText="id корабля">
+					<h:outputText value="#{vessel.id}" />
+				</p:column>
+				<p:column headerText="Тип корабля">
 					<h:outputText value="#{vessel.type}" />
 				</p:column>
 
-				<p:column headerText="vessel name">
-					<h:outputText value="#{vessel.name}" />
-				</p:column>
+			
 
 			</p:dataTable>
 		</ui:define>

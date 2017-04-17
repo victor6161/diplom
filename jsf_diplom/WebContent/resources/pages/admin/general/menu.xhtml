@@ -13,16 +13,22 @@
 
 <composite:implementation>
 	<p:row>
+		<p:column colspan="4">
+			<p>Картинка</p>
+		</p:column>
+	</p:row>
+	<p:row>
 		<p:column>
 			<h:form>
-				<p:tabMenu>
+				<p:tabMenu titleStyle="float:right">
+					<p:menuitem value="Заказы на перевозки"
+						action="order?faces-redirect=true" icon="ui-icon-star">
+					</p:menuitem>
 
 					<p:menuitem value="Карта с расположением судов"
 						action="map?faces-redirect=true" icon="ui-icon-star">
 					</p:menuitem>
-					<p:menuitem value="Заказы на перевозки"
-						action="order?faces-redirect=true" icon="ui-icon-star">
-					</p:menuitem>
+				
 					<p:menuitem value="Список Кораблей" action="vessel?faces-redirect=true"
 						icon="ui-icon-star">
 					</p:menuitem>
