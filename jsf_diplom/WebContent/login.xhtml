@@ -11,12 +11,17 @@
 
 </h:head>
 <h:body>
+
+
 	<p:panelGrid style="height:100%;border:0;width:100%;text-align:center;">
 
 		<f:facet name="header">
-			<h1>header</h1>
+			<p:row>
+				<p:column colspan="2">
+					<h1>header</h1>
+				</p:column>
+			</p:row>
 		</f:facet>
-
 
 		<p:row>
 			<p:column colspan="2">
@@ -35,7 +40,7 @@
 					<br></br>
 					<h:message for="password" style="color:red"></h:message>
 					<br></br>
-					<p:commandButton action="main" immediate="true" update="@form"
+					<p:commandButton action="resources/pages/user/vessel" immediate="true" update="@form"
 						value="Login" ajax="false"></p:commandButton>
 
 					<p:growl id="growl" showDetail="true" sticky="true" />
@@ -49,11 +54,7 @@
 					<br></br>
 					<br></br>
 					<br></br>
-					<p:commandButton
-						action="resources/pages/admin/order?faces-redirect=true"
-						immediate="true" value="main_admin" ajax="false"></p:commandButton>
-					<p:commandButton action="resources/pages/user/order?faces-redirect=true" immediate="true"
-						value="main_user" ajax="false"></p:commandButton>
+			
 				</h:form>
 			</p:column>
 		</p:row>
@@ -65,74 +66,20 @@
 
 
 		<f:facet name="footer">
-			<h1>footer</h1>
+			<p:row>
+				<p:column colspan="2" style="text-align:center">
+					<!-- 	<div style="margin: 20px; font-size:30px">
+						<b>Program version x.xx.xx</b>
+					</div> -->
+					<div style="margin: 20px;">Program version x.xx.xx</div>
+				</p:column>
+			</p:row>
 		</f:facet>
 
+
 	</p:panelGrid>
-	
+
+
 </h:body>
 </html>
 
-
-<!-- 	<p:panelGrid style="height:100%;border:0;width:100%;text-align:center;">
-
-		<f:facet name="header">
-			<h1>header</h1>
-		</f:facet>
-
-
-		<p:row>
-			<p:column colspan="2">
-				<h:form>
-					<p:outputLabel value="Username" />
-					<br></br>
-					<p:inputText id="username"
-						value="" required="true"
-						requiredMessage="field is empty"></p:inputText>
-					<br></br>
-					<h:message for="username" style="color:red"></h:message>
-					<br></br>
-					<p:outputLabel value="Password" />
-					<br></br>
-					<p:password id="password"
-						value="" required="true"
-						requiredMessage="field is empty"></p:password>
-					<br></br>
-					<h:message for="password" style="color:red"></h:message>
-					<br></br>
-					<p:commandButton
-						action="main" immediate="true"
-						update="@form" value="Login" ajax="false"></p:commandButton>
-
-					<p:growl id="growl" showDetail="true" sticky="true" />
-					<br></br>
-					<br></br>
-					<br></br>
-					<br></br>
-					<p:commandLink value="Don't have an account?"
-						action="registration.xhtml?faces-redirect=true" immediate="true"></p:commandLink>
-					<br></br>
-					<br></br>
-					<br></br>
-					<br></br>
-						<p:commandButton
-						action="resources/pages/admin/order?faces-redirect=true" immediate="true"
-						 value="main_admin" ajax="false"></p:commandButton>
-							<p:commandButton
-						action="main_user" immediate="true"
-						 value="main_user" ajax="false"></p:commandButton>
-				</h:form>
-			</p:column>
-		</p:row>
-
-		<br></br>
-		<br></br>
-		<br></br>
-
-
-
-		<f:facet name="footer">
-			<h1>footer</h1>
-		</f:facet>
-
-	</p:panelGrid> -->

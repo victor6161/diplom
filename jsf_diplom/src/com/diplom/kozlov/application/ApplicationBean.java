@@ -16,6 +16,7 @@ import com.diplom.kozlov.db.service.CountryServiceImpl;
 import com.diplom.kozlov.db.service.PortService;
 import com.diplom.kozlov.db.service.PortServiceImpl;
 import com.diplom.kozlov.user.order.view.MainBean;
+import com.diplom.kozlov.user.order.view.SheduleBean;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,7 +25,7 @@ import lombok.Setter;
 @SessionScoped
 public class ApplicationBean {
 	private static final Logger LOGGER = Logger.getLogger(ApplicationBean.class);
-	// @EJB
+
 	private CountryService countryService = new CountryServiceImpl();
 	private PortService portService = new PortServiceImpl();
 	@Setter
@@ -35,6 +36,9 @@ public class ApplicationBean {
 	private List<PortBean> listPortBean;
 	@Setter
 	@Getter
+	private List<SheduleBean> listShedule;
+	@Setter
+	@Getter
 	@ManagedProperty(value = "#{mainBeanOrder}")
 	private MainBean mainBean;
 
@@ -43,6 +47,12 @@ public class ApplicationBean {
 	public ApplicationBean() {
 		listCountryBean = getListCountryBeanDB();
 		listPortBean = getListPortBeanDB();
+		listShedule = new ArrayList<>();
+		SheduleBean shedule= new SheduleBean();
+		shedule.setId(1);
+		shedule.setPortFrom("testFrom");
+		shedule.setPortTo("aaa");
+		listShedule.add(shedule);
 	}
 
 	private List<PortBean> getListPortBeanDB() {
@@ -63,7 +73,7 @@ public class ApplicationBean {
 		return countryBean;
 	}
 
-	public List<CountryBean> byCountry(String autoCompleteText) {
+/*	public List<CountryBean> byCountry(String autoCompleteText) {
 		LOGGER.info("1");
 		LOGGER.info(listCountryBean.toString());
 		List<CountryBean> results = new ArrayList<>();
@@ -92,5 +102,5 @@ public class ApplicationBean {
 
 		}
 		return results;
-	}
+	}*/
 }

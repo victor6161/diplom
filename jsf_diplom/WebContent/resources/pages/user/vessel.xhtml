@@ -8,27 +8,25 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	
+
 </h:head>
 <h:body>
-	<ui:composition template="/resources/pages/admin/template/admin.xhtml">
+	<ui:composition template="/resources/pages/user/template/user.xhtml">
 		<ui:define name="main">
-			<p:dataTable var="order" value="#{mainBeanOrderAdmin.orderList}">
-				<p:column headerText="Товар">
-					<h:outputText value="#{order.product}"></h:outputText>
+			<p:dataTable var="vessel" value="#{mainBean.vesselBean}">
+				<p:column headerText="id корабля">
+					<h:outputText value="#{vessel.id}" />
 				</p:column>
-				<p:column headerText="Порт Загрузки">
-					<h:outputText value="#{order.portFrom}"></h:outputText>
+				<p:column headerText="Тип корабля">
+					<h:outputText value="#{vessel.type}" />
 				</p:column>
-				<p:column headerText="Порт разргрузки">
-					<h:outputText value="#{order.portTo}"></h:outputText>
-				</p:column>
-				
+
+			
+
 			</p:dataTable>
 		</ui:define>
 
 	</ui:composition>
-
 
 
 

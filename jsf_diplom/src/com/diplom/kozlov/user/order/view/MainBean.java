@@ -31,7 +31,9 @@ public class MainBean {
 	@Setter
 	@Getter
 	private List<String> typeList = new ArrayList<>();
-
+	@Setter
+	@Getter
+	private String size;
 	@Setter
 	@Getter
 	private String weight;
@@ -53,10 +55,10 @@ public class MainBean {
 
 	@PostConstruct
 	public void init() {
-		countryBeanOrder.setName("Введите страну загрузки");
+/*		countryBeanOrder.setName("Введите страну загрузки");
 		portBeanOrder.setName("Введите порт");
 		countryBeanOrderUnloading.setName("Введите страну выгрузки");
-		portBeanOrderUnloading.setName("Введите порт выгрузки");
+		portBeanOrderUnloading.setName("Введите порт выгрузки");*/
 	}
 
 }

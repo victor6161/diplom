@@ -12,9 +12,20 @@
 
 </h:head>
 <h:body>
-	<ui:composition template="/resources/pages/admin/template/admin.xhtml">
+	<ui:composition template="/resources/pages/user/template/user.xhtml">
 		<ui:define name="main">
-			
+			<p:dataTable var="item" value="#{applicationBean.listShedule}">
+				<p:column headerText="id">
+					<h:outputText value="#{item.id}"/>
+				</p:column>
+				<p:column headerText="Порт из">
+					<h:outputText value="#{item.portFrom}"/>
+				</p:column>
+				<p:column headerText="Порт в">
+					<h:outputText value="#{item.portTo}"/>
+				</p:column>
+		
+			</p:dataTable>
 		</ui:define>
 	</ui:composition>
 
