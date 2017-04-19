@@ -46,19 +46,13 @@ public class MainBean {
 		portBeanOrder = new PortBeanOrder();
 		countryBeanOrderUnloading = new CountryBeanOrder();
 		portBeanOrderUnloading = new PortBeanOrder();
-		weightList.add("11");
-		weightList.add("12");
-		typeList.add("paper");
-		typeList.add("tires");
+	
 
 	}
 
 	@PostConstruct
 	public void init() {
-/*		countryBeanOrder.setName("Введите страну загрузки");
-		portBeanOrder.setName("Введите порт");
-		countryBeanOrderUnloading.setName("Введите страну выгрузки");
-		portBeanOrderUnloading.setName("Введите порт выгрузки");*/
+
 	}
 
 }

@@ -5,7 +5,10 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	
+	
+	>
 
 <h:head>
 
@@ -13,7 +16,14 @@
 <h:body>
 	<ui:composition template="/resources/pages/user/template/user.xhtml">
 		<ui:define name="main">
-			<p:dataTable var="port" value="#{applicationBean.listPortBean}">
+		
+			<p:dataTable var="port" 
+					value="#{applicationBean.listPortBean}"
+					paginator="true"
+					lazy="true"
+					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15" 
+			>
 			
 					<p:column headerText="id Порта">
 						<h:outputText value="#{port.id}"></h:outputText>
@@ -25,6 +35,11 @@
 					<p:column headerText="Название страны">
 						<h:outputText value="#{port.countryId}"></h:outputText>
 					</p:column>
+					<f:facet name="footer">
+						<h:form>
+							<p:commandButton icon="ui-icon-add" value="Добавить Корабль" oncomplete="PF('addWidgetVar').show();"></p:commandButton>
+						</h:form>
+					</f:facet>
 			</p:dataTable>
 		</ui:define>
 	</ui:composition>

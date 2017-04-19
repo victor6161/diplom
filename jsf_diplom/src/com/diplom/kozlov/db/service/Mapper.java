@@ -35,4 +35,14 @@ public class Mapper {
 		portDto.setCountryId(portEntity.getCountryId());
 		return portDto;
 	}
+
+	public VesselEntity vesselDtoToEntity(VesselDto vesselDto) {
+		VesselEntity vesselEntity = new VesselEntity();
+		vesselEntity.setId(vesselDto.getId());
+		vesselEntity.setType(vesselDto.getType());
+		vesselEntity.setLoadCapacity(vesselDto.getLoadCapacity());
+		vesselEntity.setAverageSpeed(vesselDto.getAverageSpeed());
+		vesselEntity.setFuelConsumption(vesselDto.getFuelConsumption());
+		return vesselEntity;
+	}
 }

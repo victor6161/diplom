@@ -5,7 +5,8 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:vessel="http://java.sun.com/jsf/composite/pages/user/vessel">
 
 <h:head>
 
@@ -13,7 +14,11 @@
 <h:body>
 	<ui:composition template="/resources/pages/user/template/user.xhtml">
 		<ui:define name="main">
-			<p:dataTable var="vessel" value="#{mainBean.vesselBean}">
+			<p:dataTable id="vesselTableForm" var="vessel" value="#{mainBeanVessel.rowsBean}"
+				paginator="true" lazy="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15">
+				
 				<p:column headerText="id корабля">
 					<h:outputText value="#{vessel.id}" />
 				</p:column>
@@ -21,11 +26,25 @@
 					<h:outputText value="#{vessel.type}" />
 				</p:column>
 
-			
-
+				<p:column headerText="Максимальная загрузка">
+					<h:outputText value="#{vessel.loadCapacity}" />
+				</p:column>
+				<p:column headerText="Средняя скорость">
+					<h:outputText value="#{vessel.loadCapacity}" />
+				</p:column>
+				<p:column headerText="Потребление топлива ">
+					<h:outputText value="#{vessel.fuelConsumption}" />
+				</p:column>
+				<f:facet name="footer">
+					<h:form>
+						<p:commandButton icon="ui-icon-add" value="Добавить Корабль"
+							oncomplete="PF('addVesselWidget').show();" update=":#{p:component('addVessel')}"></p:commandButton>
+					</h:form>
+				</f:facet>
 			</p:dataTable>
+			<vessel:addVessel />
 		</ui:define>
-
+		
 	</ui:composition>
 
 

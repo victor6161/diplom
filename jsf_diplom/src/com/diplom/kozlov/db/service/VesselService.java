@@ -7,7 +7,7 @@ import com.diplom.kozlov.db.dto.VesselDto;
 
 
 public interface VesselService {
-	void save(CountryDto countryDto);
+	void save(VesselDto vesselDto);
 	List<VesselDto> getVessels();
 
 }

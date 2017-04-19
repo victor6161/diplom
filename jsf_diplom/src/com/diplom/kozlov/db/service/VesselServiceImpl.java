@@ -10,15 +10,17 @@ import com.diplom.kozlov.entity.VesselEntity;
 
 public class VesselServiceImpl implements VesselService {
 	Mapper mapper = new Mapper();
+	VesselDao vesselDao = new VesselDao();
 
 	@Override
-	public void save(CountryDto countryDto) {
-
+	public void save(VesselDto vesselDto) {
+		VesselEntity vesselEntity = mapper.vesselDtoToEntity(vesselDto);
+		vesselDao.save(vesselEntity);
 	}
 
 	@Override
 	public List<VesselDto> getVessels() {
-		List<VesselEntity> vesselEntityAll = new VesselDao().getVessels();
+		List<VesselEntity> vesselEntityAll = vesselDao.getVessels();
 		List<VesselDto> vesselDto = new ArrayList<>();
 		for (VesselEntity vesselEntity : vesselEntityAll) {
 			vesselDto.add(mapper.vesselEntityToDto(vesselEntity));

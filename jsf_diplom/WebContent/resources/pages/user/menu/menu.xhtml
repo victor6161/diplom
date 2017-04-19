@@ -20,23 +20,27 @@
 	<p:row>
 		<p:column>
 			<h:form>
-				<p:tabMenu>	
+				<p:tabMenu activeIndex="#{param.i}">	
 					
 
 					<p:menuitem value="Карта с расположением судов"
-						action="map?faces-redirect=true" icon="ui-icon-star">
+						action="map.xhtml?faces-redirect=true&i;" icon="ui-icon-star">
+						 <f:param name="i" value="0" />
 					</p:menuitem>
 
 					<p:menuitem value="Корабли"
-						action="vessel?faces-redirect=true" icon="ui-icon-star">
+						url="vessel.xhtml?faces-redirect=true&i;" icon="ui-icon-star">
+						 <f:param name="i" value="1" />
 					</p:menuitem>
 					
 					<p:menuitem value="Порты"
-						action="port?faces-redirect=true" icon="ui-icon-star">
+						action="port.xhtml?faces-redirect=true&i;" icon="ui-icon-star">
+						 <f:param name="i" value="2" />
 					</p:menuitem>
 					
 					<p:menuitem value="Расписание Движения Кораблей"
-						action="shedule?faces-redirect=true" icon="ui-icon-star">
+						action="shedule.xhtml?faces-redirect=true&i;" icon="ui-icon-star">
+						 <f:param name="i" value="3" />
 					</p:menuitem>
 					
 				</p:tabMenu>
