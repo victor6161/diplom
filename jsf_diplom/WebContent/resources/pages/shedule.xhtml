@@ -12,7 +12,7 @@
 
 </h:head>
 <h:body>
-	<ui:composition template="/resources/pages/user/template/user.xhtml">
+	<ui:composition template="/resources/pages/template/user.xhtml">
 		<ui:define name="main">
 			<p:dataTable var="item" value="#{applicationBean.listShedule}">
 				<p:column headerText="id">
@@ -24,7 +24,13 @@
 				<p:column headerText="Порт в">
 					<h:outputText value="#{item.portTo}"/>
 				</p:column>
-		
+					<f:facet name="footer">
+					<h:form>
+						<p:commandButton icon="ui-icon-add" value="Добавить Маршрут" oncomplete="PF('addRoute').show();" update=":#{p:component('addRoute')}">
+							<p:resetInput target=":#{p:component('addRoute')}"></p:resetInput>
+						</p:commandButton>
+					</h:form>
+				</f:facet>
 			</p:dataTable>
 		</ui:define>
 	</ui:composition>

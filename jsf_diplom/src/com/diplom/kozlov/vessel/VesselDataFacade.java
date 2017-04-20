@@ -29,13 +29,15 @@ public class VesselDataFacade {
 		AddBean addBean = vesselController.getMainBean().getAddBean();
 		VesselDto vesselDto = vesselController.getMapper().addBeanToDto(addBean);
 		vesselController.getVesselService().save(vesselDto);
+		init();
 	}
 
 	public void onAddOpen() {
-
+		vesselController.getMainBean().setAddBean(new AddBean());
 	}
 
 	public void init() {
+		LOGGER.info("init");
 		
 		List<VesselDto> vesselDto = vesselController.getVesselService().getVessels();
 		List<RowBean> rowsBean =new ArrayList<RowBean>();

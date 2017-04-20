@@ -5,7 +5,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:general="http://java.sun.com/jsf/composite/pages/general"
+	>
 
 <h:head>
 
@@ -40,7 +42,7 @@
 					<br></br>
 					<h:message for="password" style="color:red"></h:message>
 					<br></br>
-					<p:commandButton action="resources/pages/user/vessel?faces-redirect=true" immediate="true" update="@form"
+					<p:commandButton action="resources/pages/vessel?faces-redirect=true" immediate="true" update="@form"
 						value="Login" ajax="false"></p:commandButton>
 
 					<p:growl id="growl" showDetail="true" sticky="true" />
@@ -66,14 +68,7 @@
 
 
 		<f:facet name="footer">
-			<p:row>
-				<p:column colspan="2" style="text-align:center">
-					<!-- 	<div style="margin: 20px; font-size:30px">
-						<b>Program version x.xx.xx</b>
-					</div> -->
-					<div style="margin: 20px;">Program version x.xx.xx</div>
-				</p:column>
-			</p:row>
+			<general:footer/>
 		</f:facet>
 
 

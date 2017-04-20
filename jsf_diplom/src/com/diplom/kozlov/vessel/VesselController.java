@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import org.apache.log4j.Logger;
+import org.primefaces.context.RequestContext;
 
 import com.diplom.kozlov.db.service.VesselService;
 import com.diplom.kozlov.db.service.VesselServiceImpl;
@@ -48,6 +49,7 @@ public class VesselController {
 
 	public void add() {
 		facade.add();
+		RequestContext.getCurrentInstance().execute("PF('addVesselWidget').hide()");
 	}
 	public void onAddOpen(){
 		facade.onAddOpen();

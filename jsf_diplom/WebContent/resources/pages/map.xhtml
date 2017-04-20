@@ -13,14 +13,14 @@
 		type="text/javascript"></script>
 </h:head>
 <h:body>
-	<ui:composition template="/resources/pages/user/template/user.xhtml">
+	<ui:composition template="/resources/pages/template/user.xhtml">
 		<ui:define name="main">
 
 			<f:view contentType="text/html">
 				<p:growl id="growl" showDetail="true" />
 				<p:gmap center="59.9954100, 29.7666800" zoom="10" type="HYBRID" style="width:100%;height:400px" model="#{markerSelectionView.simpleModel}" >
 					<p:ajax event="overlaySelect" listener="#{markerSelectionView.onMarkerSelect}" update="growl" />
-					</p:gmap>
+				</p:gmap>
 			</f:view>
 
 		</ui:define>

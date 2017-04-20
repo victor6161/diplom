@@ -8,8 +8,11 @@ public class RowBean {
 	@Override
 	public String toString() {
 		return "RowBean [type=" + type + ", loadCapacity=" + loadCapacity + ", averageSpeed=" + averageSpeed
-				+ ", fuelConsumtion=" + fuelConsumtion + "]";
+				+ ", fuelConsumtion=" + fuelConsumption + "]";
 	}
+	@Setter
+	@Getter
+	private Integer id;
 	@Setter
 	@Getter
 	private String type;
@@ -22,5 +25,5 @@ public class RowBean {
 	private Integer averageSpeed;
 	@Setter
 	@Getter
-	private Integer fuelConsumtion;
+	private Integer fuelConsumption;
 }

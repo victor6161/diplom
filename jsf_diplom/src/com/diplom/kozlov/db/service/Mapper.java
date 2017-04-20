@@ -22,8 +22,10 @@ public class Mapper {
 		VesselDto vesselDto = new VesselDto();
 		vesselDto.setId(vesselEntity.getId());
 		vesselDto.setType(vesselEntity.getType());
-		vesselDto.setName(vesselEntity.getName());
-
+	
+		vesselDto.setAverageSpeed(vesselEntity.getAverageSpeed());
+		vesselDto.setFuelConsumption(vesselEntity.getFuelConsumption());
+		vesselDto.setLoadCapacity(vesselEntity.getLoadCapacity());
 		
 		return vesselDto;
 	}

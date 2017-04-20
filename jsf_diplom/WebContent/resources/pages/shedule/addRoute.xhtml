@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:f="http://java.sun.com/jsf/core"
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p="http://primefaces.org/ui"
+ xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface />
+
+<composite:implementation>
+	
+	<p:dialog id="addRoute" header="Create Book" widgetVar="addRouteWidget"  minHeight="40" modal="true">
+		<h:form>
+		
+				<div style="margin: 10px; font-weight: bold;">
+					<h:outputText value="Тип vessel" />
+				</div>
+				<div style="margin: 10px">
+					<p:inputText id="vesselType" value="#{vesselController.mainBean.addBean.type}" required="true" requiredMessage="Field is empty"/>
+					<br></br>
+				</div>
+				<div style="margin: 10px; font-weight: bold;">
+					<h:outputText value="Грузоподъемность" />
+				</div>
+				<div style="margin: 10px">
+					<p:inputText id="loadCapacity" value="#{vesselController.mainBean.addBean.loadCapacity}" required="true" requiredMessage="Field is empty"/>
+					<br></br>
+				</div>
+				<div style="margin: 10px; font-weight: bold;">
+					<h:outputText value="Средняя скорость" />
+				</div>
+				<div style="margin: 10px">
+					<p:inputText id="averageSpeed" value="#{vesselController.mainBean.addBean.averageSpeed}" required="true" requiredMessage="Field is empty"/>
+					<br></br>
+				</div>
+				<div style="margin: 10px; font-weight: bold;">
+					<h:outputText value="Потребление топлива" />
+				</div>
+				<div style="margin: 10px">
+					<p:inputText id="fuelConsumtion" value="#{vesselController.mainBean.addBean.fuelConsumtion}" required="true" requiredMessage="Field is empty"/>
+					<br></br>
+				</div>
+
+
+			<p:commandButton value="Add"  actionListener="#{vesselController.add}" update="@form :#{p:component('vesselTableForm')}"/>
+			<p:commandButton value="Close" onclick="PF('addVesselWidget').hide();" immediate="true"  update=":#{p:component('addVessel')}" >
+				
+			</p:commandButton>
+		</h:form>
+	</p:dialog>
+</composite:implementation>
+</html>
