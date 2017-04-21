@@ -1,4 +1,6 @@
-package com.diplom.kozlov.shedule;
+package com.diplom.kozlov.port;
+
+
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -6,31 +8,31 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import org.apache.log4j.Logger;
-import org.primefaces.context.RequestContext;
 
-import com.diplom.kozlov.db.service.SheduleServiceImpl;
-import com.diplom.kozlov.shedule.view.MainBean;
+import com.diplom.kozlov.db.service.PortServiceImpl;
+import com.diplom.kozlov.port.view.MainBean;
 
 import lombok.Getter;
 import lombok.Setter;
 
-@ManagedBean(name = "sheduleController", eager = true)
+@ManagedBean(name = "portController", eager = true)
 @SessionScoped
-public class SheduleController {
-	private SheduleDataFacade facade = new SheduleDataFacade(this); 
+public class PortController {
 	
-	private static final Logger LOGGER = Logger.getLogger(SheduleController.class);
+	private PortDataFacade facade = new PortDataFacade(this); 
+	
+	private static final Logger LOGGER = Logger.getLogger(PortController.class);
 	@Setter
 	@Getter
 	private Mapper mapper = new Mapper();
 	
 	@Setter
 	@Getter
-	@ManagedProperty(value = "#{mainBeanShedule}")
+	@ManagedProperty(value = "#{mainBeanPort}")
 	private MainBean mainBean;
 	@Setter
 	@Getter
-	private SheduleServiceImpl sheduleService = new SheduleServiceImpl();
+	private PortServiceImpl portService = new PortServiceImpl();
 	
 	@PostConstruct
 	private void init(){
@@ -52,6 +54,5 @@ public class SheduleController {
 	public void onAddOpen(){
 		facade.onAddOpen();
 	}*/
-	
 
 }

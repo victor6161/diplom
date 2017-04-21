@@ -6,7 +6,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
-	>
+	xmlns:shedule="http://java.sun.com/jsf/composite/pages/shedule">
 
 <h:head>
 
@@ -14,28 +14,45 @@
 <h:body>
 	<ui:composition template="/resources/pages/template/user.xhtml">
 		<ui:define name="main">
-			<p:dataTable var="item" value="#{applicationBean.listShedule}">
+			<p:dataTable id="sheduleTableForm" var="item"
+				value="#{sheduleController.mainBean.rowsBean}" paginator="true" lazy="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15">
 				<p:column headerText="id">
-					<h:outputText value="#{item.id}"/>
+					<h:outputText value="#{item.id}" />
 				</p:column>
 				<p:column headerText="Порт из">
-					<h:outputText value="#{item.portFrom}"/>
+					<h:outputText value="#{item.portFrom}" />
+				</p:column>
+				<p:column headerText="Время отплытия">
+					<h:outputText value="#{item.dateFrom}" />
 				</p:column>
 				<p:column headerText="Порт в">
-					<h:outputText value="#{item.portTo}"/>
+					<h:outputText value="#{item.portTo}" />
 				</p:column>
-					<f:facet name="footer">
+				<p:column headerText="Время прибытия">
+					<h:outputText value="#{item.dateTo}" />
+				</p:column>
+				<p:column headerText="Корабль">
+					<h:outputText value="#{item.vesselId}" />
+				</p:column>
+				
+				<f:facet name="footer">
 					<h:form>
-						<p:commandButton icon="ui-icon-add" value="Добавить Маршрут" oncomplete="PF('addRoute').show();" update=":#{p:component('addRoute')}">
+						<p:commandButton icon="ui-icon-add" 
+							value="Добавить Маршрут"
+							oncomplete="PF('addRouteWidget').show();"
+							update=":#{p:component('addRoute')}">
 							<p:resetInput target=":#{p:component('addRoute')}"></p:resetInput>
 						</p:commandButton>
 					</h:form>
 				</f:facet>
 			</p:dataTable>
+			<shedule:addRoute />
 		</ui:define>
 	</ui:composition>
 
-	
-	
+
+
 </h:body>
 </html>

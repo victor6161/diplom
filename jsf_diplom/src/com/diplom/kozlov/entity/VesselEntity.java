@@ -14,7 +14,7 @@ import lombok.Setter;
 public class VesselEntity {
   public VesselEntity() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 @Override
 	public String toString() {

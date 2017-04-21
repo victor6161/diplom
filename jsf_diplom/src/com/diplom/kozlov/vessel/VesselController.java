@@ -8,7 +8,7 @@ import javax.faces.bean.SessionScoped;
 import org.apache.log4j.Logger;
 import org.primefaces.context.RequestContext;
 
-import com.diplom.kozlov.db.service.VesselService;
+
 import com.diplom.kozlov.db.service.VesselServiceImpl;
 import com.diplom.kozlov.vessel.view.MainBean;
 

@@ -16,12 +16,13 @@
 	<ui:composition template="/resources/pages/template/user.xhtml">
 		<ui:define name="main">
 			<p:dataTable id="vesselTableForm" var="vessel"
-				value="#{vesselController.mainBean.rowsBean}" paginator="true"
+				value="#{vesselController.mainBean.rowsBean}"
+				 paginator="true"
 				lazy="true"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15">
 
-				<p:column headerText="Тип корабля">
+				<p:column headerText="id корабля">
 					<h:outputText value="#{vessel.id}" />
 				</p:column>
 				<p:column headerText="Тип корабля">

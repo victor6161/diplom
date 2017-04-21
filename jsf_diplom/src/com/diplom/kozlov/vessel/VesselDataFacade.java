@@ -33,7 +33,7 @@ public class VesselDataFacade {
 	}
 
 	public void onAddOpen() {
-		vesselController.getMainBean().setAddBean(new AddBean());
+		vesselController.getMainBean().setAddBean(new AddBean());//прочекать надо ли это
 	}
 
 	public void init() {

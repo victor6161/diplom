@@ -13,38 +13,19 @@
 	<p:dialog id="addRoute" header="Create Book" widgetVar="addRouteWidget"  minHeight="40" modal="true">
 		<h:form>
 		
+		
 				<div style="margin: 10px; font-weight: bold;">
-					<h:outputText value="Тип vessel" />
+					<h:outputText value="Порт в" />
 				</div>
+		
 				<div style="margin: 10px">
-					<p:inputText id="vesselType" value="#{vesselController.mainBean.addBean.type}" required="true" requiredMessage="Field is empty"/>
-					<br></br>
-				</div>
-				<div style="margin: 10px; font-weight: bold;">
-					<h:outputText value="Грузоподъемность" />
-				</div>
-				<div style="margin: 10px">
-					<p:inputText id="loadCapacity" value="#{vesselController.mainBean.addBean.loadCapacity}" required="true" requiredMessage="Field is empty"/>
-					<br></br>
-				</div>
-				<div style="margin: 10px; font-weight: bold;">
-					<h:outputText value="Средняя скорость" />
-				</div>
-				<div style="margin: 10px">
-					<p:inputText id="averageSpeed" value="#{vesselController.mainBean.addBean.averageSpeed}" required="true" requiredMessage="Field is empty"/>
-					<br></br>
-				</div>
-				<div style="margin: 10px; font-weight: bold;">
-					<h:outputText value="Потребление топлива" />
-				</div>
-				<div style="margin: 10px">
-					<p:inputText id="fuelConsumtion" value="#{vesselController.mainBean.addBean.fuelConsumtion}" required="true" requiredMessage="Field is empty"/>
+					<p:inputText id="portTo" value="#{sheduleController.mainBean.addBean.portTo}" required="true" requiredMessage="Field is empty"/>
 					<br></br>
 				</div>
 
 
-			<p:commandButton value="Add"  actionListener="#{vesselController.add}" update="@form :#{p:component('vesselTableForm')}"/>
-			<p:commandButton value="Close" onclick="PF('addVesselWidget').hide();" immediate="true"  update=":#{p:component('addVessel')}" >
+			<p:commandButton value="Add"  actionListener="#{sheduleController.add}" update="@form :#{p:component('sheduleTableForm')}"/>
+			<p:commandButton value="Close" onclick="PF('addRouteWidget').hide();" immediate="true"  update=":#{p:component('addRoute')}" >
 				
 			</p:commandButton>
 		</h:form>

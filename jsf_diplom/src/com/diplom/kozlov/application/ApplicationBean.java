@@ -3,20 +3,20 @@ package com.diplom.kozlov.application;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
+
 import javax.faces.bean.SessionScoped;
 
 import org.apache.log4j.Logger;
 
-import com.diplom.kozlov.db.dto.CountryDto;
+
 import com.diplom.kozlov.db.dto.PortDto;
-import com.diplom.kozlov.db.service.CountryService;
-import com.diplom.kozlov.db.service.CountryServiceImpl;
+
 import com.diplom.kozlov.db.service.PortService;
 import com.diplom.kozlov.db.service.PortServiceImpl;
-import com.diplom.kozlov.user.order.view.MainBean;
-import com.diplom.kozlov.user.order.view.SheduleBean;
+
+import com.diplom.kozlov.db.service.VesselServiceImpl;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -26,33 +26,33 @@ import lombok.Setter;
 public class ApplicationBean {
 	private static final Logger LOGGER = Logger.getLogger(ApplicationBean.class);
 
-	private CountryService countryService = new CountryServiceImpl();
+	
 	private PortService portService = new PortServiceImpl();
-	@Setter
-	@Getter
-	private List<CountryBean> listCountryBean;
+	private VesselServiceImpl vesselService = new VesselServiceImpl();
+
 	@Setter
 	@Getter
 	private List<PortBean> listPortBean;
-	@Setter
+	
+	
+/*	@Setter
 	@Getter
 	private List<SheduleBean> listShedule;
 	@Setter
 	@Getter
-	@ManagedProperty(value = "#{mainBeanOrder}")
-	private MainBean mainBean;
+	@ManagedProperty(value = "#{mainBeanPort}")
+	private MainBean mainBean;*/
 
 	private Mapper mapper = new Mapper();
 
 	public ApplicationBean() {
-		listCountryBean = getListCountryBeanDB();
+	
+		
+
+	}
+	@PostConstruct
+	private void init(){
 		listPortBean = getListPortBeanDB();
-		listShedule = new ArrayList<>();
-		SheduleBean shedule= new SheduleBean();
-		shedule.setId(1);
-		shedule.setPortFrom("testFrom");
-		shedule.setPortTo("aaa");
-		listShedule.add(shedule);
 	}
 
 	private List<PortBean> getListPortBeanDB() {
@@ -64,14 +64,7 @@ public class ApplicationBean {
 		return portBean;
 	}
 
-	private List<CountryBean> getListCountryBeanDB() {
-		List<CountryDto> countryDtoAll = countryService.getCountries();
-		List<CountryBean> countryBean = new ArrayList<>();
-		for (CountryDto countryDto : countryDtoAll) {
-			countryBean.add(mapper.countryDtoToBean(countryDto));
-		}
-		return countryBean;
-	}
+
 
 /*	public List<CountryBean> byCountry(String autoCompleteText) {
 		LOGGER.info("1");

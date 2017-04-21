@@ -2,9 +2,11 @@ package com.diplom.kozlov.db.service;
 
 import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.PortDto;
+import com.diplom.kozlov.db.dto.SheduleDto;
 import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.entity.CountryEntity;
 import com.diplom.kozlov.entity.PortEntity;
+import com.diplom.kozlov.entity.SheduleEntity;
 import com.diplom.kozlov.entity.VesselEntity;
 
 public class Mapper {
@@ -47,4 +49,17 @@ public class Mapper {
 		vesselEntity.setFuelConsumption(vesselDto.getFuelConsumption());
 		return vesselEntity;
 	}
+
+	public SheduleDto sheduleEntityToDto(SheduleEntity sheduleEntity) {
+		SheduleDto sheduleDto = new SheduleDto();
+		sheduleDto.setId(sheduleEntity.getId());
+		sheduleDto.setPortFrom(sheduleEntity.getPortFrom().getName());
+		sheduleDto.setPortTo(sheduleEntity.getPortTo().getName());
+		sheduleDto.setDateFrom(sheduleEntity.getDateFrom());
+		sheduleDto.setDateTo(sheduleEntity.getDateTo());
+		sheduleDto.setVesselId(sheduleEntity.getVessel().getId());
+		return sheduleDto;
+	}
+	
+	
 }

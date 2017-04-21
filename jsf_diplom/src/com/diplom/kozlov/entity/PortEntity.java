@@ -13,7 +13,11 @@ import lombok.Setter;
 @Table(name = "port")
 public class PortEntity {
 	
-	  public PortEntity() {
+	  @Override
+	public String toString() {
+		return "PortEntity [id=" + id + ", countryId=" + countryId + ", name=" + name + "]";
+	}
+	public PortEntity() {
 		super();
 		
 	}
