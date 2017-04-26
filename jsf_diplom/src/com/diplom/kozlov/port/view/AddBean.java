@@ -1,17 +1,19 @@
 package com.diplom.kozlov.port.view;
 
+import com.diplom.kozlov.application.CountryBean;
+
 import lombok.Getter;
 import lombok.Setter;
 
-public class RowBean {
-	@Setter
-	@Getter
-	private Integer id;
+public class AddBean {
 	@Setter
 	@Getter
 	private String name;
+	
 	@Setter
 	@Getter
-	private String country;
+	private CountryBean countryBean;
+	
+	
 
 }

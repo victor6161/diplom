@@ -10,9 +10,9 @@ import javax.faces.bean.SessionScoped;
 
 import org.apache.log4j.Logger;
 
-
+import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.PortDto;
-
+import com.diplom.kozlov.db.service.CountryServiceImpl;
 import com.diplom.kozlov.db.service.PortService;
 import com.diplom.kozlov.db.service.PortServiceImpl;
 
@@ -29,71 +29,45 @@ public class ApplicationBean {
 	
 	private PortService portService = new PortServiceImpl();
 	private VesselServiceImpl vesselService = new VesselServiceImpl();
-
+	private CountryServiceImpl countryService = new CountryServiceImpl();
 	@Setter
 	@Getter
 	private List<PortBean> listPortBean;
-	
-	
-/*	@Setter
-	@Getter
-	private List<SheduleBean> listShedule;
 	@Setter
 	@Getter
-	@ManagedProperty(value = "#{mainBeanPort}")
-	private MainBean mainBean;*/
-
+	private List<CountryBean> listCountryBean;
+	
 	private Mapper mapper = new Mapper();
 
 	public ApplicationBean() {
-	
-		
-
+		listPortBean = new ArrayList<>();
+		listCountryBean = new ArrayList<>();
 	}
 	@PostConstruct
 	private void init(){
 		listPortBean = getListPortBeanDB();
+		listCountryBean = getListCountryBeanDB();
 	}
 
 	private List<PortBean> getListPortBeanDB() {
 		List<PortDto> portDtoAll = portService.getPorts();
 		List<PortBean> portBean = new ArrayList<>();
-		for (PortDto portDto : portDtoAll) {
-			portBean.add(mapper.portDtoToBean(portDto));
-		}
+	/*	for(PortDto port){
+			
+		}*/
 		return portBean;
 	}
-
-
-
-/*	public List<CountryBean> byCountry(String autoCompleteText) {
-		LOGGER.info("1");
-		LOGGER.info(listCountryBean.toString());
-		List<CountryBean> results = new ArrayList<>();
-		for (CountryBean country : listCountryBean) {
-			if (country.getName().contains(autoCompleteText)) {
-				results.add(country);
-			}
+	
+	private List<CountryBean> getListCountryBeanDB() {
+		List<CountryDto> countryDtoAll = countryService.getCountries();
+		List<CountryBean> countryBean = new ArrayList<>();
+		
+		for(CountryDto port:countryDtoAll){
+			countryBean.add(mapper.countryDtoToBean(port));
 		}
-		return results;
+		return countryBean;
 	}
 
-	public List<PortBean> byPort(String autoCompleteText) {
-		LOGGER.info("byPort");
-		List<PortBean> results = new ArrayList<>();
 
-		Integer idCountry = null;
-		if (mainBean.getCountryBeanOrder().getId() != null) {
 
-			idCountry = mainBean.getCountryBeanOrder().getId();
-		}
-		for (PortBean port : listPortBean) {
-
-			if (port.getName().contains(autoCompleteText) && port.getCountryId().equals(idCountry)) {
-				results.add(port);
-			}
-
-		}
-		return results;
-	}*/
 }

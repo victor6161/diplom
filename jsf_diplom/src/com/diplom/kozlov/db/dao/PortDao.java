@@ -19,4 +19,13 @@ public class PortDao {
 		
 	}
 
+	public void save(PortEntity portEntity) {
+		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
+		em.getTransaction().begin();
+		em.persist(portEntity);
+		em.getTransaction().commit();
+		em.close();
+		
+	}
+
 }

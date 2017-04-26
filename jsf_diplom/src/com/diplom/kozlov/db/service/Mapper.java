@@ -10,6 +10,13 @@ import com.diplom.kozlov.entity.SheduleEntity;
 import com.diplom.kozlov.entity.VesselEntity;
 
 public class Mapper {
+	public CountryEntity countryDtoToEntity(CountryDto countryDto){
+		CountryEntity countryEntity = new CountryEntity();
+		countryEntity.setId(countryDto.getId());
+		countryEntity.setName(countryDto.getName());
+		return countryEntity;
+	}
+	
 	public CountryDto countryEntityToDto(CountryEntity countryEntity){
 		CountryDto countryDto = new CountryDto();
 		countryDto.setId(countryEntity.getId());
@@ -36,7 +43,7 @@ public class Mapper {
 		PortDto portDto = new PortDto();
 		portDto.setId(portEntity.getId());
 		portDto.setName(portEntity.getName());
-		portDto.setCountryId(portEntity.getCountryId());
+		portDto.setCountryDto(countryEntityToDto(portEntity.getCountry()));
 		return portDto;
 	}
 
@@ -59,6 +66,13 @@ public class Mapper {
 		sheduleDto.setDateTo(sheduleEntity.getDateTo());
 		sheduleDto.setVesselId(sheduleEntity.getVessel().getId());
 		return sheduleDto;
+	}
+
+	public PortEntity portDtoToEntity(PortDto portDto) {
+		PortEntity portEntity = new PortEntity();
+		portEntity.setCountry(countryDtoToEntity(portDto.getCountryDto()));
+		portEntity.setName(portDto.getName());
+		return portEntity;
 	}
 	
 	

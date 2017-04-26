@@ -13,7 +13,7 @@ public class SheduleServiceImpl implements SheduleService {
 	
 	private Mapper mapper = new Mapper();
 	@Override
-	public void save(SheduleDto vesselDto) {
+	public void save(SheduleDto sheduleDto) {
 		
 	
 	}

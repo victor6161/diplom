@@ -1,15 +1,30 @@
 package com.diplom.kozlov.port;
 
-import com.diplom.kozlov.application.PortBean;
+
 import com.diplom.kozlov.db.dto.PortDto;
+import com.diplom.kozlov.port.view.AddBean;
+import com.diplom.kozlov.port.view.RowBean;
 
 public class Mapper {
-	public PortBean portDtoToBean(PortDto portDto) {
-		PortBean portBean = new PortBean();
-		portBean.setId(portDto.getId());
-		portBean.setName(portDto.getName());
-		portBean.setCountryId(portDto.getCountryId());
-		return portBean;
+	
+	private com.diplom.kozlov.application.Mapper mapperApplication = new com.diplom.kozlov.application.Mapper();
+
+	public RowBean dtoToRowBean(PortDto port) {
+		RowBean rowBean = new RowBean();
+		rowBean.setId(port.getId());
+		rowBean.setCountry(port.getCountryDto().getName());
+		rowBean.setName(port.getName());
+		return rowBean;
 	}
+	
+	public PortDto addBeanToDto(AddBean addPort) {
+		PortDto portDto = new PortDto();
+		portDto.setName(addPort.getName());
+		portDto.setCountryDto(mapperApplication.countryBeanToDto(addPort.getCountryBean()));
+		return portDto;
+	}
+	
+	
+
 
 }

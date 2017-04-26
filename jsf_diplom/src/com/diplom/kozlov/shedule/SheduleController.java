@@ -6,7 +6,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import org.apache.log4j.Logger;
-import org.primefaces.context.RequestContext;
+
 
 import com.diplom.kozlov.db.service.SheduleServiceImpl;
 import com.diplom.kozlov.shedule.view.MainBean;
@@ -45,7 +45,7 @@ public class SheduleController {
 			
 	}
 
-/*	public void add() {
+	/*public void add() {
 		facade.add();
 		RequestContext.getCurrentInstance().execute("PF('addVesselWidget').hide()");
 	}

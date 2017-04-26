@@ -5,19 +5,23 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:port="http://java.sun.com/jsf/composite/pages/port"
+	>
 
 <h:head>
-
 </h:head>
 <h:body>
 	<ui:composition template="/resources/pages/template/user.xhtml">
 		<ui:define name="main">
 
-			<p:dataTable var="port" value="#{applicationBean.listPortBean}"
+			<p:dataTable id="portTableForm" var="port" 
+				value="#{portController.mainBean.rowsBean}"
 				paginator="true" lazy="true"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-				rowsPerPageTemplate="5,10,15">
+				rowsPerPageTemplate="5,10,15"
+				
+				>
 
 				<p:column headerText="id Порта">
 					<h:outputText value="#{port.id}"></h:outputText>
@@ -27,15 +31,16 @@
 					<h:outputText value="#{port.name}"></h:outputText>
 				</p:column>
 				<p:column headerText="Название страны">
-					<h:outputText value="#{port.countryId}"></h:outputText>
+					<h:outputText value="#{port.country}"></h:outputText>
 				</p:column>
 				<f:facet name="footer">
 					<h:form>
 						<p:commandButton icon="ui-icon-add" value="Добавить Порт"
-							oncomplete="PF('addWidgetVar').show();"></p:commandButton>
+							oncomplete="PF('addPortWidget').show();"></p:commandButton>
 					</h:form>
 				</f:facet>
 			</p:dataTable>
+			<port:addPort/>
 		</ui:define>
 	</ui:composition>
 

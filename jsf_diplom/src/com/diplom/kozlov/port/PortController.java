@@ -7,6 +7,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
+
+import org.primefaces.context.RequestContext;
+
 import org.apache.log4j.Logger;
 
 import com.diplom.kozlov.db.service.PortServiceImpl;
@@ -47,12 +50,12 @@ public class PortController {
 			
 	}
 
-/*	public void add() {
+	public void add() {
 		facade.add();
-		RequestContext.getCurrentInstance().execute("PF('addVesselWidget').hide()");
+		RequestContext.getCurrentInstance().execute("PF('addPortWidget').hide()");
 	}
 	public void onAddOpen(){
 		facade.onAddOpen();
-	}*/
+	}
 
 }
