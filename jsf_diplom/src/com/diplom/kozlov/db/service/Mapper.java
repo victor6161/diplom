@@ -60,11 +60,12 @@ public class Mapper {
 	public SheduleDto sheduleEntityToDto(SheduleEntity sheduleEntity) {
 		SheduleDto sheduleDto = new SheduleDto();
 		sheduleDto.setId(sheduleEntity.getId());
-		sheduleDto.setPortFrom(sheduleEntity.getPortFrom().getName());
-		sheduleDto.setPortTo(sheduleEntity.getPortTo().getName());
+		sheduleDto.setPortFrom(portEntityToDto(sheduleEntity.getPortFrom()));
+		sheduleDto.setPortTo(portEntityToDto(sheduleEntity.getPortTo()));
+		
 		sheduleDto.setDateFrom(sheduleEntity.getDateFrom());
 		sheduleDto.setDateTo(sheduleEntity.getDateTo());
-		sheduleDto.setVesselId(sheduleEntity.getVessel().getId());
+		sheduleDto.setVesselDto( vesselEntityToDto(sheduleEntity.getVessel()));
 		return sheduleDto;
 	}
 
@@ -72,8 +73,19 @@ public class Mapper {
 		PortEntity portEntity = new PortEntity();
 		portEntity.setCountry(countryDtoToEntity(portDto.getCountryDto()));
 		portEntity.setName(portDto.getName());
+		portEntity.setId(portDto.getId());
 		return portEntity;
 	}
-	
+
+	public SheduleEntity sheduleDtoToEntity(SheduleDto sheduleDto) {
+		SheduleEntity sheduleEntity = new SheduleEntity();
+		sheduleEntity.setPortFrom(portDtoToEntity(sheduleDto.getPortFrom()));
+		sheduleEntity.setPortTo(portDtoToEntity(sheduleDto.getPortTo()));
+		sheduleEntity.setDateFrom(sheduleDto.getDateFrom());
+		sheduleEntity.setDateTo(sheduleDto.getDateTo());
+		sheduleEntity.setVessel(vesselDtoToEntity(sheduleDto.getVesselDto()));
+	 
+		return sheduleEntity;
+	}
 	
 }

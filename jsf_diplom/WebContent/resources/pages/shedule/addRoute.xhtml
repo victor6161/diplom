@@ -1,32 +1,84 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
- xmlns:f="http://java.sun.com/jsf/core"
- xmlns:h="http://java.sun.com/jsf/html"
- xmlns:ui="http://java.sun.com/jsf/facelets"
- xmlns:p="http://primefaces.org/ui"
- xmlns:composite="http://java.sun.com/jsf/composite">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
 
 <composite:interface />
 
 <composite:implementation>
-	
-	<p:dialog id="addRoute" header="Добавить маршрут" widgetVar="addRouteWidget"  minHeight="40" modal="true">
+
+	<p:dialog id="addRoute" header="Добавить маршрут"
+		widgetVar="addRouteWidget" minHeight="40" modal="true">
 		<h:form>
-		
-		
-				<div style="margin: 10px; font-weight: bold;">
-					<h:outputText value="Порт в" />
-				</div>
-		
-				<div style="margin: 10px">
-					<p:inputText id="portTo" value="#{sheduleController.mainBean.addBean.portTo}" required="true" requiredMessage="Field is empty"/>
-					<br></br>
-				</div>
 
 
-			<p:commandButton value="Add"  actionListener="#{sheduleController.add}" update="@form :#{p:component('sheduleTableForm')}"/>
-			<p:commandButton value="Close" onclick="PF('addRouteWidget').hide();" immediate="true"  update=":#{p:component('addRoute')}" >
-				
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Порт отправки" />
+			</div>
+
+			<div style="margin: 10px">
+				<p:selectOneMenu
+					value="#{sheduleController.mainBean.addBean.portFrom}"
+					style="width:150px"
+					converter="com.diplom.kozlov.converter.PortConverter">
+					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listPortBean}" var="port" itemLabel=" #{port.name}" itemValue="#{port}" />
+				</p:selectOneMenu>
+				<br></br>
+			</div>
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Время отправки" />
+			</div>
+			<p:calendar id="fromDatetime"
+				value="#{sheduleController.mainBean.addBean.timeFrom}"
+				pattern="MM/dd/yyyy HH:mm:ss" />
+
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Порт прибытия" />
+			</div>
+
+			<div style="margin: 10px;">
+				<p:selectOneMenu
+					value="#{sheduleController.mainBean.addBean.portTo}"
+					style="width:150px" converter="com.diplom.kozlov.converter.PortConverter">
+					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listPortBean}" var="port" itemLabel=" #{port.name}" itemValue="#{port}" />
+				</p:selectOneMenu>
+				<br></br>
+			</div>
+
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Время прибытия" />
+			</div>
+			<p:calendar id="toDatetime"
+				value="#{sheduleController.mainBean.addBean.timeTo}"
+				pattern="MM/dd/yyyy HH:mm:ss" />
+			<br></br>
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Выберите тип корабля" />
+			</div>
+		
+			<p:selectOneMenu
+				value="#{sheduleController.mainBean.addBean.vesselBean}"
+				style="width:150px"
+				converter="com.diplom.kozlov.converter.VesselConverter">
+				<f:selectItem itemLabel="Выберите тип корабля" itemValue=""
+					noSelectionOption="true" />
+				<f:selectItems value="#{applicationBean.listVesselBean}"
+					var="vessel" itemLabel=" #{vessel.type}" itemValue="#{vessel}" />
+			</p:selectOneMenu>
+			<br></br><br></br>
+
+			<p:commandButton value="Добавить"
+				actionListener="#{sheduleController.add}"
+				update="@form :#{p:component('sheduleTableForm')}" />
+			<p:commandButton value="Закрыть"
+				onclick="PF('addRouteWidget').hide();" immediate="true"
+				update=":#{p:component('addRoute')}">
+
 			</p:commandButton>
 		</h:form>
 	</p:dialog>

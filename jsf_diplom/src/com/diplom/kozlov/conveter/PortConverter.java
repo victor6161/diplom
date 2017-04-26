@@ -9,26 +9,23 @@ import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
 import com.diplom.kozlov.application.ApplicationBean;
-import com.diplom.kozlov.application.CountryBean;
 
+import com.diplom.kozlov.application.PortBean;
 
-@FacesConverter("com.diplom.kozlov.converter.CountryConverter")
-public class CountryConverter implements Converter {
-
+@FacesConverter("com.diplom.kozlov.converter.PortConverter")
+public class PortConverter implements Converter{
 	@Override
 	public Object getAsObject(FacesContext fc, UIComponent arg1, String value) {
 		ApplicationBean autoCompleteValueBean = null;
 
 		autoCompleteValueBean = (ApplicationBean) fc.getApplication().evaluateExpressionGet(fc, "#{applicationBean}", ApplicationBean.class);
 		
-
-
-		List<CountryBean> countryBean = autoCompleteValueBean.getListCountryBean();
+		List<PortBean> portBean = autoCompleteValueBean.getListPortBean();
 		if (value != null && value.trim().length() > 0) {
 			try {
-				for (CountryBean country : countryBean) {
-					if (value.equals(String.valueOf(country.getId()))) {
-						return country;
+				for (PortBean port : portBean) {
+					if (value.equals(String.valueOf(port.getId()))) {
+						return port;
 					}
 				}
 				return null;
@@ -43,8 +40,8 @@ public class CountryConverter implements Converter {
 
 	@Override
 	public String getAsString(FacesContext arg0, UIComponent arg1, Object value) {
-		if (value instanceof CountryBean)
-			return String.valueOf((((CountryBean) value).getId()));
+		if (value instanceof PortBean)
+			return String.valueOf((((PortBean) value).getId()));
 		return null;
 	}
 

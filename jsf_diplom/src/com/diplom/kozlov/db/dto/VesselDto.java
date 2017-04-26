@@ -13,9 +13,7 @@ public class VesselDto implements Serializable {
 	  @Setter
 	  @Getter
 	  private String type;
-	  @Setter
-	  @Getter
-	  private String name;
+
 	  @Setter
 	  @Getter
 	  private Integer fuelConsumption;

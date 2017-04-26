@@ -6,15 +6,20 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class SheduleDto {
+	@Override
+	public String toString() {
+		return "SheduleDto [id=" + id + ", portFrom=" + portFrom + ", portTo=" + portTo + ", dateTo=" + dateTo
+				+ ", dateFrom=" + dateFrom + ", vesselDto=" + vesselDto + "]";
+	}
 	@Setter
 	@Getter
 	private Integer id;
 	@Setter
 	@Getter
-	private String portFrom;
+	private PortDto portFrom;
 	@Setter
 	@Getter
-	private String portTo;
+	private PortDto portTo;
 	@Setter
 	@Getter
 	private Date dateTo;
@@ -23,6 +28,6 @@ public class SheduleDto {
 	private Date dateFrom;
 	@Setter
 	@Getter
-	private Integer vesselId;
+	private VesselDto vesselDto;
 
 }

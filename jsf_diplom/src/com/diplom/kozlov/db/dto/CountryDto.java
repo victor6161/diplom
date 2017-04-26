@@ -8,7 +8,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class CountryDto implements Serializable {
-	  @Setter
+	  @Override
+	public String toString() {
+		return "CountryDto [id=" + id + ", name=" + name + ", postcode=" + postcode + ", tax=" + tax + "]";
+	}
+	@Setter
 	  @Getter
 	  private Integer id;
 	  

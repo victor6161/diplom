@@ -5,12 +5,16 @@ import lombok.Setter;
 
 public class PortBean {
 	
-	  @Setter
+	  @Override
+	public String toString() {
+		return "PortBean [id=" + id + ", countryBean=" + countryBean + ", name=" + name + "]";
+	}
+	@Setter
 	  @Getter
 	  private Integer id;
 	  @Setter
 	  @Getter
-	  private Integer countryId;
+	  private CountryBean countryBean;
 	  @Setter
 	  @Getter
 	  private String name;

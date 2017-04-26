@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.diplom.kozlov.db.dao.SheduleDao;
 import com.diplom.kozlov.db.dto.SheduleDto;
+import com.diplom.kozlov.entity.PortEntity;
 import com.diplom.kozlov.entity.SheduleEntity;
 
 public class SheduleServiceImpl implements SheduleService {
@@ -14,7 +15,8 @@ public class SheduleServiceImpl implements SheduleService {
 	private Mapper mapper = new Mapper();
 	@Override
 	public void save(SheduleDto sheduleDto) {
-		
+		SheduleEntity sheduleEntity = mapper.sheduleDtoToEntity(sheduleDto);
+		sheduleDao.save(sheduleEntity);
 	
 	}
 

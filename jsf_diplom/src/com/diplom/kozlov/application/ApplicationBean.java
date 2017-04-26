@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 
 import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.PortDto;
+import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.db.service.CountryServiceImpl;
 import com.diplom.kozlov.db.service.PortService;
 import com.diplom.kozlov.db.service.PortServiceImpl;
@@ -36,25 +37,38 @@ public class ApplicationBean {
 	@Setter
 	@Getter
 	private List<CountryBean> listCountryBean;
+	@Setter
+	@Getter
+	private List<VesselBean> listVesselBean;
 	
 	private Mapper mapper = new Mapper();
 
 	public ApplicationBean() {
 		listPortBean = new ArrayList<>();
 		listCountryBean = new ArrayList<>();
+		listVesselBean = new ArrayList<>();
 	}
 	@PostConstruct
 	private void init(){
 		listPortBean = getListPortBeanDB();
 		listCountryBean = getListCountryBeanDB();
+		listVesselBean = getListVesselBeanDB();
 	}
 
+	private List<VesselBean> getListVesselBeanDB() {
+		List<VesselDto> vesselDtoAll = vesselService.getVessels();
+		List<VesselBean> vesselBean = new ArrayList<>();
+		for(VesselDto vessel:vesselDtoAll){
+			vesselBean.add(mapper.vesselDtoToBean(vessel));
+		}
+		return vesselBean;
+	}
 	private List<PortBean> getListPortBeanDB() {
 		List<PortDto> portDtoAll = portService.getPorts();
 		List<PortBean> portBean = new ArrayList<>();
-	/*	for(PortDto port){
-			
-		}*/
+		for(PortDto port:portDtoAll){
+			portBean.add(mapper.portDtoToBean(port));
+		}
 		return portBean;
 	}
 	

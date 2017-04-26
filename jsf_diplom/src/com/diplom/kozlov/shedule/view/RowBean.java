@@ -23,6 +23,6 @@ public class RowBean {
 	private Date dateFrom;
 	@Setter
 	@Getter
-	private Integer vesselId;
+	private String vesselType;
 
 }

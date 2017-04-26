@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import com.diplom.kozlov.db.entityManager.PersistenceManager;
-
+import com.diplom.kozlov.entity.CountryEntity;
 import com.diplom.kozlov.entity.SheduleEntity;
 
 public class SheduleDao {
@@ -17,5 +17,14 @@ public class SheduleDao {
 		em.close();
 		return sheduleEntity;
 	}
+	
+	public void save(SheduleEntity sheduleEntity){
+		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
+		em.getTransaction().begin();
+		em.persist(sheduleEntity);
+		em.getTransaction().commit();
+		em.close();
+	}
+	
 
 }

@@ -27,14 +27,14 @@
 				<h:outputText value="Название Страны" />
 			</div>
 				
-			<p:selectOneMenu id="country" value="#{portController.mainBean.addBean.countryBean}" style="width:150px" converter="com.diplom.kozlov.converter">
+			<p:selectOneMenu id="country" value="#{portController.mainBean.addBean.countryBean}" style="width:150px" converter="com.diplom.kozlov.converter.CountryConverter">
                 <f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
                 <f:selectItems value="#{applicationBean.listCountryBean}" var="country" itemLabel="#{country.id} #{country.name}" itemValue="#{country}"/>
             </p:selectOneMenu>
 
 			<br></br><br></br>
-			<p:commandButton value="Add"  actionListener="#{portController.add}" update="@form :#{p:component('portTableForm')}"/>
-			<p:commandButton value="Close" onclick="PF('addPortWidget').hide();" immediate="true"  update=":#{p:component('addPort')}" >
+			<p:commandButton value="Добавить"  actionListener="#{portController.add}" update="@form :#{p:component('portTableForm')}"/>
+			<p:commandButton value="Закрыть" onclick="PF('addPortWidget').hide();" immediate="true"  update=":#{p:component('addPort')}" >
 				
 			</p:commandButton>
 		</h:form>
