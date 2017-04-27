@@ -15,6 +15,7 @@ import org.primefaces.model.map.DefaultMapModel;
 import org.primefaces.model.map.LatLng;
 import org.primefaces.model.map.MapModel;
 import org.primefaces.model.map.Marker;
+import org.primefaces.model.map.Polyline;
 
 import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.db.service.PortServiceImpl;
@@ -37,19 +38,30 @@ public class MarkerSelectionView {
 
 		List<PortDto> portDto = portService.getPorts();
 		List<LatLng> coord1 = new ArrayList<>();
-
 		for (PortDto port : portDto) {
 			if (port.getLatitude() != null && port.getLongitude() != null) {
-				LOGGER.info("for"+port.getLatitude()+":"+port.getLongitude());
+				//LOGGER.info("for"+port.getLatitude()+":"+port.getLongitude());
 				coord1.add(new LatLng(port.getLatitude(), port.getLongitude()));
 			}
 		}
 		// 1 широта
 		// 2 долгота
-
 		// Basic marker
 		for (LatLng coord : coord1) {
 			simpleModel.addOverlay(new Marker(coord, "Konyaalti"));
 		}
+		
+	    LatLng coord1P = new LatLng(59.43696, 24.75353);
+        LatLng coord2P = new LatLng(59.99541, 29.76668);
+     
+        Polyline polyline = new Polyline();
+        polyline.getPaths().add(coord1P);
+        polyline.getPaths().add(coord2P);
+  
+          
+        polyline.setStrokeWeight(10);
+        polyline.setStrokeColor("#FF9900");
+        polyline.setStrokeOpacity(0.7);
+        simpleModel.addOverlay(polyline);
 	}
 }
