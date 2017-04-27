@@ -9,9 +9,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class AddBean {
+	public AddBean() {
+		portFrom = null;
+		portTo = null;
+		dateFrom = null;
+		dateTo = null;
+		vesselBean = null;
+	}
+
 	@Override
 	public String toString() {
-		return "AddBean [portFrom=" + portFrom + ", portTo=" + portTo + ", timeFrom=" + timeFrom + ", timeTo=" + timeTo
+		return "AddBean [portFrom=" + portFrom + ", portTo=" + portTo + ", timeFrom=" + dateFrom + ", timeTo=" + dateTo
 				+ ", vesselBean=" + vesselBean + "]";
 	}
 
@@ -23,11 +31,11 @@ public class AddBean {
 	private PortBean portTo;
 	@Setter
 	@Getter
-	private Date timeFrom;
+	private Date dateFrom;
 	@Setter
 	@Getter
-	private Date timeTo;
-	
+	private Date dateTo;
+
 	@Setter
 	@Getter
 	private VesselBean vesselBean;

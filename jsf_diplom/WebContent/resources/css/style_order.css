@@ -1,10 +1,23 @@
 @CHARSET "UTF-8";
-.ui-selectonemenu{
-     width: 15% !important;
+
+.ui-selectonemenu {
+	width: 15% !important;
 }
 
-.ui-autocomplete-input.ui-inputfield
-{
-    width : 100% !important;
+.ui-autocomplete-input.ui-inputfield {
+	width: 100% !important;
 }
-.ui-tabs .ui-tabs-nav li{float:right!important;}
+
+.ui-tabs .ui-tabs-nav li {
+	float: right !important;
+}
+
+html, body {
+	margin: 0;
+	height: 100%;
+}
+
+/* #main {
+	height: 100%;
+	background: yellow;
+}  */

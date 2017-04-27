@@ -21,6 +21,8 @@ public class Mapper {
 
 	public SheduleDto addBeanToDto(AddBean addBean) {
 		SheduleDto sheduleDto = new SheduleDto();
+		sheduleDto.setDateFrom(addBean.getDateFrom());
+		sheduleDto.setDateTo(addBean.getDateTo());
 		sheduleDto.setPortFrom(portBeanToDto(addBean.getPortFrom()));
 		sheduleDto.setPortTo(portBeanToDto(addBean.getPortTo()));
 		sheduleDto.setVesselDto(mapperApplication.vesselBeanToDto(addBean.getVesselBean()));

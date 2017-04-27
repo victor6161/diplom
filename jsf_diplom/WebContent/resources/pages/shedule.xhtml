@@ -24,13 +24,13 @@
 				<p:column headerText="Порт из">
 					<h:outputText value="#{item.portFrom}" />
 				</p:column>
-				<p:column headerText="Время отплытия">
+				<p:column headerText="Время отплытия(местное)">
 					<h:outputText value="#{item.dateFrom}" />
 				</p:column>
 				<p:column headerText="Порт в">
 					<h:outputText value="#{item.portTo}" />
 				</p:column>
-				<p:column headerText="Время прибытия">
+				<p:column headerText="Время прибытия(местное)">
 					<h:outputText value="#{item.dateTo}" />
 				</p:column>
 				<p:column headerText="Корабль">
@@ -42,14 +42,19 @@
 						<p:commandButton icon="ui-icon-add" 
 							value="Добавить Маршрут"
 							oncomplete="PF('addRouteWidget').show();"
-							update=":#{p:component('addRoute')}">
+							update=":#{p:component('addRoute')}"
+							actionListener="#{sheduleController.onAddOpen}"
+							>
 							<p:resetInput target=":#{p:component('addRoute')}"></p:resetInput>
 						</p:commandButton>
 					</h:form>
 				</f:facet>
 			</p:dataTable>
-			<shedule:addRoute />
+		
 		</ui:define>
+			<ui:define name="add">
+				<shedule:addRoute />
+			</ui:define>
 	</ui:composition>
 
 

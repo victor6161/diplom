@@ -39,16 +39,14 @@ public class SheduleDataFacade {
 	public void add() {
 		LOGGER.info("add");
 		AddBean addBean = sheduleController.getMainBean().getAddBean();
-		LOGGER.info(addBean);
 		SheduleDto sheduleDto = sheduleController.getMapper().addBeanToDto(addBean);
-		LOGGER.info(sheduleDto);
 		sheduleController.getSheduleService().save(sheduleDto);
 		init();
 		
 	}
 
 	public void onAddOpen() {
-		
+		sheduleController.getMainBean().setAddBean(new AddBean());//это обязательно вместе c resetInput
 		
 	}
 

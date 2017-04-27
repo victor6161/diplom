@@ -5,33 +5,46 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	>
 
 <h:head>
 	<script
 		src="http://maps.google.com/maps/api/js?key=AIzaSyDweLLqpxhMPOPZMs1H0L21-wOU8NuN77g"
 		type="text/javascript"></script>
-		<h:outputStylesheet library="css" name="style_order.css" />
+	<h:outputStylesheet library="css" name="style_order.css" />
 </h:head>
 <h:body>
-	<p:panelGrid style="width:100%;height:100%;border:0">
-		<f:facet name="header">
-			<ui:insert name="navigation">
-				<ui:include src="/resources/pages/menu/menu.xhtml" />
-			</ui:insert>
-		</f:facet>
-		<p:row>
-			<p:column>
-				<ui:insert name="main">
-					main	
-				</ui:insert>
-			</p:column>
-		</p:row>
-		<f:facet name="footer">
-			<ui:insert name="footer">
-				<ui:include src="/resources/pages/general/footer.xhtml" />
-			</ui:insert>
-		</f:facet>
-	</p:panelGrid>
+	<p:layout style="min-width:400px;min-height:100%">
+		<p:layoutUnit position="center">
+			<p:panelGrid style="width:100%;height:100%;border:0">
+				<f:facet name="header">
+					<ui:insert name="navigation">
+						<ui:include src="/resources/pages/menu/menu.xhtml" />
+					</ui:insert>
+				</f:facet>
+
+				<p:row>
+					<p:column>
+						
+							<ui:insert name="main">
+								main	
+							</ui:insert>
+					
+					</p:column>
+				</p:row>
+
+				<f:facet name="footer">
+					<ui:insert name="footer">
+						<ui:include src="/resources/pages/general/footer.xhtml" />
+					</ui:insert>
+				</f:facet>
+			</p:panelGrid>
+		</p:layoutUnit>
+	</p:layout>
+		<ui:insert name="add">
+				
+		</ui:insert>
+		
 </h:body>
 </html>

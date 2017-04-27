@@ -14,7 +14,7 @@
 <h:body>
 	<ui:composition template="/resources/pages/template/user.xhtml">
 		<ui:define name="main">
-
+			<div id="main" style="height: 100%">
 			<p:dataTable id="portTableForm" var="port" 
 				value="#{portController.mainBean.rowsBean}"
 				paginator="true" lazy="true"
@@ -40,6 +40,10 @@
 					</h:form>
 				</f:facet>
 			</p:dataTable>
+			<port:addPort/>
+			</div>
+		</ui:define>
+		<ui:define name="add">
 			<port:addPort/>
 		</ui:define>
 	</ui:composition>
