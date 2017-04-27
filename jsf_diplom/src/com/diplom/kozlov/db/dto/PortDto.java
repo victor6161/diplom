@@ -19,4 +19,10 @@ public class PortDto {
 	  @Setter
 	  @Getter
 	  private CountryDto countryDto;
+	  @Setter
+	  @Getter
+	  private Double latitude;
+	  @Setter
+	  @Getter
+	  private Double longitude;
 }

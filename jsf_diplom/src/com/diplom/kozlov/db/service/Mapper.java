@@ -44,6 +44,8 @@ public class Mapper {
 		portDto.setId(portEntity.getId());
 		portDto.setName(portEntity.getName());
 		portDto.setCountryDto(countryEntityToDto(portEntity.getCountry()));
+		portDto.setLatitude(portEntity.getLatitude());
+		portDto.setLongitude(portEntity.getLongitude());
 		return portDto;
 	}
 
@@ -74,6 +76,8 @@ public class Mapper {
 		portEntity.setCountry(countryDtoToEntity(portDto.getCountryDto()));
 		portEntity.setName(portDto.getName());
 		portEntity.setId(portDto.getId());
+		portEntity.setLatitude(portDto.getLatitude());
+		portEntity.setLongitude(portDto.getLongitude());
 		return portEntity;
 	}
 

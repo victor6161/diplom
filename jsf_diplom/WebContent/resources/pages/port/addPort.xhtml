@@ -31,6 +31,23 @@
                 <f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
                 <f:selectItems value="#{applicationBean.listCountryBean}" var="country" itemLabel="#{country.id} #{country.name}" itemValue="#{country}"/>
             </p:selectOneMenu>
+            
+            <div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Широта" />
+			</div>
+		
+			<div style="margin: 10px">
+				<p:inputText value="#{portController.mainBean.addBean.latitude}" required="true" requiredMessage="Field is empty"/>
+				<br></br>
+			</div>
+			  <div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Долгота" />
+			</div>
+		
+			<div style="margin: 10px">
+				<p:inputText  value="#{portController.mainBean.addBean.longitude}" required="true" requiredMessage="Field is empty"/>
+				<br></br>
+			</div>
 
 			<br></br><br></br>
 			<p:commandButton value="Добавить"  actionListener="#{portController.add}" update="@form :#{p:component('portTableForm')}"/>

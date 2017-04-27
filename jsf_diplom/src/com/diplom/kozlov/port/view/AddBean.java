@@ -13,6 +13,15 @@ public class AddBean {
 	@Setter
 	@Getter
 	private CountryBean countryBean;
+	@Setter
+	@Getter
+	private Double latitude;//широта
+	@Setter
+	@Getter
+	private Double longitude;//долгота
+	
+	
+	
 	
 	
 
