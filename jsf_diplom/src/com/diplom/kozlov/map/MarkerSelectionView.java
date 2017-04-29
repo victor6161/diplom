@@ -10,6 +10,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import org.apache.log4j.Logger;
+import org.primefaces.event.map.MarkerDragEvent;
 import org.primefaces.event.map.OverlaySelectEvent;
 import org.primefaces.event.map.PointSelectEvent;
 import org.primefaces.model.map.DefaultMapModel;
@@ -35,6 +36,7 @@ public class MarkerSelectionView {
 	private static final Logger LOGGER = Logger.getLogger(PortController.class);
 	private PortServiceImpl portService = new PortServiceImpl();
 	private SheduleServiceImpl sheduleService = new SheduleServiceImpl();
+	private Marker marker;
 
 	@PostConstruct
 	public void init() {
@@ -57,24 +59,10 @@ public class MarkerSelectionView {
 			simpleModel.addOverlay(new Marker(coord, "Konyaalti"));
 		}
 
-		// Shared coordinates
-		/*
-		 * LatLng coord1 = new LatLng(36.879466, 30.667648); LatLng coord2 = new
-		 * LatLng(36.883707, 30.689216); LatLng coord3 = new LatLng(36.879703,
-		 * 30.706707); LatLng coord4 = new LatLng(36.885233, 30.702323);
-		 */
-
-		// Draggable
-		/*
-		 * simpleModel.addOverlay(new Marker(coord1, "Konyaalti"));
-		 * simpleModel.addOverlay(new Marker(coord2, "Ataturk Parki"));
-		 * simpleModel.addOverlay(new Marker(coord3, "Karaalioglu Parki"));
-		 * simpleModel.addOverlay(new Marker(coord4, "Kaleici"));
-		 */
-
 		List<SheduleDto> sheduleAll = sheduleService.getShedule();
 		LatLng intermediateMarker = null;
 		for (SheduleDto sheduleDto : sheduleAll) {
+			LOGGER.info("1");
 			LatLng portFromLatLng = new LatLng(sheduleDto.getPortFrom().getLatitude(),
 					sheduleDto.getPortFrom().getLongitude());
 			LatLng portToLatLng = new LatLng(sheduleDto.getPortTo().getLatitude(),
@@ -87,40 +75,31 @@ public class MarkerSelectionView {
 			double intermediateLat = (portToLatLng.getLat() + portFromLatLng.getLat()) / 2;
 			double intermediateLng = (portToLatLng.getLng() + portFromLatLng.getLng()) / 2;
 			intermediateMarker = new LatLng(intermediateLat, intermediateLng);
-			simpleModel.addOverlay(new Marker(intermediateMarker, "zdrasteprivet", "zdrasteprivet",
-					"http://maps.google.com/mapfiles/ms/micons/yellow-dot.png"));
+			simpleModel.addOverlay(new Marker(intermediateMarker, sheduleDto.getId().toString(),
+					sheduleDto.getId().toString(), "http://maps.google.com/mapfiles/ms/micons/yellow-dot.png"));
+
+	
 
 			intermediateMarker = new LatLng((intermediateLat + portFromLatLng.getLat()) / 2,
 					(intermediateLng + portFromLatLng.getLng()) / 2);
-			simpleModel.addOverlay(new Marker(intermediateMarker, "zdrasteprivet", "zdrasteprivet",
-					"http://maps.google.com/mapfiles/ms/micons/yellow-dot.png"));
+			simpleModel.addOverlay(new Marker(intermediateMarker, sheduleDto.getId().toString(),
+					sheduleDto.getId().toString(), "http://maps.google.com/mapfiles/ms/micons/yellow-dot.png"));
 
 			intermediateMarker = new LatLng((portToLatLng.getLat() + intermediateLat) / 2,
 					(portToLatLng.getLng() + intermediateLng) / 2);
-			simpleModel.addOverlay(new Marker(intermediateMarker, "zdrasteprivet", "zdrasteprivet",
-					"http://maps.google.com/mapfiles/ms/micons/yellow-dot.png"));
-		
+			simpleModel.addOverlay(new Marker(intermediateMarker, sheduleDto.getId().toString(),
+					sheduleDto.getId().toString(), "http://maps.google.com/mapfiles/ms/micons/yellow-dot.png"));
+
 			polyline.setId(sheduleDto.getId().toString());
 			polyline.setStrokeWeight(5);
 			polyline.setStrokeColor("red");
 			polyline.setStrokeOpacity(0.5);
 			simpleModel.addOverlay(polyline);
-		}
-	}
-/*	addMarker(){
-		
-	}*/
 
-	public void onPolylineSelect(OverlaySelectEvent event) {
-		// event.getOverlay().getId();
-		for(Polyline pol: simpleModel.getPolylines()){
-			if(pol.getId().equals(event.getOverlay().getId())){
-				
+			for (Marker premarker : simpleModel.getMarkers()) {
+				premarker.setDraggable(true);
 			}
 		}
-	
-		FacesContext.getCurrentInstance().addMessage(null,
-				new FacesMessage(FacesMessage.SEVERITY_INFO, event.getOverlay().getId(), null));
 	}
 
 	public void onPointSelect(PointSelectEvent event) {
@@ -128,5 +107,22 @@ public class MarkerSelectionView {
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
 				event.getSource().toString() + "\nPoint Selected Lat:" + latlng.getLat() + ", Lng:" + latlng.getLng(),
 				null));
+	}
+
+	public void onMarkerDrag(MarkerDragEvent event) {
+		marker = event.getMarker();
+		
+		for (Polyline polyline : simpleModel.getPolylines()) {
+			if (polyline.getId().equals(marker.getTitle())) {
+				LOGGER.info("1-if-onMarkerDrag");
+				List<LatLng> arr = polyline.getPaths();
+				arr.add(new LatLng(marker.getLatlng().getLat(), marker.getLatlng().getLng()));
+				polyline.setPaths(arr);
+				simpleModel.addOverlay(polyline);
+
+			}
+		}
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
+				"Marker Dragged Lat:" + marker.getLatlng().getLat() + ", Lng:" + marker.getLatlng().getLng(), null));
 	}
 }
