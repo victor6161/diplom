@@ -16,6 +16,9 @@ html, body {
 	margin: 0;
 	height: 100%;
 }
+.ui-growl {
+	left:20px;
+}
 
 /* #main {
 	height: 100%;

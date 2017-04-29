@@ -13,17 +13,67 @@
 		type="text/javascript"></script>
 </h:head>
 <h:body>
+
+
 	<ui:composition template="/resources/pages/template/user.xhtml">
 		<ui:define name="main">
+			<script>
+		      // This example creates a 2-pixel-wide red polyline showing the path of William
 
-			<f:view contentType="text/html">
+/* 	
+		      function initMap() {
+		    	var map = PF('pmap').getMap();
+		    	map.Polyline.setEditable(true)
+		    	 for(var i in map.polylines)
+		    	   {
+		    	   		i.editable=true;
+		    	   }
+		      }
+	        var flightPlanCoordinates = [
+		          {lat: 59.43696, lng: 24.75353},
+		          {lat: 59.99541, lng: 29.76668}
+		        ];
+		        var flightPlanCoordinates2 = [
+		                {lat: 60.43696, lng: 24.75353},
+		                {lat: 59.99541, lng: 29.76668}
+		        ];
+		        var flightPath = new google.maps.Polyline({
+		          path: flightPlanCoordinates,
+		          geodesic: true,
+		          strokeColor: '#FF0000',
+		          strokeOpacity: 1.0,
+		          strokeWeight: 2,
+		          editable : true
+		        });
+		        var flightPath2 = new google.maps.Polyline({
+			          path: flightPlanCoordinates2,
+			          geodesic: true,
+			          strokeColor: '#FF0000',
+			          strokeOpacity: 1.0,
+			          strokeWeight: 2,
+			          editable : true
+			        });
+
+		        flightPath.setMap(map);
+		        flightPath2.setMap(map);
+		      } 
+		      google.maps.event.addDomListener(window, 'load', initMap); */
+			</script>
 				
-				<p:gmap center="59.9386300, 30.3141300" zoom="10" type="HYBRID" style="width:100%;height:400px" model="#{markerSelectionView.simpleModel}" />
+			<f:view contentType="text/html">
+			<h:form>
+				<p:growl id="growl" />		
+				<p:gmap center="59.9386300, 30.3141300" zoom="10" type="HYBRID"
+					style="width:100%;height:600px"
+					model="#{markerSelectionView.simpleModel}" widgetVar="pmap" >
+					
+					 <p:ajax event="overlaySelect" listener="#{markerSelectionView.onPolylineSelect}" update="@form" />
+					<p:ajax event="pointSelect" listener="#{markerSelectionView.onPointSelect}" update="@form" />
+				</p:gmap>
+			</h:form>		
+					
 			</f:view>
-
 		</ui:define>
-
 	</ui:composition>
-
 </h:body>
 </html>
