@@ -67,8 +67,6 @@
 					style="width:100%;height:600px"
 					model="#{markerSelectionView.simpleModel}" widgetVar="pmap" >
 					<p:ajax event="markerDrag" listener="#{markerSelectionView.onMarkerDrag}"  />
-					<p:ajax event="overlaySelect" listener="#{markerSelectionView.onPolylineSelect}" update="@form" />
-					<p:ajax event="pointSelect" listener="#{markerSelectionView.onPointSelect}" update="@form" />
 				</p:gmap>
 				<p:commandButton value="сохранять" update="@form"></p:commandButton>
 			</h:form>		

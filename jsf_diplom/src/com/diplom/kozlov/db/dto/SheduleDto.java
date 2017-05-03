@@ -1,6 +1,9 @@
 package com.diplom.kozlov.db.dto;
 
 import java.util.Date;
+import java.util.List;
+
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -29,5 +32,14 @@ public class SheduleDto {
 	@Setter
 	@Getter
 	private VesselDto vesselDto;
+	@Setter
+	@Getter
+	private Integer numPoints;
+	@Setter
+	@Getter
+	private List<MarkerDto> markersDto;
+
+
+	
 
 }

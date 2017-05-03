@@ -18,5 +18,11 @@ public class PortBean {
 	  @Setter
 	  @Getter
 	  private String name;
+	  @Setter
+	  @Getter
+	  private Double latitude;
+	  @Setter
+	  @Getter
+	  private Double longitude;
 
 }

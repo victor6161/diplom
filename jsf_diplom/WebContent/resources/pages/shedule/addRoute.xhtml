@@ -70,7 +70,16 @@
 				<f:selectItems value="#{applicationBean.listVesselBean}"
 					var="vessel" itemLabel=" #{vessel.type}" itemValue="#{vessel}" />
 			</p:selectOneMenu>
+			<br></br>
+			
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Количество точек" />
+			</div>
+			<p:inputText
+				value="#{sheduleController.mainBean.addBean.numPoints}"
+				 />
 			<br></br><br></br>
+		
 
 			<p:commandButton value="Добавить"
 				actionListener="#{sheduleController.add}"

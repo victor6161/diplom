@@ -27,6 +27,8 @@ public class Mapper {
 		PortBean portBean = new PortBean();
 		portBean.setId(portDto.getId());
 		portBean.setName(portDto.getName());
+		portBean.setLatitude(portDto.getLatitude());
+		portBean.setLongitude(portDto.getLongitude());
 		portBean.setCountryBean(countryDtoToBean(portDto.getCountryDto()));
 		return portBean;
 	}

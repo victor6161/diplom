@@ -1,10 +1,15 @@
 package com.diplom.kozlov.db.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.diplom.kozlov.db.dto.CountryDto;
+import com.diplom.kozlov.db.dto.MarkerDto;
 import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.db.dto.SheduleDto;
 import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.entity.CountryEntity;
+import com.diplom.kozlov.entity.MarkerEntity;
 import com.diplom.kozlov.entity.PortEntity;
 import com.diplom.kozlov.entity.SheduleEntity;
 import com.diplom.kozlov.entity.VesselEntity;
@@ -88,8 +93,21 @@ public class Mapper {
 		sheduleEntity.setDateFrom(sheduleDto.getDateFrom());
 		sheduleEntity.setDateTo(sheduleDto.getDateTo());
 		sheduleEntity.setVessel(vesselDtoToEntity(sheduleDto.getVesselDto()));
-	 
+		sheduleEntity.setNumPoints(sheduleDto.getNumPoints());
+		sheduleEntity.setMarkersEntity(markersDtoToEntity(sheduleDto.getMarkersDto()));
+		
 		return sheduleEntity;
+	}
+
+	private List<MarkerEntity> markersDtoToEntity(List<MarkerDto> markersDto) {
+		List<MarkerEntity> markersEntity = new ArrayList<>();
+		for(MarkerDto markerDto : markersDto){
+			double latitude = markerDto.getLatitude();
+			double longitude = markerDto.getLongitude();
+			int pathNum = markerDto.getPathNum();
+			markersEntity.add(new MarkerEntity(latitude,longitude,pathNum));
+		}
+		return markersEntity;
 	}
 	
 }

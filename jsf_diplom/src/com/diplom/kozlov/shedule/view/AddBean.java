@@ -39,5 +39,8 @@ public class AddBean {
 	@Setter
 	@Getter
 	private VesselBean vesselBean;
+	@Setter
+	@Getter
+	private int numPoints;
 
 }

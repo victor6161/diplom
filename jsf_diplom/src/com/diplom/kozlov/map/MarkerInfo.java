@@ -6,20 +6,23 @@ import lombok.Setter;
 public class MarkerInfo {
 	@Override
 	public String toString() {
-		return "MarkerInfo [id=" + id + ", pathNum=" + pathNum + "]";
+		return "MarkerInfo [id=" + polylineId + ", pathNum=" + pathNum + "]";
 	}
 
 	@Setter
 	@Getter
-	private String id;
+	private String polylineId;
 
-	public MarkerInfo(String id, int i) {
-		this.id = id;
+	public MarkerInfo(String polylineid, int i) {
+		this.polylineId = polylineid;
 		this.pathNum = i;
 	}
 
 	@Setter
 	@Getter
 	private Integer pathNum;
+	@Setter
+	@Getter
+	private Integer id;
 
 }

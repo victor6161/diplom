@@ -26,6 +26,7 @@ public class Mapper {
 		sheduleDto.setPortFrom(portBeanToDto(addBean.getPortFrom()));
 		sheduleDto.setPortTo(portBeanToDto(addBean.getPortTo()));
 		sheduleDto.setVesselDto(mapperApplication.vesselBeanToDto(addBean.getVesselBean()));
+		sheduleDto.setNumPoints(addBean.getNumPoints());
 		return sheduleDto;
 	}
 
@@ -33,6 +34,8 @@ public class Mapper {
 		PortDto portDto = new PortDto();
 		portDto.setId(portBean.getId());
 		portDto.setName(portBean.getName());
+		portDto.setLatitude(portBean.getLatitude());
+		portDto.setLongitude(portBean.getLongitude());
 		portDto.setCountryDto(mapperApplication.countryBeanToDto(portBean.getCountryBean()));
 		return portDto;
 	}

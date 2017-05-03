@@ -2,6 +2,7 @@ package com.diplom.kozlov.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,8 +12,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -24,15 +26,17 @@ import lombok.Setter;
 @Table(name = "route")
 public class SheduleEntity implements Serializable {
 	
-	  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
 	@Override
 	public String toString() {
 		return "SheduleEntity [id=" + id + ", portFrom=" + portFrom + ", portTo=" + portTo + ", dateFrom=" + dateFrom
-				+ ", dateTo=" + dateTo + ", vessel=" + vessel + "]";
+				+ ", dateTo=" + dateTo + ", vessel=" + vessel + ", numPoints=" + numPoints + ", markersEntity="
+				+ markersEntity + "]";
 	}
+
+
+
+
 	  @Id
 	  @GeneratedValue(strategy=GenerationType.IDENTITY)
 	  @Setter
@@ -62,4 +66,16 @@ public class SheduleEntity implements Serializable {
 	  @ManyToOne
 	  @JoinColumn(name="vessel_id", nullable=false, updatable=false)
 	  private VesselEntity vessel;
+	  @Setter
+	  @Getter
+	  @Column(name="number_points")
+	  private Integer numPoints;
+	  
+	  @Setter
+	  @Getter
+	  @OneToMany(cascade = CascadeType.ALL)
+	  @JoinColumn(name = "route_id")
+	  private List<MarkerEntity> markersEntity;
+	  
+	  
 }

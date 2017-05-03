@@ -38,11 +38,21 @@ public class MarkerSelectionView {
 	private SheduleServiceImpl sheduleService = new SheduleServiceImpl();
 	private Marker marker;
 
+	private final double part = 8;
+	
+	
+
 	@PostConstruct
 	public void init() {
 		LOGGER.info("MarkerSelectionView");
 		simpleModel = new DefaultMapModel();
+		initPorts();
+		initRoutes();
 
+		
+	}
+	
+	private void initPorts(){
 		List<PortDto> portDto = portService.getPorts();
 		List<LatLng> coord1 = new ArrayList<>();
 		for (PortDto port : portDto) {
@@ -54,11 +64,12 @@ public class MarkerSelectionView {
 		for (LatLng coord : coord1) {
 			simpleModel.addOverlay(new Marker(coord, "Konyaalti"));
 		}
-
+	}
+	
+	private void initRoutes(){
 		List<SheduleDto> sheduleAll = sheduleService.getShedule();
 		LatLng intermediateMarker = null;
 		for (SheduleDto sheduleDto : sheduleAll) {
-			LOGGER.info("1");
 			LatLng portFromLatLng = new LatLng(sheduleDto.getPortFrom().getLatitude(),
 					sheduleDto.getPortFrom().getLongitude());
 			LatLng portToLatLng = new LatLng(sheduleDto.getPortTo().getLatitude(),
@@ -66,41 +77,24 @@ public class MarkerSelectionView {
 
 			Polyline polyline = new Polyline();
 			polyline.getPaths().add(portFromLatLng);
-			
-			double intermediateLat = (portToLatLng.getLat() + portFromLatLng.getLat()) / 2;
-			double intermediateLng = (portToLatLng.getLng() + portFromLatLng.getLng()) / 2;
-			double latLength = Math.abs(portToLatLng.getLat() - portFromLatLng.getLat());
-			double lngLength = Math.abs(portToLatLng.getLng() - portFromLatLng.getLng());
-			double len = Math.pow(Math.pow(latLength,2)+ Math.pow(lngLength,2),0.5);
-			LOGGER.info(len);
-			int res =(int) len*3;
-			LOGGER.info(res);
-			//rec(portFromLatLng,portToLatLng);
-			
-			intermediateMarker = new LatLng((intermediateLat + portFromLatLng.getLat()) / 2,
-					(intermediateLng + portFromLatLng.getLng()) / 2);
-			polyline.getPaths().add(intermediateMarker);
-			simpleModel.addOverlay(new Marker(intermediateMarker, sheduleDto.getId().toString(),
-					new MarkerInfo(sheduleDto.getId().toString(), 1),
-					"http://maps.google.com/mapfiles/ms/micons/yellow-dot.png"));
-		
-			
-			
-			intermediateMarker = new LatLng(intermediateLat, intermediateLng);
-			simpleModel.addOverlay(new Marker(intermediateMarker, sheduleDto.getId().toString(),
-					new MarkerInfo(sheduleDto.getId().toString(), 2),
-					"http://maps.google.com/mapfiles/ms/micons/yellow-dot.png"));
-			polyline.getPaths().add(intermediateMarker);
-			
-	
-			
-			intermediateMarker = new LatLng((portToLatLng.getLat() + intermediateLat) / 2,
-					(portToLatLng.getLng() + intermediateLng) / 2);
-			polyline.getPaths().add(intermediateMarker);
-			simpleModel.addOverlay(new Marker(intermediateMarker, sheduleDto.getId().toString(),
-					new MarkerInfo(sheduleDto.getId().toString(), 3),
-					"http://maps.google.com/mapfiles/ms/micons/yellow-dot.png"));
 
+			int pathNum = 0;
+			double additive = 1 / part;
+			for (double i = 0; i < 1; i = i + additive) {
+				double latitude = sheduleDto.getPortFrom().getLatitude() * (1 - i)
+						+ sheduleDto.getPortTo().getLatitude() * i;
+				double longitude = sheduleDto.getPortFrom().getLongitude() * (1 - i)
+						+ sheduleDto.getPortTo().getLongitude() * i;
+				pathNum++;
+			
+				intermediateMarker = new LatLng(latitude, longitude);
+				polyline.getPaths().add(intermediateMarker);
+				simpleModel.addOverlay(new Marker(intermediateMarker, sheduleDto.getId().toString(),
+						new MarkerInfo(sheduleDto.getId().toString(), pathNum),
+						"http://digital.designnewengland.com/images/navbar/autoPlayStop.png"));
+			}
+
+	
 			polyline.getPaths().add(portToLatLng);
 			polyline.setId(sheduleDto.getId().toString());
 			polyline.setStrokeWeight(5);
@@ -113,39 +107,21 @@ public class MarkerSelectionView {
 				premarker.setDraggable(true);
 			}
 		}
+	
 	}
-
-/*	private void rec(LatLng portFromLatLng,LatLng portToLatLng) {
-		double intermediateLat = (portToLatLng.getLat() + portFromLatLng.getLat()) / 2;
-		double intermediateLng = (portToLatLng.getLng() + portFromLatLng.getLng()) / 2;
-		
-	}
-*/
+	
 
 
-	public void onPointSelect(PointSelectEvent event) {
-		LatLng latlng = event.getLatLng();
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
-				event.getSource().toString() + "\nPoint Selected Lat:" + latlng.getLat() + ", Lng:" + latlng.getLng(),
-				null));
-	}
 
 	public void onMarkerDrag(MarkerDragEvent event) {
 		LOGGER.info("onMarkerDrag");
 		marker = event.getMarker();
 
 		for (Polyline polyline : simpleModel.getPolylines()) {
-
 			MarkerInfo markerInfo = (MarkerInfo) marker.getData();
-			LOGGER.info(markerInfo);
-
-			if (polyline.getData().equals(markerInfo.getId())) {
-				LOGGER.info(markerInfo.getPathNum());
-
-
-
-				polyline.getPaths().set(markerInfo.getPathNum(), new LatLng(marker.getLatlng().getLat(), marker.getLatlng().getLng()));
-
+			if (polyline.getData().equals(markerInfo.getPolylineId())) {
+				polyline.getPaths().set(markerInfo.getPathNum(),
+						new LatLng(marker.getLatlng().getLat(), marker.getLatlng().getLng()));
 			}
 		}
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
