@@ -6,28 +6,19 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:general="http://java.sun.com/jsf/composite/pages/general"
-	>
+	xmlns:general="http://java.sun.com/jsf/composite/pages/general">
 
 <h:head>
 
 </h:head>
 <h:body>
+	<ui:composition template="/resources/pages/template/user.xhtml">
+		<ui:define name="navigation">
 
-<p:layout style="min-width:400px;min-height:100%">
-		<p:layoutUnit position="center">
-	<p:panelGrid style="height:100%;border:0;width:100%;text-align:center;">
+		</ui:define>
+		<ui:define name="main">
 
-		<f:facet name="header">
-			<p:row>
-				<p:column colspan="2">
-					<h1>header</h1>
-				</p:column>
-			</p:row>
-		</f:facet>
-
-		<p:row>
-			<p:column colspan="2">
+			<div style="margin: 0 auto; text-align: center;">
 				<h:form>
 					<p:outputLabel value="Username" />
 					<br></br>
@@ -43,8 +34,9 @@
 					<br></br>
 					<h:message for="password" style="color:red"></h:message>
 					<br></br>
-					<p:commandButton action="resources/pages/vessel?faces-redirect=true" immediate="true" update="@form"
-						value="Login" ajax="false"></p:commandButton>
+					<p:commandButton
+						action="resources/pages/vessel?faces-redirect=true"
+						immediate="true" update="@form" value="Login" ajax="false"></p:commandButton>
 
 					<p:growl id="growl" showDetail="true" sticky="true" />
 					<br></br>
@@ -53,29 +45,16 @@
 					<br></br>
 					<p:commandLink value="Don't have an account?"
 						action="registration.xhtml?faces-redirect=true" immediate="true"></p:commandLink>
-					<br></br>
-					<br></br>
-					<br></br>
-					<br></br>
-			
+				
+
 				</h:form>
-			</p:column>
-		</p:row>
 
-		<br></br>
-		<br></br>
-		<br></br>
+			</div>
 
 
 
-		<f:facet name="footer">
-			<general:footer/>
-		</f:facet>
-
-
-	</p:panelGrid>
-	</p:layoutUnit>
-	</p:layout>
+		</ui:define>
+	</ui:composition>
 
 </h:body>
 </html>

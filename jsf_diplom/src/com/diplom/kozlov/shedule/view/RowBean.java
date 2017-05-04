@@ -24,5 +24,7 @@ public class RowBean {
 	@Setter
 	@Getter
 	private String vesselType;
-
+	@Setter
+	@Getter
+	private Integer numPoints;
 }

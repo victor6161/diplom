@@ -16,6 +16,7 @@ public class Mapper {
 		rowBean.setDateFrom(route.getDateFrom());
 		rowBean.setDateTo(route.getDateTo());
 		rowBean.setVesselType(route.getVesselDto().getType());
+		rowBean.setNumPoints(route.getNumPoints());
 		return rowBean;
 	}
 

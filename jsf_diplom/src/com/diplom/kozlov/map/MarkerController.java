@@ -32,7 +32,7 @@ import lombok.Getter;
 
 @ManagedBean
 @ViewScoped
-public class MarkerSelectionView {
+public class MarkerController {
 	@Getter
 	private MapModel simpleModel;
 	private static final Logger LOGGER = Logger.getLogger(PortController.class);
@@ -96,7 +96,7 @@ public class MarkerSelectionView {
 				polyline.getPaths().add(intermediateMarker);
 				//getPathNum используется при set
 				simpleModel.addOverlay(new Marker(intermediateMarker, sheduleDto.getId().toString(),
-						new MarkerInfo(markerDto.getId(), sheduleDto.getId().toString(),markerDto.getPathNum() ),
+						new MarkerBean(markerDto.getId(), sheduleDto.getId().toString(),markerDto.getPathNum() ),
 						"http://digital.designnewengland.com/images/navbar/autoPlayStop.png"));
 			}
 
@@ -124,7 +124,7 @@ public class MarkerSelectionView {
 		marker = event.getMarker();
 
 		for (Polyline polyline : simpleModel.getPolylines()) {
-			MarkerInfo markerInfo = (MarkerInfo) marker.getData();
+			MarkerBean markerInfo = (MarkerBean) marker.getData();
 			if (polyline.getData().equals(markerInfo.getPolylineId())) {
 				polyline.getPaths().set(markerInfo.getPathNum(),
 						new LatLng(marker.getLatlng().getLat(), marker.getLatlng().getLng()));

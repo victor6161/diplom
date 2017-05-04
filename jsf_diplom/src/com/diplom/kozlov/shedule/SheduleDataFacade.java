@@ -9,7 +9,7 @@ import org.primefaces.model.map.Marker;
 import org.primefaces.model.map.Polyline;
 
 import com.diplom.kozlov.db.dto.SheduleDto;
-import com.diplom.kozlov.map.MarkerInfo;
+import com.diplom.kozlov.map.MarkerBean;
 import com.diplom.kozlov.shedule.view.AddBean;
 import com.diplom.kozlov.shedule.view.RowBean;
 import com.diplom.kozlov.vessel.VesselController;
