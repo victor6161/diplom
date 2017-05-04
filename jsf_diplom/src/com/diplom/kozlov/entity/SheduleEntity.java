@@ -69,11 +69,11 @@ public class SheduleEntity implements Serializable {
 	  @Setter
 	  @Getter
 	  @Column(name="number_points")
-	  private Integer numPoints;
+	  private int numPoints;
 	  
 	  @Setter
 	  @Getter
-	  @OneToMany(cascade = CascadeType.ALL)
+	  @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	  @JoinColumn(name = "route_id")
 	  private List<MarkerEntity> markersEntity;
 	  

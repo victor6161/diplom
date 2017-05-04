@@ -13,7 +13,8 @@ public class MarkerInfo {
 	@Getter
 	private String polylineId;
 
-	public MarkerInfo(String polylineid, int i) {
+	public MarkerInfo(Integer id,String polylineid, int i) {
+		this.id = id;
 		this.polylineId = polylineid;
 		this.pathNum = i;
 	}

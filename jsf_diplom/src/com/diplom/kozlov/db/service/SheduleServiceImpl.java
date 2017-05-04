@@ -30,11 +30,12 @@ public class SheduleServiceImpl implements SheduleService {
 	
 	
 	private List<MarkerDto> listPoints(SheduleDto sheduleDto) {
+		LOGGER.info("listPoints");
 		List<MarkerDto> markerDto = new ArrayList<>();
 		double numPoints = (double) sheduleDto.getNumPoints();
 		int pathNum = 0;
 		double additive = 1 / numPoints;
-		LOGGER.info("!!!!!!!!!!!!!!" + additive);
+		
 		for (double i = 0; i < 1; i = i + additive) {
 			double latitude = sheduleDto.getPortFrom().getLatitude() * (1 - i)
 					+ sheduleDto.getPortTo().getLatitude() * i;
@@ -49,7 +50,9 @@ public class SheduleServiceImpl implements SheduleService {
 
 	@Override
 	public List<SheduleDto> getShedule() {
+		
 		List<SheduleEntity> sheduleEntity = sheduleDao.getShedule();
+		LOGGER.info("!!!!!!!!!!!!!!" + sheduleEntity);
 		List<SheduleDto> sheduleDto = new ArrayList<>();
 		for(SheduleEntity shedule:sheduleEntity){
 			sheduleDto.add(mapper.sheduleEntityToDto(shedule));

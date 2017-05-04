@@ -6,6 +6,9 @@ import lombok.Setter;
 public class MarkerDto {
 	@Setter
 	@Getter
+	private Integer id;
+	@Setter
+	@Getter
 	private double latitude;
 	@Setter
 	@Getter
@@ -14,10 +17,22 @@ public class MarkerDto {
 	@Getter
 	private int pathNum;
 	
-	public MarkerDto(double latitude, double longitude, int pathNum) {
+	public MarkerDto(Integer id,double latitude, double longitude, int pathNum) {
+		this.id = id ;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.pathNum = pathNum;
+	}
+	public MarkerDto(double latitude, double longitude, int pathNum) {
+		
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.pathNum = pathNum;
+	}
+	public MarkerDto(Integer id, double lat, double lng) {
+		this.id = id;
+		this.latitude = lat;
+		this.longitude = lng;
 	}
 
 }

@@ -2,7 +2,7 @@ package com.diplom.kozlov.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -32,6 +32,12 @@ public class MarkerEntity {
 		this.pathNum = pathNum;
 	}
 	
+	public MarkerEntity(Integer id, double latitude, double longitude) {
+		this.id = id;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+
 	@Id
 	@GeneratedValue
 	@Setter

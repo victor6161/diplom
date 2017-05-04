@@ -12,7 +12,7 @@ import javax.faces.context.FacesContext;
 import org.apache.log4j.Logger;
 import org.primefaces.event.map.MarkerDragEvent;
 
-import org.primefaces.event.map.PointSelectEvent;
+
 import org.primefaces.model.map.DefaultMapModel;
 import org.primefaces.model.map.LatLng;
 import org.primefaces.model.map.MapModel;
@@ -20,8 +20,10 @@ import org.primefaces.model.map.Marker;
 
 import org.primefaces.model.map.Polyline;
 
+import com.diplom.kozlov.db.dto.MarkerDto;
 import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.db.dto.SheduleDto;
+import com.diplom.kozlov.db.service.MarkerServiceImpl;
 import com.diplom.kozlov.db.service.PortServiceImpl;
 import com.diplom.kozlov.db.service.SheduleServiceImpl;
 import com.diplom.kozlov.port.PortController;
@@ -37,8 +39,10 @@ public class MarkerSelectionView {
 	private PortServiceImpl portService = new PortServiceImpl();
 	private SheduleServiceImpl sheduleService = new SheduleServiceImpl();
 	private Marker marker;
+	private List<MarkerDto> markersForSave = new ArrayList<MarkerDto>();
+	private MarkerServiceImpl markerServiceImpl = new MarkerServiceImpl();
 
-	private final double part = 8;
+
 	
 	
 
@@ -67,8 +71,11 @@ public class MarkerSelectionView {
 	}
 	
 	private void initRoutes(){
+		
 		List<SheduleDto> sheduleAll = sheduleService.getShedule();
 		LatLng intermediateMarker = null;
+		
+		
 		for (SheduleDto sheduleDto : sheduleAll) {
 			LatLng portFromLatLng = new LatLng(sheduleDto.getPortFrom().getLatitude(),
 					sheduleDto.getPortFrom().getLongitude());
@@ -77,20 +84,19 @@ public class MarkerSelectionView {
 
 			Polyline polyline = new Polyline();
 			polyline.getPaths().add(portFromLatLng);
-
-			int pathNum = 0;
-			double additive = 1 / part;
-			for (double i = 0; i < 1; i = i + additive) {
-				double latitude = sheduleDto.getPortFrom().getLatitude() * (1 - i)
-						+ sheduleDto.getPortTo().getLatitude() * i;
-				double longitude = sheduleDto.getPortFrom().getLongitude() * (1 - i)
-						+ sheduleDto.getPortTo().getLongitude() * i;
-				pathNum++;
+			
+	
+			for (MarkerDto markerDto:sheduleDto.getMarkersDto()) {
+				double latitude = markerDto.getLatitude();
+						
+				double longitude = markerDto.getLongitude();
+				
 			
 				intermediateMarker = new LatLng(latitude, longitude);
 				polyline.getPaths().add(intermediateMarker);
+				//getPathNum используется при set
 				simpleModel.addOverlay(new Marker(intermediateMarker, sheduleDto.getId().toString(),
-						new MarkerInfo(sheduleDto.getId().toString(), pathNum),
+						new MarkerInfo(markerDto.getId(), sheduleDto.getId().toString(),markerDto.getPathNum() ),
 						"http://digital.designnewengland.com/images/navbar/autoPlayStop.png"));
 			}
 
@@ -122,10 +128,19 @@ public class MarkerSelectionView {
 			if (polyline.getData().equals(markerInfo.getPolylineId())) {
 				polyline.getPaths().set(markerInfo.getPathNum(),
 						new LatLng(marker.getLatlng().getLat(), marker.getLatlng().getLng()));
+				markersForSave.add(new MarkerDto(markerInfo.getId(),marker.getLatlng().getLat(), marker.getLatlng().getLng()));
 			}
 		}
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
 				"Marker Dragged Lat:" + marker.getLatlng().getLat() + ", Lng:" + marker.getLatlng().getLng(), null));
+	}
+	
+	public void save(){
+		LOGGER.info("save");
+		markerServiceImpl.update(markersForSave);
+		
+		
+		
 	}
 
 }

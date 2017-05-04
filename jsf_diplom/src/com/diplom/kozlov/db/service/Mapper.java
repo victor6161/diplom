@@ -73,6 +73,8 @@ public class Mapper {
 		sheduleDto.setDateFrom(sheduleEntity.getDateFrom());
 		sheduleDto.setDateTo(sheduleEntity.getDateTo());
 		sheduleDto.setVesselDto( vesselEntityToDto(sheduleEntity.getVessel()));
+		sheduleDto.setNumPoints(sheduleEntity.getNumPoints());
+		sheduleDto.setMarkersDto(markersEntityToDto(sheduleEntity.getMarkersEntity()));
 		return sheduleDto;
 	}
 
@@ -108,6 +110,17 @@ public class Mapper {
 			markersEntity.add(new MarkerEntity(latitude,longitude,pathNum));
 		}
 		return markersEntity;
+	}
+	private List<MarkerDto> markersEntityToDto(List<MarkerEntity> markersEntity) {
+		List<MarkerDto> markersDto = new ArrayList<>();
+		for(MarkerEntity markerEntity : markersEntity){
+			Integer id = markerEntity.getId();
+			double latitude = markerEntity.getLatitude();
+			double longitude = markerEntity.getLongitude();
+			int pathNum = markerEntity.getPathNum();
+			markersDto.add(new MarkerDto(id,latitude,longitude,pathNum));
+		}
+		return markersDto;
 	}
 	
 }
