@@ -50,9 +50,9 @@ public class SheduleServiceImpl implements SheduleService {
 
 	@Override
 	public List<SheduleDto> getShedule() {
-		
+		LOGGER.info("getShedule");
 		List<SheduleEntity> sheduleEntity = sheduleDao.getShedule();
-		LOGGER.info("!!!!!!!!!!!!!!" + sheduleEntity);
+		
 		List<SheduleDto> sheduleDto = new ArrayList<>();
 		for(SheduleEntity shedule:sheduleEntity){
 			sheduleDto.add(mapper.sheduleEntityToDto(shedule));

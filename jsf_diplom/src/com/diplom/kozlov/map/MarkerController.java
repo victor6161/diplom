@@ -11,8 +11,7 @@ import javax.faces.context.FacesContext;
 
 import org.apache.log4j.Logger;
 import org.primefaces.event.map.MarkerDragEvent;
-
-
+import org.primefaces.event.map.OverlaySelectEvent;
 import org.primefaces.model.map.DefaultMapModel;
 import org.primefaces.model.map.LatLng;
 import org.primefaces.model.map.MapModel;
@@ -38,6 +37,7 @@ public class MarkerController {
 	private static final Logger LOGGER = Logger.getLogger(PortController.class);
 	private PortServiceImpl portService = new PortServiceImpl();
 	private SheduleServiceImpl sheduleService = new SheduleServiceImpl();
+	@Getter
 	private Marker marker;
 	private List<MarkerDto> markersForSave = new ArrayList<MarkerDto>();
 	private MarkerServiceImpl markerServiceImpl = new MarkerServiceImpl();
@@ -116,7 +116,9 @@ public class MarkerController {
 	
 	}
 	
-
+	  public void onMarkerSelect(OverlaySelectEvent event) {
+	        marker = (Marker) event.getOverlay();
+	    }
 
 
 	public void onMarkerDrag(MarkerDragEvent event) {

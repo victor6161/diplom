@@ -30,8 +30,11 @@
 								<p:gmap id="map" center="59.9386300, 30.3141300" zoom="8" type="HYBRID"
 									style="height:600px"
 									model="#{markerController.simpleModel}" widgetVar="pmap">
-									<p:ajax event="markerDrag"
-										listener="#{markerController.onMarkerDrag}" />
+									<p:ajax event="markerDrag" listener="#{markerController.onMarkerDrag}" />
+											<p:ajax event="overlaySelect" listener="#{markerController.onMarkerDrag}" />
+										<p:outputPanel style="text-align: center; display: block; margin: auto">
+											<h:outputText value="#{markerController.marker.title}" />
+										</p:outputPanel>
 								</p:gmap>
 							</p:column>
 
