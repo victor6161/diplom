@@ -6,8 +6,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:port="http://java.sun.com/jsf/composite/pages/port"
-	>
+	xmlns:port="http://java.sun.com/jsf/composite/pages/port">
 
 <h:head>
 </h:head>
@@ -15,35 +14,49 @@
 	<ui:composition template="/resources/pages/template/user.xhtml">
 		<ui:define name="main">
 			<div id="main" style="height: 100%">
-			<p:dataTable id="portTableForm" var="port" 
-				value="#{portController.mainBean.rowsBean}"
-				paginator="true" lazy="true"
-				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-				rowsPerPageTemplate="5,10,15"
-				>
 
-				<p:column headerText="id Порта">
-					<h:outputText value="#{port.id}"></h:outputText>
-				</p:column>
+				<p:panelGrid column="2" style="height:100%">
+					<p:row>
+						<p:column>
+							<p:dataTable id="portTableForm" var="port"
+								value="#{portController.mainBean.rowsBean}" paginator="true"
+								lazy="true"
+								paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+								rowsPerPageTemplate="5,10,15">
 
-				<p:column headerText="Название порта">
-					<h:outputText value="#{port.name}"></h:outputText>
-				</p:column>
-				<p:column headerText="Название страны">
-					<h:outputText value="#{port.country}"></h:outputText>
-				</p:column>
-				<f:facet name="footer">
-					<h:form>
-						<p:commandButton icon="ui-icon-add" value="Добавить Порт"
-							oncomplete="PF('addPortWidget').show();"></p:commandButton>
-					</h:form>
-				</f:facet>
-			</p:dataTable>
-			<port:addPort/>
+								<p:column headerText="id Порта">
+									<h:outputText value="#{port.id}"></h:outputText>
+								</p:column>
+
+								<p:column headerText="Название порта">
+									<h:outputText value="#{port.name}"></h:outputText>
+								</p:column>
+								<p:column headerText="Название страны">
+									<h:outputText value="#{port.country}"></h:outputText>
+								</p:column>
+								<f:facet name="footer">
+									<h:form>
+										<p:commandButton icon="ui-icon-add" value="Добавить Порт"
+											oncomplete="PF('addPortWidget').show();"></p:commandButton>
+									</h:form>
+								</f:facet>
+							</p:dataTable>
+						</p:column>
+						<p:column>
+							<p:chart type="bar" model="#{chartPort.barModel}"
+								style="width:400px;height:300px" />
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+				<port:addPort />
 			</div>
+
+
+
 		</ui:define>
+
 		<ui:define name="add">
-			<port:addPort/>
+			<port:addPort />
 		</ui:define>
 	</ui:composition>
 
