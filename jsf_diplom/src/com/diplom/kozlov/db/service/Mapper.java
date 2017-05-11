@@ -7,11 +7,13 @@ import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.MarkerDto;
 import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.db.dto.SheduleDto;
+import com.diplom.kozlov.db.dto.UserDto;
 import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.entity.CountryEntity;
 import com.diplom.kozlov.entity.MarkerEntity;
 import com.diplom.kozlov.entity.PortEntity;
 import com.diplom.kozlov.entity.SheduleEntity;
+import com.diplom.kozlov.entity.UserEntity;
 import com.diplom.kozlov.entity.VesselEntity;
 
 public class Mapper {
@@ -121,6 +123,23 @@ public class Mapper {
 			markersDto.add(new MarkerDto(id,latitude,longitude,pathNum));
 		}
 		return markersDto;
+	}
+
+	public UserEntity userDtoToEntity(UserDto userDto) {
+		UserEntity userEntity = new UserEntity();
+		userEntity.setFirstname(userDto.getFirstname());
+		userEntity.setLastname(userDto.getLastname());
+		userEntity.setLogin(userDto.getLogin());
+		userEntity.setPassword(userDto.getPassword());
+		userEntity.setRoleId(1);
+		return userEntity;
+	}
+
+	public UserDto userEntityToDto(UserEntity user) {
+		UserDto userDto = new UserDto();
+		userDto.setLogin(user.getLogin());
+		userDto.setPassword(user.getPassword());
+		return userDto;
 	}
 	
 }

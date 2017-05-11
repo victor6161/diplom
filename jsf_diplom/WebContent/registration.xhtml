@@ -5,88 +5,127 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:writer="http://java.sun.com/jsf/composite/pages/writer"
-	xmlns:general="http://java.sun.com/jsf/composite/pages/general">
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 
 </h:head>
 <h:body>
-	<p:panelGrid columns="1" cellpadding="5"
-		style="height:100%;border:0;width:100%;text-align:center;">
-		<f:facet name="header">
-			<general:navigation />
+	<ui:composition template="/resources/pages/template/user.xhtml">
+		<ui:define name="navigation">
 
-		</f:facet>
+		</ui:define>
+		<ui:define name="main">
 
-		<h:form>
-			<p:row>
-				<p:column>
+			<div style="margin: 0 auto; text-align: center; font-size: 15px;">
 
-					<p:outputLabel value="Enter Name" for="name" />
 
-					<p:inputText id="name"
-						value="#{applicationBean.registrationBean.name}"></p:inputText>
+				<h:form>
+					<p:outputLabel value="Имя*" />
+					<br></br>
+					<p:inputText id="username"
+						value="#{securityController.mainCredentialsBean.registrationBean.firstname}"
+						required="true" requiredMessage="field is empty"></p:inputText>
+					<br></br>
+					<h:message for="username" style="color:red"></h:message>
+					<br></br>
 
+					<p:outputLabel value="Фамилия*" />
 					<br></br>
+					<p:inputText id="last_name"
+						value="#{securityController.mainCredentialsBean.registrationBean.lastname}"
+						required="true" requiredMessage="field is empty"></p:inputText>
 					<br></br>
-					<p:outputLabel value="Enter Surname" for="surname" />
-					<p:inputText id="surname"
-						value="#{applicationBean.registrationBean.surname}"></p:inputText>
+					<h:message for="username" style="color:red"></h:message>
 					<br></br>
+
+					<p:outputLabel value="Компания*" />
 					<br></br>
-					<p:outputLabel value="Enter Login" />
-					<p:inputText id="login"
-						value="#{applicationBean.registrationBean.login}"
-						validatorMessage="login must consists from 5 to 10 letters">
-						<f:validateLength minimum="5" maximum="10" />
-					</p:inputText>
+					<p:inputText id="company"
+						value="#{securityController.mainCredentialsBean.registrationBean.company}"
+						required="true" requiredMessage="field is empty"></p:inputText>
 					<br></br>
-					<h:message for="login" style="color:red" />
+					<h:message for="company" style="color:red"></h:message>
 					<br></br>
+
+					<p:outputLabel value="Страна*" />
 					<br></br>
-					<p:outputLabel for="pwd1" value="Enter Password" />
-					<p:password id="pwd1"
-						value="#{applicationBean.registrationBean.password}" match="pwd2"
-						label="Password 1" required="true" feedback="true"
-						weakLabel="weak" goodLabel="good" strongLabel="you are like man"
-						requiredMessage="field is empty" />
+					<p:inputText id="country"
+						value="#{securityController.mainCredentialsBean.registrationBean.country}"
+						required="true" requiredMessage="field is empty"></p:inputText>
 					<br></br>
+					<h:message for="country" style="color:red"></h:message>
 					<br></br>
-					<p:outputLabel for="pwd2" value="Repeat Password" />
-					<p:password id="pwd2"
-						value="#{applicationBean.registrationBean.password}"
-						label="Password 2" required="true"
-						requiredMessage="field is empty" />
+
+					<p:outputLabel value="Телефонный номер" />
 					<br></br>
+					<p:inputText id="phone"
+						value="#{securityController.mainCredentialsBean.registrationBean.phone}"
+						required="true" requiredMessage="field is empty"></p:inputText>
 					<br></br>
-					<p:outputLabel value="Enter Email" />
+					<h:message for="phone" style="color:red"></h:message>
+					<br></br>
+
+					<p:outputLabel value="E-mail" />
+					<br></br>
 					<p:inputText id="email"
-						value="#{applicationBean.registrationBean.email}" required="true"
-						requiredMessage="field is empty">
-						<f:validator
-							validatorId="com.iba.kozlov.web.validator.EmailValidator" />
-					</p:inputText>
+						value="#{securityController.mainCredentialsBean.registrationBean.email}"
+						required="true" requiredMessage="field is empty"></p:inputText>
 					<br></br>
 					<h:message for="email" style="color:red"></h:message>
 					<br></br>
+					
+					<p:outputLabel value="Введите ваш персональный id" />
+					<br></br>
+					<p:inputText id="login"
+						value="#{securityController.mainCredentialsBean.registrationBean.login}"
+						required="true" requiredMessage="field is empty"></p:inputText>
+					<br></br>
+					<h:message for="login" style="color:red"></h:message>
+					<br></br>
+
+					<p:outputLabel value="Введите пароль" />
+					<br></br>
+					<p:password id="password"
+						value="#{securityController.mainCredentialsBean.registrationBean.password}"
+						required="true" requiredMessage="field is empty" />
+					<br></br>
+					<h:message for="password" style="color:red"></h:message>
+					<br></br>
+
+					<p:outputLabel value="Повторите пароль" />
+					<br></br>
+					<p:password id="repeat_password"
+						value="#{securityController.mainCredentialsBean.registrationBean.repeatPassword}"
+						required="true" requiredMessage="field is empty" />
+					<br></br>
+					<h:message for="repeat_password" style="color:red"></h:message>
+					<br></br>
 					<p:commandButton action="#{securityController.registration}"
-						value="registration" update="@form"></p:commandButton>
+						update="@form" value="registration" ajax="false"></p:commandButton>
+
+
+
+					<p:growl id="growl" showDetail="true" sticky="true" />
+
+
+
 					<br></br>
 					<br></br>
-				
-						<p:commandLink value="Have an account?" action="login" immediate="true"></p:commandLink>
-				
-				</p:column>
-			</p:row>
+					<br></br>
+					<br></br>
+					<p:commandLink value="Have an account?"
+						action="login.xhtml?faces-redirect=true" immediate="true"></p:commandLink>
+				</h:form>
 
-		</h:form>
 
-		<f:facet name="footer">
-			<general:footer />
-		</f:facet>
-	</p:panelGrid>
+			</div>
+
+
+
+		</ui:define>
+	</ui:composition>
+
 
 </h:body>
 </html>

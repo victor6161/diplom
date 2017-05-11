@@ -18,14 +18,14 @@
 		<p:column colspan="4"> 
 			<h:form>
 				<p:tabMenu activeIndex="#{param.i}">	
-					<p:menuitem value="Карта с расположением судов"
-						outcome="map.xhtml" icon="ui-icon-star">
-						 <f:param name="i" value="0" />
-					</p:menuitem>
-
 					<p:menuitem value="Корабли"
 						outcome="vessel.xhtml" icon="ui-icon-star">
 						 <f:param name="i" value="1" />
+					</p:menuitem>
+					
+					<p:menuitem value="Карта с расположением судов"
+						outcome="map.xhtml" icon="ui-icon-star">
+						 <f:param name="i" value="0" />
 					</p:menuitem>
 					
 					<p:menuitem value="Порты"
@@ -40,6 +40,10 @@
 					
 				</p:tabMenu>
 			</h:form>
+					<h:form>
+						<p>Welcome #{securityController.mainCredentialsBean.loginBean.login}</p>
+						<p:commandLink action="#{securityController.logout}" value="Logout" ajax="false"></p:commandLink>
+					</h:form>
 		</p:column>
 	</p:row>
 </composite:implementation>

@@ -26,4 +26,5 @@ public class RowBean {
 	@Setter
 	@Getter
 	private Integer fuelConsumption;
+
 }

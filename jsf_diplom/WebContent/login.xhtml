@@ -20,23 +20,23 @@
 
 			<div style="margin: 0 auto; text-align: center;">
 				<h:form>
-					<p:outputLabel value="Username" />
+					<p:outputLabel value="Логин" />
 					<br></br>
-					<p:inputText id="username" value="" required="true"
+					<p:inputText id="username" value="#{mainCredentialsBean.loginBean.login}" required="true"
 						requiredMessage="field is empty"></p:inputText>
 					<br></br>
 					<h:message for="username" style="color:red"></h:message>
 					<br></br>
-					<p:outputLabel value="Password" />
+					<p:outputLabel value="Пароль" />
 					<br></br>
-					<p:password id="password" value="" required="true"
+					<p:password id="password" value="#{mainCredentialsBean.loginBean.password}" required="true"
 						requiredMessage="field is empty"></p:password>
 					<br></br>
 					<h:message for="password" style="color:red"></h:message>
 					<br></br>
 					<p:commandButton
-						action="resources/pages/vessel?faces-redirect=true"
-						immediate="true" update="@form" value="Login" ajax="false"></p:commandButton>
+						action="#{securityController.validateUsernamePassword}"
+						 update="@form" value="Login" ajax="false"></p:commandButton>
 
 					<p:growl id="growl" showDetail="true" sticky="true" />
 					<br></br>
