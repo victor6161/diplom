@@ -21,33 +21,45 @@
 
 			<f:view contentType="text/html">
 
-				
 
-					<p:panelGrid columns="2">
-					<h:form>
+
+				<p:panelGrid columns="2">
+					
 						<p:row>
 							<p:column style="width:100%">
-								<p:gmap id="map" center="59.9386300, 30.3141300" zoom="8" type="HYBRID"
-									style="height:600px"
+							<h:form>
+								<p:gmap id="map" center="59.9386300, 30.3141300" zoom="8"
+									type="HYBRID" style="height:600px"
 									model="#{markerController.simpleModel}" widgetVar="pmap">
-									<p:ajax event="markerDrag" listener="#{markerController.onMarkerDrag}" />
-											<p:ajax event="overlaySelect" listener="#{markerController.onMarkerDrag}" />
+									<p:ajax event="markerDrag"
+										listener="#{markerController.onMarkerDrag}" />
+									<p:ajax event="overlaySelect" listener="#{markerController.onMarkerSelect}" />
+							
+
+									<p:gmapInfoWindow id="infoWindow">
 										<p:outputPanel style="text-align: center; display: block; margin: auto">
-											<h:outputText value="#{markerController.marker.title}" />
+											<br />
+											<h:outputText value="#{markerController.marker.data}" />
+
 										</p:outputPanel>
+									</p:gmapInfoWindow>
 								</p:gmap>
+								</h:form>
 							</p:column>
 
 
 							<p:column>
-								<p:commandButton value="сохранять" update=":#{p:component('map')}"
-									actionListener="#{markerController.save}"></p:commandButton>
+							<h:form>
+								<p:commandButton value="сохранять"
+									update=":#{p:component('map')}"
+									actionListener="#{markerController.save}"/>
+							</h:form>
 							</p:column>
 						</p:row>
-						</h:form>
-					</p:panelGrid>
+					
+				</p:panelGrid>
 
-				
+
 			</f:view>
 
 		</ui:define>

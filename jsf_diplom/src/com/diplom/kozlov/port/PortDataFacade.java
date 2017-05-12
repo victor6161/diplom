@@ -14,6 +14,7 @@ import com.diplom.kozlov.port.view.RowBean;
 
 
 
+
 public class PortDataFacade {
 	
 	private static final Logger LOGGER = Logger.getLogger(PortDataFacade.class);
@@ -45,5 +46,17 @@ public class PortDataFacade {
 		LOGGER.info("onAddOpen");
 		
 	}
+	public void onEditOpen() {
+		LOGGER.info("onEditOpen");
+		
+		PortDto portDto = portController.getMapper().rowBeanToPortDto(portController.getMainBean().getSelectedPort());
+		portController.getMainBean().setEditorBean(portController.getMapper().portDtoToEditorBean(portDto));	
+	}
+/*	public void edit() {
+		LOGGER.info("edit");
+		EditorBean addBean = portController.getMainBean().getSelectedPort();
+		PortDto portDto = portController.getMapper().addBeanToDto(addBean);
+		portController.getPortService().update(portDto);
+	}*/
 
 }

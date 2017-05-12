@@ -3,6 +3,7 @@ package com.diplom.kozlov.port;
 
 import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.port.view.AddBean;
+import com.diplom.kozlov.port.view.EditorBean;
 import com.diplom.kozlov.port.view.RowBean;
 
 public class Mapper {
@@ -24,6 +25,18 @@ public class Mapper {
 		portDto.setLatitude(addPort.getLatitude());
 		portDto.setLongitude(addPort.getLongitude());
 		return portDto;
+	}
+
+	public PortDto rowBeanToPortDto(RowBean selectedPort) {
+		PortDto portDto = new PortDto();
+		portDto.setName(selectedPort.getName());
+		return portDto;
+	}
+
+	public EditorBean portDtoToEditorBean(PortDto portDto) {
+		EditorBean editorBean = new EditorBean();
+		editorBean.setName(portDto.getName());
+		return editorBean;
 	}
 	
 	

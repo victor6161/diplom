@@ -20,7 +20,13 @@ public class MainBean {
 	@Setter
 	@Getter
 	private AddBean addBean;
+	@Setter
+	@Getter
+	private EditorBean editorBean;
 	
+	@Setter
+	@Getter
+	private RowBean selectedPort;
 	
 	public MainBean(){
 		rowsBean = new ArrayList<>();

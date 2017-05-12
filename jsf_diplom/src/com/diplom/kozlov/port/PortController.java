@@ -1,12 +1,9 @@
 package com.diplom.kozlov.port;
 
-
-
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-
 
 import org.primefaces.context.RequestContext;
 
@@ -21,14 +18,14 @@ import lombok.Setter;
 @ManagedBean(name = "portController", eager = true)
 @SessionScoped
 public class PortController {
-	
-	private PortDataFacade facade = new PortDataFacade(this); 
-	
+
+	private PortDataFacade facade = new PortDataFacade(this);
+
 	private static final Logger LOGGER = Logger.getLogger(PortController.class);
 	@Setter
 	@Getter
 	private Mapper mapper = new Mapper();
-	
+
 	@Setter
 	@Getter
 	@ManagedProperty(value = "#{mainBeanPort}")
@@ -36,25 +33,27 @@ public class PortController {
 	@Setter
 	@Getter
 	private PortServiceImpl portService = new PortServiceImpl();
-	
+
 	@PostConstruct
-	private void init(){
+	private void init() {
 		LOGGER.info("init");
 		facade.init();
 	}
-	
+
 	public void edit() {
-		
+
 	}
+
 	public void onEditOpen() {
-			
+		facade.onEditOpen();
 	}
 
 	public void add() {
 		facade.add();
 		RequestContext.getCurrentInstance().execute("PF('addPortWidget').hide()");
 	}
-	public void onAddOpen(){
+
+	public void onAddOpen() {
 		facade.onAddOpen();
 	}
 

@@ -25,6 +25,7 @@ import com.diplom.kozlov.db.dto.SheduleDto;
 import com.diplom.kozlov.db.service.MarkerServiceImpl;
 import com.diplom.kozlov.db.service.PortServiceImpl;
 import com.diplom.kozlov.db.service.SheduleServiceImpl;
+import com.diplom.kozlov.map.view.MarkerPortBean;
 import com.diplom.kozlov.port.PortController;
 
 import lombok.Getter;
@@ -58,16 +59,17 @@ public class MarkerController {
 	
 	private void initPorts(){
 		List<PortDto> portDto = portService.getPorts();
-		List<LatLng> coord1 = new ArrayList<>();
+		
+		LatLng latlng ;
 		for (PortDto port : portDto) {
 			if (port.getLatitude() != null && port.getLongitude() != null) {
-				coord1.add(new LatLng(port.getLatitude(), port.getLongitude()));
+				
+				latlng = new LatLng(port.getLatitude(), port.getLongitude()); 
+				simpleModel.addOverlay(new Marker(latlng,port.getName(),new MarkerPortBean()));
 			}
 		}
+		
 
-		for (LatLng coord : coord1) {
-			simpleModel.addOverlay(new Marker(coord, "Konyaalti"));
-		}
 	}
 	
 	private void initRoutes(){
@@ -136,6 +138,7 @@ public class MarkerController {
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
 				"Marker Dragged Lat:" + marker.getLatlng().getLat() + ", Lng:" + marker.getLatlng().getLng(), null));
 	}
+
 	
 	public void save(){
 		LOGGER.info("save");
