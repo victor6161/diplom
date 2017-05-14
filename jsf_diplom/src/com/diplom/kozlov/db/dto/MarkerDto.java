@@ -1,9 +1,11 @@
 package com.diplom.kozlov.db.dto;
 
+import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 
-public class MarkerDto {
+public class MarkerDto implements Serializable {
 	@Setter
 	@Getter
 	private Integer id;

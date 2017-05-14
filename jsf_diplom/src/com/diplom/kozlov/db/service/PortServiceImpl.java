@@ -26,5 +26,9 @@ public class PortServiceImpl implements PortService {
 		portDao.save(portEntity);
 		
 	}
+	public void update(PortDto portDto) {
+		PortEntity portEntity = mapper.portDtoToEntity(portDto);
+		portDao.update(portEntity);
+	}
 
 }

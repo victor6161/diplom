@@ -1,5 +1,6 @@
 package com.diplom.kozlov.db.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
-public class SheduleDto {
+public class SheduleDto implements Serializable {
 	@Override
 	public String toString() {
 		return "SheduleDto [id=" + id + ", portFrom=" + portFrom + ", portTo=" + portTo + ", dateTo=" + dateTo

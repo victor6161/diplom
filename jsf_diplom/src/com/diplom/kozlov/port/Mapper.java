@@ -1,6 +1,8 @@
 package com.diplom.kozlov.port;
 
 
+import com.diplom.kozlov.application.CountryBean;
+import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.port.view.AddBean;
 import com.diplom.kozlov.port.view.EditorBean;
@@ -13,7 +15,7 @@ public class Mapper {
 	public RowBean dtoToRowBean(PortDto port) {
 		RowBean rowBean = new RowBean();
 		rowBean.setId(port.getId());
-		rowBean.setCountry(port.getCountryDto().getName());
+		rowBean.setCountryBean(countryDtoToBean(port.getCountryDto()));
 		rowBean.setName(port.getName());
 		return rowBean;
 	}
@@ -29,16 +31,41 @@ public class Mapper {
 
 	public PortDto rowBeanToPortDto(RowBean selectedPort) {
 		PortDto portDto = new PortDto();
+		portDto.setId(selectedPort.getId());
 		portDto.setName(selectedPort.getName());
+		portDto.setCountryDto(mapperApplication.countryBeanToDto(selectedPort.getCountryBean()));
 		return portDto;
 	}
+	
 
 	public EditorBean portDtoToEditorBean(PortDto portDto) {
 		EditorBean editorBean = new EditorBean();
+		editorBean.setId(portDto.getId());
 		editorBean.setName(portDto.getName());
+		editorBean.setCountryBean(mapperApplication.countryDtoToBean(portDto.getCountryDto()));
 		return editorBean;
 	}
+
+	public PortDto editorBeanToDto(EditorBean editorBean) {
+		PortDto portDto = new PortDto();
+		portDto.setId(editorBean.getId());
+		portDto.setName(editorBean.getName());
+		portDto.setCountryDto(countryBeanToDto(editorBean.getCountryBean()));
+		return portDto;
+	}
 	
+	public CountryDto countryBeanToDto(CountryBean countryBean){
+		CountryDto countryDto = new CountryDto();
+		countryDto.setId(countryBean.getId());
+		countryDto.setName(countryBean.getName());
+		return countryDto;
+	}
+	public CountryBean countryDtoToBean(CountryDto countryDto){
+		CountryBean countryBean = new CountryBean();
+		countryBean.setId(countryDto.getId());
+		countryBean.setName(countryDto.getName());
+		return countryBean;
+	}
 	
 
 

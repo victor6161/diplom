@@ -9,6 +9,7 @@
 	xmlns:port="http://java.sun.com/jsf/composite/pages/port">
 
 <h:head>
+				
 </h:head>
 <h:body>
 	<ui:composition template="/resources/pages/template/user.xhtml">
@@ -18,52 +19,66 @@
 				<p:panelGrid column="2" style="height:100%">
 					<p:row>
 						<p:column>
-							<p:dataTable id="portTableForm" var="port"
-								value="#{portController.mainBean.rowsBean}" paginator="true"
-								lazy="true"
-								paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-								rowsPerPageTemplate="5,10,15"
-								selectionMode="single"
-								selection="#{portController.mainBean.selectedPort}"
-								rowKey="#{port.id}"
-								>
+							<h:form>
+								<p:dataTable id="portTableForm" rowIndexVar="rowIndex"
+									widgetVar="dtWv" var="port"
+									value="#{portController.mainBean.rowsBean}"
+									rows="#{portController.rowsPerPage}" paginator="true"
+									lazy="true"
+									paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+									rowsPerPageTemplate="5,10,15" selectionMode="single"
+									selection="#{portController.mainBean.selectedPort}"
+									rowKey="#{port.id}">
 
-								<p:column headerText="id Порта">
-									<h:outputText value="#{port.id}"></h:outputText>
-								</p:column>
+								
 
-								<p:column headerText="Название порта">
-									<h:outputText value="#{port.name}"></h:outputText>
-								</p:column>
-								<p:column headerText="Название страны">
-									<h:outputText value="#{port.country}"></h:outputText>
-								</p:column>
-								<p:column headerText="Изменить данные">
-											<p:commandButton icon="ui-icon-pencil"
-												actionListener="#{portController.onEditOpen}"
-												update=":#{p:component('updatePort')}"
-												oncomplete="PF('updatePortWidget').show();"/>
-												
-								</p:column>
-								<f:facet name="footer">
-									<h:form>
+									<p:column headerText="Название порта">
+										<h:outputText value="#{port.name}"></h:outputText>
+									</p:column>
+									<p:column headerText="Название страны">
+										<h:outputText value="#{port.countryBean.name}"></h:outputText>
+									</p:column>
+									<p:column headerText="Изменить данные">
+
+										<p:commandButton icon="ui-icon-pencil"
+											actionListener="#{portController.onEditOpen}"
+											update=":#{p:component('updatePort')}"
+											oncomplete="PF('updatePortWidget').show();"
+											onmousedown="selectRow(PF('dtWv'), #{rowIndex}, #{portController.rowsPerPage});" >
+											<p:resetInput target=":#{p:component('updatePort')}"></p:resetInput>
+											</p:commandButton>
+							
+
+									</p:column>
+									<f:facet name="footer">
+
 										<p:commandButton icon="ui-icon-add" value="Добавить Порт"
 											oncomplete="PF('addPortWidget').show();"></p:commandButton>
-									</h:form>
-								</f:facet>
-							</p:dataTable>
+
+									</f:facet>
+							
+								</p:dataTable>
+							</h:form>
+									<script>
+										function selectRow(tableWidjet, rowNumber, rowPerPage) {
+				 							tableWidjet.unselectAllRows();
+				 							tableWidjet.selectRow(rowNumber - tableWidjet.paginator.getCurrentPage()*rowPerPage, false);
+										}
+									</script>
 						</p:column>
-						<p:column>
+						
+				
+					</p:row>
+					<p:row>
+						<p:column sytle="text-align: center; display: block; margin: auto">
 							<p:chart type="bar" model="#{chartPort.barModel}"
-								style="width:400px;height:300px" />
+									style="width:400px;height:300px" />
 						</p:column>
 					</p:row>
 				</p:panelGrid>
-				
-			
+
+
 			</div>
-
-
 
 		</ui:define>
 

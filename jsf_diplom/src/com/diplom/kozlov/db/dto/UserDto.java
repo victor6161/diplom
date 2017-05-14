@@ -1,9 +1,11 @@
 package com.diplom.kozlov.db.dto;
 
+import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 
-public class UserDto {
+public class UserDto implements Serializable {
 	@Setter
 	@Getter
 	private String firstname;

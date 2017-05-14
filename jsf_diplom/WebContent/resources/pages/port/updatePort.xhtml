@@ -8,11 +8,10 @@
 
 <composite:interface />
 
-
-
 <composite:implementation>
-	<p:dialog id="updatePort" header="Update Port" widgetVar="updatePortWidget" minHeight="40" modal="true" >
-	
+	<p:dialog id="updatePort" header="Update Port"
+		widgetVar="updatePortWidget" minHeight="40" modal="true">
+
 		<h:form>
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Имя порта" />
@@ -22,18 +21,28 @@
 					<f:validateRequired />
 				</p:inputText>
 			</div>
-				
-
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Страна порта" />
+			</div>
+			<div style="margin: 10px">
+				<p:selectOneMenu
+					value="#{portController.mainBean.editorBean.countryBean}"
+					style="width:150px"
+					converter="com.diplom.kozlov.converter.CountryConverter">
+					<f:selectItem itemLabel="Выберите страну" itemValue="" noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listCountryBean}" var="country" itemLabel=" #{country.name}" itemValue="#{country}" />
+				</p:selectOneMenu>
+			</div>
+			<br></br>
+			<p:commandButton value="Обновить"
+				actionListener="#{portController.edit}"
+				update=":#{p:component('portTableForm')} :#{p:component('updatePort')}"
+				oncomplete="PF('updatePort').hide();" />
 			
-			
-				<p:commandButton value="Update"
-					actionListener="#{portController.edit}"
-					update=":#{p:component('portTableForm')} :#{p:component('updatePort')}" 
-					oncomplete="PF('updatePort').hide();" />
-			
-			<p:commandButton value="Close" onclick="PF('updatePort').hide();" immediate="true"/>
+			<p:commandButton value="Закрыть" onclick="PF('updatePort').hide();"
+				immediate="true" />
 		</h:form>
-		
+
 	</p:dialog>
 </composite:implementation>
 </html>

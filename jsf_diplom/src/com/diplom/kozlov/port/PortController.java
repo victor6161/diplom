@@ -33,6 +33,9 @@ public class PortController {
 	@Setter
 	@Getter
 	private PortServiceImpl portService = new PortServiceImpl();
+	@Setter
+	@Getter
+	private String rowsPerPage = "10";
 
 	@PostConstruct
 	private void init() {
@@ -41,19 +44,24 @@ public class PortController {
 	}
 
 	public void edit() {
-
+		LOGGER.info("edit");
+		facade.edit();
+		RequestContext.getCurrentInstance().execute("PF('updatePortWidget').hide()");
 	}
 
 	public void onEditOpen() {
+		LOGGER.info("onEditOpen");
 		facade.onEditOpen();
 	}
 
 	public void add() {
+		LOGGER.info("add");
 		facade.add();
 		RequestContext.getCurrentInstance().execute("PF('addPortWidget').hide()");
 	}
 
 	public void onAddOpen() {
+		LOGGER.info("onAddOpen");
 		facade.onAddOpen();
 	}
 

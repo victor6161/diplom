@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.port.view.AddBean;
+import com.diplom.kozlov.port.view.EditorBean;
 import com.diplom.kozlov.port.view.RowBean;
 
 
@@ -48,15 +49,18 @@ public class PortDataFacade {
 	}
 	public void onEditOpen() {
 		LOGGER.info("onEditOpen");
-		
+		LOGGER.info(portController.getMainBean().getSelectedPort());
 		PortDto portDto = portController.getMapper().rowBeanToPortDto(portController.getMainBean().getSelectedPort());
+		LOGGER.info(portDto);
 		portController.getMainBean().setEditorBean(portController.getMapper().portDtoToEditorBean(portDto));	
 	}
-/*	public void edit() {
+	public void edit() {
 		LOGGER.info("edit");
-		EditorBean addBean = portController.getMainBean().getSelectedPort();
-		PortDto portDto = portController.getMapper().addBeanToDto(addBean);
+		EditorBean editorBean = portController.getMainBean().getEditorBean();
+		LOGGER.info(editorBean);
+		PortDto portDto = portController.getMapper().editorBeanToDto(editorBean);
 		portController.getPortService().update(portDto);
-	}*/
+		init();
+	}
 
 }
