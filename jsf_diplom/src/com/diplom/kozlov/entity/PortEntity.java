@@ -2,6 +2,7 @@ package com.diplom.kozlov.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,6 +18,11 @@ import lombok.Setter;
 @Table(name = "port")
 public class PortEntity implements Serializable {
 
+	@Override
+	public String toString() {
+		return "PortEntity [id=" + id + ", country=" + country + ", name=" + name + ", latitude=" + latitude
+				+ ", longitude=" + longitude + "]";
+	}
 	public PortEntity() {
 		super();
 	}
@@ -29,8 +35,9 @@ public class PortEntity implements Serializable {
 	@Setter
 	@Getter
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "country_id", nullable = false, updatable = false)
+	@JoinColumn(name = "country_id", nullable = false)
 	private CountryEntity country;
+
 	@Setter
 	@Getter
 	private String name;

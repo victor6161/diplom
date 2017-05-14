@@ -11,7 +11,11 @@ import lombok.Setter;
 @Entity
 @Table(name = "country")
 public class CountryEntity {
-	  public CountryEntity() {
+	  @Override
+	public String toString() {
+		return "CountryEntity [id=" + id + ", name=" + name + ", postcode=" + postcode + ", tax=" + tax + "]";
+	}
+	public CountryEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
