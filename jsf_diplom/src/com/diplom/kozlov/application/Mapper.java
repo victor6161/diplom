@@ -32,6 +32,15 @@ public class Mapper {
 		portBean.setCountryBean(countryDtoToBean(portDto.getCountryDto()));
 		return portBean;
 	}
+	public PortDto portBeanToDto(PortBean portBean) {
+		PortDto portDto = new PortDto();
+		portDto.setId(portBean.getId());
+		portDto.setName(portBean.getName());
+		portDto.setLatitude(portBean.getLatitude());
+		portDto.setLongitude(portBean.getLongitude());
+		portDto.setCountryDto(countryBeanToDto(portBean.getCountryBean()));
+		return portDto;
+	}
 
 	public VesselBean vesselDtoToBean(VesselDto vesselDto) {
 		VesselBean vesselBean = new VesselBean();

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface />
+
+<composite:implementation>
+	<p:dialog id="updateRoute" header="Update Route"
+		widgetVar="updateRouteWidget" minHeight="40" modal="true">
+		<h:form>
+
+
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Порт отправки" />
+			</div>
+
+			<div style="margin: 10px">
+				<p:selectOneMenu
+					value="#{sheduleController.mainBean.editorBean.portFrom}"
+					style="width:150px"
+					converter="com.diplom.kozlov.converter.PortConverter">
+					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listPortBean}" var="port" itemLabel=" #{port.name}" itemValue="#{port}" />
+				</p:selectOneMenu>
+				<br></br>
+			</div>
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Время отправки" />
+			</div>
+			<p:calendar id="fromDatetime"
+				value="#{sheduleController.mainBean.editorBean.dateFrom}"
+				pattern="MM/dd/yyyy HH:mm:ss" />
+
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Порт прибытия" />
+			</div>
+
+			<div style="margin: 10px;">
+				<p:selectOneMenu
+					value="#{sheduleController.mainBean.editorBean.portTo}"
+					style="width:150px" converter="com.diplom.kozlov.converter.PortConverter">
+					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listPortBean}" var="port" itemLabel=" #{port.name}" itemValue="#{port}" />
+				</p:selectOneMenu>
+				<br></br>
+			</div>
+
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Время прибытия" />
+			</div>
+			<p:calendar id="toDatetime"
+				value="#{sheduleController.mainBean.editorBean.dateTo}"
+				pattern="MM/dd/yyyy HH:mm:ss" />
+			<br></br>
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Выберите тип корабля" />
+			</div>
+		
+			<p:selectOneMenu
+				value="#{sheduleController.mainBean.editorBean.vesselBean}"
+				style="width:150px"
+				converter="com.diplom.kozlov.converter.VesselConverter">
+				<f:selectItem itemLabel="Выберите тип корабля" itemValue=""
+					noSelectionOption="true" />
+				<f:selectItems value="#{applicationBean.listVesselBean}"
+					var="vessel" itemLabel=" #{vessel.type}" itemValue="#{vessel}" />
+			</p:selectOneMenu>
+			<br></br>
+			
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Количество точек" />
+			</div>
+			<p:inputText
+				value="#{sheduleController.mainBean.editorBean.numPoints}"
+				 />
+			<br></br><br></br>
+		
+			<p:commandButton value="Обновить"
+				actionListener="#{sheduleController.edit}"
+				update=":#{p:component('updateRoute')} :#{p:component('sheduleTableForm')}" />
+			<p:commandButton value="Закрыть" onclick="PF('updateRouteWidget').hide();" immediate="true"/>
+		</h:form>
+	</p:dialog>
+</composite:implementation>
+</html>

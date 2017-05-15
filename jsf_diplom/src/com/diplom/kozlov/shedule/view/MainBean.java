@@ -20,8 +20,14 @@ public class MainBean {
 	@Setter
 	@Getter
 	private AddBean addBean;
-	
+	@Setter
+	@Getter
+	private RowBean selectedRoute;
+	@Setter
+	@Getter
+	private EditorBean editorBean;
 	public MainBean(){
+		
 		rowsBean = new ArrayList<>();
 		addBean = new AddBean(); 
 	}

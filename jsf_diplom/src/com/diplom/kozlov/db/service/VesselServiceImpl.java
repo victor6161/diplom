@@ -28,4 +28,9 @@ public class VesselServiceImpl implements VesselService {
 		return vesselDto;
 	}
 
+	public void update(VesselDto vesselDto) {
+		VesselEntity vesselEntity = mapper.vesselDtoToEntity(vesselDto);
+		vesselDao.update(vesselEntity);
+	}
+
 }

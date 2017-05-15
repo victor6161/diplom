@@ -48,4 +48,14 @@ public class Mapper {
 		return editorBean;
 	}
 
+	public VesselDto editorBeanToVesselDto(EditorBean editorBean) {
+		VesselDto vesselDto = new VesselDto();
+		vesselDto.setId(editorBean.getId());
+		vesselDto.setType(editorBean.getType());
+		vesselDto.setLoadCapacity(editorBean.getLoadCapacity());
+		vesselDto.setAverageSpeed(editorBean.getAverageSpeed());
+		vesselDto.setFuelConsumption(editorBean.getFuelConsumtion());
+		return vesselDto;
+	}
+
 }

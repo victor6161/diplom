@@ -44,7 +44,8 @@ public class VesselController {
 	}
 
 	public void edit() {
-
+		LOGGER.info("edit");
+		facade.edit();
 	}
 
 	public void onEditOpen() {

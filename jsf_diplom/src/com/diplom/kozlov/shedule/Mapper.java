@@ -4,6 +4,7 @@ import com.diplom.kozlov.application.PortBean;
 import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.db.dto.SheduleDto;
 import com.diplom.kozlov.shedule.view.AddBean;
+import com.diplom.kozlov.shedule.view.EditorBean;
 import com.diplom.kozlov.shedule.view.RowBean;
 
 public class Mapper {
@@ -11,11 +12,11 @@ public class Mapper {
 	public RowBean dtoToRowBean(SheduleDto route) {
 		RowBean rowBean = new RowBean();
 		rowBean.setId(route.getId());
-		rowBean.setPortFrom(route.getPortFrom().getName());
-		rowBean.setPortTo(route.getPortTo().getName());
+		rowBean.setPortFrom(mapperApplication.portDtoToBean(route.getPortFrom()));
+		rowBean.setPortTo(mapperApplication.portDtoToBean(route.getPortTo()));
 		rowBean.setDateFrom(route.getDateFrom());
 		rowBean.setDateTo(route.getDateTo());
-		rowBean.setVesselType(route.getVesselDto().getType());
+		rowBean.setVesselBean(mapperApplication.vesselDtoToBean(route.getVesselDto()));
 		rowBean.setNumPoints(route.getNumPoints());
 		return rowBean;
 	}
@@ -40,6 +41,42 @@ public class Mapper {
 		portDto.setCountryDto(mapperApplication.countryBeanToDto(portBean.getCountryBean()));
 		return portDto;
 	}
+
+
+	public SheduleDto editorBeanToDto(EditorBean editorBean) {
+		SheduleDto sheduleDto = new SheduleDto();
+		sheduleDto.setId(editorBean.getId());
+		sheduleDto.setPortFrom(mapperApplication.portBeanToDto(editorBean.getPortFrom()));
+		sheduleDto.setPortTo(mapperApplication.portBeanToDto(editorBean.getPortTo()));
+		return sheduleDto;
+	}
+
+	public SheduleDto rowBeanToDto(RowBean rowBean) {
+		SheduleDto sheduleDto = new SheduleDto();
+		sheduleDto.setId(rowBean.getId());
+		sheduleDto.setPortFrom(mapperApplication.portBeanToDto(rowBean.getPortFrom()));
+		sheduleDto.setPortTo(mapperApplication.portBeanToDto(rowBean.getPortTo()));
+		sheduleDto.setVesselDto(mapperApplication.vesselBeanToDto(rowBean.getVesselBean()));
+		sheduleDto.setDateFrom(rowBean.getDateFrom());
+		sheduleDto.setDateTo(rowBean.getDateTo());
+		sheduleDto.setNumPoints(rowBean.getNumPoints());
+		
+		return sheduleDto;
+	}
+
+	public EditorBean sheduleDtoToEditorBean(SheduleDto sheduleDto) {
+		EditorBean editorBean = new EditorBean();
+		editorBean.setId(sheduleDto.getId());
+		editorBean.setPortFrom(mapperApplication.portDtoToBean(sheduleDto.getPortFrom()));
+		editorBean.setPortTo(mapperApplication.portDtoToBean(sheduleDto.getPortTo()));
+		editorBean.setVesselBean(mapperApplication.vesselDtoToBean(sheduleDto.getVesselDto()));
+		editorBean.setNumPoints(sheduleDto.getNumPoints());
+		editorBean.setDateFrom(sheduleDto.getDateFrom());
+		editorBean.setDateTo(sheduleDto.getDateTo());
+		return editorBean;
+	}
+
+
 	
 	
 	

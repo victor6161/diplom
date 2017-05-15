@@ -31,6 +31,10 @@ public class SheduleController {
 	@Setter
 	@Getter
 	private SheduleServiceImpl sheduleService = new SheduleServiceImpl();
+	@Setter
+	@Getter
+	private String rowsPerPage = "10";
+	
 	
 	@PostConstruct
 	private void init(){
@@ -39,17 +43,22 @@ public class SheduleController {
 	}
 	
 	public void edit() {
+		LOGGER.info("edit");
 		
 	}
 	public void onEditOpen() {
+		LOGGER.info("onEditOpen");
+		facade.onEditOpen();
 			
 	}
 
 	public void add() {
+		LOGGER.info("add");
 		facade.add();
 		RequestContext.getCurrentInstance().execute("PF('addRouteWidget').hide()");
 	}
 	public void onAddOpen(){
+		LOGGER.info("onAddOpen");
 		facade.onAddOpen();
 	}
 	

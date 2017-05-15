@@ -19,14 +19,12 @@
 				<p:dataTable id="vesselTableForm" rowIndexVar="rowIndex"
 					widgetVar="dtWv" var="vessel"
 					value="#{vesselController.mainBean.rowsBean}"
-					rows="#{vesselController.rowsPerPage}" paginator="true" lazy="true"
+					rows="#{vesselController.rowsPerPage}" paginator="true" 
 					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-					rowsPerPageTemplate="5,10,15" selectionMode="single"
+					rowsPerPageTemplate="5,10,15" 
+					selectionMode="single"
 					selection="#{vesselController.mainBean.selectedVessel}"
 					rowKey="#{vessel.id}">
-
-
-
 
 					<p:column headerText="Тип корабля">
 						<h:outputText value="#{vessel.type}" />

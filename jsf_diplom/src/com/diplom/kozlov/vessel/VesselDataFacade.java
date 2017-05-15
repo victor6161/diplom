@@ -19,7 +19,10 @@ public class VesselDataFacade {
 	}
 
 	public void edit() {
-
+		LOGGER.info("edit");
+		VesselDto vesselDto = vesselController.getMapper().editorBeanToVesselDto(vesselController.getMainBean().getEditorBean());
+		vesselController.getVesselService().update(vesselDto);
+		init();
 	}
 
 	public void onEditOpen() {

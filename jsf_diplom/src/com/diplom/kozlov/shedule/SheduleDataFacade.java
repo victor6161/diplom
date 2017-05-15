@@ -11,6 +11,7 @@ import org.primefaces.model.map.Polyline;
 import com.diplom.kozlov.db.dto.SheduleDto;
 import com.diplom.kozlov.map.MarkerBean;
 import com.diplom.kozlov.shedule.view.AddBean;
+import com.diplom.kozlov.shedule.view.EditorBean;
 import com.diplom.kozlov.shedule.view.RowBean;
 import com.diplom.kozlov.vessel.VesselController;
 
@@ -47,11 +48,29 @@ public class SheduleDataFacade {
 
 
 	public void onAddOpen() {
+		LOGGER.info("edit");
 		sheduleController.getMainBean().setAddBean(new AddBean());// это
 																	// обязательно
 																	// вместе c
 																	// resetInput
 
+	}
+
+	public void edit() {
+		LOGGER.info("edit");
+	}
+
+	public void onEditOpen() {
+		LOGGER.info("onEditOpen");
+		RowBean rowBean = sheduleController.getMainBean().getSelectedRoute();
+		LOGGER.info(rowBean);
+	 	SheduleDto sheduleDto = sheduleController.getMapper().rowBeanToDto(rowBean);
+	 	LOGGER.info(sheduleDto);
+	 	EditorBean editorBean = sheduleController.getMapper().sheduleDtoToEditorBean(sheduleDto);
+	 	LOGGER.info(editorBean);
+	 	sheduleController.getMainBean().setEditorBean(editorBean);
+	 	
+		
 	}
 
 }
