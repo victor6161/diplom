@@ -12,7 +12,11 @@
 				
 </h:head>
 <h:body>
-	<ui:composition template="/resources/pages/template/user.xhtml">
+
+	<ui:composition template="/resources/pages/template/template.xhtml">
+		<ui:define name="search">
+			<ui:include src="/resources/pages/port/search.xhtml" />
+		</ui:define>
 		<ui:define name="main">
 			<div id="main" style="height: 100%">
 
@@ -70,10 +74,7 @@
 				
 					</p:row>
 					<p:row>
-						<p:column sytle="text-align: center; display: block; margin: auto">
-							<p:chart type="bar" model="#{chartPort.barModel}"
-									style="width:400px;height:300px" />
-						</p:column>
+				
 					</p:row>
 				</p:panelGrid>
 

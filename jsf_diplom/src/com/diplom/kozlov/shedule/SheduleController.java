@@ -41,7 +41,11 @@ public class SheduleController {
 		LOGGER.info("init");
 		facade.init();
 	}
-	
+	public void onSearch() {
+		
+		
+		
+	}
 	public void edit() {
 		LOGGER.info("edit");
 		facade.edit();

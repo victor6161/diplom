@@ -23,6 +23,9 @@ public class MainBean {
 	@Setter
 	@Getter
 	private EditorBean editorBean;
+	@Setter
+	@Getter
+	private SearchBean searchBean;
 	
 	@Setter
 	@Getter
