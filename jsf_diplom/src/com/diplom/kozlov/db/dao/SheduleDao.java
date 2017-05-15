@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import com.diplom.kozlov.db.entityManager.PersistenceManager;
 import com.diplom.kozlov.entity.CountryEntity;
 import com.diplom.kozlov.entity.SheduleEntity;
+import com.diplom.kozlov.entity.VesselEntity;
 import com.diplom.kozlov.shedule.SheduleController;
 
 public class SheduleDao {
@@ -29,6 +30,25 @@ public class SheduleDao {
 		em.persist(sheduleEntity);
 		em.getTransaction().commit();
 		em.close();
+	}
+
+	public void update(SheduleEntity sheduleEntityInput) {
+		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
+		em.getTransaction().begin();
+		SheduleEntity sheduleEntityOutput = em.find(SheduleEntity.class, sheduleEntityInput.getId());
+		
+		sheduleEntityOutput.setPortFrom(sheduleEntityInput.getPortFrom());
+		sheduleEntityOutput.setDateFrom(sheduleEntityInput.getDateFrom());
+		sheduleEntityOutput.setPortTo(sheduleEntityInput.getPortTo());
+		sheduleEntityOutput.setDateTo(sheduleEntityInput.getDateTo());
+		sheduleEntityOutput.setVessel(sheduleEntityInput.getVessel());
+		sheduleEntityOutput.setNumPoints(sheduleEntityInput.getNumPoints());
+	
+		
+		
+		em.getTransaction().commit();
+		em.close();
+		
 	}
 	
 

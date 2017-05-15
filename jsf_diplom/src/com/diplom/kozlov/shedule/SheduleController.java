@@ -44,6 +44,7 @@ public class SheduleController {
 	
 	public void edit() {
 		LOGGER.info("edit");
+		facade.edit();
 		
 	}
 	public void onEditOpen() {

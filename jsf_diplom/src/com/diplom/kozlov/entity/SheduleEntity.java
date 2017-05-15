@@ -45,13 +45,13 @@ public class SheduleEntity implements Serializable {
 	  @Setter
 	  @Getter
 	  @ManyToOne// Not-null property references a transient value - transient instance must be saved before current operation : com.diplom.kozlov.entity.SheduleEntity.portFrom -> com.diplom.kozlov.entity.PortEntity
-	  @JoinColumn(name="port_id_from", nullable=false, updatable=false)
+	  @JoinColumn(name="port_id_from", nullable=false)
 	  private PortEntity portFrom;
 	  
 	  @Setter
 	  @Getter
 	  @ManyToOne
-	  @JoinColumn(name="port_id_to", nullable=false, updatable=true)
+	  @JoinColumn(name="port_id_to", nullable=false)
 	  private PortEntity portTo;
 	  @Setter
 	  @Getter
@@ -64,7 +64,7 @@ public class SheduleEntity implements Serializable {
 	  @Setter
 	  @Getter
 	  @ManyToOne
-	  @JoinColumn(name="vessel_id", nullable=false, updatable=false)
+	  @JoinColumn(name="vessel_id", nullable=false)
 	  private VesselEntity vessel;
 	  @Setter
 	  @Getter

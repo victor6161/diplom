@@ -17,6 +17,7 @@ public class PortServiceImpl implements PortService {
 	private Mapper mapper = new Mapper();
 	@Override
 	public List<PortDto> getPorts() {
+		LOGGER.info("getPorts");
 		List<PortEntity> portEntity = portDao.getPorts();
 		List<PortDto> portDto = new ArrayList<>();
 		for(PortEntity port:portEntity){
@@ -26,6 +27,7 @@ public class PortServiceImpl implements PortService {
 	}
 	@Override
 	public void save(PortDto portDto) {
+		LOGGER.info("save");
 		PortEntity portEntity = mapper.portDtoToEntity(portDto);
 		portDao.save(portEntity);
 		
@@ -33,7 +35,6 @@ public class PortServiceImpl implements PortService {
 	public void update(PortDto portDto) {
 		LOGGER.info("update");
 		PortEntity portEntity = mapper.portDtoToEntity(portDto);
-		LOGGER.info(portEntity);
 		portDao.update(portEntity);
 	}
 

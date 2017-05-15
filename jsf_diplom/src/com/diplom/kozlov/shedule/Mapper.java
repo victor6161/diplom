@@ -48,6 +48,10 @@ public class Mapper {
 		sheduleDto.setId(editorBean.getId());
 		sheduleDto.setPortFrom(mapperApplication.portBeanToDto(editorBean.getPortFrom()));
 		sheduleDto.setPortTo(mapperApplication.portBeanToDto(editorBean.getPortTo()));
+		sheduleDto.setVesselDto(mapperApplication.vesselBeanToDto(editorBean.getVesselBean()));
+		sheduleDto.setDateFrom(editorBean.getDateFrom());
+		sheduleDto.setDateTo(editorBean.getDateTo());
+		sheduleDto.setNumPoints(editorBean.getNumPoints());
 		return sheduleDto;
 	}
 

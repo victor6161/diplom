@@ -61,4 +61,14 @@ public class SheduleServiceImpl implements SheduleService {
 		return sheduleDto;
 	}
 
+
+	public void update(SheduleDto sheduleDto) {
+		LOGGER.info("update");
+		sheduleDto.setMarkersDto(new ArrayList<>());//потому что в конвертере null pointer 
+		SheduleEntity sheduleEntity = mapper.sheduleDtoToEntity(sheduleDto);
+		
+		sheduleDao.update(sheduleEntity);
+		
+	}
+
 }

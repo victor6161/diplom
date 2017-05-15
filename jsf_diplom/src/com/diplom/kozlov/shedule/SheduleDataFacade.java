@@ -58,16 +58,17 @@ public class SheduleDataFacade {
 
 	public void edit() {
 		LOGGER.info("edit");
+		EditorBean editorBean = sheduleController.getMainBean().getEditorBean();
+		SheduleDto sheduleDto = sheduleController.getMapper().editorBeanToDto(editorBean);
+		sheduleController.getSheduleService().update(sheduleDto);
+		init();
 	}
 
 	public void onEditOpen() {
 		LOGGER.info("onEditOpen");
 		RowBean rowBean = sheduleController.getMainBean().getSelectedRoute();
-		LOGGER.info(rowBean);
 	 	SheduleDto sheduleDto = sheduleController.getMapper().rowBeanToDto(rowBean);
-	 	LOGGER.info(sheduleDto);
 	 	EditorBean editorBean = sheduleController.getMapper().sheduleDtoToEditorBean(sheduleDto);
-	 	LOGGER.info(editorBean);
 	 	sheduleController.getMainBean().setEditorBean(editorBean);
 	 	
 		

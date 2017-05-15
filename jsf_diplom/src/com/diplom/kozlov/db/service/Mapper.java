@@ -92,6 +92,7 @@ public class Mapper {
 
 	public SheduleEntity sheduleDtoToEntity(SheduleDto sheduleDto) {
 		SheduleEntity sheduleEntity = new SheduleEntity();
+		sheduleEntity.setId(sheduleDto.getId());
 		sheduleEntity.setPortFrom(portDtoToEntity(sheduleDto.getPortFrom()));
 		sheduleEntity.setPortTo(portDtoToEntity(sheduleDto.getPortTo()));
 		sheduleEntity.setDateFrom(sheduleDto.getDateFrom());
