@@ -16,12 +16,12 @@ public class VesselDto implements Serializable {
 
 	  @Setter
 	  @Getter
-	  private Integer fuelConsumption;
+	  private Double fuelConsumption;
 	  @Setter
 	  @Getter
-	  private Integer loadCapacity;
+	  private Double loadCapacity;
 	  @Setter
 	  @Getter
-	  private Integer averageSpeed;
+	  private Double averageSpeed;
 
 }

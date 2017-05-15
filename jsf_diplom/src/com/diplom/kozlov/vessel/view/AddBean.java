@@ -47,9 +47,9 @@ public class AddBean {
 	}
 	public AddBean(){
 		this.type=new String();
-		this.loadCapacity=new Integer(0);
-		this.averageSpeed=new Integer(0);
-		this.fuelConsumtion=new Integer(0);
+		this.loadCapacity=new Double(0);
+		this.averageSpeed=new Double(0);
+		this.fuelConsumtion=new Double(0);
 	}
 
 	@Setter
@@ -58,12 +58,12 @@ public class AddBean {
 
 	@Setter
 	@Getter
-	private Integer loadCapacity;
+	private Double loadCapacity;
 	@Setter
 	@Getter
-	private Integer averageSpeed;
+	private Double averageSpeed;
 	@Setter
 	@Getter
-	private Integer fuelConsumtion;
+	private Double fuelConsumtion;
 
 }

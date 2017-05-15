@@ -19,6 +19,12 @@ public class MainBean {
 	@Setter
 	@Getter
 	private AddBean addBean;
+	@Setter
+	@Getter
+	private RowBean selectedVessel;
+	@Setter
+	@Getter
+	private EditorBean editorBean;
 	
 	public MainBean(){
 		rowsBean = new ArrayList<>();

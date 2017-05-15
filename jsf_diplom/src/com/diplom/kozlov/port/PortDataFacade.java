@@ -49,9 +49,7 @@ public class PortDataFacade {
 	}
 	public void onEditOpen() {
 		LOGGER.info("onEditOpen");
-		LOGGER.info(portController.getMainBean().getSelectedPort());
 		PortDto portDto = portController.getMapper().rowBeanToPortDto(portController.getMainBean().getSelectedPort());
-		LOGGER.info(portDto);
 		portController.getMainBean().setEditorBean(portController.getMapper().portDtoToEditorBean(portDto));	
 	}
 	public void edit() {

@@ -35,14 +35,14 @@ public class VesselEntity {
   @Setter
   @Getter
   @Column(name = "fuel_consumption")
-  private Integer fuelConsumption;
+  private Double fuelConsumption;
   @Setter
   @Getter
   @Column(name = "load_capacity")
-  private Integer loadCapacity;
+  private Double loadCapacity;
   @Setter
   @Getter
   @Column(name = "average_speed")
-  private Integer averageSpeed;
+  private Double averageSpeed;
 
 }

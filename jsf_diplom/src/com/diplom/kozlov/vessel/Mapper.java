@@ -1,7 +1,9 @@
 package com.diplom.kozlov.vessel;
 
+
 import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.vessel.view.AddBean;
+import com.diplom.kozlov.vessel.view.EditorBean;
 import com.diplom.kozlov.vessel.view.RowBean;
 
 public class Mapper {
@@ -24,6 +26,26 @@ public class Mapper {
 		
 		return rowBean;
 		
+	}
+
+	public VesselDto rowBeanToVesselDto(RowBean selectedVessel) {
+		VesselDto vesselDto = new VesselDto();
+		vesselDto.setId(selectedVessel.getId());
+		vesselDto.setType(selectedVessel.getType());
+		vesselDto.setLoadCapacity(selectedVessel.getLoadCapacity());
+		vesselDto.setFuelConsumption(selectedVessel.getFuelConsumption());
+		vesselDto.setAverageSpeed(selectedVessel.getAverageSpeed());
+		return vesselDto;
+	}
+
+	public EditorBean vesselDtoToEditorBean(VesselDto vesselDto) {
+		EditorBean editorBean = new EditorBean();
+		editorBean.setId(vesselDto.getId());
+		editorBean.setType(vesselDto.getType());
+		editorBean.setLoadCapacity(vesselDto.getLoadCapacity());
+		editorBean.setAverageSpeed(vesselDto.getAverageSpeed());
+		editorBean.setFuelConsumtion(vesselDto.getFuelConsumption());
+		return editorBean;
 	}
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.vessel.view.AddBean;
 import com.diplom.kozlov.vessel.view.RowBean;
@@ -22,6 +23,11 @@ public class VesselDataFacade {
 	}
 
 	public void onEditOpen() {
+		LOGGER.info("onEditOpen");
+		
+		
+		VesselDto vesselDto = vesselController.getMapper().rowBeanToVesselDto(vesselController.getMainBean().getSelectedVessel());
+		vesselController.getMainBean().setEditorBean(vesselController.getMapper().vesselDtoToEditorBean(vesselDto));
 
 	}
 

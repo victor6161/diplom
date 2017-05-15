@@ -15,14 +15,19 @@
 	<ui:composition template="/resources/pages/template/user.xhtml">
 		<ui:define name="main">
 			<h:form>
-				<p:dataTable id="vesselTableForm" var="vessel"
-					value="#{vesselController.mainBean.rowsBean}" paginator="true"				
-					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-					rowsPerPageTemplate="5,10,15">
 
-					<p:column headerText="id корабля" sortBy="#{vessel.id}">
-						<h:outputText value="#{vessel.id}" />
-					</p:column>
+				<p:dataTable id="vesselTableForm" rowIndexVar="rowIndex"
+					widgetVar="dtWv" var="vessel"
+					value="#{vesselController.mainBean.rowsBean}"
+					rows="#{vesselController.rowsPerPage}" paginator="true" lazy="true"
+					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15" selectionMode="single"
+					selection="#{vesselController.mainBean.selectedVessel}"
+					rowKey="#{vessel.id}">
+
+
+
+
 					<p:column headerText="Тип корабля">
 						<h:outputText value="#{vessel.type}" />
 					</p:column>
@@ -39,6 +44,19 @@
 						sortBy="#{vessel.fuelConsumption}">
 						<h:outputText value="#{vessel.fuelConsumption}" />
 					</p:column>
+					<p:column headerText="Потребление топлива(на 100 км)"
+						sortBy="#{vessel.fuelConsumption}">
+						<h:outputText value="#{vessel.fuelConsumption}" />
+					</p:column>
+					<p:column headerText="Изменить данные">
+						<p:commandButton icon="ui-icon-pencil"
+							actionListener="#{vesselController.onEditOpen}"
+							update=":#{p:component('updateVessel')}"
+							oncomplete="PF('updateVesselWidget').show();"
+							onmousedown="selectRow(PF('dtWv'), #{rowIndex}, #{vesselController.rowsPerPage});">
+
+						</p:commandButton>
+					</p:column>
 					<f:facet name="footer">
 						<h:form>
 							<p:commandButton icon="ui-icon-add" value="Добавить Корабль"
@@ -50,9 +68,16 @@
 					</f:facet>
 				</p:dataTable>
 			</h:form>
+			<script>
+					function selectRow(tableWidjet, rowNumber, rowPerPage) {
+				 			tableWidjet.unselectAllRows();
+				 			tableWidjet.selectRow(rowNumber - tableWidjet.paginator.getCurrentPage()*rowPerPage, false);
+					}
+			</script>
 		</ui:define>
 		<ui:define name="add">
 			<vessel:addVessel />
+			<vessel:updateVessel />
 		</ui:define>
 
 	</ui:composition>

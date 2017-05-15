@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface />
+
+<composite:implementation>
+	<p:dialog id="updateVessel" header="Update Vessel"
+		widgetVar="updateVesselWidget" minHeight="40" modal="true">
+
+		<h:form>
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Тип корабля" />
+			</div>
+			<div style="margin: 10px">
+				<p:inputText value="#{vesselController.mainBean.editorBean.type}">
+					<f:validateRequired />
+				</p:inputText>
+			</div>
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Максимальная загрузка" />
+			</div>
+			<div style="margin: 10px">
+				<p:inputText value="#{vesselController.mainBean.editorBean.loadCapacity}">
+					<f:validateRequired />
+				</p:inputText>
+			</div>
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Средняя скорость(км/ч)" />
+			</div>
+			<div style="margin: 10px">
+				<p:inputText value="#{vesselController.mainBean.editorBean.averageSpeed}">
+					<f:validateRequired />
+				</p:inputText>
+			</div>
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Потребление топлива(100 км)" />
+			</div>
+			<div style="margin: 10px">
+				<p:inputText value="#{vesselController.mainBean.editorBean.fuelConsumtion}">
+					<f:validateRequired />
+				</p:inputText>
+			</div>
+			<br></br>
+			<p:commandButton value="Обновить"
+				actionListener="#{vesselController.edit}"
+				update=":#{p:component('vesselTableForm')} :#{p:component('updateVessel')}"
+				oncomplete="PF('updateVessel').hide();" />
+			
+			<p:commandButton value="Закрыть" onclick="PF('updateVessel').hide();"
+				immediate="true" />
+		</h:form>
+
+	</p:dialog>
+</composite:implementation>
+</html>
