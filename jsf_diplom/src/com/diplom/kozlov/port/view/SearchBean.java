@@ -8,6 +8,6 @@ import lombok.Setter;
 public class SearchBean {
 	@Setter
 	@Getter
-	private CountryBean countryBean;
+	private String countryBean;
 
 }

@@ -14,67 +14,7 @@
 <h:body>
 	<ui:composition template="/resources/pages/template/template.xhtml">
 		<ui:define name="main">
-			<h:form>
-			<p:dataTable id="sheduleTableForm"
-				rowIndexVar="rowIndex"
-				widgetVar="dtWv"
-				var="item"
-				value="#{sheduleController.mainBean.rowsBean}" 
-				paginator="true" 
-				lazy="true"
-				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-				rowsPerPageTemplate="5,10,15"
-				selectionMode="single"
-				selection="#{sheduleController.mainBean.selectedRoute}"
-				rowKey="#{item.id}">
-				
-			
-				<p:column headerText="Порт из">
-					<h:outputText value="#{item.portFrom.name}" />
-				</p:column>
-				<p:column headerText="Время отплытия(местное)">
-					<h:outputText value="#{item.dateFrom}" />
-				</p:column>
-				<p:column headerText="Порт в">
-					<h:outputText value="#{item.portTo.name}" />
-				</p:column>
-				<p:column headerText="Время прибытия(местное)">
-					<h:outputText value="#{item.dateTo}" />
-				</p:column>
-				<p:column headerText="Корабль">
-					<h:outputText value="#{item.vesselBean.type}" />
-				</p:column>
-				<p:column headerText="Количество точек">
-					<h:outputText value="#{item.numPoints}" />
-				</p:column>
-				<p:column headerText="Изменить данные">
-							<p:commandButton icon="ui-icon-pencil"
-							actionListener="#{sheduleController.onEditOpen}"
-							update=":#{p:component('updateRoute')}"
-							oncomplete="PF('updateRouteWidget').show();"
-							onmousedown="selectRow(PF('dtWv'), #{rowIndex}, #{sheduleController.rowsPerPage});">
-							<p:resetInput target=":#{p:component('updateRoute')}"></p:resetInput>
-						</p:commandButton>
-				</p:column>
-				
-				<f:facet name="footer">
-						<p:commandButton icon="ui-icon-add" 
-							value="Добавить Маршрут"
-							oncomplete="PF('addRouteWidget').show();"
-							update=":#{p:component('addRoute')}"
-							actionListener="#{sheduleController.onAddOpen}">
-							<p:resetInput target=":#{p:component('addRoute')}"></p:resetInput>
-						</p:commandButton>
-				</f:facet>
-			</p:dataTable>
-			</h:form>
-			
-			<script>
-					function selectRow(tableWidjet, rowNumber, rowPerPage) {
-				 			tableWidjet.unselectAllRows();
-				 			tableWidjet.selectRow(rowNumber - tableWidjet.paginator.getCurrentPage()*rowPerPage, false);
-					}
-			</script>
+			<ui:include src="/resources/pages/shedule/table.xhtml" />
 		</ui:define>
 			<ui:define name="add">
 				<shedule:addRoute />

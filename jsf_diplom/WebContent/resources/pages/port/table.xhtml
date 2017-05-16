@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<h:body>
+	<ui:composition>
+
+<div id="main" style="height: 100%">
+
+				<p:panelGrid column="2" style="height:100%">
+					<p:row>
+						<p:column>
+							<h:form>
+								<p:dataTable id="portTableForm" rowIndexVar="rowIndex"
+									widgetVar="dtWv" var="port"
+									value="#{portController.mainBean.rowsBean}"
+									rows="#{portController.rowsPerPage}" paginator="true"
+									lazy="true"
+									paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+									rowsPerPageTemplate="5,10,15" selectionMode="single"
+									selection="#{portController.mainBean.selectedPort}"
+									rowKey="#{port.id}">
+
+								
+
+									<p:column headerText="Название порта">
+										<h:outputText value="#{port.name}"></h:outputText>
+									</p:column>
+									<p:column headerText="Название страны">
+										<h:outputText value="#{port.countryBean.name}"></h:outputText>
+									</p:column>
+									<p:column headerText="Изменить данные">
+
+										<p:commandButton icon="ui-icon-pencil"
+											actionListener="#{portController.onEditOpen}"
+											update=":#{p:component('updatePort')}"
+											oncomplete="PF('updatePortWidget').show();"
+											onmousedown="selectRow(PF('dtWv'), #{rowIndex}, #{portController.rowsPerPage});" >
+											<p:resetInput target=":#{p:component('updatePort')}"></p:resetInput>
+										</p:commandButton>
+							
+
+									</p:column>
+									<f:facet name="footer">
+
+										<p:commandButton icon="ui-icon-add" value="Добавить Порт"
+											oncomplete="PF('addPortWidget').show();"></p:commandButton>
+
+									</f:facet>
+							
+								</p:dataTable>
+							</h:form>
+									<script>
+										function selectRow(tableWidjet, rowNumber, rowPerPage) {
+				 							tableWidjet.unselectAllRows();
+				 							tableWidjet.selectRow(rowNumber - tableWidjet.paginator.getCurrentPage()*rowPerPage, false);
+										}
+									</script>
+						</p:column>
+						
+				
+					</p:row>
+					<p:row>
+				
+					</p:row>
+				</p:panelGrid>
+
+
+			</div>
+
+	</ui:composition>
+</h:body>
+</html>

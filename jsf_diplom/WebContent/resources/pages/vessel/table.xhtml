@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<h:body>
+	<ui:composition>
+<h:form>
+
+				<p:dataTable id="vesselTableForm" rowIndexVar="rowIndex"
+					widgetVar="dtWv" var="vessel"
+					value="#{vesselController.mainBean.rowsBean}"
+					rows="#{vesselController.rowsPerPage}" paginator="true" 
+					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15" 
+					selectionMode="single"
+					selection="#{vesselController.mainBean.selectedVessel}"
+					rowKey="#{vessel.id}">
+
+					<p:column headerText="Тип корабля">
+						<h:outputText value="#{vessel.type}" />
+					</p:column>
+
+					<p:column headerText="Максимальная загрузка(тонны)"
+						sortBy="#{vessel.loadCapacity}">
+						<h:outputText value="#{vessel.loadCapacity}" />
+					</p:column>
+					<p:column headerText="Средняя скорость(км/ч)"
+						sortBy="#{vessel.averageSpeed}">
+						<h:outputText value="#{vessel.averageSpeed}" />
+					</p:column>
+					<p:column headerText="Потребление топлива(на 100 км)"
+						sortBy="#{vessel.fuelConsumption}">
+						<h:outputText value="#{vessel.fuelConsumption}" />
+					</p:column>
+					<p:column headerText="Потребление топлива(на 100 км)"
+						sortBy="#{vessel.fuelConsumption}">
+						<h:outputText value="#{vessel.fuelConsumption}" />
+					</p:column>
+					<p:column headerText="Изменить данные">
+						<p:commandButton icon="ui-icon-pencil"
+							actionListener="#{vesselController.onEditOpen}"
+							update=":#{p:component('updateVessel')}"
+							oncomplete="PF('updateVesselWidget').show();"
+							onmousedown="selectRow(PF('dtWv'), #{rowIndex}, #{vesselController.rowsPerPage});">
+
+						</p:commandButton>
+					</p:column>
+					<f:facet name="footer">
+						<h:form>
+							<p:commandButton icon="ui-icon-add" value="Добавить Корабль"
+								oncomplete="PF('addVesselWidget').show();"
+								update=":#{p:component('addVessel')}">
+								<p:resetInput target=":#{p:component('addVessel')}"></p:resetInput>
+							</p:commandButton>
+						</h:form>
+					</f:facet>
+				</p:dataTable>
+			</h:form>
+			<script>
+					function selectRow(tableWidjet, rowNumber, rowPerPage) {
+				 			tableWidjet.unselectAllRows();
+				 			tableWidjet.selectRow(rowNumber - tableWidjet.paginator.getCurrentPage()*rowPerPage, false);
+					}
+			</script>
+
+	</ui:composition>
+</h:body>
+</html>
