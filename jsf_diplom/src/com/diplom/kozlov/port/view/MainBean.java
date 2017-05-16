@@ -31,7 +31,10 @@ public class MainBean {
 	@Getter
 	private RowBean selectedPort;
 	
+
+	
 	public MainBean(){
+		searchBean = new SearchBean();
 		rowsBean = new ArrayList<>();
 		addBean = new AddBean();
 	}

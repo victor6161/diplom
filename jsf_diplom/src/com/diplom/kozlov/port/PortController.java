@@ -36,7 +36,7 @@ public class PortController {
 	@Setter
 	@Getter
 	private String rowsPerPage = "10";
-
+	
 	@PostConstruct
 	private void init() {
 		LOGGER.info("init");
@@ -63,6 +63,11 @@ public class PortController {
 	public void onAddOpen() {
 		LOGGER.info("onAddOpen");
 		facade.onAddOpen();
+	}
+	
+	public void onSearch(){
+		LOGGER.info("onSearch");
+		facade.onSearch();
 	}
 
 }

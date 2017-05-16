@@ -12,11 +12,11 @@ public class Mapper {
 	
 	private com.diplom.kozlov.application.Mapper mapperApplication = new com.diplom.kozlov.application.Mapper();
 
-	public RowBean dtoToRowBean(PortDto port) {
+	public RowBean portDtoToRowBean(PortDto portDto) {
 		RowBean rowBean = new RowBean();
-		rowBean.setId(port.getId());
-		rowBean.setCountryBean(countryDtoToBean(port.getCountryDto()));
-		rowBean.setName(port.getName());
+		rowBean.setId(portDto.getId());
+		rowBean.setCountryBean(countryDtoToBean(portDto.getCountryDto()));
+		rowBean.setName(portDto.getName());
 		return rowBean;
 	}
 	

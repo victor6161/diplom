@@ -2,10 +2,12 @@ package com.diplom.kozlov.db.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 
 import com.diplom.kozlov.db.dao.PortDao;
+import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.entity.PortEntity;
 import com.diplom.kozlov.entity.VesselEntity;
@@ -36,6 +38,19 @@ public class PortServiceImpl implements PortService {
 		LOGGER.info("update");
 		PortEntity portEntity = mapper.portDtoToEntity(portDto);
 		portDao.update(portEntity);
+	}
+	public List<PortDto> onSearch(CountryDto countryDto) {
+		LOGGER.info("onSearch");
+		List<PortEntity> portEntity = portDao.getPorts();
+		List<PortEntity> portEntityResult = portEntity.stream()
+				.filter(port -> port.getCountry().getName().contains(countryDto.getName()) )
+				.collect(Collectors.toList());
+		List<PortDto> portDto = new ArrayList<>();
+		
+		portEntityResult.forEach(portEn->portDto.add(mapper.portEntityToDto(portEn)) );
+		return portDto;
+		
+		
 	}
 
 }
