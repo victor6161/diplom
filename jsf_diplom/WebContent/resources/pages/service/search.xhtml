@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<h:body>
+	<ui:composition>
+
+		<p:row>
+			<p:column style="text-align: left;">
+				<p:panelGrid columns="2" layout="grid">
+					<p:row>
+						<p:column>
+							<h:form>
+
+								<div style="margin: 10px">
+
+
+									<p:outputLabel value="Искать по id" for="serviceSearch"
+										style="margin-right:10px;" />
+
+
+									<p:inputText id="serviceSearch"
+										value="#{serviceController.mainBean.searchBean.serviceId}">
+									</p:inputText>
+
+
+								</div>
+
+
+								<p:commandButton value="Search"
+									update=":#{p:component('serviceTableForm')}"
+									actionListener="#{serviceController.onSearch}">
+
+								</p:commandButton>
+								</h:form>
+						</p:column>
+						
+					
+					</p:row>
+				</p:panelGrid>
+			</p:column>
+		</p:row>
+
+	</ui:composition>
+</h:body>
+</html>

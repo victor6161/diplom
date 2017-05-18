@@ -6,25 +6,23 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:port="http://java.sun.com/jsf/composite/pages/port">
+	xmlns:shedule="http://java.sun.com/jsf/composite/pages/shedule">
 
 <h:head>
-			<h:outputScript library = "js" name = "select.js"></h:outputScript>	
+
 </h:head>
 <h:body>
-
 	<ui:composition template="/resources/pages/template/template.xhtml">
 		<ui:define name="search">
-			<ui:include src="/resources/pages/port/search.xhtml" />
+			<ui:include src="/resources/pages/service/search.xhtml" />
 		</ui:define>
 		<ui:define name="main">
-			<ui:include src="/resources/pages/port/table.xhtml" />
+			<ui:include src="/resources/pages/service/table.xhtml" />
 		</ui:define>
-
-		<ui:define name="add">
-			<port:addPort />
-			<port:updatePort />
-		</ui:define>
+			<ui:define name="add">
+				<!-- <shedule:addRoute />
+				<shedule:updateRoute /> -->
+			</ui:define>
 	</ui:composition>
 
 

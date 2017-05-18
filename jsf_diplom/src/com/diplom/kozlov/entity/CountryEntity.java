@@ -19,7 +19,7 @@ public class CountryEntity {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	@Id
+	  @Id
 	  @GeneratedValue
 	  @Setter
 	  @Getter

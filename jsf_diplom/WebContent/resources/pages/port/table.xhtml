@@ -34,6 +34,9 @@
 									<p:column headerText="Название страны">
 										<h:outputText value="#{port.countryBean.name}"></h:outputText>
 									</p:column>
+									<p:column headerText="Цена стоянки для корабля">
+										
+									</p:column>
 									<p:column headerText="Изменить данные">
 
 										<p:commandButton icon="ui-icon-pencil"
@@ -55,12 +58,7 @@
 							
 								</p:dataTable>
 							</h:form>
-									<script>
-										function selectRow(tableWidjet, rowNumber, rowPerPage) {
-				 							tableWidjet.unselectAllRows();
-				 							tableWidjet.selectRow(rowNumber - tableWidjet.paginator.getCurrentPage()*rowPerPage, false);
-										}
-									</script>
+							
 						</p:column>
 						
 				

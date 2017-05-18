@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 
 import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.PortDto;
-import com.diplom.kozlov.db.dto.VesselDto;
+
 import com.diplom.kozlov.port.view.AddBean;
 import com.diplom.kozlov.port.view.EditorBean;
 import com.diplom.kozlov.port.view.RowBean;

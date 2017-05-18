@@ -10,8 +10,7 @@ import com.diplom.kozlov.db.dao.PortDao;
 import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.entity.PortEntity;
-import com.diplom.kozlov.entity.VesselEntity;
-import com.diplom.kozlov.port.PortDataFacade;
+
 
 public class PortServiceImpl implements PortService {
 	private static final Logger LOGGER = Logger.getLogger(PortServiceImpl.class);

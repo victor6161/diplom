@@ -23,13 +23,11 @@
 				<p:column headerText="Порт из">
 					<h:outputText value="#{item.portFrom.name}" />
 				</p:column>
-				<p:column headerText="Время отплытия(местное)">
-					<h:outputText value="#{item.dateFrom}" />
-				</p:column>
+	
 				<p:column headerText="Порт в">
 					<h:outputText value="#{item.portTo.name}" />
 				</p:column>
-				<p:column headerText="Время прибытия(местное)">
+				<p:column headerText="Время затраченное на преодоление">
 					<h:outputText value="#{item.dateTo}" />
 				</p:column>
 				<p:column headerText="Корабль">
@@ -37,6 +35,15 @@
 				</p:column>
 				<p:column headerText="Количество точек">
 					<h:outputText value="#{item.numPoints}" />
+				</p:column>
+				<p:column headerText="Требование по длине">
+				
+				</p:column>
+				<p:column headerText="Требование по ширине">
+				
+				</p:column>
+				<p:column headerText="очевидно что на одном route может быть несколько препятсвтвий">
+					
 				</p:column>
 				<p:column headerText="Изменить данные">
 					<p:commandButton icon="ui-icon-pencil"
@@ -59,12 +66,7 @@
 			</p:dataTable>
 		</h:form>
 
-		<script>
-					function selectRow(tableWidjet, rowNumber, rowPerPage) {
-				 			tableWidjet.unselectAllRows();
-				 			tableWidjet.selectRow(rowNumber - tableWidjet.paginator.getCurrentPage()*rowPerPage, false);
-					}
-			</script>
+	
 
 	</ui:composition>
 </h:body>

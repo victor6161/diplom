@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<h:body>
+	<ui:composition>
+		<h:form>
+			<p:dataTable id="serviceTableForm" rowIndexVar="rowIndex"
+				widgetVar="dtWv" var="item"
+				value="#{serviceController.mainBean.rowsBean}" paginator="true"
+				lazy="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15" selectionMode="single"
+				selection="#{serviceController.mainBean.selectedService}"
+				rowKey="#{item.id}">
+
+				
+				<p:column headerText="id маршрута">
+				
+				</p:column>
+				<p:column headerText="время">
+					
+				</p:column>
+				
+				<p:column headerText="Изменить данные">
+
+				</p:column>
+
+				<f:facet name="footer">
+			
+				</f:facet>
+			</p:dataTable>
+		</h:form>
+
+			<script>
+					function selectRow(tableWidjet, rowNumber, rowPerPage) {
+				 			tableWidjet.unselectAllRows();
+				 			tableWidjet.selectRow(rowNumber - tableWidjet.paginator.getCurrentPage()*rowPerPage, false);
+					}
+			</script>
+
+	</ui:composition>
+</h:body>
+</html>
