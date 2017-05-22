@@ -7,6 +7,8 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import com.diplom.kozlov.application.VesselBean;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,6 +30,13 @@ public class MainBean {
 	@Setter
 	@Getter
 	private SearchBean searchBean;
+	@Setter
+	@Getter
+	private List<Compare> compareList;
+	
+	@Setter
+	@Getter
+	private VesselBean vesselBean;
 	
 	public MainBean(){
 		rowsBean = new ArrayList<>();

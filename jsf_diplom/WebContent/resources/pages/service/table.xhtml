@@ -10,39 +10,78 @@
 <h:body>
 	<ui:composition>
 		<h:form>
-			<p:dataTable id="serviceTableForm" rowIndexVar="rowIndex"
-				widgetVar="dtWv" var="item"
-				value="#{serviceController.mainBean.rowsBean}" paginator="true"
-				lazy="true"
-				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-				rowsPerPageTemplate="5,10,15" selectionMode="single"
-				selection="#{serviceController.mainBean.selectedService}"
-				rowKey="#{item.id}">
+			<p:dataTable id="serviceTableForm" var="team"
+				value="#{dtSubTableView.teams}"
+				>
+				<p:columnGroup type="header">
+					<p:row>
+						<p:column headerText="id маршрута" />
+						<p:column headerText="время на преодоление" />
+						<p:column headerText="Стоимость преодоление" />
 
-				
-				<p:column headerText="id маршрута">
-				
-				</p:column>
-				<p:column headerText="время">
-					
-				</p:column>
-				
-				<p:column headerText="Изменить данные">
+					</p:row>
+				</p:columnGroup>
 
-				</p:column>
+				<p:subTable var="stats" value="#{team.stats}">
+					<f:facet name="header">
+						<h:outputText value="#{team.name}" />
+						<br />
+						<h:outputText value="id корабля" />
+					</f:facet>
+					<p:column>
+						<h:outputText value="#{stats.season}" />
+					</p:column>
+					<p:column>
+						<h:outputText value="#{stats.win}" />
+					</p:column>
+					<p:column>
+						<h:outputText value="#{stats.win}" />
+					</p:column>
+					<p:column style="width:10px">
+						<h:outputStylesheet library="css" name="comparison.css"  />
+						<p:commandButton icon="ui-icon-bookmark"
+							
+							update=":#{p:component('comparison')}"
+							oncomplete="PF('comparisonWidget').show();"
+							>
+							
+						</p:commandButton>
 
+
+
+					</p:column>
+					<p:column>
+						<p:commandButton icon="ui-icon-carat-2-n-s">
+
+						</p:commandButton>
+					</p:column>
+					<p:columnGroup type="footer">
+						<p:row>
+							<p:column footerText="Общее время на преодоление"
+								style="text-align:right" />
+							<p:column footerText="#{team.allWins}" colspan="3" />
+
+						</p:row>
+
+					</p:columnGroup>
+				</p:subTable>
 				<f:facet name="footer">
-			
+
+					<p:commandButton icon="ui-icon-add" value="Добавить Сервис" />
+
+
 				</f:facet>
 			</p:dataTable>
 		</h:form>
 
-			<script>
-					function selectRow(tableWidjet, rowNumber, rowPerPage) {
-				 			tableWidjet.unselectAllRows();
-				 			tableWidjet.selectRow(rowNumber - tableWidjet.paginator.getCurrentPage()*rowPerPage, false);
-					}
-			</script>
+		<script>
+			function selectRow(tableWidjet, rowNumber, rowPerPage) {
+				tableWidjet.unselectAllRows();
+				tableWidjet.selectRow(rowNumber
+						- tableWidjet.paginator.getCurrentPage() * rowPerPage,
+						false);
+			}
+		</script>
 
 	</ui:composition>
 </h:body>

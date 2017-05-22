@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface />
+
+<composite:implementation>
+
+	<p:dialog id="addRouteToService" header="Добавить маршрут"
+		widgetVar="addRouteToServiceWidget" minHeight="40" modal="true">
+		<h:form>
+		
+			<p:selectOneMenu
+				value="#{serviceController.mainBean.vesselBean}"
+				style="width:150px"
+				converter="com.diplom.kozlov.converter.VesselConverter">
+				<f:selectItem itemLabel="Выберите тип корабля" itemValue=""
+					noSelectionOption="true" />
+				<f:selectItems value="#{applicationBean.listVesselBean}"
+					var="vessel" itemLabel="#{vessel.type}" itemValue="#{vessel}" />
+			</p:selectOneMenu>
+			<br></br>
+			
+
+			<br></br><br></br>
+		
+
+			<p:commandButton value="Изменить"
+				actionListener="#{serviceController.add}"
+				update="@form :#{p:component('addRouteToService')}" />
+			<p:commandButton value="Закрыть"
+				onclick="PF('addRouteToServiceWidget').hide();" immediate="true"
+				update=":#{p:component('addRouteToService')}">
+
+			</p:commandButton>
+		</h:form>
+	</p:dialog>
+</composite:implementation>
+</html>

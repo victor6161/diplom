@@ -6,10 +6,10 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:shedule="http://java.sun.com/jsf/composite/pages/shedule">
+	xmlns:service="http://java.sun.com/jsf/composite/pages/service">
 
 <h:head>
-
+<h:outputStylesheet ></h:outputStylesheet>
 </h:head>
 <h:body>
 	<ui:composition template="/resources/pages/template/template.xhtml">
@@ -20,10 +20,11 @@
 			<ui:include src="/resources/pages/service/table.xhtml" />
 		</ui:define>
 			<ui:define name="add">
-				<!-- <shedule:addRoute />
-				<shedule:updateRoute /> -->
+				<service:addRouteToService />
+				<service:comparison />
 			</ui:define>
 	</ui:composition>
+	
 
 
 

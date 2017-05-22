@@ -15,10 +15,10 @@ import lombok.Setter;
 
 @ManagedBean(name = "serviceController", eager = true)
 @SessionScoped
-public class SheduleController {
-	private SheduleDataFacade facade = new SheduleDataFacade(this); 
+public class ServiceController {
+	private ServiceDataFacade facade = new ServiceDataFacade(this); 
 	
-	private static final Logger LOGGER = Logger.getLogger(SheduleController.class);
+	private static final Logger LOGGER = Logger.getLogger(ServiceController.class);
 	@Setter
 	@Getter
 	private Mapper mapper = new Mapper();
@@ -53,7 +53,11 @@ public class SheduleController {
 		facade.onEditOpen();
 			
 	}
-
+	public void onCompareOpen() {
+		LOGGER.info("onCompareOpen");
+		facade.onCompareOpen();
+			
+	}
 	public void add() {
 		LOGGER.info("add");
 		facade.add();

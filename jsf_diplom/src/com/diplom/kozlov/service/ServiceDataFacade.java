@@ -1,17 +1,29 @@
 package com.diplom.kozlov.service;
 
+import java.util.ArrayList;
+import java.util.List;
 
+import com.diplom.kozlov.service.view.Compare;
 
-public class SheduleDataFacade {
-	private SheduleController sheduleController;
+public class ServiceDataFacade {
+	private ServiceController serviceController;
 
-	public SheduleDataFacade(SheduleController sheduleController) {
-		this.sheduleController = sheduleController;
+	public ServiceDataFacade(ServiceController sheduleController) {
+		this.serviceController = sheduleController;
 	}
 
 	//private static final Logger LOGGER = Logger.getLogger(SheduleDataFacade.class);
 
 	public void init() {
+		List<Compare> compareList = new ArrayList<Compare>();
+		compareList.add(new Compare("requarement1",12.0,15.0));
+		compareList.add(new Compare("requarement1",17.0,18.0));
+		compareList.add(new Compare("requarement1",11.0,15.0));
+		compareList.add(new Compare("requarement1",21.0,6.0));
+		compareList.add(new Compare("requarement1",12.0,34.0));
+		compareList.add(new Compare("requarement1",23.0,43.0));
+		compareList.add(new Compare("requarement1",11.0,9.0));
+		serviceController.getMainBean().setCompareList(compareList);
 
 	/*	List<SheduleDto> sheduleDto = sheduleController.getSheduleService().getShedule();
 		List<RowBean> rowsBean = new ArrayList<RowBean>();
@@ -55,6 +67,11 @@ public class SheduleDataFacade {
 	 	EditorBean editorBean = sheduleController.getMapper().sheduleDtoToEditorBean(sheduleDto);
 	 	sheduleController.getMainBean().setEditorBean(editorBean);*/
 	 	
+		
+	}
+
+	public void onCompareOpen() {
+		
 		
 	}
 

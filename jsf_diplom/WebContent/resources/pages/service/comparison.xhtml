@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface />
+
+<composite:implementation>
+	<p:dialog id="comparison" header="Сравнение параметров"
+		widgetVar="comparisonWidget" minHeight="40" maxWidth="100"
+		modal="true">
+
+		<h:form>
+	
+			<p:dataTable var="requirement"
+				value="#{serviceController.mainBean.compareList}"
+				rowStyleClass="#{requirement.shipValue le 15.0 ? 'highlight1' : null}">
+
+				<p:column headerText="параметр">
+					<h:outputText value="#{requirement.title}" />
+				</p:column>
+				<p:column headerText="shipValue">
+					<h:outputText value="#{requirement.shipValue}" />
+				</p:column>
+				<p:column headerText="requiredValue">
+					<h:outputText value="#{requirement.requiredValue}" />
+				</p:column>
+
+			</p:dataTable>
+			<p:commandButton value="Закрыть"
+				onclick="PF('comparisonWidget').hide();" immediate="true" />
+
+		</h:form>
+
+	</p:dialog>
+</composite:implementation>
+</html>
