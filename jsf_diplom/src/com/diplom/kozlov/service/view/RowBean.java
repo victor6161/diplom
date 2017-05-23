@@ -1,30 +1,30 @@
 package com.diplom.kozlov.service.view;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Period;
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 
 public class RowBean {
+	@Setter
+	@Getter
+	private String title;
+	@Setter
+	@Getter
+	private Period allTime;
 	
-	@Override
-	public String toString() {
-		return "RowBean [type=" + type + ", loadCapacity=" + loadCapacity + ", averageSpeed=" + averageSpeed
-				+ ", fuelConsumtion=" + fuelConsumption + "]";
+	public RowBean(String title) {
+		this.title = title;
+	
+		subRowsBean = new ArrayList<>();
 	}
-	@Setter
-	@Getter
-	private Integer id;
-	@Setter
-	@Getter
-	private String type;
 
 	@Setter
 	@Getter
-	private Double loadCapacity;
-	@Setter
-	@Getter
-	private Double averageSpeed;
-	@Setter
-	@Getter
-	private Double fuelConsumption;
-
+	private List<SubRowBean> subRowsBean;
+	
 }

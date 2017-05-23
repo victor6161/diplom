@@ -21,10 +21,10 @@ import org.primefaces.model.map.Polyline;
 
 import com.diplom.kozlov.db.dto.MarkerDto;
 import com.diplom.kozlov.db.dto.PortDto;
-import com.diplom.kozlov.db.dto.SheduleDto;
+import com.diplom.kozlov.db.dto.RouteDto;
 import com.diplom.kozlov.db.service.MarkerServiceImpl;
 import com.diplom.kozlov.db.service.PortServiceImpl;
-import com.diplom.kozlov.db.service.SheduleServiceImpl;
+import com.diplom.kozlov.db.service.RouteServiceImpl;
 import com.diplom.kozlov.map.view.MarkerPortBean;
 import com.diplom.kozlov.port.PortController;
 
@@ -37,7 +37,7 @@ public class MarkerController {
 	private MapModel simpleModel;
 	private static final Logger LOGGER = Logger.getLogger(PortController.class);
 	private PortServiceImpl portService = new PortServiceImpl();
-	private SheduleServiceImpl sheduleService = new SheduleServiceImpl();
+	private RouteServiceImpl sheduleService = new RouteServiceImpl();
 	@Getter
 	private Marker marker;
 	private List<MarkerDto> markersForSave = new ArrayList<MarkerDto>();
@@ -74,11 +74,11 @@ public class MarkerController {
 	
 	private void initRoutes(){
 		
-		List<SheduleDto> sheduleAll = sheduleService.getShedule();
+		List<RouteDto> sheduleAll = sheduleService.getRoute();
 		LatLng intermediateMarker = null;
 		
 		
-		for (SheduleDto sheduleDto : sheduleAll) {
+		for (RouteDto sheduleDto : sheduleAll) {
 			LatLng portFromLatLng = new LatLng(sheduleDto.getPortFrom().getLatitude(),
 					sheduleDto.getPortFrom().getLongitude());
 			LatLng portToLatLng = new LatLng(sheduleDto.getPortTo().getLatitude(),

@@ -14,9 +14,9 @@ import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.db.service.CountryServiceImpl;
-import com.diplom.kozlov.db.service.PortService;
-import com.diplom.kozlov.db.service.PortServiceImpl;
 
+import com.diplom.kozlov.db.service.PortServiceImpl;
+import com.diplom.kozlov.db.service.RouteServiceImpl;
 import com.diplom.kozlov.db.service.VesselServiceImpl;
 
 import lombok.Getter;
@@ -28,9 +28,10 @@ public class ApplicationBean {
 	private static final Logger LOGGER = Logger.getLogger(ApplicationBean.class);
 
 	
-	private PortService portService = new PortServiceImpl();
+	private PortServiceImpl portService = new PortServiceImpl();
 	private VesselServiceImpl vesselService = new VesselServiceImpl();
 	private CountryServiceImpl countryService = new CountryServiceImpl();
+	private RouteServiceImpl routeService = new RouteServiceImpl();
 	@Setter
 	@Getter
 	private List<PortBean> listPortBean;
@@ -40,6 +41,9 @@ public class ApplicationBean {
 	@Setter
 	@Getter
 	private List<VesselBean> listVesselBean;
+	@Setter
+	@Getter
+	private List<RouteBean> listRouteBean;
 	
 	private Mapper mapper = new Mapper();
 
@@ -47,14 +51,20 @@ public class ApplicationBean {
 		listPortBean = new ArrayList<>();
 		listCountryBean = new ArrayList<>();
 		listVesselBean = new ArrayList<>();
+		listRouteBean = new ArrayList<>();
 	}
 	@PostConstruct
 	private void init(){
 		listPortBean = getListPortBeanDB();
 		listCountryBean = getListCountryBeanDB();
 		listVesselBean = getListVesselBeanDB();
+		listRouteBean = getListRouteBeanDB();
 	}
 
+	private List<RouteBean> getListRouteBeanDB() {
+		
+		return null;
+	}
 	private List<VesselBean> getListVesselBeanDB() {
 		List<VesselDto> vesselDtoAll = vesselService.getVessels();
 		List<VesselBean> vesselBean = new ArrayList<>();

@@ -12,11 +12,12 @@ import com.diplom.kozlov.db.dto.PortDto;
 import com.diplom.kozlov.entity.PortEntity;
 
 
-public class PortServiceImpl implements PortService {
+
+public class PortServiceImpl  {
 	private static final Logger LOGGER = Logger.getLogger(PortServiceImpl.class);
 	private PortDao portDao = new PortDao();
 	private Mapper mapper = new Mapper();
-	@Override
+	
 	public List<PortDto> getPorts() {
 		LOGGER.info("getPorts");
 		List<PortEntity> portEntity = portDao.getPorts();
@@ -26,7 +27,7 @@ public class PortServiceImpl implements PortService {
 		}
 		return portDto;
 	}
-	@Override
+	
 	public void save(PortDto portDto) {
 		LOGGER.info("save");
 		PortEntity portEntity = mapper.portDtoToEntity(portDto);

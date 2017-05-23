@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:f="http://java.sun.com/jsf/core"
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p="http://primefaces.org/ui"
+ xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface />
+
+<composite:implementation>
+	
+	<p:dialog id="addService" header="Добавить Service" widgetVar="addServiceWidget"  minHeight="40" modal="true">
+		<h:form>
+		
+		
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Название Сервиса" />
+			</div>
+			<p:inputText></p:inputText>
+<!-- 		
+				<p:selectOneMenu
+					value="#{serviceController.mainBean.addBean.routeBean}"
+					style="width:150px"
+					>
+					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listRouteBean}" var="route" itemLabel="#{route.id}" itemValue="#{route}" />
+				</p:selectOneMenu> -->
+			
+		
+
+			<br></br><br></br>
+			<p:commandButton value="Добавить"  actionListener="#{serviceController.add}" update="@form :#{p:component('serviceTableForm')}"/>
+			<p:commandButton value="Закрыть" onclick="PF('addServiceWidget').hide();" immediate="true"  update=":#{p:component('addService')}" >
+				
+			</p:commandButton>
+		</h:form>
+	</p:dialog>
+</composite:implementation>
+</html>

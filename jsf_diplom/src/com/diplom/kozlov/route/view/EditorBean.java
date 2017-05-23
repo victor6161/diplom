@@ -1,4 +1,4 @@
-package com.diplom.kozlov.shedule.view;
+package com.diplom.kozlov.route.view;
 
 import java.util.Date;
 
@@ -8,11 +8,11 @@ import com.diplom.kozlov.application.VesselBean;
 import lombok.Getter;
 import lombok.Setter;
 
-public class RowBean {
+public class EditorBean {
 	@Override
 	public String toString() {
-		return "RowBean [id=" + id + ", portFrom=" + portFrom + ", portTo=" + portTo + ", dateTo=" + dateTo
-				+ ", dateFrom=" + dateFrom + ", vesselBean=" + vesselBean + ", numPoints=" + numPoints + "]";
+		return "EditorBean [id=" + id + ", portFrom=" + portFrom + ", portTo=" + portTo + ", dateFrom=" + dateFrom
+				+ ", dateTo=" + dateTo + ", vesselBean=" + vesselBean + ", numPoints=" + numPoints + "]";
 	}
 	@Setter
 	@Getter
@@ -25,14 +25,16 @@ public class RowBean {
 	private PortBean portTo;
 	@Setter
 	@Getter
-	private Date dateTo;
+	private Date dateFrom;
 	@Setter
 	@Getter
-	private Date dateFrom;
+	private Date dateTo;
+
 	@Setter
 	@Getter
 	private VesselBean vesselBean;
 	@Setter
 	@Getter
-	private Integer numPoints;
+	private int numPoints;
+
 }

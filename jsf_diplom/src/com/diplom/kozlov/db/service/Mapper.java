@@ -6,13 +6,13 @@ import java.util.List;
 import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.MarkerDto;
 import com.diplom.kozlov.db.dto.PortDto;
-import com.diplom.kozlov.db.dto.SheduleDto;
+import com.diplom.kozlov.db.dto.RouteDto;
 import com.diplom.kozlov.db.dto.UserDto;
 import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.entity.CountryEntity;
 import com.diplom.kozlov.entity.MarkerEntity;
 import com.diplom.kozlov.entity.PortEntity;
-import com.diplom.kozlov.entity.SheduleEntity;
+import com.diplom.kozlov.entity.RouteEntity;
 import com.diplom.kozlov.entity.UserEntity;
 import com.diplom.kozlov.entity.VesselEntity;
 
@@ -28,8 +28,8 @@ public class Mapper {
 		CountryDto countryDto = new CountryDto();
 		countryDto.setId(countryEntity.getId());
 		countryDto.setName(countryEntity.getName());
-		countryDto.setPostcode(countryEntity.getPostcode());
-		countryDto.setTax(countryEntity.getTax());
+	/*	countryDto.setPostcode(countryEntity.getPostcode());
+		countryDto.setTax(countryEntity.getTax());*/
 		
 		return countryDto;
 	}
@@ -66,18 +66,16 @@ public class Mapper {
 		return vesselEntity;
 	}
 
-	public SheduleDto sheduleEntityToDto(SheduleEntity sheduleEntity) {
-		SheduleDto sheduleDto = new SheduleDto();
-		sheduleDto.setId(sheduleEntity.getId());
-		sheduleDto.setPortFrom(portEntityToDto(sheduleEntity.getPortFrom()));
-		sheduleDto.setPortTo(portEntityToDto(sheduleEntity.getPortTo()));
+	public RouteDto routeEntityToDto(RouteEntity routeEntity) {
+		RouteDto routeDto = new RouteDto();
+		routeDto.setId(routeEntity.getId());
+		routeDto.setPortFrom(portEntityToDto(routeEntity.getPortFrom()));
+		routeDto.setPortTo(portEntityToDto(routeEntity.getPortTo()));
 		
-		sheduleDto.setDateFrom(sheduleEntity.getDateFrom());
-		sheduleDto.setDateTo(sheduleEntity.getDateTo());
-		sheduleDto.setVesselDto( vesselEntityToDto(sheduleEntity.getVessel()));
-		sheduleDto.setNumPoints(sheduleEntity.getNumPoints());
-		sheduleDto.setMarkersDto(markersEntityToDto(sheduleEntity.getMarkersEntity()));
-		return sheduleDto;
+		
+		routeDto.setNumPoints(routeEntity.getNumPoints());
+		routeDto.setMarkersDto(markersEntityToDto(routeEntity.getMarkersEntity()));
+		return routeDto;
 	}
 
 	public PortEntity portDtoToEntity(PortDto portDto) {
@@ -90,18 +88,17 @@ public class Mapper {
 		return portEntity;
 	}
 
-	public SheduleEntity sheduleDtoToEntity(SheduleDto sheduleDto) {
-		SheduleEntity sheduleEntity = new SheduleEntity();
-		sheduleEntity.setId(sheduleDto.getId());
-		sheduleEntity.setPortFrom(portDtoToEntity(sheduleDto.getPortFrom()));
-		sheduleEntity.setPortTo(portDtoToEntity(sheduleDto.getPortTo()));
-		sheduleEntity.setDateFrom(sheduleDto.getDateFrom());
-		sheduleEntity.setDateTo(sheduleDto.getDateTo());
-		sheduleEntity.setVessel(vesselDtoToEntity(sheduleDto.getVesselDto()));
-		sheduleEntity.setNumPoints(sheduleDto.getNumPoints());
-		sheduleEntity.setMarkersEntity(markersDtoToEntity(sheduleDto.getMarkersDto()));
+	public RouteEntity routeDtoToEntity(RouteDto routeDto) {
+		RouteEntity routeEntity = new RouteEntity();
+		routeEntity.setId(routeDto.getId());
+		routeEntity.setPortFrom(portDtoToEntity(routeDto.getPortFrom()));
+		routeEntity.setPortTo(portDtoToEntity(routeDto.getPortTo()));
+	
+	
+		routeEntity.setNumPoints(routeDto.getNumPoints());
+		routeEntity.setMarkersEntity(markersDtoToEntity(routeDto.getMarkersDto()));
 		
-		return sheduleEntity;
+		return routeEntity;
 	}
 
 	private List<MarkerEntity> markersDtoToEntity(List<MarkerDto> markersDto) {

@@ -3,11 +3,12 @@ package com.diplom.kozlov.service.view;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import com.diplom.kozlov.application.VesselBean;
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +19,9 @@ public class MainBean {
 	@Setter
 	@Getter
 	private List<RowBean> rowsBean;
+	@Setter
+	@Getter
+	private List<SubRowBean> subRowsBean;
 	@Setter
 	@Getter
 	private AddBean addBean;
@@ -33,16 +37,20 @@ public class MainBean {
 	@Setter
 	@Getter
 	private List<Compare> compareList;
-	
+
 	@Setter
 	@Getter
 	private VesselBean vesselBean;
-	
-	public MainBean(){
+
+	public MainBean() {
 		rowsBean = new ArrayList<>();
-		addBean = new AddBean(); 
+		addBean = new AddBean();
 		searchBean = new SearchBean();
+
+		rowsBean = new ArrayList<RowBean>();
+
 	}
 
-	
+
+
 }

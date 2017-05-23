@@ -9,10 +9,10 @@ import com.diplom.kozlov.db.dto.MarkerDto;
 import com.diplom.kozlov.entity.MarkerEntity;
 
 
-public class MarkerServiceImpl implements MarkerService {
+public class MarkerServiceImpl  {
 	private static final Logger LOGGER = Logger.getLogger( MarkerServiceImpl.class);
 	private MarkerDao markerDao = new MarkerDao();
-	@Override
+
 	public void update(List<MarkerDto> markersDto) {
 		LOGGER.info("update");
 		

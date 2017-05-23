@@ -59,6 +59,6 @@ public class MarkerEntity {
 	@Getter
 	@ManyToOne
 	@JoinColumn(name = "route_id")
-	private SheduleEntity sheduleEntity;
+	private RouteEntity routeEntity;
 
 }

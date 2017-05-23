@@ -10,8 +10,9 @@
 <h:body>
 	<ui:composition>
 		<h:form>
-			<p:dataTable id="serviceTableForm" var="team"
-				value="#{dtSubTableView.teams}"
+			<p:dataTable id="serviceTableForm" var="row"
+				value="#{serviceController.mainBean.rowsBean}"
+				
 				>
 				<p:columnGroup type="header">
 					<p:row>
@@ -22,25 +23,25 @@
 					</p:row>
 				</p:columnGroup>
 
-				<p:subTable var="stats" value="#{team.stats}">
+				<p:subTable var="subRow" value="#{row.subRowsBean}">
 					<f:facet name="header">
-						<h:outputText value="#{team.name}" />
+						<h:outputText value="#{row.title}" />
 						<br />
 						<h:outputText value="id корабля" />
 					</f:facet>
 					<p:column>
-						<h:outputText value="#{stats.season}" />
+						<h:outputText value="#{subRow.idRoute}" />
 					</p:column>
 					<p:column>
-						<h:outputText value="#{stats.win}" />
+						<h:outputText value="#{subRow.period}" />
 					</p:column>
 					<p:column>
-						<h:outputText value="#{stats.win}" />
+						<h:outputText value="#{subRow.cost}" />
 					</p:column>
 					<p:column style="width:10px">
 						<h:outputStylesheet library="css" name="comparison.css"  />
-						<p:commandButton icon="ui-icon-bookmark"
-							
+						<p:commandButton 
+							icon="ui-icon-carat-1-s"
 							update=":#{p:component('comparison')}"
 							oncomplete="PF('comparisonWidget').show();"
 							>
@@ -51,15 +52,18 @@
 
 					</p:column>
 					<p:column>
-						<p:commandButton icon="ui-icon-carat-2-n-s">
-
+						<p:commandButton icon="ui-icon-carat-2-n-s"
+							update=":#{p:component('addRouteToService')}"
+							oncomplete="PF('addRouteToServiceWidget').show();"
+						>
+							
 						</p:commandButton>
 					</p:column>
 					<p:columnGroup type="footer">
 						<p:row>
 							<p:column footerText="Общее время на преодоление"
 								style="text-align:right" />
-							<p:column footerText="#{team.allWins}" colspan="3" />
+							<p:column footerText="#{row.allTime}" colspan="3" />
 
 						</p:row>
 
@@ -67,7 +71,12 @@
 				</p:subTable>
 				<f:facet name="footer">
 
-					<p:commandButton icon="ui-icon-add" value="Добавить Сервис" />
+					<p:commandButton icon="ui-icon-add" value="Добавить Сервис"
+							update=":#{p:component('addService')}"
+							oncomplete="PF('addServiceWidget').show();"
+					/>
+					<br/>
+			
 
 
 				</f:facet>

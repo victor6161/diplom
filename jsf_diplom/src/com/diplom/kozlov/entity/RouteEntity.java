@@ -24,20 +24,21 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "route")
-public class SheduleEntity implements Serializable {
+public class RouteEntity implements Serializable {
 	
 
-	@Override
+
+
+
+
+
+	  @Override
 	public String toString() {
-		return "SheduleEntity [id=" + id + ", portFrom=" + portFrom + ", portTo=" + portTo + ", dateFrom=" + dateFrom
-				+ ", dateTo=" + dateTo + ", vessel=" + vessel + ", numPoints=" + numPoints + ", markersEntity="
-				+ markersEntity + "]";
+		return "RouteEntity [id=" + id + ", portFrom=" + portFrom + ", portTo=" + portTo + ", distance=" + distance
+				+ ", numPoints=" + numPoints + ", markersEntity=" + markersEntity + "]";
 	}
 
-
-
-
-	  @Id
+	@Id
 	  @GeneratedValue(strategy=GenerationType.IDENTITY)
 	  @Setter
 	  @Getter
@@ -55,17 +56,8 @@ public class SheduleEntity implements Serializable {
 	  private PortEntity portTo;
 	  @Setter
 	  @Getter
-	  @Column(name = "date_from")
-	  private Date dateFrom;
-	  @Setter
-	  @Getter
-	  @Column(name = "date_to")
-	  private Date dateTo;
-	  @Setter
-	  @Getter
-	  @ManyToOne
-	  @JoinColumn(name="vessel_id", nullable=false)
-	  private VesselEntity vessel;
+	  private double distance;
+	
 	  @Setter
 	  @Getter
 	  @Column(name="number_points")

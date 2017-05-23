@@ -8,11 +8,11 @@ import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.entity.CountryEntity;
 
 
-public class CountryServiceImpl implements CountryService {
+public class CountryServiceImpl {
 	Mapper mapper = new Mapper();
 	CountryDao countryDao = new CountryDao();
 
-	@Override
+
 	public List<CountryDto> getCountries() {
 		
 		List<CountryEntity> countryEntityAll = countryDao.getCountries();

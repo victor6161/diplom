@@ -13,9 +13,9 @@ import org.primefaces.model.chart.BarChartModel;
 import org.primefaces.model.chart.ChartSeries;
 
 import com.diplom.kozlov.db.dto.PortDto;
-import com.diplom.kozlov.db.dto.SheduleDto;
+import com.diplom.kozlov.db.dto.RouteDto;
 import com.diplom.kozlov.db.service.PortServiceImpl;
-import com.diplom.kozlov.db.service.SheduleServiceImpl;
+import com.diplom.kozlov.db.service.RouteServiceImpl;
 import com.diplom.kozlov.vessel.VesselController;
 
 import lombok.Getter;
@@ -27,7 +27,7 @@ public class ChartPort {
 	@Getter
 	private BarChartModel barModel;
 	private PortServiceImpl portService = new PortServiceImpl();
-	private SheduleServiceImpl sheduleService = new SheduleServiceImpl();
+	private RouteServiceImpl sheduleService = new RouteServiceImpl();
 
 	@PostConstruct
 	public void init() {
@@ -53,27 +53,15 @@ public class ChartPort {
 
 	private BarChartModel initBarModel() {
 		BarChartModel model = new BarChartModel();
-		List<SheduleDto> listRoutes = sheduleService.getShedule();
+		List<RouteDto> listRoutes = sheduleService.getRoute();
 		List<PortDto> portDto = portService.getPorts();
 		ChartSeries ports = new ChartSeries();
 		ports.setLabel("Число судов");
-/*		int k = 0;
-		portDto.stream()
-		.forEach(port->{
-			k=0;
-			listShedule.forEach(route-> {
-				if(route.getPortTo().getId().equals(port.getId())){
-					k++;
-				}
-			});
-			ports.set(port.getName(),k);
-		});*/
+		
 		int k = 0;
-		LOGGER.info(listRoutes);
-		LOGGER.info(portDto);
 		for(PortDto port:portDto){
 			k=0;
-			for(SheduleDto route: listRoutes){
+			for(RouteDto route: listRoutes){
 				if(route.getPortTo().getId().equals(port.getId())){
 					k++;
 				}

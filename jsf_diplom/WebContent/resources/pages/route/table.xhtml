@@ -10,13 +10,13 @@
 <h:body>
 	<ui:composition>
 		<h:form>
-			<p:dataTable id="sheduleTableForm" rowIndexVar="rowIndex"
+			<p:dataTable id="routeTableForm" rowIndexVar="rowIndex"
 				widgetVar="dtWv" var="item"
-				value="#{sheduleController.mainBean.rowsBean}" paginator="true"
+				value="#{routeController.mainBean.rowsBean}" paginator="true"
 				lazy="true"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15" selectionMode="single"
-				selection="#{sheduleController.mainBean.selectedRoute}"
+				selection="#{routeController.mainBean.selectedRoute}"
 				rowKey="#{item.id}">
 
 
@@ -27,12 +27,7 @@
 				<p:column headerText="Порт в">
 					<h:outputText value="#{item.portTo.name}" />
 				</p:column>
-				<p:column headerText="Время затраченное на преодоление">
-					<h:outputText value="#{item.dateTo}" />
-				</p:column>
-				<p:column headerText="Корабль">
-					<h:outputText value="#{item.vesselBean.type}" />
-				</p:column>
+			
 				<p:column headerText="Количество точек">
 					<h:outputText value="#{item.numPoints}" />
 				</p:column>
@@ -42,15 +37,19 @@
 				<p:column headerText="Требование по ширине">
 				
 				</p:column>
+				<p:column headerText="Требование по водоизмещению">
+				
+				</p:column>
+				
 				<p:column headerText="очевидно что на одном route может быть несколько препятсвтвий">
 					
 				</p:column>
 				<p:column headerText="Изменить данные">
 					<p:commandButton icon="ui-icon-pencil"
-						actionListener="#{sheduleController.onEditOpen}"
+						actionListener="#{routeController.onEditOpen}"
 						update=":#{p:component('updateRoute')}"
 						oncomplete="PF('updateRouteWidget').show();"
-						onmousedown="selectRow(PF('dtWv'), #{rowIndex}, #{sheduleController.rowsPerPage});">
+						onmousedown="selectRow(PF('dtWv'), #{rowIndex}, #{routeController.rowsPerPage});">
 						<p:resetInput target=":#{p:component('updateRoute')}"></p:resetInput>
 					</p:commandButton>
 				</p:column>
@@ -59,7 +58,7 @@
 					<p:commandButton icon="ui-icon-add" value="Добавить Маршрут"
 						oncomplete="PF('addRouteWidget').show();"
 						update=":#{p:component('addRoute')}"
-						actionListener="#{sheduleController.onAddOpen}">
+						actionListener="#{routeController.onAddOpen}">
 						<p:resetInput target=":#{p:component('addRoute')}"></p:resetInput>
 					</p:commandButton>
 				</f:facet>

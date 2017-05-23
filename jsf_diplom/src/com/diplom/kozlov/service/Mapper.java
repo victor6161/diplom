@@ -2,14 +2,14 @@ package com.diplom.kozlov.service;
 
 import com.diplom.kozlov.application.PortBean;
 import com.diplom.kozlov.db.dto.PortDto;
-import com.diplom.kozlov.db.dto.SheduleDto;
-import com.diplom.kozlov.shedule.view.AddBean;
-import com.diplom.kozlov.shedule.view.EditorBean;
-import com.diplom.kozlov.shedule.view.RowBean;
+import com.diplom.kozlov.db.dto.RouteDto;
+import com.diplom.kozlov.route.view.AddBean;
+import com.diplom.kozlov.route.view.EditorBean;
+import com.diplom.kozlov.route.view.RowBean;
 
 public class Mapper {
 	private com.diplom.kozlov.application.Mapper mapperApplication = new com.diplom.kozlov.application.Mapper();
-	public RowBean dtoToRowBean(SheduleDto route) {
+	public RowBean dtoToRowBean(RouteDto route) {
 		RowBean rowBean = new RowBean();
 		rowBean.setId(route.getId());
 		rowBean.setPortFrom(mapperApplication.portDtoToBean(route.getPortFrom()));
@@ -21,8 +21,8 @@ public class Mapper {
 		return rowBean;
 	}
 
-	public SheduleDto addBeanToDto(AddBean addBean) {
-		SheduleDto sheduleDto = new SheduleDto();
+	public RouteDto addBeanToDto(AddBean addBean) {
+		RouteDto sheduleDto = new RouteDto();
 		sheduleDto.setDateFrom(addBean.getDateFrom());
 		sheduleDto.setDateTo(addBean.getDateTo());
 		sheduleDto.setPortFrom(portBeanToDto(addBean.getPortFrom()));
@@ -43,8 +43,8 @@ public class Mapper {
 	}
 
 
-	public SheduleDto editorBeanToDto(EditorBean editorBean) {
-		SheduleDto sheduleDto = new SheduleDto();
+	public RouteDto editorBeanToDto(EditorBean editorBean) {
+		RouteDto sheduleDto = new RouteDto();
 		sheduleDto.setId(editorBean.getId());
 		sheduleDto.setPortFrom(mapperApplication.portBeanToDto(editorBean.getPortFrom()));
 		sheduleDto.setPortTo(mapperApplication.portBeanToDto(editorBean.getPortTo()));
@@ -55,8 +55,8 @@ public class Mapper {
 		return sheduleDto;
 	}
 
-	public SheduleDto rowBeanToDto(RowBean rowBean) {
-		SheduleDto sheduleDto = new SheduleDto();
+	public RouteDto rowBeanToDto(RowBean rowBean) {
+		RouteDto sheduleDto = new RouteDto();
 		sheduleDto.setId(rowBean.getId());
 		sheduleDto.setPortFrom(mapperApplication.portBeanToDto(rowBean.getPortFrom()));
 		sheduleDto.setPortTo(mapperApplication.portBeanToDto(rowBean.getPortTo()));
@@ -68,7 +68,7 @@ public class Mapper {
 		return sheduleDto;
 	}
 
-	public EditorBean sheduleDtoToEditorBean(SheduleDto sheduleDto) {
+	public EditorBean sheduleDtoToEditorBean(RouteDto sheduleDto) {
 		EditorBean editorBean = new EditorBean();
 		editorBean.setId(sheduleDto.getId());
 		editorBean.setPortFrom(mapperApplication.portDtoToBean(sheduleDto.getPortFrom()));

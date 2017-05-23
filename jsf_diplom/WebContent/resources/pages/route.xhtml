@@ -6,7 +6,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:shedule="http://java.sun.com/jsf/composite/pages/shedule">
+	xmlns:route="http://java.sun.com/jsf/composite/pages/route">
 
 <h:head>
 
@@ -14,11 +14,11 @@
 <h:body>
 	<ui:composition template="/resources/pages/template/template.xhtml">
 		<ui:define name="main">
-			<ui:include src="/resources/pages/shedule/table.xhtml" />
+			<ui:include src="/resources/pages/route/table.xhtml" />
 		</ui:define>
 			<ui:define name="add">
-				<shedule:addRoute />
-				<shedule:updateRoute />
+				<route:addRoute />
+				<route:updateRoute />
 			</ui:define>
 	</ui:composition>
 

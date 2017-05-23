@@ -1,4 +1,4 @@
-package com.diplom.kozlov.shedule.view;
+package com.diplom.kozlov.route.view;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import javax.faces.bean.SessionScoped;
 import lombok.Getter;
 import lombok.Setter;
 
-@ManagedBean(name = "mainBeanShedule", eager = true)
+@ManagedBean(name = "mainBeanRoute", eager = true)
 @SessionScoped
 public class MainBean {
 	@Setter
@@ -27,7 +27,7 @@ public class MainBean {
 	@Getter
 	private EditorBean editorBean;
 	public MainBean(){
-		
+		selectedRoute = new RowBean();
 		rowsBean = new ArrayList<>();
 		addBean = new AddBean(); 
 	}

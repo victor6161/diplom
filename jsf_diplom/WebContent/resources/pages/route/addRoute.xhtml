@@ -9,8 +9,9 @@
 <composite:interface />
 
 <composite:implementation>
-	<p:dialog id="updateRoute" header="Update Route"
-		widgetVar="updateRouteWidget" minHeight="40" modal="true">
+
+	<p:dialog id="addRoute" header="Добавить маршрут"
+		widgetVar="addRouteWidget" minHeight="40" modal="true">
 		<h:form>
 
 
@@ -20,7 +21,7 @@
 
 			<div style="margin: 10px">
 				<p:selectOneMenu
-					value="#{sheduleController.mainBean.editorBean.portFrom}"
+					value="#{routeController.mainBean.addBean.portFrom}"
 					style="width:150px"
 					converter="com.diplom.kozlov.converter.PortConverter">
 					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
@@ -28,12 +29,8 @@
 				</p:selectOneMenu>
 				<br></br>
 			</div>
-			<div style="margin: 10px; font-weight: bold;">
-				<h:outputText value="Время отправки" />
-			</div>
-			<p:calendar id="fromDatetime"
-				value="#{sheduleController.mainBean.editorBean.dateFrom}"
-				pattern="MM/dd/yyyy HH:mm:ss" />
+
+	
 
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Порт прибытия" />
@@ -41,7 +38,7 @@
 
 			<div style="margin: 10px;">
 				<p:selectOneMenu
-					value="#{sheduleController.mainBean.editorBean.portTo}"
+					value="#{routeController.mainBean.addBean.portTo}"
 					style="width:150px" converter="com.diplom.kozlov.converter.PortConverter">
 					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
 					<f:selectItems value="#{applicationBean.listPortBean}" var="port" itemLabel=" #{port.name}" itemValue="#{port}" />
@@ -49,19 +46,13 @@
 				<br></br>
 			</div>
 
-			<div style="margin: 10px; font-weight: bold;">
-				<h:outputText value="Время прибытия" />
-			</div>
-			<p:calendar id="toDatetime"
-				value="#{sheduleController.mainBean.editorBean.dateTo}"
-				pattern="MM/dd/yyyy HH:mm:ss" />
-			<br></br>
+		
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Выберите тип корабля" />
 			</div>
 		
 			<p:selectOneMenu
-				value="#{sheduleController.mainBean.editorBean.vesselBean}"
+				value="#{routeController.mainBean.addBean.vesselBean}"
 				style="width:150px"
 				converter="com.diplom.kozlov.converter.VesselConverter">
 				<f:selectItem itemLabel="Выберите тип корабля" itemValue=""
@@ -75,14 +66,19 @@
 				<h:outputText value="Количество точек" />
 			</div>
 			<p:inputText
-				value="#{sheduleController.mainBean.editorBean.numPoints}"
+				value="#{routeController.mainBean.addBean.numPoints}"
 				 />
 			<br></br><br></br>
 		
-			<p:commandButton value="Обновить"
-				actionListener="#{sheduleController.edit}"
-				update=":#{p:component('updateRoute')} :#{p:component('sheduleTableForm')}" />
-			<p:commandButton value="Закрыть" onclick="PF('updateRouteWidget').hide();" immediate="true"/>
+
+			<p:commandButton value="Добавить"
+				actionListener="#{routeController.add}"
+				update="@form :#{p:component('routeTableForm')}" />
+			<p:commandButton value="Закрыть"
+				onclick="PF('addRouteWidget').hide();" immediate="true"
+				update=":#{p:component('addRoute')}">
+
+			</p:commandButton>
 		</h:form>
 	</p:dialog>
 </composite:implementation>

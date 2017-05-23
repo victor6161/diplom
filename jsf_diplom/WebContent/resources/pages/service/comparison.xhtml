@@ -17,7 +17,8 @@
 	
 			<p:dataTable var="requirement"
 				value="#{serviceController.mainBean.compareList}"
-				rowStyleClass="#{requirement.shipValue le 15.0 ? 'highlight1' : null}">
+				rowStyleClass="#{requirement.shipValue le 15.0 ? 'highlight1' : null}"
+				tableStyle="width:auto">
 
 				<p:column headerText="параметр">
 					<h:outputText value="#{requirement.title}" />
@@ -30,9 +31,11 @@
 				</p:column>
 
 			</p:dataTable>
-			<p:commandButton value="Закрыть"
-				onclick="PF('comparisonWidget').hide();" immediate="true" />
-
+			<br/>
+			<div style="text-align:center">
+				<p:commandButton value="Закрыть"
+					onclick="PF('comparisonWidget').hide();" immediate="true" />
+			</div>
 		</h:form>
 
 	</p:dialog>

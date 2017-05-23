@@ -1,4 +1,4 @@
-package com.diplom.kozlov.shedule.view;
+package com.diplom.kozlov.route.view;
 
 import java.util.Date;
 

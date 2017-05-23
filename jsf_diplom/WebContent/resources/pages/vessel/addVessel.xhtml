@@ -32,15 +32,34 @@
 				</div>
 				<div style="margin: 10px">
 					<p:inputText id="averageSpeed" value="#{vesselController.mainBean.addBean.averageSpeed}" required="true" requiredMessage="Field is empty"/>
-					<br></br>
+					<br/>
 				</div>
 				<div style="margin: 10px; font-weight: bold;">
 					<h:outputText value="Потребление топлива" />
 				</div>
 				<div style="margin: 10px">
 					<p:inputText id="fuelConsumtion" value="#{vesselController.mainBean.addBean.fuelConsumtion}" required="true" requiredMessage="Field is empty"/>
-					<br></br>
+					<br/>
 				</div>
+				<div style="margin: 10px; font-weight: bold;">
+					<h:outputText value="Длина" />
+				</div>
+				<div style="margin: 10px">
+					<p:inputText value="#{vesselController.mainBean.addBean.length}"></p:inputText>
+				</div>
+				<div style="margin: 10px; font-weight: bold;">
+					<h:outputText value="Ширина" />
+				</div>
+				<div style="margin: 10px">
+					<p:inputText value="#{vesselController.mainBean.addBean.width}"></p:inputText>
+				</div>
+				<div style="margin: 10px; font-weight: bold;">
+					<h:outputText value="Водоизмещеиние" />
+				</div>
+				<div style="margin: 10px">
+					<p:inputText value="#{vesselController.mainBean.addBean.draught}"></p:inputText>
+				</div>
+				
 
 
 			<p:commandButton value="Добавить"  actionListener="#{vesselController.add}" update="@form :#{p:component('vesselTableForm')}"/>

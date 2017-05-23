@@ -9,7 +9,7 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
-public class SheduleDto implements Serializable {
+public class RouteDto implements Serializable {
 	@Override
 	public String toString() {
 		return "SheduleDto [id=" + id + ", portFrom=" + portFrom + ", portTo=" + portTo + ", dateTo=" + dateTo

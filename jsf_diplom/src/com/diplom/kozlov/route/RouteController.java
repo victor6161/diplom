@@ -1,4 +1,4 @@
-package com.diplom.kozlov.shedule;
+package com.diplom.kozlov.route;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -8,29 +8,29 @@ import javax.faces.bean.SessionScoped;
 import org.apache.log4j.Logger;
 import org.primefaces.context.RequestContext;
 
-import com.diplom.kozlov.db.service.SheduleServiceImpl;
-import com.diplom.kozlov.shedule.view.MainBean;
+import com.diplom.kozlov.db.service.RouteServiceImpl;
+import com.diplom.kozlov.route.view.MainBean;
 
 import lombok.Getter;
 import lombok.Setter;
 
-@ManagedBean(name = "sheduleController", eager = true)
+@ManagedBean(name = "routeController", eager = true)
 @SessionScoped
-public class SheduleController {
-	private SheduleDataFacade facade = new SheduleDataFacade(this); 
+public class RouteController {
+	private RouteDataFacade facade = new RouteDataFacade(this); 
 	
-	private static final Logger LOGGER = Logger.getLogger(SheduleController.class);
+	private static final Logger LOGGER = Logger.getLogger(RouteController.class);
 	@Setter
 	@Getter
 	private Mapper mapper = new Mapper();
 	
 	@Setter
 	@Getter
-	@ManagedProperty(value = "#{mainBeanShedule}")
+	@ManagedProperty(value = "#{mainBeanRoute}")
 	private MainBean mainBean;
 	@Setter
 	@Getter
-	private SheduleServiceImpl sheduleService = new SheduleServiceImpl();
+	private RouteServiceImpl routeService = new RouteServiceImpl();
 	@Setter
 	@Getter
 	private String rowsPerPage = "10";

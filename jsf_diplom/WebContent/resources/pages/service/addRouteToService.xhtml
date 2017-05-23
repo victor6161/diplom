@@ -14,15 +14,7 @@
 		widgetVar="addRouteToServiceWidget" minHeight="40" modal="true">
 		<h:form>
 		
-			<p:selectOneMenu
-				value="#{serviceController.mainBean.vesselBean}"
-				style="width:150px"
-				converter="com.diplom.kozlov.converter.VesselConverter">
-				<f:selectItem itemLabel="Выберите тип корабля" itemValue=""
-					noSelectionOption="true" />
-				<f:selectItems value="#{applicationBean.listVesselBean}"
-					var="vessel" itemLabel="#{vessel.type}" itemValue="#{vessel}" />
-			</p:selectOneMenu>
+
 			<br></br>
 			
 

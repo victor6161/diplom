@@ -10,11 +10,11 @@ import com.diplom.kozlov.db.dto.UserDto;
 import com.diplom.kozlov.entity.UserEntity;
 
 
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl {
 	private static final Logger LOGGER = Logger.getLogger(UserServiceImpl .class);
 	Mapper mapper = new Mapper();
 	UserDao userDao = new UserDao();
-	@Override
+
 	public void save(UserDto userDto) {
 		LOGGER.info("save");
 		UserEntity userEntity = mapper.userDtoToEntity(userDto);
@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService{
 		
 	}
 
-	@Override
+	
 	public List<UserDto> getUsers() {
 		LOGGER.info("getUsers");
 		List<UserEntity> userEntity = userDao.getUsers();
