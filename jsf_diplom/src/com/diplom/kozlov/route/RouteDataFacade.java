@@ -31,7 +31,7 @@ public class RouteDataFacade {
 		for (RouteDto route : routeDto) {
 			rowsBean.add(routeController.getMapper().dtoToRowBean(route));
 		}
-		//routeController.getMainBean().setRowsBean(rowsBean);
+		routeController.getMainBean().setRowsBean(rowsBean);
 	}
 	
 

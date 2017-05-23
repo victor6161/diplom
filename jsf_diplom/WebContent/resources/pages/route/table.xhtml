@@ -31,14 +31,12 @@
 				<p:column headerText="Количество точек">
 					<h:outputText value="#{item.numPoints}" />
 				</p:column>
-				<p:column headerText="Требование по длине">
-				
+				<p:column headerText="Требование по габаритам">
+				<h:outputText value="#{item.length} x #{item.width}" />
 				</p:column>
-				<p:column headerText="Требование по ширине">
 				
-				</p:column>
 				<p:column headerText="Требование по водоизмещению">
-				
+				<h:outputText value="#{item.draught}" />
 				</p:column>
 				
 				<p:column headerText="очевидно что на одном route может быть несколько препятсвтвий">

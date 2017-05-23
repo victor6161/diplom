@@ -24,52 +24,57 @@
 					value="#{routeController.mainBean.addBean.portFrom}"
 					style="width:150px"
 					converter="com.diplom.kozlov.converter.PortConverter">
-					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
-					<f:selectItems value="#{applicationBean.listPortBean}" var="port" itemLabel=" #{port.name}" itemValue="#{port}" />
+					<f:selectItem itemLabel="Выберите порт" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listPortBean}" var="port"
+						itemLabel=" #{port.name}" itemValue="#{port}" />
 				</p:selectOneMenu>
 				<br></br>
 			</div>
 
-	
+
 
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Порт прибытия" />
 			</div>
 
 			<div style="margin: 10px;">
-				<p:selectOneMenu
-					value="#{routeController.mainBean.addBean.portTo}"
-					style="width:150px" converter="com.diplom.kozlov.converter.PortConverter">
-					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
-					<f:selectItems value="#{applicationBean.listPortBean}" var="port" itemLabel=" #{port.name}" itemValue="#{port}" />
+				<p:selectOneMenu value="#{routeController.mainBean.addBean.portTo}"
+					style="width:150px"
+					converter="com.diplom.kozlov.converter.PortConverter">
+					<f:selectItem itemLabel="Выберите порт" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listPortBean}" var="port"
+						itemLabel=" #{port.name}" itemValue="#{port}" />
 				</p:selectOneMenu>
 				<br></br>
 			</div>
 
-		
-			<div style="margin: 10px; font-weight: bold;">
-				<h:outputText value="Выберите тип корабля" />
-			</div>
-		
-			<p:selectOneMenu
-				value="#{routeController.mainBean.addBean.vesselBean}"
-				style="width:150px"
-				converter="com.diplom.kozlov.converter.VesselConverter">
-				<f:selectItem itemLabel="Выберите тип корабля" itemValue=""
-					noSelectionOption="true" />
-				<f:selectItems value="#{applicationBean.listVesselBean}"
-					var="vessel" itemLabel=" #{vessel.type}" itemValue="#{vessel}" />
-			</p:selectOneMenu>
-			<br></br>
-			
+
+
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Количество точек" />
 			</div>
-			<p:inputText
-				value="#{routeController.mainBean.addBean.numPoints}"
-				 />
-			<br></br><br></br>
-		
+			<p:inputText value="#{routeController.mainBean.addBean.numPoints}" />
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Дистанция между портами" />
+			</div>
+			<p:inputText value="#{routeController.mainBean.addBean.distance}" />
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Требование по длине" />
+			</div>
+			<p:inputText value="#{routeController.mainBean.addBean.length}" />
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Требование по ширине" />
+			</div>
+			<p:inputText value="#{routeController.mainBean.addBean.width}" />
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Требование по водоизмещению" />
+			</div>
+			<p:inputText value="#{routeController.mainBean.addBean.draught}" />
+			<br></br>
+			<br></br>
+
 
 			<p:commandButton value="Добавить"
 				actionListener="#{routeController.add}"

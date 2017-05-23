@@ -9,11 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class RowBean {
-	@Override
-	public String toString() {
-		return "RowBean [id=" + id + ", portFrom=" + portFrom + ", portTo=" + portTo + ", dateTo=" + dateTo
-				+ ", dateFrom=" + dateFrom + ", vesselBean=" + vesselBean + ", numPoints=" + numPoints + "]";
-	}
+
 	@Setter
 	@Getter
 	private Integer id;
@@ -23,16 +19,20 @@ public class RowBean {
 	@Setter
 	@Getter
 	private PortBean portTo;
-	@Setter
-	@Getter
-	private Date dateTo;
-	@Setter
-	@Getter
-	private Date dateFrom;
-	@Setter
-	@Getter
-	private VesselBean vesselBean;
+
 	@Setter
 	@Getter
 	private Integer numPoints;
+	@Setter
+	@Getter
+	private double distance;
+	@Setter
+	@Getter
+	private double length;
+	@Setter
+	@Getter
+	private double width;
+	@Setter
+	@Getter
+	private double draught;
 }

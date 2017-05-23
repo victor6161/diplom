@@ -14,18 +14,23 @@ public class Mapper {
 		rowBean.setId(route.getId());
 		rowBean.setPortFrom(mapperApplication.portDtoToBean(route.getPortFrom()));
 		rowBean.setPortTo(mapperApplication.portDtoToBean(route.getPortTo()));
-	
+		rowBean.setDistance(route.getDistance());
+		rowBean.setDraught(route.getDraught());
+		rowBean.setWidth(route.getWidth());
+		rowBean.setLength(route.getLength());
 		rowBean.setNumPoints(route.getNumPoints());
 		return rowBean;
 	}
 
 	public RouteDto addBeanToDto(AddBean addBean) {
 		RouteDto routeDto = new RouteDto();
-		routeDto.setDateFrom(addBean.getDateFrom());
-		routeDto.setDateTo(addBean.getDateTo());
+		routeDto.setDistance(addBean.getDistance());
+		routeDto.setDraught(addBean.getDraught());
+		routeDto.setWidth(addBean.getWidth());
+		routeDto.setLength(addBean.getLength());
 		routeDto.setPortFrom(portBeanToDto(addBean.getPortFrom()));
 		routeDto.setPortTo(portBeanToDto(addBean.getPortTo()));
-		routeDto.setVesselDto(mapperApplication.vesselBeanToDto(addBean.getVesselBean()));
+		
 		routeDto.setNumPoints(addBean.getNumPoints());
 		return routeDto;
 	}
@@ -46,9 +51,7 @@ public class Mapper {
 		routeDto.setId(editorBean.getId());
 		routeDto.setPortFrom(mapperApplication.portBeanToDto(editorBean.getPortFrom()));
 		routeDto.setPortTo(mapperApplication.portBeanToDto(editorBean.getPortTo()));
-		routeDto.setVesselDto(mapperApplication.vesselBeanToDto(editorBean.getVesselBean()));
-		routeDto.setDateFrom(editorBean.getDateFrom());
-		routeDto.setDateTo(editorBean.getDateTo());
+	
 		routeDto.setNumPoints(editorBean.getNumPoints());
 		return routeDto;
 	}
@@ -58,9 +61,7 @@ public class Mapper {
 		routeDto.setId(rowBean.getId());
 		routeDto.setPortFrom(mapperApplication.portBeanToDto(rowBean.getPortFrom()));
 		routeDto.setPortTo(mapperApplication.portBeanToDto(rowBean.getPortTo()));
-		routeDto.setVesselDto(mapperApplication.vesselBeanToDto(rowBean.getVesselBean()));
-		routeDto.setDateFrom(rowBean.getDateFrom());
-		routeDto.setDateTo(rowBean.getDateTo());
+
 		routeDto.setNumPoints(rowBean.getNumPoints());
 		
 		return routeDto;
@@ -71,10 +72,9 @@ public class Mapper {
 		editorBean.setId(routeDto.getId());
 		editorBean.setPortFrom(mapperApplication.portDtoToBean(routeDto.getPortFrom()));
 		editorBean.setPortTo(mapperApplication.portDtoToBean(routeDto.getPortTo()));
-		editorBean.setVesselBean(mapperApplication.vesselDtoToBean(routeDto.getVesselDto()));
+		
 		editorBean.setNumPoints(routeDto.getNumPoints());
-		editorBean.setDateFrom(routeDto.getDateFrom());
-		editorBean.setDateTo(routeDto.getDateTo());
+
 		return editorBean;
 	}
 

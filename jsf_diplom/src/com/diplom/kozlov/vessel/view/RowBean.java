@@ -26,5 +26,16 @@ public class RowBean {
 	@Setter
 	@Getter
 	private Double fuelConsumption;
-
+	@Setter
+	@Getter
+	private double distance;
+	@Setter
+	@Getter
+	private double length;
+	@Setter
+	@Getter
+	private double width;
+	@Setter
+	@Getter
+	private double draught;
 }

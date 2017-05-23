@@ -54,9 +54,7 @@ public class RouteEntity implements Serializable {
 	  @ManyToOne
 	  @JoinColumn(name="port_id_to", nullable=false)
 	  private PortEntity portTo;
-	  @Setter
-	  @Getter
-	  private double distance;
+
 	
 	  @Setter
 	  @Getter
@@ -68,6 +66,19 @@ public class RouteEntity implements Serializable {
 	  @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	  @JoinColumn(name = "route_id")
 	  private List<MarkerEntity> markersEntity;
+		
+		@Setter
+		@Getter
+		private double length;
+		@Setter
+		@Getter
+		private double width;
+		@Setter
+		@Getter
+		private double draught;
+		  @Setter
+		  @Getter
+		  private double distance;
 	  
 	  
 }

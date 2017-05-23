@@ -71,7 +71,10 @@ public class Mapper {
 		routeDto.setId(routeEntity.getId());
 		routeDto.setPortFrom(portEntityToDto(routeEntity.getPortFrom()));
 		routeDto.setPortTo(portEntityToDto(routeEntity.getPortTo()));
-		
+		routeDto.setDistance(routeEntity.getDistance());
+		routeDto.setDraught(routeEntity.getDraught());
+		routeDto.setLength(routeEntity.getLength());
+		routeDto.setWidth(routeEntity.getWidth());
 		
 		routeDto.setNumPoints(routeEntity.getNumPoints());
 		routeDto.setMarkersDto(markersEntityToDto(routeEntity.getMarkersEntity()));
@@ -93,8 +96,11 @@ public class Mapper {
 		routeEntity.setId(routeDto.getId());
 		routeEntity.setPortFrom(portDtoToEntity(routeDto.getPortFrom()));
 		routeEntity.setPortTo(portDtoToEntity(routeDto.getPortTo()));
-	
-	
+		routeEntity.setDraught(routeDto.getDraught());
+		routeEntity.setLength(routeDto.getLength());
+		routeEntity.setWidth(routeDto.getWidth());
+		routeEntity.setDistance(routeDto.getDistance());
+		
 		routeEntity.setNumPoints(routeDto.getNumPoints());
 		routeEntity.setMarkersEntity(markersDtoToEntity(routeDto.getMarkersDto()));
 		

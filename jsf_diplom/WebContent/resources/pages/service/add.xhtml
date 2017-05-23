@@ -18,14 +18,21 @@
 				<h:outputText value="Название Сервиса" />
 			</div>
 			<p:inputText></p:inputText>
-<!-- 		
-				<p:selectOneMenu
-					value="#{serviceController.mainBean.addBean.routeBean}"
-					style="width:150px"
-					>
-					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
-					<f:selectItems value="#{applicationBean.listRouteBean}" var="route" itemLabel="#{route.id}" itemValue="#{route}" />
-				</p:selectOneMenu> -->
+	
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Выберите тип корабля" />
+			</div>
+		
+			<p:selectOneMenu
+				value="#{serviceController.mainBean.addBean.vesselBean}"
+				style="width:150px"
+				converter="com.diplom.kozlov.converter.VesselConverter">
+				<f:selectItem itemLabel="Выберите тип корабля" itemValue=""
+					noSelectionOption="true" />
+				<f:selectItems value="#{applicationBean.listVesselBean}"
+					var="vessel" itemLabel=" #{vessel.type}" itemValue="#{vessel}" />
+			</p:selectOneMenu>
+			<br></br>
 			
 		
 
