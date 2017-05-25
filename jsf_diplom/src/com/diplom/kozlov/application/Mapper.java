@@ -1,6 +1,7 @@
 package com.diplom.kozlov.application;
 import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.PortDto;
+import com.diplom.kozlov.db.dto.RouteDto;
 import com.diplom.kozlov.db.dto.VesselDto;
 
 
@@ -54,6 +55,25 @@ public class Mapper {
 		vesselDto.setId(vesselBean.getId());
 		vesselDto.setType(vesselBean.getType());
 		return vesselDto;
+	}
+
+	public RouteBean routeDtoToBean(RouteDto route) {
+		RouteBean routeBean = new RouteBean();
+		routeBean.setId(route.getId());
+		routeBean.setPortFrom(this.portDtoToBean(route.getPortFrom()));
+		routeBean.setPortTo(this.portDtoToBean(route.getPortTo()));
+		
+		return routeBean;
+	}
+
+	public RouteDto routeBeanToDto(RouteBean routeBean) {
+		RouteDto routeDto = new RouteDto();
+		routeDto.setId(routeBean.getId());
+		routeDto.setPortFrom(this.portBeanToDto(routeBean.getPortFrom()));
+		routeDto.setPortTo(this.portBeanToDto(routeBean.getPortTo()));
+		
+		return routeDto;
+		
 	}
 	
 	

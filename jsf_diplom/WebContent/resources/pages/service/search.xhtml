@@ -20,8 +20,8 @@
 								<div style="margin: 10px">
 
 
-									<p:outputLabel value="показать service по id" for="serviceSearch"
-										style="margin-right:10px;" />
+									<p:outputLabel value="показать service по id"
+										for="serviceSearch" style="margin-right:10px;" />
 
 
 									<p:inputText id="serviceSearch"
@@ -37,10 +37,17 @@
 									actionListener="#{serviceController.onSearch}">
 
 								</p:commandButton>
-								</h:form>
+								
+							
+							</h:form>
+							<h:form>
+								<p:commandButton  value="Добавить Сервис"
+									update=":#{p:component('addService')}"
+									oncomplete="PF('addServiceWidget').show();" />
+							</h:form>
 						</p:column>
-						
-					
+
+
 					</p:row>
 				</p:panelGrid>
 			</p:column>

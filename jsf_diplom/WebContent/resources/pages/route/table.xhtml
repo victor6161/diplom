@@ -15,9 +15,11 @@
 				value="#{routeController.mainBean.rowsBean}" paginator="true"
 				lazy="true"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-				rowsPerPageTemplate="5,10,15" selectionMode="single"
+				rowsPerPageTemplate="5,10,15" 
+				selectionMode="single"
 				selection="#{routeController.mainBean.selectedRoute}"
-				rowKey="#{item.id}">
+				rowKey="#{item.id}"
+				>
 
 
 				<p:column headerText="Порт из">
@@ -27,16 +29,19 @@
 				<p:column headerText="Порт в">
 					<h:outputText value="#{item.portTo.name}" />
 				</p:column>
+				<p:column headerText="Расстояние">
+					<h:outputText value="#{item.distance}" />
+				</p:column>
 			
 				<p:column headerText="Количество точек">
 					<h:outputText value="#{item.numPoints}" />
 				</p:column>
 				<p:column headerText="Требование по габаритам">
-				<h:outputText value="#{item.length} x #{item.width}" />
+					<h:outputText value="#{item.length} x #{item.width}" />
 				</p:column>
 				
 				<p:column headerText="Требование по водоизмещению">
-				<h:outputText value="#{item.draught}" />
+					<h:outputText value="#{item.draught}" />
 				</p:column>
 				
 				<p:column headerText="очевидно что на одном route может быть несколько препятсвтвий">

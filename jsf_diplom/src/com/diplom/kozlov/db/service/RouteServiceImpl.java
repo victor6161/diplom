@@ -38,10 +38,10 @@ public class RouteServiceImpl {
 		
 		for (double i = 0; i < 1; i = i + additive) {
 			double latitude = RouteDto.getPortFrom().getLatitude() * (1 - i)
-					+ RouteDto.getPortTo().getLatitude() * i;
+					+ RouteDto.getPortTo().getLatitude() * i;//делятся по формуле на numPoints равных частей
 			double longitude = RouteDto.getPortFrom().getLongitude() * (1 - i)
 					+ RouteDto.getPortTo().getLongitude() * i;
-			pathNum++;
+			pathNum++;// порядковый номер точки
 			
 			markerDto.add(new MarkerDto(latitude,longitude,pathNum));
 		}

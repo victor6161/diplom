@@ -8,14 +8,21 @@ import lombok.Setter;
 
 public class AddBean {
 
-
-
+	@Override
+	public String toString() {
+		return "AddBean [title=" + title + ", routeBean=" + routeBean + ", vesselBean=" + vesselBean + "]";
+	}
+	@Setter
+	@Getter
+	private String title;
 	@Setter
 	@Getter
 	private RouteBean routeBean ;
 	@Setter
 	@Getter
 	private VesselBean vesselBean ;
+
+	
 
 
 }

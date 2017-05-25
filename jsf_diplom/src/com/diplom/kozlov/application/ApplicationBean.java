@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 
 import com.diplom.kozlov.db.dto.CountryDto;
 import com.diplom.kozlov.db.dto.PortDto;
+import com.diplom.kozlov.db.dto.RouteDto;
 import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.db.service.CountryServiceImpl;
 
@@ -63,7 +64,12 @@ public class ApplicationBean {
 
 	private List<RouteBean> getListRouteBeanDB() {
 		
-		return null;
+		List<RouteDto> routeDtoAll = routeService.getRoute();
+		List<RouteBean> routeBean = new ArrayList<>();
+		for(RouteDto route:routeDtoAll){
+			routeBean.add(mapper.routeDtoToBean(route));
+		}
+		return routeBean;
 	}
 	private List<VesselBean> getListVesselBeanDB() {
 		List<VesselDto> vesselDtoAll = vesselService.getVessels();

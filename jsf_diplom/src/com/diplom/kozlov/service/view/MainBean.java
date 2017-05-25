@@ -1,11 +1,12 @@
 package com.diplom.kozlov.service.view;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
-import javax.annotation.PostConstruct;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
 
 import com.diplom.kozlov.application.VesselBean;
 
@@ -18,16 +19,18 @@ import lombok.Setter;
 public class MainBean {
 	@Setter
 	@Getter
-	private List<RowBean> rowsBean;
-	@Setter
-	@Getter
-	private List<SubRowBean> subRowsBean;
+	private RowBean rowBean;
+
 	@Setter
 	@Getter
 	private AddBean addBean;
 	@Setter
 	@Getter
-	private RowBean selectedService;
+	private AddRouteToServiceBean addRouteToServiceBean;
+	
+	@Setter
+	@Getter
+	private RowBean selectedRoute;
 	@Setter
 	@Getter
 	private EditorBean editorBean;
@@ -43,11 +46,11 @@ public class MainBean {
 	private VesselBean vesselBean;
 
 	public MainBean() {
-		rowsBean = new ArrayList<>();
+		
 		addBean = new AddBean();
 		searchBean = new SearchBean();
 
-		rowsBean = new ArrayList<RowBean>();
+		rowBean = new RowBean();
 
 	}
 

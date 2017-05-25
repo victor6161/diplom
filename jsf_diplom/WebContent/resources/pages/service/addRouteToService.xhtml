@@ -13,16 +13,29 @@
 	<p:dialog id="addRouteToService" header="Добавить маршрут"
 		widgetVar="addRouteToServiceWidget" minHeight="40" modal="true">
 		<h:form>
-		
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Выбрать Маршрут" />
+			</div>
+			<p:selectOneMenu
+				value="#{serviceController.mainBean.addRouteToServiceBean}"
+				style="width:150px"
+				converter="com.diplom.kozlov.converter.RouteConverter">
+				<f:selectItem itemLabel="Выбрать маршрут" itemValue=""
+					noSelectionOption="true" />
+				<f:selectItems value="#{applicationBean.listRouteBean}" var="item"
+					itemLabel="#{item.id} #{item.portFrom.name} #{item.portTo.name}"
+					itemValue="#{item}" />
+			</p:selectOneMenu>
 
 			<br></br>
-			
 
-			<br></br><br></br>
-		
 
-			<p:commandButton value="Изменить"
-				actionListener="#{serviceController.add}"
+			<br></br>
+			<br></br>
+
+
+			<p:commandButton value="Добавить"
+				actionListener="#{serviceController.addRouteToService}"
 				update="@form :#{p:component('addRouteToService')}" />
 			<p:commandButton value="Закрыть"
 				onclick="PF('addRouteToServiceWidget').hide();" immediate="true"

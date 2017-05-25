@@ -1,45 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
- xmlns:f="http://java.sun.com/jsf/core"
- xmlns:h="http://java.sun.com/jsf/html"
- xmlns:ui="http://java.sun.com/jsf/facelets"
- xmlns:p="http://primefaces.org/ui"
- xmlns:composite="http://java.sun.com/jsf/composite">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
 
 <composite:interface />
 
 <composite:implementation>
-	
-	<p:dialog id="addService" header="Добавить Service" widgetVar="addServiceWidget"  minHeight="40" modal="true">
+
+	<p:dialog id="addService" header="Добавить Service"
+		widgetVar="addServiceWidget" minHeight="40" modal="true">
 		<h:form>
-		
-		
+
+
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Название Сервиса" />
 			</div>
-			<p:inputText></p:inputText>
-	
+			<p:inputText value="#{serviceController.mainBean.addBean.title}"></p:inputText>
+
 			<div style="margin: 10px; font-weight: bold;">
-				<h:outputText value="Выберите тип корабля" />
+				<h:outputText value="Выбрать корабль" />
 			</div>
-		
+
 			<p:selectOneMenu
 				value="#{serviceController.mainBean.addBean.vesselBean}"
 				style="width:150px"
 				converter="com.diplom.kozlov.converter.VesselConverter">
-				<f:selectItem itemLabel="Выберите тип корабля" itemValue=""
+				<f:selectItem itemLabel="Выбрать корабль" itemValue=""
 					noSelectionOption="true" />
 				<f:selectItems value="#{applicationBean.listVesselBean}"
-					var="vessel" itemLabel=" #{vessel.type}" itemValue="#{vessel}" />
+					var="vessel" itemLabel=" #{vessel.type} #{vessel.id}"
+					itemValue="#{vessel}" />
 			</p:selectOneMenu>
 			<br></br>
-			
-		
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Выбрать Маршрут" />
+			</div>
+			<p:selectOneMenu
+				value="#{serviceController.mainBean.addBean.routeBean}"
+				style="width:150px"
+				converter="com.diplom.kozlov.converter.RouteConverter">
+				<f:selectItem itemLabel="Выбрать маршрут" itemValue=""
+					noSelectionOption="true" />
+				<f:selectItems value="#{applicationBean.listRouteBean}"
+					var="item" itemLabel="#{item.id} #{item.portFrom.name} #{item.portTo.name}"
+					itemValue="#{item}" />
+			</p:selectOneMenu>
+			<br></br>
 
-			<br></br><br></br>
-			<p:commandButton value="Добавить"  actionListener="#{serviceController.add}" update="@form :#{p:component('serviceTableForm')}"/>
-			<p:commandButton value="Закрыть" onclick="PF('addServiceWidget').hide();" immediate="true"  update=":#{p:component('addService')}" >
-				
+
+
+			<br></br>
+			<br></br>
+			<p:commandButton value="Добавить"
+				actionListener="#{serviceController.add}"
+				update="@form :#{p:component('serviceTableForm')}" />
+			<p:commandButton value="Закрыть"
+				onclick="PF('addServiceWidget').hide();" immediate="true"
+				update=":#{p:component('addService')}">
+
 			</p:commandButton>
 		</h:form>
 	</p:dialog>

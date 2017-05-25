@@ -8,6 +8,7 @@ import javax.faces.bean.SessionScoped;
 import org.apache.log4j.Logger;
 import org.primefaces.context.RequestContext;
 
+import com.diplom.kozlov.db.service.SServiceImpl;
 import com.diplom.kozlov.service.view.MainBean;
 
 import lombok.Getter;
@@ -31,7 +32,9 @@ public class ServiceController {
 	@Setter
 	@Getter
 	private String rowsPerPage = "10";
-	
+	@Setter
+	@Getter
+	private SServiceImpl service = new SServiceImpl();
 	
 	@PostConstruct
 	private void init(){
@@ -39,7 +42,8 @@ public class ServiceController {
 		facade.init();
 	}
 	public void onSearch() {
-		
+		LOGGER.info("onSearch");
+		facade.onSearch();
 		
 		
 	}
@@ -61,11 +65,19 @@ public class ServiceController {
 	public void add() {
 		LOGGER.info("add");
 		facade.add();
+		RequestContext.getCurrentInstance().execute("PF('addServiceWidget').hide()");
 		
 	}
 	public void onAddOpen(){
 		LOGGER.info("onAddOpen");
 		facade.onAddOpen();
+	}
+	public void onAddBeanToServiceOpen(){
+		facade.onAddBeanToServiceOpen();
+	}
+	
+	public void addBeanToService(){
+		facade.addBeanToService();
 	}
 	
 

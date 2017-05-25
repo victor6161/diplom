@@ -10,73 +10,67 @@
 <h:body>
 	<ui:composition>
 		<h:form>
-			<p:dataTable id="serviceTableForm" var="row"
-				value="#{serviceController.mainBean.rowsBean}"
-				
-				>
-				<p:columnGroup type="header">
-					<p:row>
-						<p:column headerText="id маршрута" />
-						<p:column headerText="время на преодоление" />
-						<p:column headerText="Стоимость преодоление" />
-
-					</p:row>
-				</p:columnGroup>
-
-				<p:subTable var="subRow" value="#{row.subRowsBean}">
-					<f:facet name="header">
-						<h:outputText value="#{row.title}" />
-						<br />
-						<h:outputText value="id корабля" />
-					</f:facet>
-					<p:column>
-						<h:outputText value="#{subRow.idRoute}" />
-					</p:column>
-					<p:column>
-						<h:outputText value="#{subRow.period}" />
-					</p:column>
-					<p:column>
-						<h:outputText value="#{subRow.cost}" />
-					</p:column>
-					<p:column style="width:10px">
-						<h:outputStylesheet library="css" name="comparison.css"  />
-						<p:commandButton 
-							icon="ui-icon-carat-1-s"
-							update=":#{p:component('comparison')}"
-							oncomplete="PF('comparisonWidget').show();"
-							>
-							
-						</p:commandButton>
+			<p:dataTable id="serviceTableForm" rowIndexVar="rowIndex"
+				widgetVar="dtWv" var="row"
+				value="#{serviceController.mainBean.rowBean.subRowsBean}"
+				selectionMode="single"
+				selection="#{serviceController.mainBean.selectedRoute}"
+				rowKey="#{row.id}">
 
 
 
-					</p:column>
-					<p:column>
-						<p:commandButton icon="ui-icon-carat-2-n-s"
-							update=":#{p:component('addRouteToService')}"
-							oncomplete="PF('addRouteToServiceWidget').show();"
-						>
-							
-						</p:commandButton>
-					</p:column>
-					<p:columnGroup type="footer">
-						<p:row>
-							<p:column footerText="Общее время на преодоление"
-								style="text-align:right" />
-							<p:column footerText="#{row.allTime}" colspan="3" />
 
-						</p:row>
 
-					</p:columnGroup>
-				</p:subTable>
+				<f:facet name="header">
+					<h:outputText value="Название сервиса: " />
+					<div style="font-color: green; margin-right: 50px">
+						<h:outputText value="trololo" />
+
+					</div>
+					<!-- как сделать чтобы не было переноса на следующую строку  -->
+					<h:outputText value="id корабля" />
+					<h:outputText value="trololo" />
+
+
+
+
+				</f:facet>
+				<p:column headerText="id маршрута">
+					<h:outputText value="#{row.id}" />
+				</p:column>
+				<p:column headerText="время на преодоление">
+					<h:outputText value="#{row.period}" />
+				</p:column>
+				<p:column headerText="Дистанция">
+					<h:outputText value="#{row.distance}" />
+				</p:column>
+
+
+
+				<p:column>
+					<h:outputStylesheet library="css" name="comparison.css" />
+					<p:commandButton icon="ui-icon-carat-1-s"
+						update=":#{p:component('comparison')}"
+						oncomplete="PF('comparisonWidget').show();">
+
+					</p:commandButton>
+
+
+
+				</p:column>
+
+
+
+
 				<f:facet name="footer">
 
-					<p:commandButton icon="ui-icon-add" value="Добавить Сервис"
-							update=":#{p:component('addService')}"
-							oncomplete="PF('addServiceWidget').show();"
-					/>
-					<br/>
-			
+					<p:commandButton icon="ui-icon-add"
+						update=":#{p:component('addRouteToService')}"
+						oncomplete="PF('addRouteToServiceWidget').show();">
+
+					</p:commandButton>
+					<br />
+
 
 
 				</f:facet>
