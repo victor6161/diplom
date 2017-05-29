@@ -36,6 +36,21 @@ public class SServiceImpl {
 		serviceEntity.forEach(service -> serviceDto.add(mapper.serviceEntityToDto(service)));
 		return serviceDto;
 	}
+	public ServiceDto getServiceById(Integer id) {
+		List<ServiceEntity> servicesEntity = serviceDao.getList();
+		ServiceDto serviceDto = null;
+		for(ServiceEntity serviceEntity : servicesEntity){
+			if(serviceEntity.getId().equals(id)){
+				serviceDto = mapper.serviceEntityToDto(serviceEntity);
+			}
+		}
+		
+		
+		
+		return serviceDto;
+		
+	}
+	
 
 	public void addRoute(RouteDto routeDto, Integer id) {
 		LOGGER.info("saveRoute");

@@ -17,7 +17,7 @@
 	
 			<p:dataTable var="requirement"
 				value="#{serviceController.mainBean.compareList}"
-				rowStyleClass="#{requirement.shipValue le 15.0 ? 'highlight1' : null}"
+				rowStyleClass="#{requirement.shipValue ge requirement.requiredValue ? 'highlight1' : null}"
 				tableStyle="width:auto">
 
 				<p:column headerText="параметр">

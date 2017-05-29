@@ -23,5 +23,14 @@ public class VesselDto implements Serializable {
 	  @Setter
 	  @Getter
 	  private Double averageSpeed;
+	  @Setter
+	  @Getter
+	  private Double draught;
+	  @Setter
+	  @Getter
+	  private Double length;
+	  @Setter
+	  @Getter
+	  private Double width;
 
 }

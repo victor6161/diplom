@@ -35,11 +35,12 @@ public class Mapper {
 		return routeDto;
 	}
 
+	
 	public RowBean serviceDtoToRowBean(ServiceDto serviceDto) {
 		RowBean rowBean = new RowBean();
 		rowBean.setId(serviceDto.getId());
 		rowBean.setTitle(serviceDto.getTitle());
-		rowBean.setVesselId(serviceDto.getVesselDto().getId());
+		rowBean.setVesselBean(mapperApplication.vesselDtoToBean(serviceDto.getVesselDto()));
 		List<SubRowBean> subRowsBean = new ArrayList<>();
 		serviceDto.getRouteDto().forEach(routeDto -> subRowsBean.add(routeDtoToSubRowBean(routeDto)));
 		rowBean.setSubRowsBean(subRowsBean);

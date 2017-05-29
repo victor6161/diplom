@@ -9,12 +9,12 @@ import org.apache.log4j.Logger;
 import com.diplom.kozlov.application.RouteBean;
 import com.diplom.kozlov.db.dto.RouteDto;
 import com.diplom.kozlov.db.dto.ServiceDto;
-import com.diplom.kozlov.entity.ServiceEntity;
+
 import com.diplom.kozlov.service.view.AddBean;
 import com.diplom.kozlov.service.view.AddRouteToServiceBean;
 import com.diplom.kozlov.service.view.Compare;
 import com.diplom.kozlov.service.view.RowBean;
-import com.diplom.kozlov.service.view.SubRowBean;
+
 
 public class ServiceDataFacade {
 	private ServiceController serviceController;
@@ -28,15 +28,7 @@ public class ServiceDataFacade {
 	public void init() {
 
 		LOGGER.info("init");
-		List<Compare> compareList = new ArrayList<Compare>();
-		compareList.add(new Compare("requarement1", 12.0, 15.0));
-		compareList.add(new Compare("requarement1", 17.0, 18.0));
-		compareList.add(new Compare("requarement1", 11.0, 15.0));
-		compareList.add(new Compare("requarement1", 21.0, 6.0));
-		compareList.add(new Compare("requarement1", 12.0, 34.0));
-		compareList.add(new Compare("requarement1", 23.0, 43.0));
-		compareList.add(new Compare("requarement1", 11.0, 9.0));
-		serviceController.getMainBean().setCompareList(compareList);
+
 
 		/*
 		 * RowBean rowBean = null; for (ServiceDto serviceDto : servicesDto) {
@@ -81,6 +73,24 @@ public class ServiceDataFacade {
 	}
 
 	public void onCompareOpen() {
+		Integer routeId = serviceController.getMainBean().getSelectedRoute().getId();
+		//Integer vesselId = serviceController.getMainBean().getRowBean().getVesselBean().getId();
+
+		Integer id = Integer.parseInt(serviceController.getMainBean().getSearchBean().getServiceId());// очень криво
+																										
+		ServiceDto serviceDto = serviceController.getService().getServiceById(id);
+		RouteDto selectedRoute = null;
+		for (RouteDto routeDto : serviceDto.getRouteDto()) {
+			if (routeDto.getId().equals(routeId)) {
+				selectedRoute = routeDto;
+				break;
+			}
+		}
+		serviceDto.getVesselDto();
+		
+		serviceController.getMainBean().getCompareList().add(new Compare("Length" ,serviceDto.getVesselDto().getLength(),selectedRoute.getLength()));
+		serviceController.getMainBean().getCompareList().add(new Compare("width" ,serviceDto.getVesselDto().getWidth(),selectedRoute.getWidth()));
+		
 
 	}
 
@@ -95,7 +105,6 @@ public class ServiceDataFacade {
 	public void onAddRouteToServiceOpen() {
 		Integer id = serviceController.getMainBean().getRowBean().getId();
 		serviceController.getMainBean().getAddRouteToServiceBean().setServiceId(id);
-		
 
 	}
 
@@ -104,8 +113,8 @@ public class ServiceDataFacade {
 		Integer id = Integer.parseInt(serviceController.getMainBean().getSearchBean().getServiceId());
 		setServiceById(id);
 	}
-	
-	public void setServiceById(Integer id){
+
+	public void setServiceById(Integer id) {
 		List<ServiceDto> servicesDto = serviceController.getService().getList();
 		for (ServiceDto serviceDto : servicesDto) {
 			if (serviceDto.getId().equals(id)) {

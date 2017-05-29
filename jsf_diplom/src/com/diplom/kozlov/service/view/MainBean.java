@@ -30,7 +30,7 @@ public class MainBean {
 	
 	@Setter
 	@Getter
-	private RowBean selectedRoute;
+	private SubRowBean selectedRoute;
 	@Setter
 	@Getter
 	private EditorBean editorBean;
@@ -49,7 +49,6 @@ public class MainBean {
 		addRouteToServiceBean = new AddRouteToServiceBean();
 		addBean = new AddBean();
 		searchBean = new SearchBean();
-
 		rowBean = new RowBean();
 
 	}

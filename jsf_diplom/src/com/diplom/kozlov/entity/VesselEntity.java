@@ -44,5 +44,15 @@ public class VesselEntity {
   @Getter
   @Column(name = "average_speed")
   private Double averageSpeed;
+  @Setter
+  @Getter
+  private Double draught;
+  @Setter
+  @Getter
+  private Double length;
+  @Setter
+  @Getter
+  private Double width;
+
 
 }

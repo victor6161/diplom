@@ -5,6 +5,8 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.diplom.kozlov.application.VesselBean;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,7 +24,7 @@ public class RowBean {
 	private String title;
 	@Setter
 	@Getter
-	private Integer vesselId;
+	private VesselBean vesselBean;
 	@Setter
 	@Getter
 	private Period allTime;

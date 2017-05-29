@@ -66,6 +66,7 @@
 					<h:outputStylesheet library="css" name="comparison.css" />
 					<p:commandButton icon="ui-icon-carat-1-s"
 						update=":#{p:component('comparison')}"
+						actionListener="#{serviceController.onCompareOpen}"
 						oncomplete="PF('comparisonWidget').show();">
 
 					</p:commandButton>
