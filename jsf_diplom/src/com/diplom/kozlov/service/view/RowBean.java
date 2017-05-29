@@ -13,6 +13,9 @@ public class RowBean {
 		super();
 	
 	}
+	@Setter
+	@Getter
+	private Integer id;
 
 	@Setter
 	@Getter

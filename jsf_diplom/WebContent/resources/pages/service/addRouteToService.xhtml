@@ -17,7 +17,7 @@
 				<h:outputText value="Выбрать Маршрут" />
 			</div>
 			<p:selectOneMenu
-				value="#{serviceController.mainBean.addRouteToServiceBean}"
+				value="#{serviceController.mainBean.addRouteToServiceBean.routeBean}"
 				style="width:150px"
 				converter="com.diplom.kozlov.converter.RouteConverter">
 				<f:selectItem itemLabel="Выбрать маршрут" itemValue=""
@@ -36,7 +36,7 @@
 
 			<p:commandButton value="Добавить"
 				actionListener="#{serviceController.addRouteToService}"
-				update="@form :#{p:component('addRouteToService')}" />
+				update="@form :#{p:component('addRouteToService')} :#{p:component('serviceTableForm')}"   />
 			<p:commandButton value="Закрыть"
 				onclick="PF('addRouteToServiceWidget').hide();" immediate="true"
 				update=":#{p:component('addRouteToService')}">

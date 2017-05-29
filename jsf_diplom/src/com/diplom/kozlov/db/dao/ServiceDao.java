@@ -1,6 +1,7 @@
 package com.diplom.kozlov.db.dao;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 
@@ -30,6 +31,18 @@ public class ServiceDao {
 		em.getTransaction().commit();
 		em.close();
 		return serviceEntity;
+	}
+	
+	public void update(RouteEntity routeEntity,Integer id){
+		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
+		em.getTransaction().begin();
+		ServiceEntity serviceEntity = em.find(ServiceEntity.class, id);
+		Set<RouteEntity> routesEntity = serviceEntity.getRouteEntity();
+		routesEntity.add(routeEntity);
+		serviceEntity.setRouteEntity(routesEntity);
+		
+		em.getTransaction().commit();
+		em.close();
 	}
 
 }

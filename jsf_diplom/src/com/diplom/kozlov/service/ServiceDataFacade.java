@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import com.diplom.kozlov.application.RouteBean;
 import com.diplom.kozlov.db.dto.RouteDto;
 import com.diplom.kozlov.db.dto.ServiceDto;
+import com.diplom.kozlov.entity.ServiceEntity;
 import com.diplom.kozlov.service.view.AddBean;
 import com.diplom.kozlov.service.view.AddRouteToServiceBean;
 import com.diplom.kozlov.service.view.Compare;
@@ -26,7 +27,6 @@ public class ServiceDataFacade {
 
 	public void init() {
 
-		
 		LOGGER.info("init");
 		List<Compare> compareList = new ArrayList<Compare>();
 		compareList.add(new Compare("requarement1", 12.0, 15.0));
@@ -38,23 +38,20 @@ public class ServiceDataFacade {
 		compareList.add(new Compare("requarement1", 11.0, 9.0));
 		serviceController.getMainBean().setCompareList(compareList);
 
-/*		RowBean rowBean = null;
-		for (ServiceDto serviceDto : servicesDto) {
-			rowBean = new RowBean(serviceDto.getTitle());
-			for (RouteDto routeDto : serviceDto.getRouteDto()) {
-				rowBean.getSubRowsBean()
-						.add(new SubRowBean(routeDto.getId(), Period.of(0, 2, 3), routeDto.getDistance()));
-			}
-			serviceController.getMainBean().setRowBean(rowBean);
-		}
-*/
-		
+		/*
+		 * RowBean rowBean = null; for (ServiceDto serviceDto : servicesDto) {
+		 * rowBean = new RowBean(serviceDto.getTitle()); for (RouteDto routeDto
+		 * : serviceDto.getRouteDto()) { rowBean.getSubRowsBean() .add(new
+		 * SubRowBean(routeDto.getId(), Period.of(0, 2, 3),
+		 * routeDto.getDistance())); }
+		 * serviceController.getMainBean().setRowBean(rowBean); }
+		 */
+
 	}
 
 	public void add() {
 		LOGGER.info("add");
 		AddBean addBean = serviceController.getMainBean().getAddBean();
-		LOGGER.info(addBean);
 		ServiceDto serviceDto = serviceController.getMapper().addBeanToDto(addBean);
 		serviceController.getService().save(serviceDto);
 		init();
@@ -80,15 +77,6 @@ public class ServiceDataFacade {
 	}
 
 	public void onEditOpen() {
-		// LOGGER.info("onEditOpen");
-		/*
-		 * RowBean rowBean = sheduleController.getMainBean().getSelectedRoute();
-		 * SheduleDto sheduleDto =
-		 * sheduleController.getMapper().rowBeanToDto(rowBean); EditorBean
-		 * editorBean =
-		 * sheduleController.getMapper().sheduleDtoToEditorBean(sheduleDto);
-		 * sheduleController.getMainBean().setEditorBean(editorBean);
-		 */
 
 	}
 
@@ -96,26 +84,32 @@ public class ServiceDataFacade {
 
 	}
 
-	public void addBeanToService() {
+	public void addRouteToService() {
 		AddRouteToServiceBean addRouteToServiceBean = serviceController.getMainBean().getAddRouteToServiceBean();
-		RouteDto routeDto = serviceController.getMapper().getMapperApplication().routeBeanToDto(addRouteToServiceBean.getRouteBean());
-		serviceController.getService().addRoute(routeDto,addRouteToServiceBean.getServiceId());
+		RouteDto routeDto = serviceController.getMapper().getMapperApplication()
+				.routeBeanToDto(addRouteToServiceBean.getRouteBean());
+		serviceController.getService().addRoute(routeDto, addRouteToServiceBean.getServiceId());
+		setServiceById(addRouteToServiceBean.getServiceId());
 	}
 
-	public void onAddBeanToServiceOpen() {
+	public void onAddRouteToServiceOpen() {
+		Integer id = serviceController.getMainBean().getRowBean().getId();
+		serviceController.getMainBean().getAddRouteToServiceBean().setServiceId(id);
 		
-		
+
 	}
 
 	public void onSearch() {
-		
+		LOGGER.info("onSearch");
 		Integer id = Integer.parseInt(serviceController.getMainBean().getSearchBean().getServiceId());
+		setServiceById(id);
+	}
+	
+	public void setServiceById(Integer id){
 		List<ServiceDto> servicesDto = serviceController.getService().getList();
-		for(ServiceDto serviceDto:servicesDto){
-			if(serviceDto.getId().equals(id)){
-				LOGGER.info(serviceDto.getRouteDto());
+		for (ServiceDto serviceDto : servicesDto) {
+			if (serviceDto.getId().equals(id)) {
 				RowBean rowBean = serviceController.getMapper().serviceDtoToRowBean(serviceDto);
-				LOGGER.info(rowBean.getSubRowsBean());
 				serviceController.getMainBean().setRowBean(rowBean);
 			}
 		}

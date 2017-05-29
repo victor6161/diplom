@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_5H_6kEINEeeix8AoSsiQYA">
+  <modelElement href="diplom_web_part.uml#_5qducEINEeeix8AoSsiQYA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6TAVIEINEeeix8AoSsiQYA" sourceAnchor="124.0,192.0" targetAnchor="246.0,0.0" target="_6TDYeUINEeeix8AoSsiQYA" source="_6UEFEEINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_51AKgUINEeeix8AoSsiQYA"/>
+    <stereotypes xmi:id="_6TAVIUINEeeix8AoSsiQYA" name="Reference">
+      <modelElement href="diplom_web_part.uml#_51HfQEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6TAVIkINEeeix8AoSsiQYA" text="">
+      <visualProperties xmi:id="_6hrqUEINEeeix8AoSsiQYA" position="-39.0,16.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6TAVI0INEeeix8AoSsiQYA" aggregationKind="NONE" name="">
+      <modelElement href="diplom_web_part.uml#_51AKgkINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hrDQEINEeeix8AoSsiQYA" position="-17.000000000000004,16.0"/>
+      <visibility xmi:id="_6TAVJEINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6TAVJUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6TAVJkINEeeix8AoSsiQYA" aggregationKind="NONE" name="markersEntity" navigable="true">
+      <modelElement href="diplom_web_part.uml#_5zJwYkINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hsRYEINEeeix8AoSsiQYA" position="-128.0,-46.0"/>
+      <stereotypes xmi:id="_6TAVJ0INEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zK-gEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6TAVKEINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zK-gUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TAVKUINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6TAVKkINEeeix8AoSsiQYA" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6TDYcEINEeeix8AoSsiQYA" sourceAnchor="278.0,0.0" targetAnchor="156.0,192.0" target="_6UEFEEINEeeix8AoSsiQYA" source="_6TDYeUINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_50d_AEINEeeix8AoSsiQYA"/>
+    <stereotypes xmi:id="_6TDYcUINEeeix8AoSsiQYA" name="Reference">
+      <modelElement href="diplom_web_part.uml#_50l60EINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6TDYckINEeeix8AoSsiQYA" text="">
+      <visualProperties xmi:id="_6hljsEINEeeix8AoSsiQYA" position="2.0,16.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6TDYc0INEeeix8AoSsiQYA" aggregationKind="NONE" name="">
+      <modelElement href="diplom_web_part.uml#_50d_AUINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hkVkkINEeeix8AoSsiQYA" position="-17.000000000000007,-62.0"/>
+      <visibility xmi:id="_6TDYdEINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6TDYdUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6TDYdkINEeeix8AoSsiQYA" aggregationKind="NONE" name="routeEntity" navigable="true">
+      <modelElement href="diplom_web_part.uml#_5y6f0EINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hljsUINEeeix8AoSsiQYA" position="2.0,16.0"/>
+      <stereotypes xmi:id="_xtvRoERAEee3go8YZQIGeQ" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5y6f0UINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_xtvRoURAEee3go8YZQIGeQ" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5y7G4EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TDYd0INEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6TDYeEINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6TVsUEINEeeix8AoSsiQYA" sourceAnchor="189.0,77.0" targetAnchor="0.0,57.0" target="_6RYkgEINEeeix8AoSsiQYA" source="_6Te2QEINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_50l60UINEeeix8AoSsiQYA"/>
+    <stereotypes xmi:id="_6TXhg0INEeeix8AoSsiQYA" name="Reference">
+      <modelElement href="diplom_web_part.uml#_50w58EINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6TXhgEINEeeix8AoSsiQYA" text="">
+      <visualProperties xmi:id="_6hmx0EINEeeix8AoSsiQYA" position="-32.0,2.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6TXhgUINEeeix8AoSsiQYA" aggregationKind="NONE" name="">
+      <modelElement href="diplom_web_part.uml#_50l60kINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hmKwEINEeeix8AoSsiQYA" position="14.0,-47.0"/>
+      <visibility xmi:id="_6TbL4UINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6TbL4EINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6TXhgkINEeeix8AoSsiQYA" aggregationKind="NONE" name="country" navigable="true">
+      <modelElement href="diplom_web_part.uml#_5y-KMkINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hmx0UINEeeix8AoSsiQYA" position="-91.0,-47.0"/>
+      <stereotypes xmi:id="_xtvRokRAEee3go8YZQIGeQ" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5y-xQEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_xtvRo0RAEee3go8YZQIGeQ" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5y_YUEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TbL40INEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6TbL4kINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6TW6cEINEeeix8AoSsiQYA" sourceAnchor="100.0,0.0" targetAnchor="93.0,173.0" target="_6Te2QEINEeeix8AoSsiQYA" source="_6UEFEEINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_50xhAEINEeeix8AoSsiQYA"/>
+    <stereotypes xmi:id="_6Tak0EINEeeix8AoSsiQYA" name="Reference">
+      <modelElement href="diplom_web_part.uml#_5041wEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6TZ9wEINEeeix8AoSsiQYA" text="">
+      <visualProperties xmi:id="_6honAEINEeeix8AoSsiQYA" position="-39.000000000000014,-9.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6TZ9wUINEeeix8AoSsiQYA" aggregationKind="NONE" name="">
+      <modelElement href="diplom_web_part.uml#_50xhAUINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hnY4EINEeeix8AoSsiQYA" position="2.0000000000000018,-50.0"/>
+      <visibility xmi:id="_6TcaAUINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6TcaAEINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6TZ9wkINEeeix8AoSsiQYA" aggregationKind="NONE" name="portFrom" navigable="true">
+      <modelElement href="diplom_web_part.uml#_5zE35kINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6honAUINEeeix8AoSsiQYA" position="-105.99999999999999,1.0"/>
+      <stereotypes xmi:id="_6TcaBEINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zFe8EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6TcaBUINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zGGAEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TcaA0INEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6TcaAkINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6TW6cUINEeeix8AoSsiQYA" sourceAnchor="129.0,0.0" targetAnchor="122.0,173.0" target="_6Te2QEINEeeix8AoSsiQYA" source="_6UEFEEINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_5041wUINEeeix8AoSsiQYA"/>
+    <stereotypes xmi:id="_6Tak1EINEeeix8AoSsiQYA" name="Reference">
+      <modelElement href="diplom_web_part.uml#_51AKgEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6Tak0UINEeeix8AoSsiQYA" text="">
+      <visualProperties xmi:id="_6hqcMEINEeeix8AoSsiQYA" position="-73.0,11.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6Tak0kINEeeix8AoSsiQYA" aggregationKind="NONE" name="">
+      <modelElement href="diplom_web_part.uml#_5041wkINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hpOEEINEeeix8AoSsiQYA" position="2.0,-50.0"/>
+      <visibility xmi:id="_6TdBEEINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6TcaBkINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6Tak00INEeeix8AoSsiQYA" aggregationKind="NONE" name="portTo" navigable="true">
+      <modelElement href="diplom_web_part.uml#_5zGtEkINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hqcMUINEeeix8AoSsiQYA" position="41.0,1.0"/>
+      <stereotypes xmi:id="_6TdBE0INEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zHUIEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6TdBFEINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zH7MEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TdBEkINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6TdBEUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6UCP4EINEeeix8AoSsiQYA" sourceAnchor="271.0,75.0" targetAnchor="0.0,94.0" target="_6UEFEEINEeeix8AoSsiQYA" source="_6UVx4EINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_51VhsEINEeeix8AoSsiQYA"/>
+    <stereotypes xmi:id="_6UCP4UINEeeix8AoSsiQYA" name="Reference">
+      <modelElement href="diplom_web_part.uml#_51fSsEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6UCP4kINEeeix8AoSsiQYA" text="">
+      <visualProperties xmi:id="_6hutoEINEeeix8AoSsiQYA" position="-54.0,-19.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6UCP40INEeeix8AoSsiQYA" aggregationKind="NONE" name="">
+      <modelElement href="diplom_web_part.uml#_51VhsUINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6huGkEINEeeix8AoSsiQYA" position="76.0,-47.0"/>
+      <visibility xmi:id="_6UCP5EINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6UCP5UINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6UCP5kINEeeix8AoSsiQYA" aggregationKind="NONE" name="routeEntity" navigable="true">
+      <modelElement href="diplom_web_part.uml#_5zV9pUINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hvUsEINEeeix8AoSsiQYA" position="-155.0,-86.0"/>
+      <stereotypes xmi:id="_6UCP50INEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zXLwEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UCP6EINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zXLwUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UCP6UINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UCP6kINEeeix8AoSsiQYA" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6UDeAEINEeeix8AoSsiQYA" sourceAnchor="0.0,126.0" targetAnchor="271.0,107.0" target="_6UVx4EINEeeix8AoSsiQYA" source="_6UEFEEINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_51HfQUINEeeix8AoSsiQYA"/>
+    <stereotypes xmi:id="_6UDeAUINEeeix8AoSsiQYA" name="Reference">
+      <modelElement href="diplom_web_part.uml#_51OM8EINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6UDeAkINEeeix8AoSsiQYA" text="">
+      <visualProperties xmi:id="_6htfgEINEeeix8AoSsiQYA" position="-7.0,-19.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6UDeA0INEeeix8AoSsiQYA" aggregationKind="NONE" name="">
+      <modelElement href="diplom_web_part.uml#_51HfQkINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hs4cEINEeeix8AoSsiQYA" position="-29.0,2.0"/>
+      <visibility xmi:id="_6UDeBEINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6UDeBUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6UDeBkINEeeix8AoSsiQYA" aggregationKind="NONE" name="serviceEntity" navigable="true">
+      <modelElement href="diplom_web_part.uml#_5zP3A0INEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6htfgUINEeeix8AoSsiQYA" position="25.0,2.0"/>
+      <stereotypes xmi:id="_xtvRpERAEee3go8YZQIGeQ" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zRFIEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_xtvRpURAEee3go8YZQIGeQ" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zRsMEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UDeB0INEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UDeCEINEeeix8AoSsiQYA" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6UVK0EINEeeix8AoSsiQYA" sourceAnchor="119.0,135.0" targetAnchor="109.0,0.0" target="_6Uyd0EINEeeix8AoSsiQYA" source="_6UVx4EINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_51OM8UINEeeix8AoSsiQYA"/>
+    <stereotypes xmi:id="_6UVK0UINEeeix8AoSsiQYA" name="Reference">
+      <modelElement href="diplom_web_part.uml#_51U6oEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6UVK0kINEeeix8AoSsiQYA" text="">
+      <visualProperties xmi:id="_6hwi0EINEeeix8AoSsiQYA" position="2.0,18.25"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6UVK00INEeeix8AoSsiQYA" aggregationKind="NONE" name="">
+      <modelElement href="diplom_web_part.uml#_51OM8kINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hv7wEINEeeix8AoSsiQYA" position="2.0,27.333333333333314"/>
+      <visibility xmi:id="_6UVK1EINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6UVK1UINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6UVK1kINEeeix8AoSsiQYA" aggregationKind="NONE" name="vessel" navigable="true">
+      <modelElement href="diplom_web_part.uml#_5zUvhEINEeeix8AoSsiQYA"/>
+      <visualProperties xmi:id="_6hwi0UINEeeix8AoSsiQYA" position="-48.0,-72.33333333333337"/>
+      <stereotypes xmi:id="_xt1YQERAEee3go8YZQIGeQ" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zVWkEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_xt1YQURAEee3go8YZQIGeQ" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zVWkUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UVK10INEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UVK2EINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6UVx4EINEeeix8AoSsiQYA" name="ServiceEntity" associationsIn="_6UDeAEINEeeix8AoSsiQYA" associationsOut="_6UCP4EINEeeix8AoSsiQYA _6UVK0EINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_5ttPsEINEeeix8AoSsiQYA"/>
+    <visualProperties xmi:id="_6UVx4UINEeeix8AoSsiQYA" position="-527.0,301.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_6UVx4kINEeeix8AoSsiQYA" name="Table">
+      <modelElement href="diplom_web_part.uml#_5t1ykEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <stereotypes xmi:id="_6UVx40INEeeix8AoSsiQYA" name="JPA1StyledElement">
+      <modelElement href="diplom_web_part.uml#_5t2ZoEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <visibility xmi:id="_6UVx5EINEeeix8AoSsiQYA" label="+"/>
+    <attributes xmi:id="_6UVx5UINEeeix8AoSsiQYA" name="id">
+      <modelElement href="diplom_web_part.uml#_5zSTQEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UVx5kINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zS6UEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UVx50INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zThYEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UVx6EINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UVx6UINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UVx6kINEeeix8AoSsiQYA" name="Integer">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UVx60INEeeix8AoSsiQYA" name="title">
+      <modelElement href="diplom_web_part.uml#_5zUIcEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UVx7EINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zUvgEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UVx7UINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zUvgUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UVx7kINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UVx70INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UVx8EINEeeix8AoSsiQYA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UVx8UINEeeix8AoSsiQYA" name="vessel">
+      <modelElement href="diplom_web_part.uml#_5zUvhEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_xusT5ERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xusT5URAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xusT5kRAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xusT50RAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xusT6ERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xusT6URAEee3go8YZQIGeQ" name="Annotations"/>
+      <visibility xmi:id="_6UVx9EINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UVx9UINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UVx9kINEeeix8AoSsiQYA" name="VesselEntity">
+        <modelElement href="diplom_web_part.uml#_5uJUkEINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UVx90INEeeix8AoSsiQYA" defaultValue="new HashSet&lt;>()" name="routeEntity">
+      <modelElement href="diplom_web_part.uml#_5zV9pUINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_xumNRkRAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xumNR0RAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xumNSERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xumNSURAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xuyagERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xuyagURAEee3go8YZQIGeQ" name="Annotations"/>
+      <visibility xmi:id="_6UVx-EINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UVx-UINEeeix8AoSsiQYA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_6UVx-kINEeeix8AoSsiQYA" name="RouteEntity">
+        <modelElement href="diplom_web_part.uml#_5tVcQEINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6UVx-0INEeeix8AoSsiQYA" name="toString">
+      <modelElement href="diplom_web_part.uml#_5t2ZoUINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UVx_EINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5t3AsUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UVx_UINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5t3nwEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UVx_kINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6UVx_0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6UVyAEINEeeix8AoSsiQYA">
+        <modelElement href="diplom_web_part.uml#_5t3AsEINEeeix8AoSsiQYA"/>
+        <type xmi:id="_6UVyAUINEeeix8AoSsiQYA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6UVyAkINEeeix8AoSsiQYA" name="addToRoute">
+      <modelElement href="diplom_web_part.uml#_5yPxcEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UVyA0INEeeix8AoSsiQYA" name="StyledElement">
+        <modelElement href="diplom_web_part.uml#_5yQYgUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UVyBEINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6UVyBUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6UVyBkINEeeix8AoSsiQYA" name="routeEntity">
+        <modelElement href="diplom_web_part.uml#_5yQYgEINEeeix8AoSsiQYA"/>
+        <cardinality xmi:id="_6UVyB0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+        <type xmi:id="_6UVyCEINEeeix8AoSsiQYA" name="RouteEntity">
+          <modelElement href="diplom_web_part.uml#_5tVcQEINEeeix8AoSsiQYA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6UEFEEINEeeix8AoSsiQYA" name="RouteEntity" associationsIn="_6TDYcEINEeeix8AoSsiQYA _6UCP4EINEeeix8AoSsiQYA" associationsOut="_6TW6cEINEeeix8AoSsiQYA _6TW6cUINEeeix8AoSsiQYA _6TAVIEINEeeix8AoSsiQYA _6UDeAEINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_5tVcQEINEeeix8AoSsiQYA"/>
+    <visualProperties xmi:id="_6UEFEUINEeeix8AoSsiQYA" position="-100.0,282.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_6UEFEkINEeeix8AoSsiQYA" name="Table">
+      <modelElement href="diplom_web_part.uml#_5tgbYEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <stereotypes xmi:id="_6UEFE0INEeeix8AoSsiQYA" name="JPA1StyledElement">
+      <modelElement href="diplom_web_part.uml#_5thpgEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <visibility xmi:id="_6UEFFEINEeeix8AoSsiQYA" label="+"/>
+    <attributes xmi:id="_6UEFFUINEeeix8AoSsiQYA" name="id">
+      <modelElement href="diplom_web_part.uml#_5zDpwEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UEFFkINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zEQ0EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UEFF0INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zE34EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UEFGEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UEFGUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UEFGkINEeeix8AoSsiQYA" name="Integer">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UEFG0INEeeix8AoSsiQYA" name="portFrom">
+      <modelElement href="diplom_web_part.uml#_5zE35kINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_xugGpURAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xugGpkRAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xumNQERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xumNQURAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xuyagkRAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xuyag0RAEee3go8YZQIGeQ" name="Annotations"/>
+      <visibility xmi:id="_6UEFHEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UEFHUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UEFHkINEeeix8AoSsiQYA" name="PortEntity">
+        <modelElement href="diplom_web_part.uml#_5s-28EINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UEFH0INEeeix8AoSsiQYA" name="portTo">
+      <modelElement href="diplom_web_part.uml#_5zGtEkINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_xumNQkRAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xumNQ0RAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xumNRERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xumNRURAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xuyahERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xuyahURAEee3go8YZQIGeQ" name="Annotations"/>
+      <visibility xmi:id="_6UEFIEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UEFIUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UEFIkINEeeix8AoSsiQYA" name="PortEntity">
+        <modelElement href="diplom_web_part.uml#_5s-28EINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UEFI0INEeeix8AoSsiQYA" name="numPoints">
+      <modelElement href="diplom_web_part.uml#_5zIiQUINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UEFJEINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zJJUEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UEFJUINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zJJUUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UEFJkINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UEFJ0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UEFKEINEeeix8AoSsiQYA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UEFKUINEeeix8AoSsiQYA" name="markersEntity">
+      <modelElement href="diplom_web_part.uml#_5zJwYkINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_xuaAAERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xuaAAURAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xuaAAkRAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xuaAA0RAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xuyahkRAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xuyah0RAEee3go8YZQIGeQ" name="Annotations"/>
+      <visibility xmi:id="_6UEFKkINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UEFK0INEeeix8AoSsiQYA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_6UEFLEINEeeix8AoSsiQYA" name="MarkerEntity">
+        <modelElement href="diplom_web_part.uml#_5sQeMEINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UEFLUINEeeix8AoSsiQYA" name="length">
+      <modelElement href="diplom_web_part.uml#_5zMMokINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UEFLkINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zMzsEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UEFL0INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zMzsUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UEFMEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UEFMUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UEFMkINEeeix8AoSsiQYA" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UEFM0INEeeix8AoSsiQYA" name="width">
+      <modelElement href="diplom_web_part.uml#_5zNawUINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UEFNEINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zNawkINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UEFNUINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zOB0EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UEFNkINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UEFN0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UEFOEINEeeix8AoSsiQYA" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UEFOUINEeeix8AoSsiQYA" name="draught">
+      <modelElement href="diplom_web_part.uml#_5zOB00INEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UEFOkINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zOo4EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UEFO0INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zOo4UINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UEFPEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UEFPUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UEFPkINEeeix8AoSsiQYA" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UEFP0INEeeix8AoSsiQYA" name="distance">
+      <modelElement href="diplom_web_part.uml#_5zPP8EINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UEFQEINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zPP8UINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UEFQUINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zP3AEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UEFQkINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UEFQ0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UEFREINEeeix8AoSsiQYA" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UEFRUINEeeix8AoSsiQYA" defaultValue="new HashSet&lt;ServiceEntity>()" name="serviceEntity">
+      <modelElement href="diplom_web_part.uml#_5zP3A0INEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_xusT4ERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xusT4URAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xusT4kRAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xusT40RAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xu4hIERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xu4hIURAEee3go8YZQIGeQ" name="Annotations"/>
+      <visibility xmi:id="_6UEFSEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UEFSUINEeeix8AoSsiQYA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_6UEFSkINEeeix8AoSsiQYA" name="ServiceEntity">
+        <modelElement href="diplom_web_part.uml#_5ttPsEINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6UEFS0INEeeix8AoSsiQYA" name="toString">
+      <modelElement href="diplom_web_part.uml#_5tiQkEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UEFTEINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5tjesEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UEFTUINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5tkFwEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UEFTkINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6UEFT0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6UEFUEINEeeix8AoSsiQYA">
+        <modelElement href="diplom_web_part.uml#_5ti3oEINEeeix8AoSsiQYA"/>
+        <type xmi:id="_6UEFUUINEeeix8AoSsiQYA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6TDYeUINEeeix8AoSsiQYA" name="MarkerEntity" associationsIn="_6TAVIEINEeeix8AoSsiQYA" associationsOut="_6TDYcEINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_5sQeMEINEeeix8AoSsiQYA"/>
+    <visualProperties xmi:id="_6TDYekINEeeix8AoSsiQYA" position="-222.0,567.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_6TDYe0INEeeix8AoSsiQYA" name="Table">
+      <modelElement href="diplom_web_part.uml#_5sqG0EINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <stereotypes xmi:id="_6TDYfEINEeeix8AoSsiQYA" name="JPA1StyledElement">
+      <modelElement href="diplom_web_part.uml#_5srU8EINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <visibility xmi:id="_6TDYfUINEeeix8AoSsiQYA" label="+"/>
+    <attributes xmi:id="_6TDYfkINEeeix8AoSsiQYA" name="id">
+      <modelElement href="diplom_web_part.uml#_5yzyIEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6TDYf0INEeeix8AoSsiQYA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6TDYgEINEeeix8AoSsiQYA" name="Annotations"/>
+      <visibility xmi:id="_6TDYgUINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6TDYgkINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6TDYg0INEeeix8AoSsiQYA" name="Integer">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6TDYhEINEeeix8AoSsiQYA" name="latitude">
+      <modelElement href="diplom_web_part.uml#_5y1nUUINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6TDYhUINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5y2OYEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6TDYhkINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5y2OYUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TDYh0INEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6TDYiEINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6TDYiUINEeeix8AoSsiQYA" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6TDYikINEeeix8AoSsiQYA" name="longitude">
+      <modelElement href="diplom_web_part.uml#_5y21ckINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6TDYi0INEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5y3cgEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6TDYjEINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5y4DkEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TDYjUINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6TDYjkINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6TDYj0INEeeix8AoSsiQYA" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6TDYkEINEeeix8AoSsiQYA" name="pathNum">
+      <modelElement href="diplom_web_part.uml#_5y4Dk0INEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6TDYkUINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5y4qoEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6TD_gEINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5y5RsEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TD_gUINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6TD_gkINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6TD_g0INEeeix8AoSsiQYA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6TD_hEINEeeix8AoSsiQYA" name="routeEntity">
+      <modelElement href="diplom_web_part.uml#_5y6f0EINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_xuaABERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xuaABURAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xuaABkRAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xugGoERAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xu4hIkRAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xu4hI0RAEee3go8YZQIGeQ" name="Annotations"/>
+      <visibility xmi:id="_6TD_h0INEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6TD_iEINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6TD_iUINEeeix8AoSsiQYA" name="RouteEntity">
+        <modelElement href="diplom_web_part.uml#_5tVcQEINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6TD_ikINEeeix8AoSsiQYA" name="toString">
+      <modelElement href="diplom_web_part.uml#_5sr8AEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6TD_i0INEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5stKIEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6TD_jEINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5suYQEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TD_jUINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6TD_jkINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6TD_j0INEeeix8AoSsiQYA">
+        <modelElement href="diplom_web_part.uml#_5ssjEEINEeeix8AoSsiQYA"/>
+        <type xmi:id="_6TD_kEINEeeix8AoSsiQYA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6TD_kUINEeeix8AoSsiQYA" name="MarkerEntity">
+      <modelElement href="diplom_web_part.uml#_5szQwEINEeeix8AoSsiQYA"/>
+      <keywords xmi:id="_6TD_kkINEeeix8AoSsiQYA" keyword="create"/>
+      <stereotypes xmi:id="_6TD_k0INEeeix8AoSsiQYA" name="StyledElement">
+        <modelElement href="diplom_web_part.uml#_5s0e4EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TD_lEINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6TD_lUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6TD_lkINEeeix8AoSsiQYA">
+        <modelElement href="diplom_web_part.uml#_5sz30UINEeeix8AoSsiQYA"/>
+        <type xmi:id="_6TD_l0INEeeix8AoSsiQYA" name="MarkerEntity">
+          <modelElement href="diplom_web_part.uml#_5sQeMEINEeeix8AoSsiQYA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6TD_mEINEeeix8AoSsiQYA" name="MarkerEntity">
+      <modelElement href="diplom_web_part.uml#_5s1F8EINEeeix8AoSsiQYA"/>
+      <keywords xmi:id="_6TD_mUINEeeix8AoSsiQYA" keyword="create"/>
+      <stereotypes xmi:id="_6TD_mkINEeeix8AoSsiQYA" name="StyledElement">
+        <modelElement href="diplom_web_part.uml#_5s27IEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TD_m0INEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6TD_nEINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6TD_nUINEeeix8AoSsiQYA">
+        <modelElement href="diplom_web_part.uml#_5s2UEkINEeeix8AoSsiQYA"/>
+        <type xmi:id="_6TD_nkINEeeix8AoSsiQYA" name="MarkerEntity">
+          <modelElement href="diplom_web_part.uml#_5sQeMEINEeeix8AoSsiQYA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6TD_n0INEeeix8AoSsiQYA" name="latitude">
+        <modelElement href="diplom_web_part.uml#_5s1F8UINEeeix8AoSsiQYA"/>
+        <cardinality xmi:id="_6TD_oEINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+        <type xmi:id="_6TD_oUINEeeix8AoSsiQYA" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6TD_okINEeeix8AoSsiQYA" name="longitude">
+        <modelElement href="diplom_web_part.uml#_5s1tAEINEeeix8AoSsiQYA"/>
+        <cardinality xmi:id="_6TD_o0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+        <type xmi:id="_6TD_pEINEeeix8AoSsiQYA" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6TD_pUINEeeix8AoSsiQYA" name="pathNum">
+        <modelElement href="diplom_web_part.uml#_5s1tAUINEeeix8AoSsiQYA"/>
+        <cardinality xmi:id="_6TD_pkINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+        <type xmi:id="_6TD_p0INEeeix8AoSsiQYA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6TD_qEINEeeix8AoSsiQYA" name="MarkerEntity">
+      <modelElement href="diplom_web_part.uml#_5s4JQEINEeeix8AoSsiQYA"/>
+      <keywords xmi:id="_6TD_qUINEeeix8AoSsiQYA" keyword="create"/>
+      <stereotypes xmi:id="_6TD_qkINEeeix8AoSsiQYA" name="StyledElement">
+        <modelElement href="diplom_web_part.uml#_5s5-cEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6TD_q0INEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6TD_rEINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6TD_rUINEeeix8AoSsiQYA">
+        <modelElement href="diplom_web_part.uml#_5s5XYkINEeeix8AoSsiQYA"/>
+        <type xmi:id="_6TD_rkINEeeix8AoSsiQYA" name="MarkerEntity">
+          <modelElement href="diplom_web_part.uml#_5sQeMEINEeeix8AoSsiQYA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6TD_r0INEeeix8AoSsiQYA" name="id">
+        <modelElement href="diplom_web_part.uml#_5s4wUEINEeeix8AoSsiQYA"/>
+        <cardinality xmi:id="_6TD_sEINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+        <type xmi:id="_6TD_sUINEeeix8AoSsiQYA" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6TD_skINEeeix8AoSsiQYA" name="latitude">
+        <modelElement href="diplom_web_part.uml#_5s4wUUINEeeix8AoSsiQYA"/>
+        <cardinality xmi:id="_6TD_s0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+        <type xmi:id="_6TD_tEINEeeix8AoSsiQYA" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6TD_tUINEeeix8AoSsiQYA" name="longitude">
+        <modelElement href="diplom_web_part.uml#_5s4wUkINEeeix8AoSsiQYA"/>
+        <cardinality xmi:id="_6TD_tkINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+        <type xmi:id="_6TD_t0INEeeix8AoSsiQYA" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6Te2QEINEeeix8AoSsiQYA" name="PortEntity" associationsIn="_6TW6cEINEeeix8AoSsiQYA _6TW6cUINEeeix8AoSsiQYA" associationsOut="_6TVsUEINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_5s-28EINEeeix8AoSsiQYA"/>
+    <visualProperties xmi:id="_6Te2QUINEeeix8AoSsiQYA" position="-93.0,51.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_6Te2QkINEeeix8AoSsiQYA" name="Table">
+      <modelElement href="diplom_web_part.uml#_5tLrQEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <stereotypes xmi:id="_6Te2Q0INEeeix8AoSsiQYA" name="JPA1StyledElement">
+      <modelElement href="diplom_web_part.uml#_5tM5YEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <visibility xmi:id="_6Te2REINEeeix8AoSsiQYA" label="+"/>
+    <attributes xmi:id="_6Te2RUINEeeix8AoSsiQYA" name="id">
+      <modelElement href="diplom_web_part.uml#_5y8VAEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Te2RkINEeeix8AoSsiQYA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6Te2R0INEeeix8AoSsiQYA" name="Annotations"/>
+      <visibility xmi:id="_6Te2SEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Te2SUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Te2SkINEeeix8AoSsiQYA" name="Integer">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Te2S0INEeeix8AoSsiQYA" name="country">
+      <modelElement href="diplom_web_part.uml#_5y-KMkINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_xugGoURAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xugGokRAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xugGo0RAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xugGpERAEee3go8YZQIGeQ" name="Annotations"/>
+      <stereotypes xmi:id="_xu4hJERAEee3go8YZQIGeQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_xu4hJURAEee3go8YZQIGeQ" name="Annotations"/>
+      <visibility xmi:id="_6Te2TkINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Te2T0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Te2UEINEeeix8AoSsiQYA" name="CountryEntity">
+        <modelElement href="diplom_web_part.uml#_5r0ZUEINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Te2UUINEeeix8AoSsiQYA" name="name">
+      <modelElement href="diplom_web_part.uml#_5y__YUINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Te2UkINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zAmcEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Te2U0INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zAmcUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Te2VEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Te2VUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Te2VkINEeeix8AoSsiQYA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Te2V0INEeeix8AoSsiQYA" name="latitude">
+      <modelElement href="diplom_web_part.uml#_5zBNgkINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Te2WEINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zB0kEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Te2WUINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zB0kUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Te2WkINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Te2W0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Te2XEINEeeix8AoSsiQYA" name="Double">
+        <modelElement href="diplom_web_part.uml#_5ygQIUINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Te2XUINEeeix8AoSsiQYA" name="longitude">
+      <modelElement href="diplom_web_part.uml#_5zCboUINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Te2XkINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zCbokINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Te2X0INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zDCsEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Te2YEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Te2YUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Te2YkINEeeix8AoSsiQYA" name="Double">
+        <modelElement href="diplom_web_part.uml#_5ygQIUINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6Te2Y0INEeeix8AoSsiQYA" name="toString">
+      <modelElement href="diplom_web_part.uml#_5tNgcEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Te2ZEINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5tOHgUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Te2ZUINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5tOukEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Te2ZkINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6Te2Z0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6Te2aEINEeeix8AoSsiQYA">
+        <modelElement href="diplom_web_part.uml#_5tOHgEINEeeix8AoSsiQYA"/>
+        <type xmi:id="_6Te2aUINEeeix8AoSsiQYA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6Te2akINEeeix8AoSsiQYA" name="PortEntity">
+      <modelElement href="diplom_web_part.uml#_5tPVoUINEeeix8AoSsiQYA"/>
+      <keywords xmi:id="_6Te2a0INEeeix8AoSsiQYA" keyword="create"/>
+      <stereotypes xmi:id="_6Te2bEINEeeix8AoSsiQYA" name="StyledElement">
+        <modelElement href="diplom_web_part.uml#_5tP8s0INEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Te2bUINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6Te2bkINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6Te2b0INEeeix8AoSsiQYA">
+        <modelElement href="diplom_web_part.uml#_5tP8skINEeeix8AoSsiQYA"/>
+        <type xmi:id="_6Te2cEINEeeix8AoSsiQYA" name="PortEntity">
+          <modelElement href="diplom_web_part.uml#_5s-28EINEeeix8AoSsiQYA"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6RYkgEINEeeix8AoSsiQYA" name="CountryEntity" associationsIn="_6TVsUEINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_5r0ZUEINEeeix8AoSsiQYA"/>
+    <visualProperties xmi:id="_6RYkgUINEeeix8AoSsiQYA" position="320.0,71.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_6RYkgkINEeeix8AoSsiQYA" name="Table">
+      <modelElement href="diplom_web_part.uml#_5r8VIEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <stereotypes xmi:id="_6RYkg0INEeeix8AoSsiQYA" name="JPA1StyledElement">
+      <modelElement href="diplom_web_part.uml#_5sDp4EINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <visibility xmi:id="_6RYkhEINEeeix8AoSsiQYA" label="+"/>
+    <attributes xmi:id="_6RYkhUINEeeix8AoSsiQYA" name="id">
+      <modelElement href="diplom_web_part.uml#_5ywHwEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6RYkhkINEeeix8AoSsiQYA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6RYkh0INEeeix8AoSsiQYA" name="Annotations"/>
+      <visibility xmi:id="_6RYkiEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6RYkiUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6RYkikINEeeix8AoSsiQYA" name="Integer">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6RYki0INEeeix8AoSsiQYA" name="name">
+      <modelElement href="diplom_web_part.uml#_5yx88EINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6RYkjEINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5yykAEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6RYkjUINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5yykAUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6RYkjkINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6RYkj0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6RYkkEINEeeix8AoSsiQYA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6RYkkUINEeeix8AoSsiQYA" name="CountryEntity">
+      <modelElement href="diplom_web_part.uml#_5sJJcEINEeeix8AoSsiQYA"/>
+      <keywords xmi:id="_6RYkkkINEeeix8AoSsiQYA" keyword="create"/>
+      <stereotypes xmi:id="_6RYkk0INEeeix8AoSsiQYA" name="StyledElement">
+        <modelElement href="diplom_web_part.uml#_5sNa4EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6RYklEINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6RYklUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6RYklkINEeeix8AoSsiQYA">
+        <modelElement href="diplom_web_part.uml#_5sMz0EINEeeix8AoSsiQYA"/>
+        <type xmi:id="_6RYkl0INEeeix8AoSsiQYA" name="CountryEntity">
+          <modelElement href="diplom_web_part.uml#_5r0ZUEINEeeix8AoSsiQYA"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6UjNQEINEeeix8AoSsiQYA" name="UserEntity">
+    <modelElement href="diplom_web_part.uml#_5t75MEINEeeix8AoSsiQYA"/>
+    <visualProperties xmi:id="_6UjNQUINEeeix8AoSsiQYA" position="289.0,279.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_6UjNQkINEeeix8AoSsiQYA" name="Table">
+      <modelElement href="diplom_web_part.uml#_5uEcEEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <stereotypes xmi:id="_6UjNQ0INEeeix8AoSsiQYA" name="JPA1StyledElement">
+      <modelElement href="diplom_web_part.uml#_5uFqMEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <visibility xmi:id="_6UjNREINEeeix8AoSsiQYA" label="+"/>
+    <attributes xmi:id="_6UjNRUINEeeix8AoSsiQYA" name="id">
+      <modelElement href="diplom_web_part.uml#_5zZA8EINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UjNRkINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zZoAEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UjNR0INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zZoAUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UjNSEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UjNSUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UjNSkINEeeix8AoSsiQYA" name="Integer">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UjNS0INEeeix8AoSsiQYA" name="firstname">
+      <modelElement href="diplom_web_part.uml#_5zaPFEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UjNTEINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5za2IEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UjNTUINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5za2IUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UjNTkINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UjNT0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6UjNUEINEeeix8AoSsiQYA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6UjNUUINEeeix8AoSsiQYA" name="lastname">
+      <modelElement href="diplom_web_part.uml#_5zbdMUINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UjNUkINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zcEQEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UjNU0INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zcEQUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UjNVEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6UjNVUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Uj0UEINEeeix8AoSsiQYA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Uj0UUINEeeix8AoSsiQYA" name="email">
+      <modelElement href="diplom_web_part.uml#_5zdSYEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Uj0UkINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zd5cEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Uj0U0INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zeggEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Uj0VEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Uj0VUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Uj0VkINEeeix8AoSsiQYA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Uj0V0INEeeix8AoSsiQYA" name="login">
+      <modelElement href="diplom_web_part.uml#_5zfHkUINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Uj0WEINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zgVsEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Uj0WUINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zg8wEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Uj0WkINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Uj0W0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Uj0XEINEeeix8AoSsiQYA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Uj0XUINEeeix8AoSsiQYA" name="password">
+      <modelElement href="diplom_web_part.uml#_5zg8w0INEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Uj0XkINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zhj0EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Uj0X0INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5ziK4EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Uj0YEINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Uj0YUINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Uj0YkINEeeix8AoSsiQYA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Uj0Y0INEeeix8AoSsiQYA" name="roleId">
+      <modelElement href="diplom_web_part.uml#_5ziK40INEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Uj0ZEINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zix8EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Uj0ZUINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zjZAEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Uj0ZkINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Uj0Z0INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Uj0aEINEeeix8AoSsiQYA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6Uyd0EINEeeix8AoSsiQYA" name="VesselEntity" associationsIn="_6UVK0EINEeeix8AoSsiQYA">
+    <modelElement href="diplom_web_part.uml#_5uJUkEINEeeix8AoSsiQYA"/>
+    <visualProperties xmi:id="_6Uyd0UINEeeix8AoSsiQYA" position="-517.0,562.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_6Uyd0kINEeeix8AoSsiQYA" name="Table">
+      <modelElement href="diplom_web_part.uml#_5uQpUEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <stereotypes xmi:id="_6Uyd00INEeeix8AoSsiQYA" name="JPA1StyledElement">
+      <modelElement href="diplom_web_part.uml#_5uRQYEINEeeix8AoSsiQYA"/>
+    </stereotypes>
+    <visibility xmi:id="_6Uyd1EINEeeix8AoSsiQYA" label="+"/>
+    <attributes xmi:id="_6Uyd1UINEeeix8AoSsiQYA" name="id">
+      <modelElement href="diplom_web_part.uml#_5zknIEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Uyd1kINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zlOMEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Uyd10INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zl1QEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Uyd2EINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Uyd2UINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Uyd2kINEeeix8AoSsiQYA" name="Integer">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Uyd20INEeeix8AoSsiQYA" name="type">
+      <modelElement href="diplom_web_part.uml#_5zmcUkINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Uyd3EINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5znDYEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Uyd3UINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5znDYUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Uyd3kINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Uyd30INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Uyd4EINEeeix8AoSsiQYA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Uyd4UINEeeix8AoSsiQYA" name="name">
+      <modelElement href="diplom_web_part.uml#_5znqckINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Uyd4kINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zoRgEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Uyd40INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zo4kEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Uyd5EINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Uyd5UINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Uyd5kINEeeix8AoSsiQYA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Uyd50INEeeix8AoSsiQYA" name="fuelConsumption">
+      <modelElement href="diplom_web_part.uml#_5zo4k0INEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Uyd6EINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zpfoEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Uyd6UINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zqGsEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Uyd6kINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Uyd60INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Uyd7EINEeeix8AoSsiQYA" name="Double">
+        <modelElement href="diplom_web_part.uml#_5ygQIUINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Uyd7UINEeeix8AoSsiQYA" name="loadCapacity">
+      <modelElement href="diplom_web_part.uml#_5zqtwEINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Uyd7kINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zrU0EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Uyd70INEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5zrU0UINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Uyd8EINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Uyd8UINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Uyd8kINEeeix8AoSsiQYA" name="Double">
+        <modelElement href="diplom_web_part.uml#_5ygQIUINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6Uyd80INEeeix8AoSsiQYA" name="averageSpeed">
+      <modelElement href="diplom_web_part.uml#_5zr740INEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6Uyd9EINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5zsi8EINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6Uyd9UINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5ztKAEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Uyd9kINEeeix8AoSsiQYA" label="-"/>
+      <cardinality xmi:id="_6Uyd90INEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Uyd-EINEeeix8AoSsiQYA" name="Double">
+        <modelElement href="diplom_web_part.uml#_5ygQIUINEeeix8AoSsiQYA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6Uyd-UINEeeix8AoSsiQYA" name="VesselEntity">
+      <modelElement href="diplom_web_part.uml#_5uR3cEINEeeix8AoSsiQYA"/>
+      <keywords xmi:id="_6Uyd-kINEeeix8AoSsiQYA" keyword="create"/>
+      <stereotypes xmi:id="_6Uyd-0INEeeix8AoSsiQYA" name="StyledElement">
+        <modelElement href="diplom_web_part.uml#_5uSegEINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6Uyd_EINEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6Uyd_UINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6Uyd_kINEeeix8AoSsiQYA">
+        <modelElement href="diplom_web_part.uml#_5uR3c0INEeeix8AoSsiQYA"/>
+        <type xmi:id="_6Uyd_0INEeeix8AoSsiQYA" name="VesselEntity">
+          <modelElement href="diplom_web_part.uml#_5uJUkEINEeeix8AoSsiQYA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6UyeAEINEeeix8AoSsiQYA" name="toString">
+      <modelElement href="diplom_web_part.uml#_5uSegUINEeeix8AoSsiQYA"/>
+      <stereotypes xmi:id="_6UyeAUINEeeix8AoSsiQYA" name="LegacyStyledElement">
+        <modelElement href="diplom_web_part.uml#_5uTFkUINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6UyeAkINEeeix8AoSsiQYA" name="Annotations">
+        <modelElement href="diplom_web_part.uml#_5uTFkkINEeeix8AoSsiQYA"/>
+      </stereotypes>
+      <visibility xmi:id="_6UyeA0INEeeix8AoSsiQYA" label="+"/>
+      <cardinality xmi:id="_6UyeBEINEeeix8AoSsiQYA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6UyeBUINEeeix8AoSsiQYA">
+        <modelElement href="diplom_web_part.uml#_5uTFkEINEeeix8AoSsiQYA"/>
+        <type xmi:id="_6UyeBkINEeeix8AoSsiQYA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

@@ -56,7 +56,7 @@
 			<br></br>
 			<p:commandButton value="Добавить"
 				actionListener="#{serviceController.add}"
-				update="@form :#{p:component('serviceTableForm')}" />
+				update="@form :#{p:component('serviceTableForm')} :#{p:component('infoService')}" />
 			<p:commandButton value="Закрыть"
 				onclick="PF('addServiceWidget').hide();" immediate="true"
 				update=":#{p:component('addService')}">

@@ -37,6 +37,7 @@ public class Mapper {
 
 	public RowBean serviceDtoToRowBean(ServiceDto serviceDto) {
 		RowBean rowBean = new RowBean();
+		rowBean.setId(serviceDto.getId());
 		rowBean.setTitle(serviceDto.getTitle());
 		rowBean.setVesselId(serviceDto.getVesselDto().getId());
 		List<SubRowBean> subRowsBean = new ArrayList<>();

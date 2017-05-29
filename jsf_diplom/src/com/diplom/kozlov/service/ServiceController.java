@@ -73,11 +73,12 @@ public class ServiceController {
 		facade.onAddOpen();
 	}
 	public void onAddBeanToServiceOpen(){
-		facade.onAddBeanToServiceOpen();
+		LOGGER.info("onAddBeanToServiceOpen");
+		facade.onAddRouteToServiceOpen();
 	}
 	
-	public void addBeanToService(){
-		facade.addBeanToService();
+	public void addRouteToService(){
+		facade.addRouteToService();
 	}
 	
 

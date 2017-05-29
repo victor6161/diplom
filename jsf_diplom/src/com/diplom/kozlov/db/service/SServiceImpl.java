@@ -39,9 +39,9 @@ public class SServiceImpl {
 
 	public void addRoute(RouteDto routeDto, Integer id) {
 		LOGGER.info("saveRoute");
-
-		// List<ServiceEntity> serviceEntity =
-		// serviceDao.saveRoute(routeEntity,id);
+		RouteEntity routeEntity = mapper.routeDtoToEntity(routeDto);
+		serviceDao.update(routeEntity, id);
+	
 
 	}
 

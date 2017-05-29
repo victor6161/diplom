@@ -11,10 +11,9 @@
 	<ui:composition>
 
 		<p:row>
-			<p:column style="text-align: left;">
-				<p:panelGrid columns="2" layout="grid">
-					<p:row>
-						<p:column>
+			<p:column style="text-align: center;">
+				
+					
 							<h:form>
 
 								<div style="margin: 10px">
@@ -33,10 +32,12 @@
 
 
 								<p:commandButton value="Search"
-									update=":#{p:component('serviceTableForm')}"
-									actionListener="#{serviceController.onSearch}">
+									update=":#{p:component('serviceTableForm')} :#{p:component('infoService')}"
+									actionListener="#{serviceController.onSearch}"
+									>
 
 								</p:commandButton>
+								<br/>
 								
 							
 							</h:form>
@@ -45,11 +46,7 @@
 									update=":#{p:component('addService')}"
 									oncomplete="PF('addServiceWidget').show();" />
 							</h:form>
-						</p:column>
-
-
-					</p:row>
-				</p:panelGrid>
+				
 			</p:column>
 		</p:row>
 

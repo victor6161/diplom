@@ -10,6 +10,21 @@
 <h:body>
 	<ui:composition>
 		<h:form>
+
+
+			<p:fieldset id="infoService" legend="info about service"
+				style="margin-bottom:20px">
+				<h:outputText value="Название сервиса: " />
+				<div style="margin-right: 50px">
+					<p>#{serviceController.mainBean.rowBean.title}</p>
+				</div>
+
+				<h:outputText value="id корабля" />
+				<div style="margin-right: 50px">
+					<p>#{serviceController.mainBean.rowBean.vesselId}</p>
+				</div>
+			</p:fieldset>
+
 			<p:dataTable id="serviceTableForm" rowIndexVar="rowIndex"
 				widgetVar="dtWv" var="row"
 				value="#{serviceController.mainBean.rowBean.subRowsBean}"
@@ -24,12 +39,12 @@
 				<f:facet name="header">
 					<h:outputText value="Название сервиса: " />
 					<div style="font-color: green; margin-right: 50px">
-						<h:outputText value="trololo" />
+						<h:outputText value="#{row.title}" />
 
 					</div>
 					<!-- как сделать чтобы не было переноса на следующую строку  -->
-					<h:outputText value="id корабля" />
-					<h:outputText value="trololo" />
+
+					<h:outputText value="#{row.vesselId}" />
 
 
 
@@ -66,7 +81,8 @@
 
 					<p:commandButton icon="ui-icon-add"
 						update=":#{p:component('addRouteToService')}"
-						oncomplete="PF('addRouteToServiceWidget').show();">
+						oncomplete="PF('addRouteToServiceWidget').show();"
+						actionListener="#{serviceController.onAddBeanToServiceOpen}">
 
 					</p:commandButton>
 					<br />

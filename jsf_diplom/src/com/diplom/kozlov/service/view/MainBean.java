@@ -46,7 +46,7 @@ public class MainBean {
 	private VesselBean vesselBean;
 
 	public MainBean() {
-		
+		addRouteToServiceBean = new AddRouteToServiceBean();
 		addBean = new AddBean();
 		searchBean = new SearchBean();
 
