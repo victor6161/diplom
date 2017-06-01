@@ -38,4 +38,12 @@ public class RowBean {
 	@Setter
 	@Getter
 	private double draught;
+	@Setter
+	@Getter
+	private String firm;
+	@Setter
+	@Getter
+	private String status;
+	
+	
 }

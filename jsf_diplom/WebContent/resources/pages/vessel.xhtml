@@ -12,7 +12,15 @@
 
 </h:head>
 <h:body>
+	<style>
+		.ui-widget, .ui-widget .ui-widget {
+			font-size: 10%;
+		}
+	</style>
 	<ui:composition template="/resources/pages/template/template.xhtml">
+		<ui:define name="search">
+			<ui:include src="/resources/pages/vessel/search.xhtml" />
+		</ui:define>
 		<ui:define name="main">
 			<ui:include src="/resources/pages/vessel/table.xhtml" />
 		</ui:define>

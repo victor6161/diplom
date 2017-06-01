@@ -55,5 +55,11 @@ public class RowBean {
 	@Setter
 	@Getter
 	private CountryBean countryBean;
+	@Setter
+	@Getter
+	private double longitude;
+	@Setter
+	@Getter
+	private double latitude;
 
 }

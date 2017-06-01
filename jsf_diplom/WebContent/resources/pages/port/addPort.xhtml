@@ -1,58 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
- xmlns:f="http://java.sun.com/jsf/core"
- xmlns:h="http://java.sun.com/jsf/html"
- xmlns:ui="http://java.sun.com/jsf/facelets"
- xmlns:p="http://primefaces.org/ui"
- xmlns:composite="http://java.sun.com/jsf/composite">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
 
 <composite:interface />
 
 <composite:implementation>
-	
-	<p:dialog id="addPort" header="Добавить Порт" widgetVar="addPortWidget"  minHeight="40" modal="true">
+
+	<p:dialog id="addPort" header="Добавить Порт" widgetVar="addPortWidget"
+		minHeight="40" modal="true">
 		<h:form>
-		
-		
+
+
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Название порта" />
 			</div>
-		
+
 			<div style="margin: 10px">
-				<p:inputText id="portTo" value="#{portController.mainBean.addBean.name}" required="true" requiredMessage="Field is empty"/>
-				<br></br>
-			</div>
-			
-			<div style="margin: 10px; font-weight: bold;">
-				<h:outputText value="Название Страны" />
-			</div>
-				
-			<p:selectOneMenu id="country" value="#{portController.mainBean.addBean.countryBean}" style="width:150px" converter="com.diplom.kozlov.converter.CountryConverter">
-                <f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
-                <f:selectItems value="#{applicationBean.listCountryBean}" var="country" itemLabel="#{country.id} #{country.name}" itemValue="#{country}"/>
-            </p:selectOneMenu>
-            
-            <div style="margin: 10px; font-weight: bold;">
-				<h:outputText value="Широта" />
-			</div>
-		
-			<div style="margin: 10px">
-				<p:inputText value="#{portController.mainBean.addBean.latitude}" required="true" requiredMessage="Field is empty"/>
-				<br></br>
-			</div>
-			  <div style="margin: 10px; font-weight: bold;">
-				<h:outputText value="Долгота" />
-			</div>
-		
-			<div style="margin: 10px">
-				<p:inputText  value="#{portController.mainBean.addBean.longitude}" required="true" requiredMessage="Field is empty"/>
+				<p:inputText id="portTo"
+					value="#{portController.mainBean.addBean.name}" required="true"
+					requiredMessage="Field is empty" />
 				<br></br>
 			</div>
 
-			<br></br><br></br>
-			<p:commandButton value="Добавить"  actionListener="#{portController.add}" update="@form :#{p:component('portTableForm')}"/>
-			<p:commandButton value="Закрыть" onclick="PF('addPortWidget').hide();" immediate="true"  update=":#{p:component('addPort')}" >
-				
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Название Страны" />
+			</div>
+			<div style="margin: 10px; font-weight: bold;">
+				<p:selectOneMenu id="country"
+					value="#{portController.mainBean.addBean.countryBean}"
+					style="width:150px"
+					converter="com.diplom.kozlov.converter.CountryConverter">
+					<f:selectItem itemLabel="Select Country" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listCountryBean}"
+						var="country" itemLabel="#{country.id} #{country.name}"
+						itemValue="#{country}" />
+				</p:selectOneMenu>
+			</div>
+
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Широта" />
+			</div>
+
+			<div style="margin: 10px">
+				<p:inputText value="#{portController.mainBean.addBean.latitude}"
+					required="true" requiredMessage="Field is empty" />
+				<br></br>
+			</div>
+			<div style="margin: 10px; font-weight: bold;">
+				<h:outputText value="Долгота" />
+			</div>
+
+			<div style="margin: 10px">
+				<p:inputText value="#{portController.mainBean.addBean.longitude}"
+					required="true" requiredMessage="Field is empty" />
+				<br></br>
+			</div>
+
+			<br></br>
+			<br></br>
+			<p:commandButton value="Добавить"
+				actionListener="#{portController.add}"
+				update="@form :#{p:component('portTableForm')}" />
+			<p:commandButton value="Закрыть"
+				onclick="PF('addPortWidget').hide();" immediate="true"
+				update=":#{p:component('addPort')}">
+
 			</p:commandButton>
 		</h:form>
 	</p:dialog>

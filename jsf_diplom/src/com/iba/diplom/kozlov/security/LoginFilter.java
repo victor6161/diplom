@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
 
 
 
-@WebFilter(filterName = "AuthFilter", urlPatterns = { "*.xhtml" })
+//@WebFilter(filterName = "AuthFilter", urlPatterns = { "*.xhtml" })
 public class LoginFilter implements Filter {
 	private static final Logger LOGGER = Logger.getLogger(LoginFilter.class);
 	@Override

@@ -21,7 +21,7 @@
 
 				<h:outputText value="id корабля" />
 				<div style="margin-right: 50px">
-					<p>#{serviceController.mainBean.rowBean.vesselId}</p>
+					<p>#{serviceController.mainBean.rowBean.vesselBean.id}</p>
 				</div>
 			</p:fieldset>
 
@@ -35,7 +35,7 @@
 
 
 
-
+				
 				<f:facet name="header">
 					<h:outputText value="Название сервиса: " />
 					<div style="font-color: green; margin-right: 50px">
@@ -44,7 +44,7 @@
 					</div>
 					<!-- как сделать чтобы не было переноса на следующую строку  -->
 
-					<h:outputText value="#{row.vesselId}" />
+					<h:outputText value="#{row.vesselBean.id}" />
 
 
 

@@ -17,6 +17,8 @@ public class Mapper {
 		rowBean.setId(portDto.getId());
 		rowBean.setCountryBean(countryDtoToBean(portDto.getCountryDto()));
 		rowBean.setName(portDto.getName());
+		rowBean.setLatitude(portDto.getLatitude());
+		rowBean.setLongitude(portDto.getLongitude());
 		return rowBean;
 	}
 	

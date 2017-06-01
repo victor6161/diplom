@@ -12,24 +12,28 @@
 
 		<p:row>
 			<p:column style="text-align: left;">
-			
+				<p:panelGrid columns="2" layout="grid">
+					<p:row>
+						<p:column>
 							<h:form>
 
 								<div style="margin: 10px">
-									<p:outputLabel value="Искать по названию" for="nameSearch"
-										style="margin-right:10px;" />
 
 
-									<p:inputText id="nameSearch"
-										value="#{portController.mainBean.searchBean.countryBean}">
-									</p:inputText>
-
-									<p:outputLabel value="Искать по стране" for="countrySearch"
+									<p:outputLabel value="Порт отплытия" for="countrySearch"
 										style="margin-right:10px;" />
 
 
 									<p:inputText id="countrySearch"
-										value="#{portController.mainBean.searchBean.countryBean}">
+										>
+									</p:inputText>
+									
+									<p:outputLabel value="Порт прибытия" for="countrySearch"
+										style="margin-right:10px;" />
+
+
+									<p:inputText id="countrySearch"
+										>
 									</p:inputText>
 
 
@@ -42,8 +46,13 @@
 
 								</p:commandButton>
 								</h:form>
+						</p:column>
+						
+						<p:column sytle="text-align: center; display: block; margin: auto">
 				
-				
+						</p:column>
+					</p:row>
+				</p:panelGrid>
 			</p:column>
 		</p:row>
 

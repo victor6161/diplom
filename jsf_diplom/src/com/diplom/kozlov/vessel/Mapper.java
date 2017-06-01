@@ -1,6 +1,8 @@
 package com.diplom.kozlov.vessel;
 
 
+import java.util.Random;
+
 import com.diplom.kozlov.db.dto.VesselDto;
 import com.diplom.kozlov.vessel.view.AddBean;
 import com.diplom.kozlov.vessel.view.EditorBean;
@@ -23,7 +25,23 @@ public class Mapper {
 		rowBean.setLoadCapacity(vessel.getLoadCapacity());
 		rowBean.setFuelConsumption(vessel.getFuelConsumption());
 		rowBean.setAverageSpeed(vessel.getAverageSpeed());
+		Random random = new Random();
+		String [] arr = new String[4];
+		arr[0]="St. Peter Line";
+		arr[1]="CMA CGM";
+		arr[2]="A.P. Moller-Maersk Group";
+		arr[3]="NYK Line";
 		
+		rowBean.setFirm(arr[random.nextInt(arr.length)]);
+		String [] arr2 = new String[3];
+		arr2[0]="В доке";
+		arr2[1]="На рейсе";
+		arr2[2]="Свободен";
+		
+		
+		rowBean.setStatus((arr2[random.nextInt(arr2.length)]));
+		
+
 		return rowBean;
 		
 	}
