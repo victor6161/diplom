@@ -13,6 +13,9 @@
 </h:head>
 <h:body>
 	<ui:composition template="/resources/pages/template/template.xhtml">
+		<ui:define name="search">
+			<ui:include src="/resources/pages/route/search.xhtml" />
+		</ui:define>
 		<ui:define name="main">
 			<ui:include src="/resources/pages/route/table.xhtml" />
 		</ui:define>

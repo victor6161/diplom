@@ -29,24 +29,21 @@
 				<p:column headerText="Порт в">
 					<h:outputText value="#{item.portTo.name}" />
 				</p:column>
-				<p:column headerText="Расстояние">
+				<p:column headerText="Расстояние(км)">
 					<h:outputText value="#{item.distance}" />
 				</p:column>
 			
 				<p:column headerText="Количество точек">
 					<h:outputText value="#{item.numPoints}" />
 				</p:column>
-				<p:column headerText="Требование по габаритам">
+				<p:column headerText="Требование по габаритам(м x м)">
 					<h:outputText value="#{item.length} x #{item.width}" />
 				</p:column>
 				
-				<p:column headerText="Требование по водоизмещению">
+				<p:column headerText="Требование по водоизмещению(тонны)">
 					<h:outputText value="#{item.draught}" />
 				</p:column>
 				
-				<p:column headerText="очевидно что на одном route может быть несколько препятсвтвий">
-					
-				</p:column>
 				<p:column headerText="Изменить данные">
 					<p:commandButton icon="ui-icon-pencil"
 						actionListener="#{routeController.onEditOpen}"

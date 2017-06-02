@@ -42,7 +42,7 @@ public class RouteController {
 		facade.init();
 	}
 	public void onSearch() {
-		
+		facade.onSearch();
 		
 		
 	}

@@ -27,8 +27,11 @@ public class RowBean {
 	private VesselBean vesselBean;
 	@Setter
 	@Getter
-	private Period allTime;
+	private Period totalTime;
 	
+	@Setter
+	@Getter
+	private double totalDistance;
 	public RowBean(String title) {
 		this.title = title;
 		subRowsBean = new ArrayList<>();

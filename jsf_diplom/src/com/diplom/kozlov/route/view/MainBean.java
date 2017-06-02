@@ -26,10 +26,14 @@ public class MainBean {
 	@Setter
 	@Getter
 	private EditorBean editorBean;
+	@Setter
+	@Getter
+	private SearchBean searchBean;
 	public MainBean(){
 		selectedRoute = new RowBean();
 		rowsBean = new ArrayList<>();
 		addBean = new AddBean(); 
+		searchBean = new SearchBean();
 	}
 
 

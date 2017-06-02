@@ -13,6 +13,7 @@ import com.diplom.kozlov.map.MarkerBean;
 import com.diplom.kozlov.route.view.AddBean;
 import com.diplom.kozlov.route.view.EditorBean;
 import com.diplom.kozlov.route.view.RowBean;
+import com.diplom.kozlov.route.view.SearchBean;
 import com.diplom.kozlov.vessel.VesselController;
 
 public class RouteDataFacade {
@@ -33,27 +34,24 @@ public class RouteDataFacade {
 		}
 		routeController.getMainBean().setRowsBean(rowsBean);
 	}
-	
 
 	public void add() {
 		LOGGER.info("add");
 		AddBean addBean = routeController.getMainBean().getAddBean();
 
 		RouteDto routeDto = routeController.getMapper().addBeanToDto(addBean);
-		
+
 		routeController.getRouteService().save(routeDto);
 		init();
 
 	}
 
-
-
 	public void onAddOpen() {
 		LOGGER.info("edit");
 		routeController.getMainBean().setAddBean(new AddBean());// это
-																	// обязательно
-																	// вместе c
-																	// resetInput
+																// обязательно
+																// вместе c
+																// resetInput
 
 	}
 
@@ -68,11 +66,25 @@ public class RouteDataFacade {
 	public void onEditOpen() {
 		LOGGER.info("onEditOpen");
 		RowBean rowBean = routeController.getMainBean().getSelectedRoute();
-	 	RouteDto routeDto = routeController.getMapper().rowBeanToDto(rowBean);
-	 	EditorBean editorBean = routeController.getMapper().routeDtoToEditorBean(routeDto);
-	 	routeController.getMainBean().setEditorBean(editorBean);
-	 	
-		
+		RouteDto routeDto = routeController.getMapper().rowBeanToDto(rowBean);
+		EditorBean editorBean = routeController.getMapper().routeDtoToEditorBean(routeDto);
+		routeController.getMainBean().setEditorBean(editorBean);
+
+	}
+
+	public void onSearch() {
+		SearchBean searchBean = routeController.getMainBean().getSearchBean();
+		String portFrom = searchBean.getPortFrom();
+		String portTo = searchBean.getPortIn();
+
+		List<RowBean> rowsBean = routeController.getMainBean().getRowsBean();
+		List<RowBean> result = new ArrayList<>();
+		for (RowBean rowBean : rowsBean) {
+			if (rowBean.getPortFrom().getName().equals(portFrom) && rowBean.getPortTo().getName().equals(portTo)) {
+				result.add(rowBean);
+			}
+		}
+		routeController.getMainBean().setRowsBean(result);
 	}
 
 }

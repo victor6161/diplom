@@ -12,16 +12,29 @@
 		<h:form>
 
 
-			<p:fieldset id="infoService" legend="info about service"
+			<p:fieldset id="infoService" legend="Информация о сервисе"
 				style="margin-bottom:20px">
-				<h:outputText value="Название сервиса: " />
 				<div style="margin-right: 50px">
-					<p>#{serviceController.mainBean.rowBean.title}</p>
+					<h:outputText
+						value="Название сервиса: #{serviceController.mainBean.rowBean.title} " />
+
+
 				</div>
 
-				<h:outputText value="id корабля" />
 				<div style="margin-right: 50px">
-					<p>#{serviceController.mainBean.rowBean.vesselBean.id}</p>
+					<h:outputText
+						value="id корабля #{serviceController.mainBean.rowBean.vesselBean.id}" />
+
+				</div>
+				<div style="margin-right: 50px">
+					<h:outputText
+						value="Общее время #{serviceController.mainBean.rowBean.totalTime}" />
+
+				</div>
+				<div style="margin-right: 50px">
+					<h:outputText
+						value="Полная дистанция(км) #{serviceController.mainBean.rowBean.totalDistance}" />
+
 				</div>
 			</p:fieldset>
 
@@ -35,7 +48,7 @@
 
 
 
-				
+
 				<f:facet name="header">
 					<h:outputText value="Название сервиса: " />
 					<div style="font-color: green; margin-right: 50px">
@@ -56,7 +69,7 @@
 				<p:column headerText="время на преодоление">
 					<h:outputText value="#{row.period}" />
 				</p:column>
-				<p:column headerText="Дистанция">
+				<p:column headerText="Дистанция(км)">
 					<h:outputText value="#{row.distance}" />
 				</p:column>
 

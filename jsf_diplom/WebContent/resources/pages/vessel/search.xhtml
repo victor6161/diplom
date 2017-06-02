@@ -17,51 +17,46 @@
 
 				<h:form>
 
-					<div style="margin: 10px">
+					<div style="margin: 10px; text-align: center;">
 
-						<p:panelGrid columns="2" border="0"
-							>
-							<p:column>
-								<p:outputLabel value="Искать по id"
-									style="margin-right:10px; text-align: left;" />
-								<br />
 
-								<p:inputText />
-								<br />
-								<br />
+						<p:outputLabel value="Искать по id"
+							style="margin-right:10px; text-align: left;" />
+						<br />
 
-								<p:outputLabel value="Искать по типу"
-									style="margin-right:10px; text-align: left;" />
-								<br />
-								<p:inputText />
-								<br />
-								<br />
-							</p:column>
-							<p:column>
-								<p:outputLabel value="Искать по компании"
-									style="margin-right:10px; text-align: left;" />
-								<br />
-								<p:inputText />
-								<br />
-								<br />
-								<p:outputLabel value="Искать по статусу"
-									style="margin-right:10px; text-align: left;" />
-								<br />
-								<p:inputText />
-							</p:column>
-						</p:panelGrid>
+						<p:inputText />
+						<br /> <br />
+
+						<p:outputLabel value="Искать по типу"
+							style="margin-right:10px; text-align: left;" />
+						<br />
+						<p:inputText />
+						<br /> <br />
+
+						<p:outputLabel value="Искать по компании"
+							style="margin-right:10px; text-align: left;" />
+						<br />
+						<p:inputText />
+						<br /> <br />
+						<p:outputLabel value="Искать по статусу"
+							style="margin-right:10px; text-align: left;" />
+						<br />
+						<p:inputText />
+						<br/><br/>
+						
+
+						<p:commandButton value="Поиск"
+							actionListener="#{portController.onSearch}">
+
+						</p:commandButton>
 
 					</div>
 
 
-					<p:commandButton value="Search"
-						actionListener="#{portController.onSearch}">
-
-					</p:commandButton>
 				</h:form>
 
 			</p:column>
-			<p:column>
+			<!-- <p:column>
 				<h:outputScript
 					value="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"
 					target="head"></h:outputScript>
@@ -115,7 +110,7 @@
 				<div id="chart">
 					<svg></svg>
 				</div>
-			</p:column>
+			</p:column> -->
 		</p:row>
 
 

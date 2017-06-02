@@ -19,6 +19,9 @@ import lombok.Setter;
 public class MainBean {
 	@Setter
 	@Getter
+	private InfoBean infoBean;
+	@Setter
+	@Getter
 	private RowBean rowBean;
 
 	@Setter

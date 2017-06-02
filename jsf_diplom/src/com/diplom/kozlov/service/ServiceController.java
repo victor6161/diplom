@@ -29,6 +29,7 @@ public class ServiceController {
 	@ManagedProperty(value = "#{mainBeanService}")
 	private MainBean mainBean;
 
+	
 	@Setter
 	@Getter
 	private String rowsPerPage = "10";

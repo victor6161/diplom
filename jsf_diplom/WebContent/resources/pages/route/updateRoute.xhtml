@@ -23,8 +23,10 @@
 					value="#{routeController.mainBean.editorBean.portFrom}"
 					style="width:150px"
 					converter="com.diplom.kozlov.converter.PortConverter">
-					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
-					<f:selectItems value="#{applicationBean.listPortBean}" var="port" itemLabel=" #{port.name}" itemValue="#{port}" />
+					<f:selectItem itemLabel="Выберите порт" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listPortBean}" var="port"
+						itemLabel=" #{port.name}" itemValue="#{port}" />
 				</p:selectOneMenu>
 				<br></br>
 			</div>
@@ -42,9 +44,12 @@
 			<div style="margin: 10px;">
 				<p:selectOneMenu
 					value="#{routeController.mainBean.editorBean.portTo}"
-					style="width:150px" converter="com.diplom.kozlov.converter.PortConverter">
-					<f:selectItem itemLabel="Выберите порт" itemValue="" noSelectionOption="true" />
-					<f:selectItems value="#{applicationBean.listPortBean}" var="port" itemLabel=" #{port.name}" itemValue="#{port}" />
+					style="width:150px"
+					converter="com.diplom.kozlov.converter.PortConverter">
+					<f:selectItem itemLabel="Выберите порт" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listPortBean}" var="port"
+						itemLabel=" #{port.name}" itemValue="#{port}" />
 				</p:selectOneMenu>
 				<br></br>
 			</div>
@@ -59,30 +64,35 @@
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Выберите тип корабля" />
 			</div>
-		
-			<p:selectOneMenu
-				value="#{routeController.mainBean.editorBean.vesselBean}"
-				style="width:150px"
-				converter="com.diplom.kozlov.converter.VesselConverter">
-				<f:selectItem itemLabel="Выберите тип корабля" itemValue=""
-					noSelectionOption="true" />
-				<f:selectItems value="#{applicationBean.listVesselBean}"
-					var="vessel" itemLabel=" #{vessel.type}" itemValue="#{vessel}" />
-			</p:selectOneMenu>
+			<div style="margin: 10px; font-weight: bold;">
+				<p:selectOneMenu
+					value="#{routeController.mainBean.editorBean.vesselBean}"
+					style="width:150px"
+					converter="com.diplom.kozlov.converter.VesselConverter">
+					<f:selectItem itemLabel="Выберите тип корабля" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{applicationBean.listVesselBean}"
+						var="vessel" itemLabel=" #{vessel.type}" itemValue="#{vessel}" />
+				</p:selectOneMenu>
+			</div>
 			<br></br>
-			
+
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Количество точек" />
 			</div>
-			<p:inputText
-				value="#{routeController.mainBean.editorBean.numPoints}"
-				 />
-			<br></br><br></br>
-		
-			<p:commandButton value="Обновить"
-				actionListener="#{routeController.edit}"
-				update=":#{p:component('updateRoute')} :#{p:component('routeTableForm')}" />
-			<p:commandButton value="Закрыть" onclick="PF('updateRouteWidget').hide();" immediate="true"/>
+			<div style="margin: 10px; font-weight: bold;">
+				<p:inputText
+					value="#{routeController.mainBean.editorBean.numPoints}" />
+			</div>
+			<br></br>
+			<br></br>
+			<div style="margin: 10px; font-weight: bold;">
+				<p:commandButton value="Обновить"
+					actionListener="#{routeController.edit}"
+					update=":#{p:component('updateRoute')} :#{p:component('routeTableForm')}" />
+				<p:commandButton value="Закрыть"
+					onclick="PF('updateRouteWidget').hide();" immediate="true" />
+			</div>
 		</h:form>
 	</p:dialog>
 </composite:implementation>

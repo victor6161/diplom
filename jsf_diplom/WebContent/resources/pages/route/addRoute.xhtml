@@ -19,7 +19,7 @@
 				<h:outputText value="Порт отправки" />
 			</div>
 
-			<div style="margin: 10px">
+			<div style="margin: 10px; font-weight: bold;">
 				<p:selectOneMenu
 					value="#{routeController.mainBean.addBean.portFrom}"
 					style="width:150px"
@@ -38,7 +38,7 @@
 				<h:outputText value="Порт прибытия" />
 			</div>
 
-			<div style="margin: 10px;">
+			<div style="margin: 10px; font-weight: bold;">
 				<p:selectOneMenu value="#{routeController.mainBean.addBean.portTo}"
 					style="width:150px"
 					converter="com.diplom.kozlov.converter.PortConverter">
@@ -49,41 +49,48 @@
 				</p:selectOneMenu>
 				<br></br>
 			</div>
-
-
-
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Количество точек" />
 			</div>
-			<p:inputText value="#{routeController.mainBean.addBean.numPoints}" />
+			<div style="margin: 10px; font-weight: bold;">
+				<p:inputText value="#{routeController.mainBean.addBean.numPoints}" />
+			</div>
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Дистанция между портами" />
 			</div>
-			<p:inputText value="#{routeController.mainBean.addBean.distance}" />
+			<div style="margin: 10px; font-weight: bold;">
+				<p:inputText value="#{routeController.mainBean.addBean.distance}" />
+			</div>
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Требование по длине" />
 			</div>
-			<p:inputText value="#{routeController.mainBean.addBean.length}" />
+			<div style="margin: 10px; font-weight: bold;">
+				<p:inputText value="#{routeController.mainBean.addBean.length}" />
+			</div>
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Требование по ширине" />
 			</div>
-			<p:inputText value="#{routeController.mainBean.addBean.width}" />
+			<div style="margin: 10px; font-weight: bold;">
+				<p:inputText value="#{routeController.mainBean.addBean.width}" />
+			</div>
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Требование по водоизмещению" />
 			</div>
-			<p:inputText value="#{routeController.mainBean.addBean.draught}" />
+			<div style="margin: 10px; font-weight: bold;">
+				<p:inputText value="#{routeController.mainBean.addBean.draught}" />
+			</div>
 			<br></br>
 			<br></br>
 
-
-			<p:commandButton value="Добавить"
-				actionListener="#{routeController.add}"
-				update="@form :#{p:component('routeTableForm')}" />
-			<p:commandButton value="Закрыть"
-				onclick="PF('addRouteWidget').hide();" immediate="true"
-				update=":#{p:component('addRoute')}">
-
-			</p:commandButton>
+			<div style="margin: 10px; font-weight: bold;">
+				<p:commandButton value="Добавить"
+					actionListener="#{routeController.add}"
+					update="@form :#{p:component('routeTableForm')}" />
+				<p:commandButton value="Закрыть"
+					onclick="PF('addRouteWidget').hide();" immediate="true"
+					update=":#{p:component('addRoute')}">
+				</p:commandButton>
+			</div>
 		</h:form>
 	</p:dialog>
 </composite:implementation>
