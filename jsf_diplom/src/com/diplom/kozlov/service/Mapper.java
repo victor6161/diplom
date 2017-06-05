@@ -7,8 +7,8 @@ import com.diplom.kozlov.application.RouteBean;
 import com.diplom.kozlov.db.dto.RouteDto;
 import com.diplom.kozlov.db.dto.ServiceDto;
 import com.diplom.kozlov.service.view.AddBean;
+import com.diplom.kozlov.service.view.InfoBean;
 import com.diplom.kozlov.service.view.RowBean;
-import com.diplom.kozlov.service.view.SubRowBean;
 
 import lombok.Getter;
 
@@ -28,31 +28,36 @@ public class Mapper {
 
 	private RouteDto routeBeanToDto(RouteBean routeBean) {
 		RouteDto routeDto = new RouteDto();
-
 		routeDto.setId(routeBean.getId());
 		routeDto.setPortFrom(mapperApplication.portBeanToDto(routeBean.getPortFrom()));
 		routeDto.setPortTo(mapperApplication.portBeanToDto(routeBean.getPortTo()));
 		return routeDto;
 	}
 
-	
-	public RowBean serviceDtoToRowBean(ServiceDto serviceDto) {
-		RowBean rowBean = new RowBean();
-		rowBean.setId(serviceDto.getId());
-		rowBean.setTitle(serviceDto.getTitle());
-		rowBean.setVesselBean(mapperApplication.vesselDtoToBean(serviceDto.getVesselDto()));
-		List<SubRowBean> subRowsBean = new ArrayList<>();
-		serviceDto.getRouteDto().forEach(routeDto -> subRowsBean.add(routeDtoToSubRowBean(routeDto)));
-		rowBean.setSubRowsBean(subRowsBean);
-		return rowBean;
+	public InfoBean serviceDtoToInfoBean(ServiceDto serviceDto) {
+		InfoBean infoBean = new InfoBean();
+		infoBean.setId(serviceDto.getId());
+		infoBean.setTitle(serviceDto.getTitle());
+		infoBean.setVesselBean(mapperApplication.vesselDtoToBean(serviceDto.getVesselDto()));
+		double totalDistance = 0;
+		for (RouteDto routeDto : serviceDto.getRouteDto()) {
+			totalDistance = totalDistance + routeDto.getDistance();
+		}
+
+		infoBean.setTotalDistance(totalDistance);
+		return infoBean;
 	}
 
-	private SubRowBean routeDtoToSubRowBean(RouteDto routeDto) {
-
-		SubRowBean subRowBean = new SubRowBean();
-		subRowBean.setId(routeDto.getId());
-		subRowBean.setDistance(routeDto.getDistance());
-		return subRowBean;
+	public RowBean routeDtoToRowBean(RouteDto routeDto) {
+		RowBean rowBean = new RowBean();
+		rowBean.setId(routeDto.getId());
+		rowBean.setDistance(routeDto.getDistance());
+		rowBean.setDraught(routeDto.getDraught());
+		rowBean.setLength(routeDto.getLength());
+		rowBean.setWidth(routeDto.getWidth());
+		rowBean.setMasut(routeDto.getMasut());
+		// rowBean.setPeriod(routeDto);
+		return rowBean;
 	}
 
 }

@@ -12,32 +12,20 @@
 
 		<p:row>
 			<p:column style="text-align: center;">
-				
-					
 							<h:form>
-
 								<div style="margin: 10px">
-
-
 									<p:outputLabel value="показать service по id"
 										for="serviceSearch" style="margin-right:10px;" />
-
-
 									<p:inputText id="serviceSearch"
 										value="#{serviceController.mainBean.searchBean.serviceId}">
 									</p:inputText>
-
-
 								</div>
-
 
 								<p:commandButton value="Поиск"
 									update=":#{p:component('serviceTableForm')} :#{p:component('infoService')}"
 									actionListener="#{serviceController.onSearch}"
-									>
-
-								</p:commandButton>
-								<br/>
+									/>
+								<br/><br/>
 								
 							
 							</h:form>

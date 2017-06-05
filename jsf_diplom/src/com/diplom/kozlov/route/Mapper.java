@@ -19,6 +19,7 @@ public class Mapper {
 		rowBean.setWidth(route.getWidth());
 		rowBean.setLength(route.getLength());
 		rowBean.setNumPoints(route.getNumPoints());
+		rowBean.setTitle(route.getTitle());
 		return rowBean;
 	}
 

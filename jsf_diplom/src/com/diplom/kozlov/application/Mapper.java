@@ -47,6 +47,9 @@ public class Mapper {
 		VesselBean vesselBean = new VesselBean();
 		vesselBean.setId(vesselDto.getId());
 		vesselBean.setType(vesselDto.getType());
+		vesselBean.setLength(vesselDto.getLength());
+		vesselBean.setWidth(vesselDto.getWidth());
+		vesselBean.setMasut(vesselDto.getMasut());
 		return vesselBean;
 	}
 

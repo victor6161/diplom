@@ -10,99 +10,64 @@
 <h:body>
 	<ui:composition>
 		<h:form>
-
-
 			<p:fieldset id="infoService" legend="Информация о сервисе"
 				style="margin-bottom:20px">
 				<div style="margin-right: 50px">
 					<h:outputText
-						value="Название сервиса: #{serviceController.mainBean.rowBean.title} " />
-
-
+						value="Название сервиса:" />
+						<h:outputText style="color:green" value="#{serviceController.mainBean.infoBean.title}"/>
 				</div>
 
 				<div style="margin-right: 50px">
-					<h:outputText
-						value="id корабля #{serviceController.mainBean.rowBean.vesselBean.id}" />
+					<h:outputText value="id корабля: " />
+					<h:outputText style="color:green"
+						value="#{serviceController.mainBean.infoBean.vesselBean.id}" />
 
 				</div>
-				<div style="margin-right: 50px">
-					<h:outputText
-						value="Общее время #{serviceController.mainBean.rowBean.totalTime}" />
 
-				</div>
-				<div style="margin-right: 50px">
-					<h:outputText
-						value="Полная дистанция(км) #{serviceController.mainBean.rowBean.totalDistance}" />
+	
 
+				<div style="margin-right: 50px">
+					<h:outputText value="Полная дистанция(км): " />
+					<h:outputText style="color: green"
+						value="#{serviceController.mainBean.infoBean.totalDistance}" />
 				</div>
 			</p:fieldset>
 
 			<p:dataTable id="serviceTableForm" rowIndexVar="rowIndex"
 				widgetVar="dtWv" var="row"
-				value="#{serviceController.mainBean.rowBean.subRowsBean}"
-				selectionMode="single"
+				value="#{serviceController.mainBean.rowsBean}"
+				rows="#{serviceController.rowsPerPage}" paginator="true" lazy="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15" selectionMode="single"
 				selection="#{serviceController.mainBean.selectedRoute}"
 				rowKey="#{row.id}">
 
-
-
-
-
-				<f:facet name="header">
-					<h:outputText value="Название сервиса: " />
-					<div style="font-color: green; margin-right: 50px">
-						<h:outputText value="#{row.title}" />
-
-					</div>
-					<!-- как сделать чтобы не было переноса на следующую строку  -->
-
-					<h:outputText value="#{row.vesselBean.id}" />
-
-
-
-
-				</f:facet>
 				<p:column headerText="id маршрута">
 					<h:outputText value="#{row.id}" />
 				</p:column>
-				<p:column headerText="время на преодоление">
-					<h:outputText value="#{row.period}" />
-				</p:column>
+			
+			
 				<p:column headerText="Дистанция(км)">
 					<h:outputText value="#{row.distance}" />
 				</p:column>
-
-
-
 				<p:column>
 					<h:outputStylesheet library="css" name="comparison.css" />
 					<p:commandButton icon="ui-icon-carat-1-s"
 						update=":#{p:component('comparison')}"
 						actionListener="#{serviceController.onCompareOpen}"
-						oncomplete="PF('comparisonWidget').show();">
-
+						oncomplete="PF('comparisonWidget').show();"
+						onmousedown="selectRow(PF('dtWv'), #{rowIndex}, #{serviceController.rowsPerPage});">
 					</p:commandButton>
-
-
-
 				</p:column>
 
-
-
-
 				<f:facet name="footer">
-
 					<p:commandButton icon="ui-icon-add"
-						update=":#{p:component('addRouteToService')}"
+						update=":#{p:component('addRouteToService')} :#{p:component('infoService')} "
 						oncomplete="PF('addRouteToServiceWidget').show();"
 						actionListener="#{serviceController.onAddBeanToServiceOpen}">
-
 					</p:commandButton>
 					<br />
-
-
-
 				</f:facet>
 			</p:dataTable>
 		</h:form>

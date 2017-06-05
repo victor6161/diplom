@@ -48,7 +48,11 @@ public class Mapper {
 		vesselDto.setAverageSpeed(vesselEntity.getAverageSpeed());
 		vesselDto.setFuelConsumption(vesselEntity.getFuelConsumption());
 		vesselDto.setLoadCapacity(vesselEntity.getLoadCapacity());
-
+		vesselDto.setDraught(vesselEntity.getDraught());
+		vesselDto.setLength(vesselEntity.getLength());
+		vesselDto.setWidth(vesselEntity.getWidth());
+		vesselDto.setMasut(vesselEntity.getMasut());
+		vesselDto.setDiesel(vesselEntity.getDiesel());
 		return vesselDto;
 	}
 
@@ -69,6 +73,7 @@ public class Mapper {
 		vesselEntity.setLoadCapacity(vesselDto.getLoadCapacity());
 		vesselEntity.setAverageSpeed(vesselDto.getAverageSpeed());
 		vesselEntity.setFuelConsumption(vesselDto.getFuelConsumption());
+		vesselEntity.setDiesel(vesselDto.getDiesel());
 		return vesselEntity;
 	}
 
@@ -81,9 +86,10 @@ public class Mapper {
 		routeDto.setDraught(routeEntity.getDraught());
 		routeDto.setLength(routeEntity.getLength());
 		routeDto.setWidth(routeEntity.getWidth());
-
+		routeDto.setMasut(routeEntity.getMasut());
 		routeDto.setNumPoints(routeEntity.getNumPoints());
 		routeDto.setMarkersDto(markersEntityToDto(routeEntity.getMarkersEntity()));
+		routeDto.setTitle(routeEntity.getTitle());
 		return routeDto;
 	}
 
@@ -176,7 +182,7 @@ public class Mapper {
 		for (RouteEntity routeEntity : serviceEntity.getRouteEntity()) {
 			routeDto.add(this.routeEntityToDto(routeEntity));
 		}
-		
+
 		serviceDto.setRouteDto(routeDto);
 		return serviceDto;
 	}

@@ -35,4 +35,7 @@ public class RowBean {
 	@Setter
 	@Getter
 	private double draught;
+	@Setter
+	@Getter
+	private String title;
 }

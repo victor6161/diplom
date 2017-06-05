@@ -44,6 +44,11 @@ public class RowBean {
 	@Setter
 	@Getter
 	private String status;
-	
+	@Setter
+	@Getter
+	private String masut;
+	@Setter
+	@Getter 
+	private String diesel;
 	
 }

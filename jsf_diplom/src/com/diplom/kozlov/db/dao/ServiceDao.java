@@ -13,6 +13,10 @@ import com.diplom.kozlov.entity.ServiceEntity;
 
 public class ServiceDao {
 	private static final Logger LOGGER = Logger.getLogger(ServiceDao.class);
+	public void getMaxIdService() {
+
+	}
+	
 	public void save(ServiceEntity serviceEntity) {
 		LOGGER.info("save");
 		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();

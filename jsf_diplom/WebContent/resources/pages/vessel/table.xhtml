@@ -51,6 +51,12 @@
 				<p:column headerText="Водоизмещение (тонны)">
 					<h:outputText value="#{vessel.draught}" />
 				</p:column>
+				<p:column headerText="Работа двигателя на маловязком топливе">
+					<h:outputText value="#{vessel.diesel}"/>
+				</p:column>
+				<p:column headerText="Работа двигателей на высоковязком топливе">
+					<h:outputText value="#{vessel.masut}"/>
+				</p:column>
 				<p:column headerText="Изменить данные">
 					<p:commandButton icon="ui-icon-pencil"
 						actionListener="#{vesselController.onEditOpen}"

@@ -38,6 +38,12 @@ public class RouteDto implements Serializable {
 	@Setter
 	@Getter
 	private List<MarkerDto> markersDto;
+	@Setter
+	@Getter
+	private int masut;
+	  @Setter
+	  @Getter
+	  private String title;
 
 
 	

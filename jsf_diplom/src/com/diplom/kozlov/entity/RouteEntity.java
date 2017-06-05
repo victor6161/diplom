@@ -80,5 +80,12 @@ public class RouteEntity implements Serializable {
 	@Getter
 	@ManyToMany(mappedBy="routeEntity")
 	private Set<ServiceEntity> serviceEntity = new HashSet<ServiceEntity>();
+	@Setter
+	@Getter
+	private int masut;
+	@Setter
+	@Getter
+	private String title;
+	
 
 }

@@ -48,16 +48,7 @@ public class ServiceController {
 		
 		
 	}
-	public void edit() {
-		LOGGER.info("edit");
-		facade.edit();
-		
-	}
-	public void onEditOpen() {
-		LOGGER.info("onEditOpen");
-		facade.onEditOpen();
-			
-	}
+
 	public void onCompareOpen() {
 		LOGGER.info("onCompareOpen");
 		facade.onCompareOpen();
@@ -69,10 +60,7 @@ public class ServiceController {
 		RequestContext.getCurrentInstance().execute("PF('addServiceWidget').hide()");
 		
 	}
-	public void onAddOpen(){
-		LOGGER.info("onAddOpen");
-		facade.onAddOpen();
-	}
+
 	public void onAddBeanToServiceOpen(){
 		LOGGER.info("onAddBeanToServiceOpen");
 		facade.onAddRouteToServiceOpen();

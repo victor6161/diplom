@@ -2,43 +2,41 @@ package com.diplom.kozlov.service.view;
 
 
 import java.time.Period;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.diplom.kozlov.application.VesselBean;
 
 import lombok.Getter;
 import lombok.Setter;
 
 public class RowBean {
-	public RowBean() {
-		super();
-	
-	}
+
 	@Setter
 	@Getter
 	private Integer id;
 
+
+	@Setter
+	@Getter
+	private Period period;
 	@Setter
 	@Getter
 	private String title;
 	@Setter
 	@Getter
-	private VesselBean vesselBean;
+	private double distance;
 	@Setter
 	@Getter
-	private Period totalTime;
-	
+	private double length;
 	@Setter
 	@Getter
-	private double totalDistance;
-	public RowBean(String title) {
-		this.title = title;
-		subRowsBean = new ArrayList<>();
-	}
+	private double width;
+	@Setter
+	@Getter
+	private double draught;
+	@Setter
+	@Getter
+	private int masut;
+	@Setter
+	@Getter 
+	private int diesel;
 
-	@Setter
-	@Getter
-	private List<SubRowBean> subRowsBean;
 	
 }

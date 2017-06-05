@@ -26,6 +26,8 @@ public class SServiceImpl {
 		LOGGER.info("save");
 		ServiceEntity serviceEntity = mapper.serviceDtoToEntity(serviceDto);
 		serviceDao.save(serviceEntity);
+		
+		
 	}
 
 	public List<ServiceDto> getList() {
@@ -59,5 +61,8 @@ public class SServiceImpl {
 	
 
 	}
+	
+
+
 
 }

@@ -32,5 +32,12 @@ public class VesselDto implements Serializable {
 	  @Setter
 	  @Getter
 	  private Double width;
+		@Setter
+		@Getter
+		private int masut;
+		@Setter
+		@Getter 
+		private int diesel;
+		
 
 }

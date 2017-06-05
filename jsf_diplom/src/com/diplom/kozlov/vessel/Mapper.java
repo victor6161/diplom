@@ -40,8 +40,13 @@ public class Mapper {
 		
 		
 		rowBean.setStatus((arr2[random.nextInt(arr2.length)]));
-		
-
+		if(vessel.getDiesel() == 0)
+		rowBean.setDiesel("Нет");
+		else rowBean.setDiesel("Да");
+		if(vessel.getMasut() == 0)
+		rowBean.setMasut("Нет");
+		else rowBean.setMasut("Да");
+	
 		return rowBean;
 		
 	}

@@ -1,6 +1,7 @@
 package com.diplom.kozlov.service.view;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -22,7 +23,7 @@ public class MainBean {
 	private InfoBean infoBean;
 	@Setter
 	@Getter
-	private RowBean rowBean;
+	private List<RowBean> rowsBean;
 
 	@Setter
 	@Getter
@@ -33,7 +34,7 @@ public class MainBean {
 	
 	@Setter
 	@Getter
-	private SubRowBean selectedRoute;
+	private RowBean selectedRoute;
 	@Setter
 	@Getter
 	private EditorBean editorBean;
@@ -52,7 +53,9 @@ public class MainBean {
 		addRouteToServiceBean = new AddRouteToServiceBean();
 		addBean = new AddBean();
 		searchBean = new SearchBean();
-		rowBean = new RowBean();
+		rowsBean = new ArrayList<RowBean>();
+		selectedRoute = new RowBean();
+		compareList = new ArrayList<Compare>();
 
 	}
 

@@ -30,12 +30,7 @@
 				</p:selectOneMenu>
 				<br></br>
 			</div>
-			<div style="margin: 10px; font-weight: bold;">
-				<h:outputText value="Время отправки" />
-			</div>
-			<p:calendar id="fromDatetime"
-				value="#{routeController.mainBean.editorBean.dateFrom}"
-				pattern="MM/dd/yyyy HH:mm:ss" />
+	
 
 			<div style="margin: 10px; font-weight: bold;">
 				<h:outputText value="Порт прибытия" />
@@ -51,41 +46,16 @@
 					<f:selectItems value="#{applicationBean.listPortBean}" var="port"
 						itemLabel=" #{port.name}" itemValue="#{port}" />
 				</p:selectOneMenu>
-				<br></br>
+				<br/>
 			</div>
+			<br/><br/>
 
-			<div style="margin: 10px; font-weight: bold;">
-				<h:outputText value="Время прибытия" />
-			</div>
-			<p:calendar id="toDatetime"
-				value="#{routeController.mainBean.editorBean.dateTo}"
-				pattern="MM/dd/yyyy HH:mm:ss" />
-			<br></br>
-			<div style="margin: 10px; font-weight: bold;">
-				<h:outputText value="Выберите тип корабля" />
-			</div>
-			<div style="margin: 10px; font-weight: bold;">
-				<p:selectOneMenu
-					value="#{routeController.mainBean.editorBean.vesselBean}"
-					style="width:150px"
-					converter="com.diplom.kozlov.converter.VesselConverter">
-					<f:selectItem itemLabel="Выберите тип корабля" itemValue=""
-						noSelectionOption="true" />
-					<f:selectItems value="#{applicationBean.listVesselBean}"
-						var="vessel" itemLabel=" #{vessel.type}" itemValue="#{vessel}" />
-				</p:selectOneMenu>
-			</div>
-			<br></br>
+		
+		
 
-			<div style="margin: 10px; font-weight: bold;">
-				<h:outputText value="Количество точек" />
-			</div>
-			<div style="margin: 10px; font-weight: bold;">
-				<p:inputText
-					value="#{routeController.mainBean.editorBean.numPoints}" />
-			</div>
-			<br></br>
-			<br></br>
+	
+		
+			
 			<div style="margin: 10px; font-weight: bold;">
 				<p:commandButton value="Обновить"
 					actionListener="#{routeController.edit}"

@@ -53,6 +53,12 @@ public class VesselEntity {
   @Setter
   @Getter
   private Double width;
+	@Setter
+	@Getter
+	private int masut;
+	@Setter
+	@Getter 
+	private int diesel;
 
 
 }
