@@ -22,7 +22,7 @@
 				converter="com.diplom.kozlov.converter.RouteConverter">
 				<f:selectItem itemLabel="Выбрать маршрут" itemValue=""
 					noSelectionOption="true" />
-				<f:selectItems value="#{applicationBean.listRouteBean}" var="item"
+				<f:selectItems value="#{serviceController.application.listRouteBean}" var="item"
 					itemLabel="#{item.id} #{item.portFrom.name} #{item.portTo.name}"
 					itemValue="#{item}" />
 			</p:selectOneMenu>

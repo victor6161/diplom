@@ -55,7 +55,7 @@ public class ApplicationBean {
 		listRouteBean = new ArrayList<>();
 	}
 	@PostConstruct
-	private void init(){
+	public void init(){
 		listPortBean = getListPortBeanDB();
 		listCountryBean = getListCountryBeanDB();
 		listVesselBean = getListVesselBeanDB();

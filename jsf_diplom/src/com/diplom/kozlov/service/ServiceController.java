@@ -8,6 +8,7 @@ import javax.faces.bean.SessionScoped;
 import org.apache.log4j.Logger;
 import org.primefaces.context.RequestContext;
 
+import com.diplom.kozlov.application.ApplicationBean;
 import com.diplom.kozlov.db.service.SServiceImpl;
 import com.diplom.kozlov.service.view.MainBean;
 
@@ -28,6 +29,10 @@ public class ServiceController {
 	@Getter
 	@ManagedProperty(value = "#{mainBeanService}")
 	private MainBean mainBean;
+	@Setter
+	@Getter
+	@ManagedProperty(value = "#{applicationBean}")
+	private ApplicationBean application;
 
 	
 	@Setter
@@ -38,7 +43,7 @@ public class ServiceController {
 	private SServiceImpl service = new SServiceImpl();
 	
 	@PostConstruct
-	private void init(){
+	public void init(){
 		LOGGER.info("init");
 		facade.init();
 	}

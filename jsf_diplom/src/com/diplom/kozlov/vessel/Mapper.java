@@ -15,6 +15,9 @@ public class Mapper {
 		vesselDto.setLoadCapacity(addBean.getLoadCapacity());
 		vesselDto.setAverageSpeed(addBean.getAverageSpeed());
 		vesselDto.setFuelConsumption(addBean.getFuelConsumtion());
+		vesselDto.setLength(250.0);
+		vesselDto.setWidth(30.0);
+		vesselDto.setDraught(3000.0);
 		return vesselDto;
 	}
 

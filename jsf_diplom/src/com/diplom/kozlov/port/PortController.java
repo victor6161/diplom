@@ -38,7 +38,7 @@ public class PortController {
 	private String rowsPerPage = "10";
 	
 	@PostConstruct
-	private void init() {
+	public void init() {
 		LOGGER.info("init");
 		facade.init();
 	}

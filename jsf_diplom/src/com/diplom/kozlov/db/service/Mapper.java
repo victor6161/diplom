@@ -74,6 +74,9 @@ public class Mapper {
 		vesselEntity.setAverageSpeed(vesselDto.getAverageSpeed());
 		vesselEntity.setFuelConsumption(vesselDto.getFuelConsumption());
 		vesselEntity.setDiesel(vesselDto.getDiesel());
+		vesselEntity.setDraught(vesselDto.getDraught());
+		vesselEntity.setWidth(vesselDto.getWidth());
+		vesselEntity.setLength(vesselDto.getLength());
 		return vesselEntity;
 	}
 

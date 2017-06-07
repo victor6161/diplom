@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.diplom.kozlov.application.RouteBean;
 import com.diplom.kozlov.application.VesselBean;
 import com.diplom.kozlov.db.dto.RouteDto;
 import com.diplom.kozlov.db.dto.ServiceDto;
@@ -79,9 +80,18 @@ public class ServiceDataFacade {
 	}
 
 	public void onAddRouteToServiceOpen() {
+		
 		Integer id = serviceController.getMainBean().getInfoBean().getId();
 		serviceController.getMainBean().getAddRouteToServiceBean().setServiceId(id);
-
+		List<RouteBean> routesBean = serviceController.getApplication().getListRouteBean();
+	//	RowBean rowBean = serviceController.getMainBean().getRowsBean().get(serviceController.getMainBean().getRowsBean().size());
+		List<RouteBean> result = new ArrayList<>();
+		for(RouteBean routeBean:routesBean){
+			if(routeBean.getPortFrom().getName().equals("Циндао")){
+				result.add(routeBean);
+			}
+		}
+		serviceController.getApplication().setListRouteBean(result);
 	}
 
 	public void onSearch() {

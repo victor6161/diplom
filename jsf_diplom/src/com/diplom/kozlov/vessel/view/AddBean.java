@@ -6,10 +6,7 @@ import lombok.Setter;
 public class AddBean {
 
 	public AddBean(){
-		this.type=new String();
-		this.loadCapacity=new Double(0);
-		this.averageSpeed=new Double(0);
-		this.fuelConsumtion=new Double(0);
+		
 	}
 
 	@Setter

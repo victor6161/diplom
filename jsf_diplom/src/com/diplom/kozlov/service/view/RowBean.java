@@ -24,6 +24,9 @@ public class RowBean {
 	private double distance;
 	@Setter
 	@Getter
+	private String portDep;
+	@Setter
+	@Getter
 	private double length;
 	@Setter
 	@Getter
