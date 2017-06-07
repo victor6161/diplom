@@ -3,6 +3,8 @@ package com.diplom.kozlov.service.view;
 
 import java.time.Period;
 
+import com.diplom.kozlov.application.PortBean;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,7 +26,10 @@ public class RowBean {
 	private double distance;
 	@Setter
 	@Getter
-	private String portDep;
+	private PortBean portFrom;
+	@Setter
+	@Getter
+	private PortBean portTo;
 	@Setter
 	@Getter
 	private double length;

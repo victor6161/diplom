@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class PortBean {
-	
-	  @Override
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -16,6 +16,7 @@ public class PortBean {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -52,24 +53,21 @@ public class PortBean {
 			return false;
 		return true;
 	}
-	@Override
-	public String toString() {
-		return "PortBean [id=" + id + ", countryBean=" + countryBean + ", name=" + name + "]";
-	}
+
 	@Setter
-	  @Getter
-	  private Integer id;
-	  @Setter
-	  @Getter
-	  private CountryBean countryBean;
-	  @Setter
-	  @Getter
-	  private String name;
-	  @Setter
-	  @Getter
-	  private Double latitude;
-	  @Setter
-	  @Getter
-	  private Double longitude;
+	@Getter
+	private Integer id;
+	@Setter
+	@Getter
+	private CountryBean countryBean;
+	@Setter
+	@Getter
+	private String name;
+	@Setter
+	@Getter
+	private Double latitude;
+	@Setter
+	@Getter
+	private Double longitude;
 
 }

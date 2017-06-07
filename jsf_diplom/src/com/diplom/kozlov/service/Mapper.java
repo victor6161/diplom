@@ -56,8 +56,10 @@ public class Mapper {
 		rowBean.setLength(routeDto.getLength());
 		rowBean.setWidth(routeDto.getWidth());
 		rowBean.setMasut(routeDto.getMasut());
-		rowBean.setPortDep(routeDto.getPortTo().getName());
-		// rowBean.setPeriod(routeDto);
+		
+		rowBean.setPortFrom(mapperApplication.portDtoToBean(routeDto.getPortFrom()));
+		rowBean.setPortTo(mapperApplication.portDtoToBean(routeDto.getPortTo()));
+	
 		return rowBean;
 	}
 

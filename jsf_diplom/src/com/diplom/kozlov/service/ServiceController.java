@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.primefaces.context.RequestContext;
 
 import com.diplom.kozlov.application.ApplicationBean;
+import com.diplom.kozlov.db.service.RouteServiceImpl;
 import com.diplom.kozlov.db.service.SServiceImpl;
 import com.diplom.kozlov.service.view.MainBean;
 
@@ -19,6 +20,7 @@ import lombok.Setter;
 @SessionScoped
 public class ServiceController {
 	private ServiceDataFacade facade = new ServiceDataFacade(this); 
+	
 	
 	private static final Logger LOGGER = Logger.getLogger(ServiceController.class);
 	@Setter
@@ -41,6 +43,9 @@ public class ServiceController {
 	@Setter
 	@Getter
 	private SServiceImpl service = new SServiceImpl();
+	@Setter
+	@Getter
+	private RouteServiceImpl routeService = new RouteServiceImpl();
 	
 	@PostConstruct
 	public void init(){

@@ -37,10 +37,8 @@ public class ServiceDataFacade {
 		AddBean addBean = serviceController.getMainBean().getAddBean();
 		ServiceDto serviceDto = serviceController.getMapper().addBeanToDto(addBean);
 		serviceController.getService().save(serviceDto);
-		// скорее всего костыль 
-		int maxId = getMaxId();
-		setServiceById(maxId);
-		
+		//костыль
+		setServiceById(getMaxId());
 		serviceController.getMainBean().setSearchBean(new SearchBean());
 
 	}
@@ -56,6 +54,18 @@ public class ServiceDataFacade {
 
 		return id;
 	}
+	private RowBean getMaxIdRouteService() {
+		List<RowBean> rowsBean = serviceController.getMainBean().getRowsBean();
+		int id = rowsBean.get(0).getId();
+		RowBean result = null;
+		for (RowBean rowBean : rowsBean) {
+			if (rowBean.getId() > id) {
+				id = rowBean.getId();
+				result = rowBean;
+			}
+		}
+		return result ;
+	}
 
 	public void onCompareOpen() {
 		serviceController.getMainBean().setCompareList(new ArrayList<>());
@@ -67,7 +77,6 @@ public class ServiceDataFacade {
 		serviceController.getMainBean().getCompareList()
 				.add(new Compare("Ширина", vesselBean.getWidth(), selectedRoute.getWidth()));
 		serviceController.getMainBean().getCompareList().add(new Compare("Водоизмещение", 12000, 15000));
-	
 
 	}
 
@@ -80,14 +89,14 @@ public class ServiceDataFacade {
 	}
 
 	public void onAddRouteToServiceOpen() {
-		
 		Integer id = serviceController.getMainBean().getInfoBean().getId();
 		serviceController.getMainBean().getAddRouteToServiceBean().setServiceId(id);
+		
 		List<RouteBean> routesBean = serviceController.getApplication().getListRouteBean();
-	//	RowBean rowBean = serviceController.getMainBean().getRowsBean().get(serviceController.getMainBean().getRowsBean().size());
+		
 		List<RouteBean> result = new ArrayList<>();
-		for(RouteBean routeBean:routesBean){
-			if(routeBean.getPortFrom().getName().equals("Циндао")){
+		for (RouteBean routeBean : routesBean) {
+			if (routeBean.getPortFrom().equals(getMaxIdRouteService())) {
 				result.add(routeBean);
 			}
 		}
