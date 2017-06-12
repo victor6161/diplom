@@ -21,7 +21,7 @@ import lombok.Setter;
 public class ServiceController {
 	private ServiceDataFacade facade = new ServiceDataFacade(this); 
 	
-	
+	static int count = 0;
 	private static final Logger LOGGER = Logger.getLogger(ServiceController.class);
 	@Setter
 	@Getter
@@ -63,6 +63,12 @@ public class ServiceController {
 		LOGGER.info("onCompareOpen");
 		facade.onCompareOpen();
 			
+	}
+	public void onAddOpen() {
+		LOGGER.info("onAddOpen");
+		facade.onAddOpen();
+		
+		
 	}
 	public void add() {
 		LOGGER.info("add");

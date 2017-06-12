@@ -12,29 +12,74 @@
 
 		<p:row>
 			<p:column style="text-align: center;">
-							<h:form>
-								<div style="margin: 10px">
-									<p:outputLabel value="показать service по id"
-										for="serviceSearch" style="margin-right:10px;" />
-									<p:inputText id="serviceSearch"
-										value="#{serviceController.mainBean.searchBean.serviceId}">
-									</p:inputText>
-								</div>
+				<h:form>
+					<div style="margin: 10px">
+						<p:outputLabel value="Найти сервис по индентификатору" for="serviceSearch"
+							style="margin-right:10px;" />
+							<br/> <br/>
+						<p:inputText id="serviceSearch"
+							value="#{serviceController.mainBean.searchBean.serviceId}">
+						</p:inputText>
+					</div>
 
-								<p:commandButton value="Поиск"
-									update=":#{p:component('serviceTableForm')} :#{p:component('infoService')}"
-									actionListener="#{serviceController.onSearch}"
-									/>
-								<br/><br/>
-								
-							
-							</h:form>
-							<h:form>
-								<p:commandButton  value="Добавить Сервис"
-									update=":#{p:component('addService')}"
-									oncomplete="PF('addServiceWidget').show();" />
-							</h:form>
+					<p:commandButton value="Поиск"
+						update=":#{p:component('serviceTableForm')} :#{p:component('infoService')}"
+						actionListener="#{serviceController.onSearch}"
+						style="margin-right:15px" />
 				
+					<p:commandButton value="Добавить Сервис"
+						update=":#{p:component('addService')}"
+						actionListener="#{serviceController.onAddOpen}"
+						oncomplete="PF('addServiceWidget').show();" />
+				</h:form>
+
+			</p:column>
+			<p:column>
+				<h:outputStylesheet library="css" name="panelGrid.css" />
+				<p:fieldset id="infoService" legend="Информация о сервисе"
+					style="margin-bottom:20px">
+					<h:panelGrid columns="2" style="width:100%" styleClass="noBorder">
+						<p:column>
+							<div style="margin-right: 50px">
+								<h:outputText value="Название сервиса: " />
+								<h:outputText style="color:green"
+									value="#{serviceController.mainBean.infoBean.title}" />
+							</div>
+							<br />
+							<div style="margin-right: 50px">
+								<h:outputText value="Полная дистанция(км): " />
+								<h:outputText style="color: green"
+									value="#{serviceController.mainBean.infoBean.totalDistance}" />
+							</div>
+						</p:column>
+						<p:column>
+							<div style="margin-right: 50px">
+								<h:outputText value="Индентификатору корабля: " />
+								<h:outputText style="color:green"
+									value="#{serviceController.mainBean.infoBean.vesselBean.id}" />
+								<br />
+								<br />
+								<h:outputText value="Тип корабля: " />
+								<h:outputText style="color:green"
+									value="#{serviceController.mainBean.infoBean.vesselBean.type}" />
+								<br />
+								<br />
+								<h:outputText value="Длина корабля: " />
+								<h:outputText style="color:green"
+									value="#{serviceController.mainBean.infoBean.vesselBean.length}" />
+								<br />
+								<br />
+								<h:outputText value="Ширина корабля: " />
+								<h:outputText style="color:green"
+									value="#{serviceController.mainBean.infoBean.vesselBean.width}" />
+								<br />
+								<br />
+							</div>
+						</p:column>
+					</h:panelGrid>
+
+				</p:fieldset>
+
 			</p:column>
 		</p:row>
 

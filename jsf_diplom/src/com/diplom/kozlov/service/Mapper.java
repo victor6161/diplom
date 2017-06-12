@@ -63,4 +63,13 @@ public class Mapper {
 		return rowBean;
 	}
 
+	public RowBean routeBeanToRowBean(RouteBean routeBean) {
+		RowBean rowBean = new RowBean();
+		rowBean.setId(routeBean.getId());
+		rowBean.setPortFrom(routeBean.getPortFrom());
+		rowBean.setPortTo(routeBean.getPortTo());
+		rowBean.setDistance(routeBean.getDistance());
+		return rowBean;
+	}
+
 }

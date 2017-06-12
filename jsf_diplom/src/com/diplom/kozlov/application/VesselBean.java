@@ -19,6 +19,10 @@ public class VesselBean {
 	private double width;
 	@Setter
 	@Getter
+	private double draught;
+	
+	@Setter
+	@Getter
 	private int masut;
 	@Setter
 	@Getter 

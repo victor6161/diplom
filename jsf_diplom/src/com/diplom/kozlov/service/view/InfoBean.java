@@ -10,10 +10,11 @@ import lombok.Setter;
 public class InfoBean {
 	public InfoBean() {
 		vesselBean = new VesselBean();
+		title = ": ";
 	}
 
 	@Setter
-	@Getter
+	@Getter 
 	private Integer id;
 
 	@Setter

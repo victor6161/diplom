@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.diplom.kozlov.application.CountryBean;
+import com.diplom.kozlov.application.PortBean;
 import com.diplom.kozlov.application.RouteBean;
 import com.diplom.kozlov.application.VesselBean;
 import com.diplom.kozlov.db.dto.RouteDto;
@@ -27,8 +29,8 @@ public class ServiceDataFacade {
 	private static final Logger LOGGER = Logger.getLogger(ServiceDataFacade.class);
 
 	public void init() {
-
 		LOGGER.info("init");
+		setServiceById(35);
 
 	}
 
@@ -37,7 +39,7 @@ public class ServiceDataFacade {
 		AddBean addBean = serviceController.getMainBean().getAddBean();
 		ServiceDto serviceDto = serviceController.getMapper().addBeanToDto(addBean);
 		serviceController.getService().save(serviceDto);
-		//костыль
+		// костыль
 		setServiceById(getMaxId());
 		serviceController.getMainBean().setSearchBean(new SearchBean());
 
@@ -54,6 +56,7 @@ public class ServiceDataFacade {
 
 		return id;
 	}
+
 	private RowBean getMaxIdRouteService() {
 		List<RowBean> rowsBean = serviceController.getMainBean().getRowsBean();
 		int id = rowsBean.get(0).getId();
@@ -64,7 +67,7 @@ public class ServiceDataFacade {
 				result = rowBean;
 			}
 		}
-		return result ;
+		return result;
 	}
 
 	public void onCompareOpen() {
@@ -81,26 +84,113 @@ public class ServiceDataFacade {
 	}
 
 	public void addRouteToService() {
+		LOGGER.info("addRouteToService");
 		AddRouteToServiceBean addRouteToServiceBean = serviceController.getMainBean().getAddRouteToServiceBean();
-		RouteDto routeDto = serviceController.getMapper().getMapperApplication()
-				.routeBeanToDto(addRouteToServiceBean.getRouteBean());
-		serviceController.getService().addRoute(routeDto, addRouteToServiceBean.getServiceId());
-		setServiceById(addRouteToServiceBean.getServiceId());
+		/*
+		 * RouteDto routeDto =
+		 * serviceController.getMapper().getMapperApplication()
+		 * .routeBeanToDto(addRouteToServiceBean.getRouteBean());
+		 * serviceController.getService().addRoute(routeDto,
+		 * addRouteToServiceBean.getServiceId());
+		 */
+
+		RowBean rowBean = serviceController.getMapper().routeBeanToRowBean(addRouteToServiceBean.getRouteBean());
+		double totalDistance = serviceController.getMainBean().getInfoBean().getTotalDistance();
+		totalDistance = totalDistance + rowBean.getDistance();
+		LOGGER.info("!!!" + totalDistance);
+		serviceController.getMainBean().getInfoBean().setTotalDistance(totalDistance);
+		serviceController.getMainBean().getRowsBean().add(rowBean);
+		/* setServiceById(addRouteToServiceBean.getServiceId()); */
 	}
 
+	List<RouteBean> rowsBean = new ArrayList<>();
+
 	public void onAddRouteToServiceOpen() {
-		Integer id = serviceController.getMainBean().getInfoBean().getId();
-		serviceController.getMainBean().getAddRouteToServiceBean().setServiceId(id);
-		
-		List<RouteBean> routesBean = serviceController.getApplication().getListRouteBean();
-		
-		List<RouteBean> result = new ArrayList<>();
-		for (RouteBean routeBean : routesBean) {
-			if (routeBean.getPortFrom().equals(getMaxIdRouteService())) {
-				result.add(routeBean);
-			}
+		LOGGER.info("onAddRouteToServiceOpen");
+		CountryBean countryBean = new CountryBean();
+		countryBean.setId(1);
+		countryBean.setName("asd");
+		if (ServiceController.count == 0) {
+
+			RouteBean routeBean = new RouteBean();
+			routeBean.setId(11);
+			routeBean.setDistance(400);
+			PortBean portBean11 = new PortBean();
+			portBean11.setCountryBean(countryBean);
+			portBean11.setName("Роттердам");
+			routeBean.setPortFrom(portBean11);
+			PortBean portBean12 = new PortBean();
+			portBean12.setName("Бристоль");
+			routeBean.setPortTo(portBean12);
+
+			rowsBean.add(routeBean);
+
+			RouteBean routeBean1 = new RouteBean();
+			PortBean portBean1 = new PortBean();
+			portBean1.setCountryBean(countryBean);
+			routeBean1.setId(12);
+			routeBean1.setDistance(550);
+			portBean1.setName("Роттердам");
+			routeBean1.setPortFrom(portBean1);
+			PortBean portBean13 = new PortBean();
+			portBean13.setName("Орхус");
+			routeBean1.setPortTo(portBean13);
+			rowsBean.add(routeBean1);
+
+			serviceController.getApplication().setListRouteBean(rowsBean);
+			ServiceController.count++;
+
+		} else if (ServiceController.count == 1) {
+			ServiceController.count++;
+			rowsBean = new ArrayList<>();
+
+			RouteBean routeBean = new RouteBean();
+			routeBean.setId(11);
+			routeBean.setDistance(400);
+			PortBean portBean11 = new PortBean();
+			portBean11.setCountryBean(countryBean);
+			portBean11.setName("Орхус");
+			routeBean.setPortFrom(portBean11);
+			PortBean portBean12 = new PortBean();
+			portBean12.setName("Петербург");
+			routeBean.setPortTo(portBean12);
+			
+
+			rowsBean.add(routeBean);
+
+			RouteBean routeBean1 = new RouteBean();
+			PortBean portBean1 = new PortBean();
+			portBean1.setCountryBean(countryBean);
+			routeBean1.setId(12);
+			routeBean1.setDistance(550);
+			portBean1.setName("Орхус");
+			routeBean1.setPortFrom(portBean1);
+			PortBean portBean13 = new PortBean();
+			portBean13.setName("Мурманск");
+			routeBean1.setPortTo(portBean13);
+			rowsBean.add(routeBean1);
+
+			serviceController.getApplication().setListRouteBean(rowsBean);
+		} else if (ServiceController.count == 1) {
+
 		}
-		serviceController.getApplication().setListRouteBean(result);
+		/*
+		 * Integer id = serviceController.getMainBean().getInfoBean().getId();
+		 * serviceController.getMainBean().getAddRouteToServiceBean().
+		 * setServiceId(id);
+		 */
+
+		// List<RouteBean> routesBean =
+		// serviceController.getApplication().getListRouteBean();
+
+		/*
+		 * List<RouteBean> result = new ArrayList<>(); for (RouteBean routeBean
+		 * : routesBean) { if
+		 * (routeBean.getPortFrom().equals(getMaxIdRouteService())) {
+		 * result.add(routeBean); } }
+		 * serviceController.getApplication().setListRouteBean(result);
+		 */
+
 	}
 
 	public void onSearch() {
@@ -122,6 +212,10 @@ public class ServiceDataFacade {
 				serviceController.getMainBean().setRowsBean(rowsBean);
 			}
 		}
+	}
+
+	public void onAddOpen() {
+		serviceController.getApplication().init();
 	}
 
 }

@@ -19,8 +19,8 @@ public class Mapper {
 		CountryDto countryDto = new CountryDto();
 		countryDto.setId(countryBean.getId());
 		countryDto.setName(countryBean.getName());
-		countryDto.setPostcode(countryBean.getPostcode());
-		countryDto.setTax(countryBean.getTax());
+	/*	countryDto.setPostcode(countryBean.getPostcode());
+		countryDto.setTax(countryBean.getTax());*/
 		return countryDto;
 	}
 

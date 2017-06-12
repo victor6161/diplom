@@ -8,31 +8,10 @@
 	xmlns:composite="http://java.sun.com/jsf/composite">
 
 <h:body>
+
 	<ui:composition>
 		<h:form>
-			<p:fieldset id="infoService" legend="Информация о сервисе"
-				style="margin-bottom:20px">
-				<div style="margin-right: 50px">
-					<h:outputText
-						value="Название сервиса:" />
-						<h:outputText style="color:green" value="#{serviceController.mainBean.infoBean.title}"/>
-				</div>
-
-				<div style="margin-right: 50px">
-					<h:outputText value="id корабля: " />
-					<h:outputText style="color:green"
-						value="#{serviceController.mainBean.infoBean.vesselBean.id}" />
-
-				</div>
-
-	
-
-				<div style="margin-right: 50px">
-					<h:outputText value="Полная дистанция(км): " />
-					<h:outputText style="color: green"
-						value="#{serviceController.mainBean.infoBean.totalDistance}" />
-				</div>
-			</p:fieldset>
+		
 
 			<p:dataTable id="serviceTableForm" rowIndexVar="rowIndex"
 				widgetVar="dtWv" var="row"
@@ -46,8 +25,14 @@
 				<p:column headerText="id маршрута">
 					<h:outputText value="#{row.id}" />
 				</p:column>
-			
-			
+				<p:column headerText="Порт из">
+					<h:outputText value="#{row.portFrom.name}" />
+				</p:column>
+				<p:column headerText="Порт в">
+					<h:outputText value="#{row.portTo.name}" />
+				</p:column>
+
+
 				<p:column headerText="Дистанция(км)">
 					<h:outputText value="#{row.distance}" />
 				</p:column>

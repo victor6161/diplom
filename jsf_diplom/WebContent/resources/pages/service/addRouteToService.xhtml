@@ -36,7 +36,7 @@
 
 			<p:commandButton value="Добавить"
 				actionListener="#{serviceController.addRouteToService}"
-				update="@form :#{p:component('addRouteToService')} :#{p:component('serviceTableForm')}"   />
+				update="@form :#{p:component('addRouteToService')} :#{p:component('serviceTableForm')} :#{p:component('infoService')}"   />
 			<p:commandButton value="Закрыть"
 				onclick="PF('addRouteToServiceWidget').hide();" immediate="true"
 				update=":#{p:component('addRouteToService')}">
